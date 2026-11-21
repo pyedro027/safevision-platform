@@ -1,0 +1,42 @@
+# Local environment and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Dependencies and builds (tooling to be confirmed when Version C source arrives)
+node_modules/
+dist/
+build/
+.next/
+.vercel/
+coverage/
+.cache/
+*.log
+
+# Operating-system and editor artifacts
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Python / Blender temporary files
+__pycache__/
+*.py[cod]
+*.blend1
+*.blend2
+*.blend@
+*.blend? 
+
+# Large 3D binary exports: host separately or via an intentional LFS policy.
+# Keep the original project offline until source integrity has been verified.
+*.glb
+*.gltf
+*.fbx
+*.blend
+*.zip
+*.7z
+*.rar
+
+# Keep model metadata/docs in Git when useful.
