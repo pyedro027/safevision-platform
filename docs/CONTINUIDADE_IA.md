@@ -60,3 +60,7 @@ A regressão da Clínica ÁUREA e a leitura anônima foram revalidadas na mesma 
 ## Missão 11 — SAFEVISION Studio
 
 O Studio está implementado na branch `feature/safevision-studio-demo`, derivada do PR #7. O módulo reconhece os dois PDFs oficiais da Etapa 6 em memória e abre o tour original com uma única instância. Próxima ação: revisão visual local pelo proprietário. As pendências de autenticação/RLS e a publicação no domínio oficial continuam em etapas separadas. [Guia](SAFEVISION_STUDIO.md) · [Validação](RELATORIO_STUDIO_DEMO.md)
+
+## Missão 12 — Revisão visual local
+
+A branch feature/platform-v1-premium-ui reúne o redesign das seis rotas sobre o PR #8. Chrome passou nas seis larguras, na regressão do Studio e no dashboard com API simulada. A próxima ação é a revisão visual pelo proprietário. [Relatório e capturas](RELATORIO_REDESIGN_12.md)

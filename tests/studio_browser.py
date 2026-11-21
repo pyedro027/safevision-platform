@@ -18,6 +18,11 @@ class QuietHandler(http.server.SimpleHTTPRequestHandler):
 
 
 def test(page, origin, pdfs, evidence):
+    def check_widths():
+        for width in (375, 430, 768, 1024, 1440, 1920):
+            page.set_viewport_size({"width": width, "height": 880})
+            assert page.evaluate("document.documentElement.scrollWidth <= innerWidth"), (width, page.url)
+        page.set_viewport_size({"width": 1350, "height": 920})
     requests = []
     errors = []
     http_errors = []
@@ -39,6 +44,7 @@ def test(page, origin, pdfs, evidence):
     page.screenshot(path=evidence / "02-studio-mobile.png", full_page=True)
     page.set_viewport_size({"width": 1350, "height": 920})
 
+    check_widths()
     picker = page.locator("#studio-files")
     prepare = page.get_by_role("button", name="Preparar demonstração")
     demo = page.get_by_role("button", name="Experimentar Clínica ÁUREA")
@@ -111,6 +117,7 @@ def test(page, origin, pdfs, evidence):
     prepare.click()
     expect(page.get_by_role("heading", name="Não foi possível preparar a Clínica ÁUREA")).to_be_visible()
     page.screenshot(path=evidence / "04-falha-recuperavel.png", full_page=True)
+    check_widths()
     pending = []
     def hold_segment(route):
         pending.append(route)
@@ -120,6 +127,7 @@ def test(page, origin, pdfs, evidence):
     expect(page.locator(".studio-frame iframe")).to_have_count(1)
     if not pending:
         page.wait_for_event("request", predicate=lambda req: req.url.endswith("clinica-v03-00.bin"), timeout=30_000)
+    check_widths()
     page.screenshot(path=evidence / "05-processamento.png", full_page=True)
     cancel.click()
     expect(page.locator(".studio-frame iframe")).to_have_count(0)
@@ -140,12 +148,14 @@ def test(page, origin, pdfs, evidence):
     expect(finished).to_be_focused()
     expect(page.get_by_text("PDFs oficiais identificados no navegador", exact=False)).to_be_visible()
     assert set(page.evaluate("window.studioSteps")) >= {1, 2, 3, 5}
+    check_widths()
     page.screenshot(path=evidence / "06-conclusao.png", full_page=True)
     runtime = page.frame(url=lambda url: url.endswith("/clinica/WEB/index.html"))
     assert runtime.evaluate("window.__tourDebug.ready && window.__tourDebug.suspended")
     expect(page.locator(".studio-frame iframe")).to_have_count(1)
 
     page.get_by_role("button", name="Abrir ambiente 3D").click()
+    check_widths()
     frame = page.frame_locator(".studio-frame iframe")
     expect(frame.locator("#startButton")).to_be_visible()
     frame.locator("#screenMode").check()
