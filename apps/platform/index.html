@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SAFEVISION Platform</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="./platform.css">
+  <script defer src="./vendor/supabase.js"></script>
+  <script type="module" src="./platform.js"></script>
+</head>
+<body>
+  <a class="skip" href="#conteudo">Ir para o conteúdo</a>
+  <aside class="sidebar">
+    <a class="brand" href="#inicio"><span class="mark" aria-hidden="true">S<span>3D</span></span><span>SAFEVISION<small>PLATFORM</small></span></a>
+    <nav aria-label="Área de trabalho">
+      <a href="#inicio">Visão geral</a>
+      <a href="#projetos">Meus projetos</a>
+      <a href="#aurea">Clínica ÁUREA</a>
+      <a href="#conta">Conta</a>
+      <a href="#configuracoes">Configurações</a>
+    </nav>
+    <p class="build">Platform V1 · desenvolvimento</p>
+  </aside>
+  <main id="conteudo" tabindex="-1">
+    <header class="top">
+      <span>Área de trabalho</span>
+      <a id="account-link" href="#conta">Entrar</a>
+    </header>
+    <p id="feedback" role="status" hidden></p>
+    <section id="screen" aria-live="polite"><p>Carregando ambiente…</p></section>
+  </main>
+  <dialog id="dialog" aria-labelledby="dialog-title"></dialog>
+  <noscript>Ative o JavaScript para acessar a plataforma.</noscript>
+</body>
+</html>

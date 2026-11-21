@@ -19,3 +19,5 @@ O PR de preparação #1 descreve uma arquitetura futura. A importação parte de
 ## Direção da Platform V1
 
 O planejamento do PR #1 separa portal, identidade, projetos e arquivos privados. O visualizador continua como módulo estático. Auth, autorização por proprietário e Storage privado serão desenvolvidos em ambiente de desenvolvimento. A prévia deve ficar separada da publicação estável da C.
+
+O dashboard em `apps/platform` usa JavaScript e o SDK oficial do Supabase. O build copia a demonstração para `dist/clinica/` e gera a configuração pública do ambiente. O Auth gerencia sessão e recuperação. O PostgREST atende os projetos e perfis protegidos por RLS. A migração contém o histórico de metadados. Upload e Storage permanecem fora do núcleo inicial.
