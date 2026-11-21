@@ -42,3 +42,9 @@ Foram confirmadas as três tabelas, oito políticas e três gatilhos. A API anô
 O [plano de Auth e Preview](PLANO_AUTH_PREVIEW_07.md) registra as aprovações específicas solicitadas, o alias exato, as duas URLs de retorno e o roteiro com dois usuários. O conector confirmou provedor de e-mail ativo, cadastro permitido e confirmação obrigatória. O navegador não tinha sessão administrativa Supabase. A lista de retornos, o Site URL, os templates, SMTP e limites continuam pendentes de inspeção autenticada.
 
 A branch `integration/auth-preview-e2e` corrige o encaminhamento de recuperação sem verificador PKCE e expande o ensaio de Chrome com respostas simuladas. Ela desativa seu deploy automático para permitir revisão antes da aprovação. Primeira ação: confirmar as duas autorizações, abrir sessão administrativa Supabase para inspeção e combinar duas contas de teste controladas. A migração remota já existe e não deve ser reaplicada.
+
+## Missão 08 — prévia conectada
+
+As autorizações da Missão 08 substituíram o plano histórico da Missão 07. A [prévia HTTPS](https://safevision-platform-2bzty7au8-pyedros-projects.vercel.app/) está `READY` no deploy `dpl_Aq1pu45FoBBxKpAzLXvqZ71TqFza` do commit corrigido `6a2a926`. As duas variáveis do Supabase estão restritas a Preview e à branch `integration/auth-preview-e2e`. O código do visualizador e o histórico de migração permanecem iguais.
+
+Primeiro passo: entrar no painel administrativo Supabase ou pedir ao responsável para confirmar que as duas URLs exatas do deploy canônico foram adicionadas. A seguir, usar duas caixas de teste controladas e o mesmo perfil de navegador por fluxo PKCE. A conexão pública de Auth foi confirmada. Cadastro, entrega de e-mail, sessão real, persistência e acesso cruzado entre usuários ainda não foram homologados. [Relatório e roteiro](RELATORIO_MISSAO_08.md)

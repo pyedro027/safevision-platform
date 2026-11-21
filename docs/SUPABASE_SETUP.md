@@ -23,3 +23,5 @@ Para modelos próprios futuros, a coluna opcional `model_object_key` reserva a r
 - [Cobrança de branches](https://supabase.com/docs/guides/platform/manage-your-usage/branching)
 
 O [plano da Missão 07](PLANO_AUTH_PREVIEW_07.md) especifica os dois retornos propostos e o ensaio remoto. O cadastro e a confirmação obrigatória foram verificados no endpoint público `/auth/v1/settings`. Ainda é necessário entrar no painel administrativo e conferir a lista atual de retornos, Site URL, templates, SMTP e limites antes de salvar qualquer alteração.
+
+Na Missão 08 o commit corrigido foi implantado noutro domínio. Use somente as duas URLs exatas do [relatório da Missão 08](RELATORIO_MISSAO_08.md), em substituição à proposta histórica da Missão 07. A sessão administrativa e a alteração da lista continuam pendentes. A migração já aplicada permanece `20261121204325`.

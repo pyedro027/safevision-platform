@@ -19,5 +19,7 @@ Após a Missão 06, o esquema do Supabase está pronto, mas a prévia atual aind
 
 A [proposta da Missão 07](PLANO_AUTH_PREVIEW_07.md) restringe as variáveis à branch `integration/supabase-remote-validation`. O alias dessa branch retornou configuração vazia. A prévia conectada depende de aprovação específica. A branch de revisão da correção PKCE desativa seu deploy automático, sem alterar as regras de outras branches.
 
+O deploy manual da Missão 08 substitui essa proposta histórica. [Preview conectada](https://safevision-platform-2bzty7au8-pyedros-projects.vercel.app/), `dpl_Aq1pu45FoBBxKpAzLXvqZ71TqFza`, commit `6a2a926`. As duas variáveis foram configuradas exclusivamente para Preview da branch `integration/auth-preview-e2e`. O `config.json` respondeu HTTP 200 com apenas `url` e `key`, comparados com o projeto oficial. O deploy está protegido por Vercel Authentication. [Detalhes da Missão 08](RELATORIO_MISSAO_08.md)
+
 - [Configuração estática](https://vercel.com/docs/project-configuration/vercel-json)
 - [Limites da Vercel](https://vercel.com/docs/limits)

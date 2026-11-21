@@ -42,3 +42,9 @@ O dashboard recebeu configuração Supabase vazia. Auth remoto, CRUD remoto, e-m
 ## Missão 07 — PKCE no navegador local
 
 `tests/platform_browser.py` usa Chrome, Playwright e o SDK Supabase do projeto. Com API simulada, conferiu URL exata de retorno, desafios S256, a troca com verificador correspondente, a recusa em outro perfil sem verificador e o formulário de senha. Também conferiu credenciais inválidas, sessão após reload, perfil, CRUD, histórico, logout e responsividade. A primeira rodada reproduziu o retorno incorreto à visão geral. Depois da correção, a suíte passou. Cadastro remoto, entrega de e-mail e isolamento por sessões Auth reais continuam pendentes.
+
+## Missão 08 — Preview conectado e regressão 3D
+
+Chrome 157 na prévia real do commit `6a2a926`. Abriram dashboard, login e recuperação sem verificador. O Auth público retornou HTTP 200 via navegador. A Data API negou leitura anônima nas três tabelas (401 / 42501). O tour renderizou e passou na navegação, porta representativa, colisão F060 e transição PROB/CORR dos cinco riscos. Os sete segmentos foram baixados por HTTPS e recompuseram o hash original.
+
+Cadastro remoto, entrega e confirmação, troca real de código PKCE, login, recuperação de senha, CRUD e isolamento de dois usuários autenticados aguardam autorização das caixas de teste e configuração das URLs. Não houve teste físico Quest. [Evidência](qa-auth-preview-08.json)
