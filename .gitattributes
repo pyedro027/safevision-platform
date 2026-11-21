@@ -2,3 +2,4 @@ apps/viewer/** -text whitespace=cr-at-eol
 apps/viewer/**/*.bin binary
 apps/viewer/**/*.hdr binary
 apps/viewer/**/*.png binary
+apps/platform/vendor/** -text -whitespace

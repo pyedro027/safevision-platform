@@ -18,3 +18,5 @@ O GLB monolítico excede o limite por arquivo de 50 MB do Storage Free. Para pro
 - [Controle de acesso do Supabase Storage](https://supabase.com/docs/guides/storage/security/access-control)
 
 Para concluir a homologação XR, testar controles físicos, conforto, desempenho e painel em HTTPS no Meta Quest 2. Registrar a versão do navegador e a escala XR usada.
+
+A fundação já tem PR de revisão. O dashboard e a migração passaram nos ensaios locais. A próxima validação usa um ambiente Vercel Preview e um projeto Supabase de desenvolvimento dedicado, com duas contas de teste e entrega de e-mail verificada.

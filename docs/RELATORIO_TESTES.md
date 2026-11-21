@@ -19,3 +19,14 @@ O resultado bruto da rodada de navegador está em [qa-chrome.json](qa-chrome.jso
 ## Regressão na fundação V1
 
 Em 21/11/2026 a cópia consolidada passou nos 42 hashes, na reconstrução dos sete segmentos e nos seis ensaios NullEngine. No Chrome acelerado por RX 580, a cena abriu a partir do painel sem erros HTTP ou de console. WASD, mouse, seta, Avançar e Parar funcionaram. A porta P03 passou de fechada para aberta pela API do visualizador e os cinco casos alternaram PROB/CORR. Os recursos relativos foram carregados da nova cópia. O Chrome sem headset informou immersive-vr indisponível. Veja qa-integracao.json.
+
+## Plataforma V1
+
+| Teste | Resultado | Evidência e limite |
+|---|---|---|
+| Migração e RLS | APROVADO localmente | PostgreSQL via PGlite 0.5.17 aplicou o SQL real. Dois usuários simulados testaram CRUD, isolamento, histórico, troca de proprietário e acesso anônimo. Não exercita Supabase Auth ou PostgREST remoto. |
+| SDK e dashboard | APROVADO com API simulada | Playwright 1.65.2, Chrome 157. O SDK real executou chamadas simuladas de login, cadastro, solicitação de recuperação, persistência, logout, perfil e CRUD. Confirmação de e-mail e conclusão da redefinição não foram testadas. |
+| Navegação e layout | APROVADO localmente | Atalho abriu o painel original em `/clinica/`. Tela de 390 px sem rolagem horizontal. Nenhuma exceção JavaScript detectada. |
+| Vercel e Supabase remotos | PENDENTE | A equipe Vercel foi autorizada. Ainda é preciso confirmar o plano e criar a prévia. O Supabase precisa de projeto dedicado e capacidade gratuita confirmada. |
+
+Para repetir, gere `dist` com `node scripts/build-platform.mjs`. Execute `python tests/platform_browser.py` com Playwright 1.65.2 e Chrome. Para teste do banco, passe o caminho do `dist/index.js` do pacote PGlite 0.5.17 para `node tests/rls.mjs`.
