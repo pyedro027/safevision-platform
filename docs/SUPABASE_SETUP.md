@@ -29,3 +29,7 @@ Na Missão 08 o commit corrigido foi implantado noutro domínio. Use somente as 
 ## Missão 09 — Retornos salvos e primeira conta
 
 O responsável confirmou a persistência das duas URLs exatas da [prévia canônica da Missão 08](RELATORIO_MISSAO_08.md) após recarregar o painel e relatou a entrega do e-mail de cadastro. O Supabase confirmou por contagem agregada uma conta com e-mail confirmado e registro de entrada. O SMTP, os templates e os limites do projeto aguardam inspeção administrativa de leitura. A próxima etapa exige uma segunda caixa autorizada. Para cada recuperação PKCE, inicie a solicitação e conclua o retorno na mesma origem HTTPS e no mesmo perfil do Chrome. Consulte o [roteiro da Missão 09](RELATORIO_MISSAO_09.md).
+
+## Missão 10 — Homologação parcial
+
+A leitura agregada confirmou uma conta verificada, um perfil, um projeto, uma versão e oito políticas nas três tabelas com RLS. A Data API anônima voltou a negar a leitura. O proprietário não dispõe de segunda caixa. Login novo, recuperação completa e isolamento de duas contas seguem pendentes. Os dois retornos já cadastrados são da prévia canônica. Em uma futura publicação autorizada, validar os retornos também para o domínio público. [Missão 10](RELATORIO_MISSAO_10.md)

@@ -52,3 +52,7 @@ Primeiro passo: entrar no painel administrativo Supabase ou pedir ao responsáve
 ## Missão 09 — Conta A confirmada
 
 O responsável confirmou que os dois retornos exatos da prévia canônica permaneceram salvos e relatou o recebimento do e-mail de cadastro. A leitura agregada do Supabase encontrou uma conta com e-mail confirmado, nenhuma pendente e uma com registro de entrada. A captura do responsável mostra a sessão ativa e um projeto carregado na Visão geral. A primeira ação pendente é observar um login novo com senha e confirmar uma segunda caixa controlada pelo responsável. Use o [relatório da Missão 09](RELATORIO_MISSAO_09.md) para retomar recuperação, CRUD e RLS A/B.
+
+## Missão 10 — Homologação parcial
+
+A regressão da Clínica ÁUREA e a leitura anônima foram revalidadas na mesma prévia. A Conta A segue confirmada. O responsável informou que quer acesso público e ainda não tem uma segunda caixa de teste. O domínio oficial retorna 404 na raiz e em `/clinica/`. Retomar o novo login e a recuperação da Conta A com o titular, e tratar a publicação no domínio oficial em etapa autorizada. [Ponto de retomada da Missão 10](RELATORIO_MISSAO_10.md)

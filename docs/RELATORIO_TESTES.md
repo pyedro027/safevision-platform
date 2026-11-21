@@ -52,3 +52,7 @@ Cadastro remoto, entrega e confirmação, troca real de código PKCE, login, rec
 ## Missão 09 — Cadastro confirmado e sessão observada
 
 Cadastro e entrega do e-mail de confirmação foram relatados pelo responsável. Uma consulta agregada confirmou uma conta com e-mail confirmado e registro de entrada. A captura na origem canônica evidencia sessão ativa, painel e leitura de um projeto existente. Um novo login com senha, recuperação real, CRUD com gravação e RLS entre duas contas continuam sem observação. [Resultados e pendências](RELATORIO_MISSAO_09.md)
+
+## Missão 10 — Homologação parcial
+
+Chrome 157 revalidou a prévia protegida, a Clínica ÁUREA e o SHA-256 do GLB. A recuperação sem verificador PKCE foi tratada pela interface. A leitura anônima foi negada nas três tabelas. O domínio oficial de produção retornou 404 em `/`, `/config.json` e `/clinica/`. Os testes com duas sessões reais continuam pendentes. [Relatório](RELATORIO_MISSAO_10.md) · [Evidência](qa-auth-preview-10.json)
