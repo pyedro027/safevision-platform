@@ -38,3 +38,21 @@ Em 21/11/2026, a [prévia protegida](https://safevision-platform-4y8u5a0md-pyedr
 Os sete binários baixados por HTTPS tiveram HTTP 200, tamanhos e hashes individuais esperados. A concatenação recompôs 113.018.368 bytes com o SHA-256 original. O navegador indicou contexto seguro. O carregamento medido pelo visualizador foi de aproximadamente 8,8 s nesta rodada, sem garantia de desempenho para outras redes ou para o Quest 2. [Evidência](qa-vercel-preview.json)
 
 O dashboard recebeu configuração Supabase vazia. Auth remoto, CRUD remoto, e-mails e headset continuam pendentes. O ensaio RLS foi repetido localmente e passou. A inspeção do Supabase remoto foi somente de leitura.
+
+## Missão 07 — PKCE no navegador local
+
+`tests/platform_browser.py` usa Chrome, Playwright e o SDK Supabase do projeto. Com API simulada, conferiu URL exata de retorno, desafios S256, a troca com verificador correspondente, a recusa em outro perfil sem verificador e o formulário de senha. Também conferiu credenciais inválidas, sessão após reload, perfil, CRUD, histórico, logout e responsividade. A primeira rodada reproduziu o retorno incorreto à visão geral. Depois da correção, a suíte passou. Cadastro remoto, entrega de e-mail e isolamento por sessões Auth reais continuam pendentes.
+
+## Missão 08 — Preview conectado e regressão 3D
+
+Chrome 157 na prévia real do commit `6a2a926`. Abriram dashboard, login e recuperação sem verificador. O Auth público retornou HTTP 200 via navegador. A Data API negou leitura anônima nas três tabelas (401 / 42501). O tour renderizou e passou na navegação, porta representativa, colisão F060 e transição PROB/CORR dos cinco riscos. Os sete segmentos foram baixados por HTTPS e recompuseram o hash original.
+
+Cadastro remoto, entrega e confirmação, troca real de código PKCE, login, recuperação de senha, CRUD e isolamento de dois usuários autenticados aguardam autorização das caixas de teste e configuração das URLs. Não houve teste físico Quest. [Evidência](qa-auth-preview-08.json)
+
+## Missão 09 — Cadastro confirmado e sessão observada
+
+Cadastro e entrega do e-mail de confirmação foram relatados pelo responsável. Uma consulta agregada confirmou uma conta com e-mail confirmado e registro de entrada. A captura na origem canônica evidencia sessão ativa, painel e leitura de um projeto existente. Um novo login com senha, recuperação real, CRUD com gravação e RLS entre duas contas continuam sem observação. [Resultados e pendências](RELATORIO_MISSAO_09.md)
+
+## Missão 10 — Homologação parcial
+
+Chrome 157 revalidou a prévia protegida, a Clínica ÁUREA e o SHA-256 do GLB. A recuperação sem verificador PKCE foi tratada pela interface. A leitura anônima foi negada nas três tabelas. O domínio oficial de produção retornou 404 em `/`, `/config.json` e `/clinica/`. Os testes com duas sessões reais continuam pendentes. [Relatório](RELATORIO_MISSAO_10.md) · [Evidência](qa-auth-preview-10.json)

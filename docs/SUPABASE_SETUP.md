@@ -21,3 +21,15 @@ Para modelos próprios futuros, a coluna opcional `model_object_key` reserva a r
 - [Limites de Storage](https://supabase.com/docs/guides/storage/uploads/file-limits)
 - [Supabase local](https://supabase.com/docs/guides/local-development)
 - [Cobrança de branches](https://supabase.com/docs/guides/platform/manage-your-usage/branching)
+
+O [plano da Missão 07](PLANO_AUTH_PREVIEW_07.md) especifica os dois retornos propostos e o ensaio remoto. O cadastro e a confirmação obrigatória foram verificados no endpoint público `/auth/v1/settings`. Ainda é necessário entrar no painel administrativo e conferir a lista atual de retornos, Site URL, templates, SMTP e limites antes de salvar qualquer alteração.
+
+Na Missão 08 o commit corrigido foi implantado noutro domínio. Use somente as duas URLs exatas do [relatório da Missão 08](RELATORIO_MISSAO_08.md), em substituição à proposta histórica da Missão 07. A sessão administrativa e a alteração da lista continuam pendentes. A migração já aplicada permanece `20261121204325`.
+
+## Missão 09 — Retornos salvos e primeira conta
+
+O responsável confirmou a persistência das duas URLs exatas da [prévia canônica da Missão 08](RELATORIO_MISSAO_08.md) após recarregar o painel e relatou a entrega do e-mail de cadastro. O Supabase confirmou por contagem agregada uma conta com e-mail confirmado e registro de entrada. O SMTP, os templates e os limites do projeto aguardam inspeção administrativa de leitura. A próxima etapa exige uma segunda caixa autorizada. Para cada recuperação PKCE, inicie a solicitação e conclua o retorno na mesma origem HTTPS e no mesmo perfil do Chrome. Consulte o [roteiro da Missão 09](RELATORIO_MISSAO_09.md).
+
+## Missão 10 — Homologação parcial
+
+A leitura agregada confirmou uma conta verificada, um perfil, um projeto, uma versão e oito políticas nas três tabelas com RLS. A Data API anônima voltou a negar a leitura. O proprietário não dispõe de segunda caixa. Login novo, recuperação completa e isolamento de duas contas seguem pendentes. Os dois retornos já cadastrados são da prévia canônica. Em uma futura publicação autorizada, validar os retornos também para o domínio público. [Missão 10](RELATORIO_MISSAO_10.md)

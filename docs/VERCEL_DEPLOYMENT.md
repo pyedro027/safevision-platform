@@ -17,5 +17,13 @@ O Chrome confirmou contexto seguro. A sessão imersiva e a interação com contr
 
 Após a Missão 06, o esquema do Supabase está pronto, mas a prévia atual ainda usa `config.json` vazio. O próximo deploy conectado deve receber `SUPABASE_URL` e `SUPABASE_PUBLISHABLE_KEY` exclusivamente em Preview. O comando de build gera a configuração pública. A chave ativa foi confirmada pelo conector oficial, sem registro do valor. Veja [o relatório da migração](RELATORIO_MIGRACAO_SUPABASE_06.md).
 
+A [proposta da Missão 07](PLANO_AUTH_PREVIEW_07.md) restringe as variáveis à branch `integration/supabase-remote-validation`. O alias dessa branch retornou configuração vazia. A prévia conectada depende de aprovação específica. A branch de revisão da correção PKCE desativa seu deploy automático, sem alterar as regras de outras branches.
+
+O deploy manual da Missão 08 substitui essa proposta histórica. [Preview conectada](https://safevision-platform-2bzty7au8-pyedros-projects.vercel.app/), `dpl_Aq1pu45FoBBxKpAzLXvqZ71TqFza`, commit `6a2a926`. As duas variáveis foram configuradas exclusivamente para Preview da branch `integration/auth-preview-e2e`. O `config.json` respondeu HTTP 200 com apenas `url` e `key`, comparados com o projeto oficial. O deploy está protegido por Vercel Authentication. [Detalhes da Missão 08](RELATORIO_MISSAO_08.md)
+
 - [Configuração estática](https://vercel.com/docs/project-configuration/vercel-json)
 - [Limites da Vercel](https://vercel.com/docs/limits)
+
+## Missão 09 — Validação na mesma prévia
+
+O deploy protegido `dpl_Aq1pu45FoBBxKpAzLXvqZ71TqFza`, commit `6a2a926`, permaneceu como ambiente de homologação. A captura do responsável confirmou abertura da Visão geral com sessão ativa e um projeto existente. Use a URL canônica em ambos os perfis de teste e confirme antes o acesso Vercel de cada um. O relatório documenta o escopo da validação. [Missão 09](RELATORIO_MISSAO_09.md)

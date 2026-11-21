@@ -1,13 +1,14 @@
 """Browser checks with a simulated API. Does not contact Supabase or send email."""
 import base64
 import functools
+import hashlib
 import http.server
 import json
 import os
 from pathlib import Path
 import threading
 import time
-from urllib.parse import urlsplit
+from urllib.parse import parse_qs, urlsplit
 
 from playwright.sync_api import expect, sync_playwright
 
@@ -24,6 +25,7 @@ projects = []
 history = []
 profiles = []
 requests = []
+challenges = {}
 
 
 def jwt_part(payload):
@@ -39,19 +41,34 @@ def simulated_api(route):
     if path == "/config.json":
         response = {"url": origin, "key": "sb_publishable_test_fixture"}
     elif path == "/auth/v1/token":
-        assert data["email"] == user["email"]
-        assert data["password"] == "test-password-123"
+        grant = parse_qs(urlsplit(request.url).query)["grant_type"][0]
+        if grant == "pkce":
+            action = {"signup-code": "signup", "recovery-code": "recover"}[data["auth_code"]]
+            verifier = data["code_verifier"].encode()
+            challenge = base64.urlsafe_b64encode(hashlib.sha256(verifier).digest()).decode().rstrip("=")
+            assert challenge == challenges[action]
+        else:
+            assert grant == "password" and data["email"] == user["email"]
+            if data["password"] != "test-password-123":
+                return route.fulfill(status=400, json={"code": "invalid_credentials", "message": "Invalid login credentials"})
         exp = int(time.time()) + 3600
         token = f"{jwt_part({'alg':'HS256'})}.{jwt_part({'sub':user['id'], 'exp':exp})}.fixture"
         response = {"access_token": token, "refresh_token": "fixture", "token_type": "bearer",
                     "expires_in": 3600, "expires_at": exp, "user": user}
     elif path == "/auth/v1/logout":
         return route.fulfill(status=204, body="")
-    elif path == "/auth/v1/signup":
+    elif path in ("/auth/v1/signup", "/auth/v1/recover"):
+        action = path.rsplit("/", 1)[1]
+        destination = parse_qs(urlsplit(request.url).query)["redirect_to"][0]
+        assert destination == origin + ("/" if action == "signup" else "/?recuperar=1")
+        assert data["code_challenge_method"] == "s256"
+        assert len(data["code_challenge"]) == 43
+        challenges[action] = data["code_challenge"]
+        response = user if action == "signup" else {}
+    elif path == "/auth/v1/user":
+        if method == "PUT":
+            assert data["password"] == "test-new-password-456"
         response = user
-    elif path == "/auth/v1/recover":
-        assert "recuperar=1" in request.url or "recuperar%3D1" in request.url
-        response = {}
     elif path == "/rest/v1/projects":
         if method == "POST":
             assert set(data) == {"title", "description"}
@@ -106,11 +123,36 @@ try:
         page.get_by_label("Senha").fill("test-password-123")
         page.get_by_role("button", name="Criar conta").click()
         expect(page.locator("#feedback")).to_contain_text("Verifique seu e-mail")
+        page.goto(origin + "/?code=signup-code")
+        expect(page.locator("#account-link")).to_have_text(user["email"])
+        page.get_by_role("link", name="Conta", exact=True).click()
+        page.get_by_role("button", name="Sair", exact=True).click()
+        expect(page.locator("#account-link")).to_have_text("Entrar")
+        page.get_by_role("link", name="Conta", exact=True).click()
         page.get_by_role("button", name="Esqueci a senha").click()
         page.get_by_label("E-mail").fill(user["email"])
         page.get_by_role("button", name="Recuperar senha").click()
         expect(page.locator("#feedback")).to_contain_text("um link será enviado")
-        page.get_by_role("button", name="Voltar ao login").click()
+        wrong_browser = browser.new_page()
+        for pattern in ("/config.json", "/auth/v1/**", "/rest/v1/**"):
+            wrong_browser.route(origin + pattern, simulated_api)
+        wrong_browser.goto(origin + "/?recuperar=1&code=recovery-code")
+        expect(wrong_browser.get_by_text("O link de recuperação está expirado")).to_be_visible()
+        expect(wrong_browser.get_by_label("Nova senha")).to_have_count(0)
+        wrong_browser.close()
+        page.goto(origin + "/?recuperar=1&code=recovery-code")
+        expect(page.get_by_label("Nova senha")).to_be_visible()
+        page.get_by_label("Nova senha").fill("test-new-password-456")
+        page.get_by_role("button", name="Salvar senha").click()
+        expect(page.locator("#feedback")).to_contain_text("Senha atualizada")
+        assert "recuperar=" not in page.url and "code=" not in page.url
+        page.get_by_role("button", name="Sair", exact=True).click()
+        expect(page.locator("#account-link")).to_have_text("Entrar")
+        page.get_by_role("link", name="Conta", exact=True).click()
+        page.get_by_label("E-mail").fill(user["email"])
+        page.get_by_label("Senha").fill("senha-incorreta")
+        page.get_by_role("button", name="Entrar").click()
+        expect(page.locator("#feedback")).to_contain_text("Invalid login credentials")
         page.get_by_label("E-mail").fill(user["email"])
         page.get_by_label("Senha").fill("test-password-123")
         page.get_by_role("button", name="Entrar").click()
@@ -146,7 +188,8 @@ try:
         assert ("DELETE", "/rest/v1/projects") in requests
         if os.getenv("SAFEVISION_QA_SCREENSHOT"):
             page.screenshot(path=os.environ["SAFEVISION_QA_SCREENSHOT"], full_page=True)
-        print("Chrome: demonstração, layout móvel, sessão e CRUD de projetos com API simulada.")
+        assert ("PUT", "/auth/v1/user") in requests
+        print("Chrome: PKCE de cadastro e recuperação, credenciais inválidas, sessão, perfil e CRUD com API simulada.")
         browser.close()
 finally:
     server.shutdown()
