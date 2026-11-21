@@ -56,3 +56,7 @@ O responsável confirmou que os dois retornos exatos da prévia canônica perman
 ## Missão 10 — Homologação parcial
 
 A regressão da Clínica ÁUREA e a leitura anônima foram revalidadas na mesma prévia. A Conta A segue confirmada. O responsável informou que quer acesso público e ainda não tem uma segunda caixa de teste. O domínio oficial retorna 404 na raiz e em `/clinica/`. Retomar o novo login e a recuperação da Conta A com o titular, e tratar a publicação no domínio oficial em etapa autorizada. [Ponto de retomada da Missão 10](RELATORIO_MISSAO_10.md)
+
+## Missão 11 — SAFEVISION Studio
+
+O Studio está implementado na branch `feature/safevision-studio-demo`, derivada do PR #7. O módulo reconhece os dois PDFs oficiais da Etapa 6 em memória e abre o tour original com uma única instância. Próxima ação: revisão visual local pelo proprietário. As pendências de autenticação/RLS e a publicação no domínio oficial continuam em etapas separadas. [Guia](SAFEVISION_STUDIO.md) · [Validação](RELATORIO_STUDIO_DEMO.md)

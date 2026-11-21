@@ -1,14 +1,17 @@
+import { mountStudio } from './studio/studio.js';
+
 const screen = document.querySelector('#screen');
 const dialog = document.querySelector('#dialog');
 const feedback = document.querySelector('#feedback');
 const dateFormat = new Intl.DateTimeFormat('pt-BR', { dateStyle: 'medium', timeStyle: 'short' });
-const routes = new Set(['inicio', 'projetos', 'aurea', 'conta', 'configuracoes']);
+const routes = new Set(['inicio', 'projetos', 'studio', 'aurea', 'conta', 'configuracoes']);
 const risks = ['Circulação', 'Rota de saída', 'Acessibilidade', 'Janela e pilar', 'Tubulação e viga'];
 const state = {
   client: null, session: null, phase: 'loading', projects: [], profile: null,
   accountMode: new URLSearchParams(location.search).has('recuperar') ? 'recovery' : 'login'
 };
 let messageTimer;
+let closeStudio;
 
 // The SDK only emits PASSWORD_RECOVERY after a successful PKCE exchange.
 // Open the recovery screen even if there is no verifier in this browser.
@@ -43,7 +46,8 @@ function button(label, action, style = '') {
 function hero() {
   return `<article class="hero"><div class="hero-content">
     <h2>Clínica ÁUREA</h2><p class="muted">Inspecione cinco casos didáticos de arquitetura, acessibilidade e instalações no modelo original da clínica.</p>
-    <a class="button" href="./clinica/">Abrir demonstração 3D</a>
+    <div class="actions"><a class="button" href="./clinica/">Abrir demonstração 3D</a>
+    <a class="button studio-link" href="#studio">Abrir SAFEVISION Studio</a></div>
     </div><img src="./clinica/assets/recepcao.png" alt="Recepção da Clínica ÁUREA modelada em 3D"></article>`;
 }
 
@@ -110,6 +114,12 @@ function render() {
     else link.removeAttribute('aria-current');
   }
   document.querySelector('#account-link').textContent = state.session?.user.email || 'Entrar';
+  if (route === 'studio') {
+    if (!closeStudio) closeStudio = mountStudio(screen);
+    return;
+  }
+  closeStudio?.();
+  closeStudio = undefined;
   if (route === 'inicio') screen.innerHTML = overview();
   if (route === 'projetos') screen.innerHTML = projectsPage();
   if (route === 'conta') screen.innerHTML = account();

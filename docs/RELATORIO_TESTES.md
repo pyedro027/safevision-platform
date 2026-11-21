@@ -56,3 +56,7 @@ Cadastro e entrega do e-mail de confirmação foram relatados pelo responsável.
 ## Missão 10 — Homologação parcial
 
 Chrome 157 revalidou a prévia protegida, a Clínica ÁUREA e o SHA-256 do GLB. A recuperação sem verificador PKCE foi tratada pela interface. A leitura anônima foi negada nas três tabelas. O domínio oficial de produção retornou 404 em `/`, `/config.json` e `/clinica/`. Os testes com duas sessões reais continuam pendentes. [Relatório](RELATORIO_MISSAO_10.md) · [Evidência](qa-auth-preview-10.json)
+
+## Missão 11 — SAFEVISION Studio
+
+A rodada local com Chrome passou em seleção e validação dos dois PDFs reais, responsividade, teclado, falha, cancelamento, repetição sem baixar os segmentos novamente e regressão 3D de R01–R05. O build local do Studio não fez chamadas externas. A regressão de conta e projetos usou API simulada. [Relatório](RELATORIO_STUDIO_DEMO.md) · [Evidência](qa-studio-demo.json)
