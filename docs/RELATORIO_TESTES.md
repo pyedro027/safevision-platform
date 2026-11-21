@@ -15,3 +15,7 @@ Executado em 21/11/2026 em Windows, Git 2.56.0, Node.js 24.22.3, Python 3.12, Ch
 | T09 WebXR | Conferir perfis, entrada em duas etapas e gerenciamento de estados no código. Consulta desktop retornou false para immersive-vr | NÃO TESTÁVEL nesse navegador | Sessão, painel, analógicos, conforto, fluidez e laser PENDENTES em Quest 2 físico |
 
 O resultado bruto da rodada de navegador está em [qa-chrome.json](qa-chrome.json). O ensaio inicial dependia de renderização por software e usava pulsos diferentes da segunda rodada. A diferença de resultado não foi atribuída a uma causa única. Os dados de tempo pertencem a esta máquina e não servem como referência de FPS no Quest.
+
+## Regressão na fundação V1
+
+Em 21/11/2026 a cópia consolidada passou nos 42 hashes, na reconstrução dos sete segmentos e nos seis ensaios NullEngine. No Chrome acelerado por RX 580, a cena abriu a partir do painel sem erros HTTP ou de console. WASD, mouse, seta, Avançar e Parar funcionaram. A porta P03 passou de fechada para aberta pela API do visualizador e os cinco casos alternaram PROB/CORR. Os recursos relativos foram carregados da nova cópia. O Chrome sem headset informou immersive-vr indisponível. Veja qa-integracao.json.
