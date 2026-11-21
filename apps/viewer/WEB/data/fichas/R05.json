@@ -1,0 +1,95 @@
+{
+  "schema_version": "1.1",
+  "codigo": "R05",
+  "nome_risco": "Ramal hidráulico incompatível com viga",
+  "local": "A09 - F009 / BASE_EST_V01",
+  "categoria": "Compatibilização estrutura / instalações",
+  "problema_identificado": "O ramal representado para F009 atravessa o volume da viga BASE_EST_V01, sem passagem estrutural projetada documentada. A sobreposição corresponde a conflito entre disciplinas antes da obra.",
+  "consequencia_possivel": "Impedimento de montagem, retrabalho ou improvisação de percurso/abertura estrutural se o conflito não for revisto pelos projetistas.",
+  "referencia_normativa_aplicavel": "ABNT NBR 5626:2020 / 1; 6.19; 6.19.1.1–6.19.1.3, lidos na edição base 2020; cotejo VC 2020 pendente.; ABNT NBR 16636-2: 2017 / 4.2.2; 4.2.3; 5.1.2; 7.2; ABNT NBR 6118:2026 / Item específico não verificado: texto integral da edição 2026 não acessado.",
+  "sugestao_correcao": "Analisar alternativa existente de desvio com projetistas hidráulico/estrutural; x 5,360 m e folgas 0,0475/0,042 m apenas geométricas. Sem dimensionamento executivo/autorização de furo.",
+  "limitacoes": "Cotejar itens 5626 com versão corrigida oficial; Confirmar água potável e função do trecho; não confundir com esgoto ou processo específico; Projeto estrutural/material/armadura/cobrimento/ações e 6118 vigente se concreto; Projeto hidráulico completo: material, bitola, vazões, pressões, perdas, montante/jusante; Suportação, dilatação, proteção, inspeção/manutenção e demais disciplinas.",
+  "evidencia": "Revisão documental dirigida da geometria e dos ensaios já registrados; ver evidencias_geometricas. Não implica detecção automática implementada no SAFEVISION 3D.",
+  "dimensoes_modelo": "Viga 0,30×0,45 m; limites x 5–5,3/y 9,4–15/z 2,65–3,1 m. Descida x 5,225 m, diâmetro externo representado 0,025 m. 126 vértices internos; recorte de superfícies confirma choque. Interseção por recorte de superfícies: x≈5,212827–5,300 / y 13,6875–13,7125 / z 2,650–2,862172 m. O intervalo 2,65–3,10 m descreve a viga inteira. Diâmetro representado 0,025 m e folgas da proposta 0,0475/0,0420 m são dados geométricos, sem dimensionamento ou mínimo normativo atribuído.",
+  "natureza": "Interface digital de inspeção, não elemento construído.",
+  "ancoras": [
+    {
+      "code": "R05",
+      "state": "PROB",
+      "anchor": [
+        5.9,
+        13.5,
+        2.12
+      ],
+      "analysis_point": [
+        5.306,
+        13.7,
+        2.85
+      ],
+      "diameter_m": 0.26
+    },
+    {
+      "code": "R05",
+      "state": "CORR",
+      "anchor": [
+        5.9,
+        13.5,
+        2.12
+      ],
+      "analysis_point": [
+        5.36,
+        13.7,
+        2.85
+      ],
+      "diameter_m": 0.26
+    }
+  ],
+  "rodape": "PROTÓTIPO ACADÊMICO — VALIDAÇÃO TÉCNICA NECESSÁRIA",
+  "interpretacao_ancora": "Referência próxima da zona analisada. No estado corrigido, indica a área resultante da proposta, sem significar permanência da interferência.",
+  "evidencias_geometricas": [
+    "Viga 0,30×0,45 m; limites x 5–5,3/y 9,4–15/z 2,65–3,1 m. Descida x 5,225 m, diâmetro externo representado 0,025 m. 126 vértices internos; recorte de superfícies confirma choque.",
+    "Interseção por recorte de superfícies: x≈5,212827–5,300 / y 13,6875–13,7125 / z 2,650–2,862172 m. O intervalo 2,65–3,10 m descreve a viga inteira.",
+    "Diâmetro representado 0,025 m e folgas da proposta 0,0475/0,0420 m são dados geométricos, sem dimensionamento ou mínimo normativo atribuído."
+  ],
+  "normas_e_itens_pertinentes": [
+    {
+      "fonte_id": "ABNT5626_CEFET",
+      "norma": "ABNT NBR 5626:2020",
+      "edicao": "2a edição 29/06/2020; versão corrigida 30/09/2020 identificada bibliograficamente, não cotejada integralmente",
+      "item": "1; 6.19; 6.19.1.1–6.19.1.3, lidos na edição base 2020; cotejo VC 2020 pendente.",
+      "explicacao_objetiva": "Coordenação e independência entre tubulação e estrutura; travessias exigem previsão e tratamento em projeto. A referência não é proibição absoluta de atravessar viga.",
+      "url": "https://sig-arquivos.cefetmg.br/arquivos/202120023891df33147803f74e1908309/NBR_5626_2020.pdf",
+      "acesso_e_limites": "Texto integral base antes da errata, CEFET-MG; itens visualmente confirmados nas páginas 1,33,34; consulta à versão corrigida oficial ainda necessária",
+      "data_consulta": "2026-10-15"
+    },
+    {
+      "fonte_id": "ABNT16636_UESB",
+      "norma": "ABNT NBR 16636-2: 2017",
+      "edicao": "1a edição, 19/12/2017",
+      "item": "4.2.2; 4.2.3; 5.1.2; 7.2",
+      "explicacao_objetiva": "Coordenação das interfaces e integração dos projetos complementares ao arquitetônico; fundamenta a revisão do encontro entre disciplinas, sem calcular a resistência.",
+      "url": "https://www2.uesb.br/biblioteca/wp-content/uploads/2022/07/Norma-ABNT-Elabora%C3%A7%C3%A3o-e-desenv-servi%C3%A7os-t%C3%A9cnicos-especializados-projeto-arquitet%C3%B4nico-e-urban%C3%ADstico-Proj-Arquitet%C3%B4nico-Parte-2-NBR16636-2.pdf",
+      "acesso_e_limites": "Texto publicado integral em biblioteca UESB; páginas 2,3,11 conferidas; sem uso do projeto CAU em consulta nacional",
+      "data_consulta": "2026-10-15"
+    },
+    {
+      "fonte_id": "ABNT6118_CATALOGO",
+      "norma": "ABNT NBR 6118:2026",
+      "edicao": "2026, confirmada em catálogo; conteúdo integral não acessado",
+      "item": "Item específico não verificado: texto integral da edição 2026 não acessado.",
+      "explicacao_objetiva": "Referência estrutural condicional se o sistema for de concreto. Somente edição/título confirmados; não se aplicam cláusulas de 2023 como se fossem 2026.",
+      "url": "https://www.abntcatalogo.com.br/default.aspx",
+      "acesso_e_limites": "Catálogo oficial consultado e edição 2026 confirmada; texto integral não acessado; item específico não confirmado",
+      "data_consulta": "2026-10-15"
+    }
+  ],
+  "rotulo_situacao_normativa": "Conflito geométrico com possível inadequação de projeto",
+  "conclusao_individual": "O tubo ocupa volume da viga sem passagem projetada documentada. A referência 5626 demanda coordenação e independência entre sistemas e permite passagens projetadas; não é proibição absoluta de toda travessia. Capacidade resistente e conformidade executiva não verificadas.",
+  "informacoes_ainda_necessarias": [
+    "Cotejar itens 5626 com versão corrigida oficial",
+    "Confirmar água potável e função do trecho; não confundir com esgoto ou processo específico",
+    "Projeto estrutural/material/armadura/cobrimento/ações e 6118 vigente se concreto",
+    "Projeto hidráulico completo: material, bitola, vazões, pressões, perdas, montante/jusante",
+    "Suportação, dilatação, proteção, inspeção/manutenção e demais disciplinas"
+  ]
+}

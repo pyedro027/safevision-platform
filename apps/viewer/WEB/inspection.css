@@ -1,0 +1,17 @@
+/* Digital inspection UI; geometry and imported materials stay untouched. */
+#riskQuickList{position:absolute;top:calc(100% + 9px);left:0;display:flex;flex-wrap:wrap;gap:5px;max-width:100%;padding:5px;background:#fafaf4eb;border:1px solid #d9dfd1;border-radius:9px;box-shadow:0 3px 15px #142e2220}
+#riskQuickList button{font-size:11px;padding:8px 10px;background:#f5eadc;color:#85502d}
+#riskQuickList button:hover{background:#e8d4ba}
+.context-actions{display:flex;gap:7px;align-items:center;justify-content:flex-end;pointer-events:auto;max-width:52%}
+#nearbyButton{max-width:480px;text-align:left;line-height:1.5;background:#80502e;border-color:#d6b996}
+#doorButton{background:#f8faf1;color:#385846;white-space:nowrap}
+#bottom{align-items:flex-end;gap:12px}
+.nav-hint{line-height:1.8;max-width:530px}
+.technical-tag{position:absolute;top:0;left:0;padding:5px 8px;font-size:10px;letter-spacing:.7px;background:#fff8edee;color:#885627;border:1px solid #c69153;border-radius:5px;pointer-events:none;white-space:nowrap;box-shadow:0 2px 6px #12251826}
+.technical-tag.proposal{background:#edf8eeeb;color:#286043;border-color:#508c65}
+.technical-explanation{font-size:12px;line-height:1.6;color:#49614f;padding:12px;background:#f0f2e8;border-radius:7px}
+.technical-panel{width:320px;bottom:auto;max-height:calc(100vh - 190px);padding:18px}
+.technical-panel .risk-name{font-size:17px}.technical-panel .local{font-size:10px;margin-bottom:12px}.technical-panel .risk-tabs{margin:12px 0}
+#cleanButton[aria-pressed=true]{background:#dce8d8}
+@media(max-width:1150px){.context-actions{max-width:55%}.nav-hint{max-width:43%;font-size:9px}}
+@media(max-width:760px){#riskQuickList{gap:2px}#riskQuickList button{font-size:9px;padding:6px}.context-actions{max-width:100%;width:100%;flex-wrap:wrap}.technical-panel{top:auto;bottom:78px;left:auto;right:10px;width:290px;max-height:36vh}#technicalLabel{font-size:10px;max-width:90%}}

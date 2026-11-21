@@ -1,0 +1,41 @@
+{
+  "bytes": 113018368,
+  "sha256": "911f6af402a19aca8b6825ab6df840b56d3100089cbb69e4c0d4a705588402f0",
+  "parts": [
+    {
+      "file": "clinica-v03-00.bin",
+      "size": 16777216,
+      "sha256": "809ba20468fa32ae22ca4e695ab71e0792253c46d7d84d9a4457a01ab64bcbb7"
+    },
+    {
+      "file": "clinica-v03-01.bin",
+      "size": 16777216,
+      "sha256": "ae9ab3ac1fca966e1ecdc7b6b0f399f5f653542ce4c9f37fab26a39e1cbac2f6"
+    },
+    {
+      "file": "clinica-v03-02.bin",
+      "size": 16777216,
+      "sha256": "11cd478fb65606d98cb259e327c08f45da750b2859dceac268092d1b970f2a30"
+    },
+    {
+      "file": "clinica-v03-03.bin",
+      "size": 16777216,
+      "sha256": "d502093bbae8a74671fa6681b159d28837aca109c683b846d234b40b9363b85c"
+    },
+    {
+      "file": "clinica-v03-04.bin",
+      "size": 16777216,
+      "sha256": "34f161ac3b7e690f38bdbbeb309d10c892e890f99cbdc2417417b1738ccb2248"
+    },
+    {
+      "file": "clinica-v03-05.bin",
+      "size": 16777216,
+      "sha256": "570759f224dc976aa191eeb0380c1e8d7b0ad1c42bc7cf0aa8b64fe69426b3f8"
+    },
+    {
+      "file": "clinica-v03-06.bin",
+      "size": 12355072,
+      "sha256": "7712d9edc1a9d4edf3f8facc92610511c9e4d0628fdc815df9aada2319f73277"
+    }
+  ]
+}

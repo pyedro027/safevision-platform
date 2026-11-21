@@ -1,0 +1,98 @@
+{
+  "schema_version": "1.1",
+  "codigo": "R03",
+  "nome_risco": "Acessibilidade — lavatório interferindo na transferência",
+  "local": "A04 — sanitário acessível proposto, junto à bacia",
+  "categoria": "Arquitetura / acessibilidade",
+  "problema_identificado": "A cuba fixa ocupa parte da área lateral de referência para transferência junto à bacia. A interferência decorre da posição das louças na planta, não do comportamento do usuário.",
+  "consequencia_possivel": "Restrição ao posicionamento da cadeira e à transferência lateral para a bacia, mesmo que o recinto possua área global ampla ou algum espaço livre abaixo da cuba.",
+  "referencia_normativa_aplicavel": "ABNT NBR 9050:2020 — Acessibilidade a edificações, mobiliário, espaços e equipamentos urbanos, 4ª edição, versão corrigida de 25/01/2021 / 4.2.2; 4.4.1–4.4.2; 7.5(b) e 7.5(d); 7.7.1 e figuras 98 e 103; ABNT NBR 9050:2020 — Acessibilidade a edificações, mobiliário, espaços e equipamentos urbanos, 4ª edição, versão corrigida de 25/01/2021 / 4.3.4(c); 4.5; 7.5(a), 7.5(c)–7.5(e); 7.8 e figura 113; Brasil. Anvisa. RDC nº 1.002, de 15/12/2025 — Boas Práticas de Funcionamento dos serviços que prestam assistência odontológica / art. 19 e parágrafo único; art. 13",
+  "sugestao_correcao": "Rever a posição do conjunto do lavatório, avaliando o deslocamento de 0,850 m já representado; conferir simultaneamente transferência, giro, aproximação frontal, alcance, altura livre e conexões. A correção é proposta didática, sem aprovação executiva. Nenhuma mudança geométrica nesta etapa.",
+  "limitacoes": "Validar com o projetista o posicionamento final das regiões lateral, perpendicular e diagonal em relação à bacia e suas barras reais; Verificar o volume de cadeira/usuário e a chegada ao M.R.; não aceitar apenas área de piso livre ou um círculo desenhado; Modelo/especificação da cuba, espaço livre frontal inferior, proteção e recuo do sifão e apoios; o fundo externo z=0,670 m, isoladamente, não define toda a altura livre de aproximação; Alturas, alcance e fixação de barras/acessórios, resistência, assento, acionamentos, porta em operação e conexão à rota acessível; Enquadramento da clínica e destinação/quantidade sanitária pelo PBA e legislação local, sem confundir consultórios individuais múltiplos com consultório coletivo.",
+  "evidencia": "Revisão documental dirigida da geometria e dos ensaios já registrados; ver evidencias_geometricas. Não implica detecção automática implementada no SAFEVISION 3D.",
+  "dimensoes_modelo": "Recinto: 2,600 × 2,850 m entre paredes; 2,834 m até revestimento posterior; geometria de piso 7,410 m². Área lateral de referência já adotada: 0,800 × 1,200 m, em x=6,950–7,750 / y=5,750–6,950 m. A projeção XY da cuba intersecta 0,135435 m² dessa região; não é área perdida genérica do banheiro. Cuba: eixo X=7,475 m, largura 0,498 m, projeção 0,39342 m, fundo externo z=0,670 m e topo z=0,800 m. A ocupação não ocorre apenas no piso. Círculo de manobra separado: Ø1,500 m, centro (7,750; 5,200) m. Sua presença gráfica não certifica liberdade de manobra, transferência ou aproximação. P05: 1,065 m entre marcos, sujeito à verificação do vão efetivo em operação. Proposta já existente: deslocamento do lavatório +0,850 m no eixo X. O QA anterior registrou ausência da interseção de vértices nesse volume na proposta; essa informação é uma conferência geométrica dirigida, não um sistema de detecção automática.",
+  "natureza": "Interface digital de inspeção, não elemento construído.",
+  "ancoras": [
+    {
+      "code": "R03",
+      "state": "PROB",
+      "anchor": [
+        7.85,
+        6.45,
+        1.25
+      ],
+      "analysis_point": [
+        7.7,
+        6.7,
+        0.85
+      ],
+      "diameter_m": 0.26
+    },
+    {
+      "code": "R03",
+      "state": "CORR",
+      "anchor": [
+        7.85,
+        6.45,
+        1.25
+      ],
+      "analysis_point": [
+        7.7,
+        6.7,
+        0.85
+      ],
+      "diameter_m": 0.26
+    }
+  ],
+  "rodape": "PROTÓTIPO ACADÊMICO — VALIDAÇÃO TÉCNICA NECESSÁRIA",
+  "interpretacao_ancora": "Referência próxima da zona analisada. No estado corrigido, indica a área resultante da proposta, sem significar permanência da interferência.",
+  "evidencias_geometricas": [
+    "Recinto: 2,600 × 2,850 m entre paredes; 2,834 m até revestimento posterior; geometria de piso 7,410 m².",
+    "Área lateral de referência já adotada: 0,800 × 1,200 m, em x=6,950–7,750 / y=5,750–6,950 m. A projeção XY da cuba intersecta 0,135435 m² dessa região; não é área perdida genérica do banheiro.",
+    "Cuba: eixo X=7,475 m, largura 0,498 m, projeção 0,39342 m, fundo externo z=0,670 m e topo z=0,800 m. A ocupação não ocorre apenas no piso.",
+    "Círculo de manobra separado: Ø1,500 m, centro (7,750; 5,200) m. Sua presença gráfica não certifica liberdade de manobra, transferência ou aproximação.",
+    "P05: 1,065 m entre marcos, sujeito à verificação do vão efetivo em operação.",
+    "Proposta já existente: deslocamento do lavatório +0,850 m no eixo X. O QA anterior registrou ausência da interseção de vértices nesse volume na proposta; essa informação é uma conferência geométrica dirigida, não um sistema de detecção automática."
+  ],
+  "normas_e_itens_pertinentes": [
+    {
+      "fonte_id": "N9050_TEXTO",
+      "norma": "ABNT NBR 9050:2020 — Acessibilidade a edificações, mobiliário, espaços e equipamentos urbanos, 4ª edição, versão corrigida de 25/01/2021",
+      "edicao": "2020, Versão Corrigida:2021",
+      "item": "4.2.2; 4.4.1–4.4.2; 7.5(b) e 7.5(d); 7.7.1 e figuras 98 e 103",
+      "explicacao_objetiva": "O lavatório não deve interferir na transferência da bacia. Confrontar a região lateral adotada com a louça real e o acesso à região.",
+      "url": "https://www.confea.org.br/midias/acessibilidade_abnt_2022.pdf",
+      "acesso_e_limites": "PDF integral obtido do Confea; capa identifica versão corrigida 2021. Itens pertinentes cotejados no texto. Não foi feita auditoria integral dos 147 números de página normativos.",
+      "data_consulta": "2026-10-15"
+    },
+    {
+      "fonte_id": "N9050_TEXTO",
+      "norma": "ABNT NBR 9050:2020 — Acessibilidade a edificações, mobiliário, espaços e equipamentos urbanos, 4ª edição, versão corrigida de 25/01/2021",
+      "edicao": "2020, Versão Corrigida:2021",
+      "item": "4.3.4(c); 4.5; 7.5(a), 7.5(c)–7.5(e); 7.8 e figura 113",
+      "explicacao_objetiva": "Manobra, aproximação e transferência são distintas. O avanço máximo de 0,30 m sob o lavatório referido em 7.5(c) é da manobra.",
+      "url": "https://www.confea.org.br/midias/acessibilidade_abnt_2022.pdf",
+      "acesso_e_limites": "PDF integral obtido do Confea; capa identifica versão corrigida 2021. Itens pertinentes cotejados no texto. Não foi feita auditoria integral dos 147 números de página normativos.",
+      "data_consulta": "2026-10-15"
+    },
+    {
+      "fonte_id": "RDC1002",
+      "norma": "Brasil. Anvisa. RDC nº 1.002, de 15/12/2025 — Boas Práticas de Funcionamento dos serviços que prestam assistência odontológica",
+      "edicao": "RDC1002/2025",
+      "item": "art. 19 e parágrafo único; art. 13",
+      "explicacao_objetiva": "O art.19 tem condição de quantidade de consultórios odontológicos; confirmar se as salas de estética integram essa classificação. A04 é examinado como sanitário acessível proposto, sem conclusão global de PBA ou quantitativos.",
+      "url": "https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&cod_menu=9451&cod_modulo=134&link=S&numeroAto=00001002&orgao=RDC%2FDC%2FANVISA%2FMS&seqAto=000&tipo=RDC&valorAno=2025",
+      "acesso_e_limites": "Texto consolidado acessível na base vinculada à Anvisa; arts.2º,12,13,19,23,182 e 186 conferidos. Aplicação depende do programa assistencial e enquadramento do PBA.",
+      "data_consulta": "2026-10-15"
+    }
+  ],
+  "rotulo_situacao_normativa": "Evidência normativa pontual referente à transferência",
+  "conclusao_individual": "Interferência geométrica comprovada e evidência normativa pontual quanto à transferência lateral. O sanitário inteiro e a proposta corrigida permanecem sujeitos à validação completa.",
+  "informacoes_ainda_necessarias": [
+    "Validar com o projetista o posicionamento final das regiões lateral, perpendicular e diagonal em relação à bacia e suas barras reais.",
+    "Verificar o volume de cadeira/usuário e a chegada ao M.R.; não aceitar apenas área de piso livre ou um círculo desenhado.",
+    "Modelo/especificação da cuba, espaço livre frontal inferior, proteção e recuo do sifão e apoios; o fundo externo z=0,670 m, isoladamente, não define toda a altura livre de aproximação.",
+    "Alturas, alcance e fixação de barras/acessórios, resistência, assento, acionamentos, porta em operação e conexão à rota acessível.",
+    "Enquadramento da clínica e destinação/quantidade sanitária pelo PBA e legislação local, sem confundir consultórios individuais múltiplos com consultório coletivo."
+  ]
+}

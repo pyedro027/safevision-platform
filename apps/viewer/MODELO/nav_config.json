@@ -1,0 +1,6281 @@
+{
+  "schema": 2,
+  "source_sha256": "3bd94d50c63f4214fe1c56e2681a2c3a4b0110328a86337e57e262ec07fd2e48",
+  "coordinate_system": "Blender X,Y,Z => Babylon right-handed X,Z,-Y; 1 unit = 1 m",
+  "start_blender_xyz": [
+    1.9,
+    5.0,
+    1.65
+  ],
+  "forward_blender_xyz": [
+    1,
+    0,
+    0
+  ],
+  "eye_height_m": 1.65,
+  "fov_degrees": 68,
+  "walk_speed_mps": 1.35,
+  "floor": {
+    "min": [
+      -2,
+      -1.5,
+      -0.185
+    ],
+    "max": [
+      22,
+      16.5,
+      -0.005
+    ]
+  },
+  "rooms": [
+    {
+      "id": "A01",
+      "name": "Recepção e espera",
+      "bounds": [
+        0.2,
+        2.75,
+        6.0,
+        7.1
+      ],
+      "source_object": "A01_PISO",
+      "spawn_blender_xyz": [
+        3.12,
+        4.92,
+        1.65
+      ]
+    },
+    {
+      "id": "A02",
+      "name": "Administração",
+      "bounds": [
+        0.2,
+        0.2,
+        3.1,
+        2.6
+      ],
+      "source_object": "A02_PISO",
+      "spawn_blender_xyz": [
+        1.68,
+        1.4399999999999997,
+        1.65
+      ]
+    },
+    {
+      "id": "A03",
+      "name": "Almoxarifado",
+      "bounds": [
+        3.25,
+        0.2,
+        6.0,
+        2.6
+      ],
+      "source_object": "A03_PISO",
+      "spawn_blender_xyz": [
+        4.68,
+        1.4399999999999997,
+        1.65
+      ]
+    },
+    {
+      "id": "A04",
+      "name": "Sanitário acessível proposto",
+      "bounds": [
+        6.15,
+        4.25,
+        8.75,
+        7.1
+      ],
+      "source_object": "A04_PISO",
+      "spawn_blender_xyz": [
+        7.44,
+        5.64,
+        1.65
+      ]
+    },
+    {
+      "id": "A05",
+      "name": "Sanitário pacientes 01",
+      "bounds": [
+        8.9,
+        4.25,
+        11.5,
+        7.1
+      ],
+      "source_object": "A05_PISO",
+      "spawn_blender_xyz": [
+        10.200000000000001,
+        5.64,
+        1.65
+      ]
+    },
+    {
+      "id": "A06",
+      "name": "Sanitário pacientes 02",
+      "bounds": [
+        6.15,
+        0.2,
+        8.75,
+        2.45
+      ],
+      "source_object": "A06_PISO",
+      "spawn_blender_xyz": [
+        7.44,
+        1.32,
+        1.65
+      ]
+    },
+    {
+      "id": "A07",
+      "name": "Sanitário equipe",
+      "bounds": [
+        8.9,
+        0.2,
+        11.5,
+        2.45
+      ],
+      "source_object": "A07_PISO",
+      "spawn_blender_xyz": [
+        10.200000000000001,
+        1.32,
+        1.65
+      ]
+    },
+    {
+      "id": "A08",
+      "name": "Consultório odontológico 01",
+      "bounds": [
+        0.2,
+        9.400001,
+        5.0,
+        14.8
+      ],
+      "source_object": "A08_PISO",
+      "spawn_blender_xyz": [
+        3.12,
+        12.120000000000001,
+        1.65
+      ]
+    },
+    {
+      "id": "A09",
+      "name": "Consultório odontológico 02",
+      "bounds": [
+        5.15,
+        9.400001,
+        9.950001,
+        14.8
+      ],
+      "source_object": "A09_PISO",
+      "spawn_blender_xyz": [
+        8.040000000000001,
+        12.120000000000001,
+        1.65
+      ]
+    },
+    {
+      "id": "A10",
+      "name": "Estética facial 01 - toxina botulínica",
+      "bounds": [
+        10.1,
+        9.400001,
+        14.9,
+        14.8
+      ],
+      "source_object": "A10_PISO",
+      "spawn_blender_xyz": [
+        13.08,
+        12.120000000000001,
+        1.65
+      ]
+    },
+    {
+      "id": "A11",
+      "name": "Estética facial 02 - preenchimentos",
+      "bounds": [
+        15.049999,
+        9.400001,
+        19.799999,
+        14.8
+      ],
+      "source_object": "A11_PISO",
+      "spawn_blender_xyz": [
+        18,
+        12.120000000000001,
+        1.65
+      ]
+    },
+    {
+      "id": "A12",
+      "name": "Processamento - limpeza e desinfecção",
+      "bounds": [
+        13.0,
+        4.65,
+        16.0,
+        7.1
+      ],
+      "source_object": "RC_R01_PROB_A12_PISO",
+      "spawn_blender_xyz": [
+        14.52,
+        5.88,
+        1.65
+      ]
+    },
+    {
+      "id": "A13",
+      "name": "Processamento - preparo e esterilização",
+      "bounds": [
+        16.15,
+        4.65,
+        19.800001,
+        7.1
+      ],
+      "source_object": "A13_PISO",
+      "spawn_blender_xyz": [
+        18,
+        5.88,
+        1.65
+      ]
+    },
+    {
+      "id": "A14",
+      "name": "Copa e apoio da equipe",
+      "bounds": [
+        13.3,
+        0.2,
+        15.599999,
+        2.85
+      ],
+      "source_object": "A14_PISO",
+      "spawn_blender_xyz": [
+        14.16,
+        1.5599999999999998,
+        1.65
+      ]
+    },
+    {
+      "id": "A15",
+      "name": "Depósito de material de limpeza",
+      "bounds": [
+        15.75,
+        0.2,
+        16.950001,
+        2.85
+      ],
+      "source_object": "A15_PISO",
+      "spawn_blender_xyz": [
+        16.32,
+        1.5599999999999998,
+        1.65
+      ]
+    },
+    {
+      "id": "A16",
+      "name": "Apoio técnico odontológico",
+      "bounds": [
+        17.1,
+        0.2,
+        18.300001,
+        2.85
+      ],
+      "source_object": "A16_PISO",
+      "spawn_blender_xyz": [
+        17.76,
+        0.48,
+        1.65
+      ]
+    },
+    {
+      "id": "A17",
+      "name": "Abrigo de resíduos",
+      "bounds": [
+        18.450001,
+        0.2,
+        19.799999,
+        2.85
+      ],
+      "source_object": "A17_PISO",
+      "spawn_blender_xyz": [
+        19.08,
+        0.72,
+        1.65
+      ]
+    },
+    {
+      "id": "C01",
+      "name": "Circulação clínica",
+      "bounds": [
+        0.2,
+        7.25,
+        19.799999,
+        9.25
+      ],
+      "source_object": "C01_PISO",
+      "spawn_blender_xyz": [
+        9.96,
+        8.280000000000001,
+        1.65
+      ]
+    },
+    {
+      "id": "C02",
+      "name": "Acesso aos sanitários",
+      "bounds": [
+        6.15,
+        2.6,
+        11.5,
+        4.1
+      ],
+      "source_object": "C02_PISO",
+      "spawn_blender_xyz": [
+        8.88,
+        3.3599999999999994,
+        1.65
+      ]
+    },
+    {
+      "id": "C03",
+      "name": "Circulação de ligação",
+      "bounds": [
+        11.65,
+        0.2,
+        13.15,
+        7.1
+      ],
+      "source_object": "RC_R01_PROB_C03_PISO",
+      "spawn_blender_xyz": [
+        12.36,
+        3.5999999999999996,
+        1.65
+      ]
+    },
+    {
+      "id": "C04",
+      "name": "Circulação de apoio",
+      "bounds": [
+        13.299999,
+        3.0,
+        19.799999,
+        4.5
+      ],
+      "source_object": "C04_PISO",
+      "spawn_blender_xyz": [
+        16.56,
+        3.7199999999999998,
+        1.65
+      ]
+    }
+  ],
+  "groups": {
+    "COMMON_EXTERIOR": {
+      "source_count": 546,
+      "state": "COMMON",
+      "technical_cover": false
+    },
+    "DOOR_P07_PIVO": {
+      "source_count": 22,
+      "state": "COMMON",
+      "technical_cover": false
+    },
+    "COMMON_A11": {
+      "source_count": 357,
+      "state": "COMMON",
+      "technical_cover": false
+    },
+    "R05_CORR": {
+      "source_count": 21,
+      "state": "R05_CORR",
+      "technical_cover": false
+    },
+    "COMMON_A10": {
+      "source_count": 377,
+      "state": "COMMON",
+      "technical_cover": false
+    },
+    "COMMON_A14": {
+      "source_count": 127,
+      "state": "COMMON",
+      "technical_cover": false
+    },
+    "COMMON_A15": {
+      "source_count": 70,
+      "state": "COMMON",
+      "technical_cover": false
+    },
+    "COMMON_A13": {
+      "source_count": 167,
+      "state": "COMMON",
+      "technical_cover": false
+    },
+    "COMMON_A01": {
+      "source_count": 631,
+      "state": "COMMON",
+      "technical_cover": false
+    },
+    "COMMON_A08": {
+      "source_count": 354,
+      "state": "COMMON",
+      "technical_cover": false
+    },
+    "DOOR_P16_PIVO": {
+      "source_count": 22,
+      "state": "COMMON",
+      "technical_cover": false
+    },
+    "DOOR_P17_PIVO": {
+      "source_count": 22,
+      "state": "COMMON",
+      "technical_cover": false
+    },
+    "R03_PROB": {
+      "source_count": 66,
+      "state": "R03_PROB",
+      "technical_cover": false
+    },
+    "R02_PROB": {
+      "source_count": 17,
+      "state": "R02_PROB",
+      "technical_cover": false
+    },
+    "COMMON_A02": {
+      "source_count": 132,
+      "state": "COMMON",
+      "technical_cover": false
+    },
+    "COMMON_C01": {
+      "source_count": 75,
+      "state": "COMMON",
+      "technical_cover": false
+    },
+    "COMMON_A07": {
+      "source_count": 72,
+      "state": "COMMON",
+      "technical_cover": false
+    },
+    "COMMON_A09": {
+      "source_count": 310,
+      "state": "COMMON",
+      "technical_cover": false
+    },
+    "DOOR_BASE_P02_PIVO": {
+      "source_count": 22,
+      "state": "COMMON",
+      "technical_cover": false
+    },
+    "R05_COBERTURA": {
+      "source_count": 90,
+      "state": "COMMON",
+      "technical_cover": true
+    },
+    "DOOR_P18_PIVO": {
+      "source_count": 22,
+      "state": "COMMON",
+      "technical_cover": false
+    },
+    "COMMON_A06": {
+      "source_count": 72,
+      "state": "COMMON",
+      "technical_cover": false
+    },
+    "DOOR_P20_PIVO": {
+      "source_count": 22,
+      "state": "COMMON",
+      "technical_cover": false
+    },
+    "R03_CORR": {
+      "source_count": 66,
+      "state": "R03_CORR",
+      "technical_cover": false
+    },
+    "COMMON_C02": {
+      "source_count": 36,
+      "state": "COMMON",
+      "technical_cover": false
+    },
+    "DOOR_RC_R02_PROB_INTERNA_BASE_P02_PIVO": {
+      "source_count": 22,
+      "state": "R02_PROB",
+      "technical_cover": false
+    },
+    "R01_CORR": {
+      "source_count": 17,
+      "state": "R01_CORR",
+      "technical_cover": false
+    },
+    "COMMON_A17": {
+      "source_count": 53,
+      "state": "COMMON",
+      "technical_cover": false
+    },
+    "R02_CORR": {
+      "source_count": 17,
+      "state": "R02_CORR",
+      "technical_cover": false
+    },
+    "COMMON_A12": {
+      "source_count": 84,
+      "state": "COMMON",
+      "technical_cover": false
+    },
+    "DOOR_P06_PIVO": {
+      "source_count": 22,
+      "state": "COMMON",
+      "technical_cover": false
+    },
+    "DOOR_P01_PIVO_A": {
+      "source_count": 27,
+      "state": "COMMON",
+      "technical_cover": false
+    },
+    "COMMON_A03": {
+      "source_count": 61,
+      "state": "COMMON",
+      "technical_cover": false
+    },
+    "DOOR_P11_PIVO": {
+      "source_count": 22,
+      "state": "COMMON",
+      "technical_cover": false
+    },
+    "DOOR_P12_PIVO": {
+      "source_count": 22,
+      "state": "COMMON",
+      "technical_cover": false
+    },
+    "COMMON_A05": {
+      "source_count": 73,
+      "state": "COMMON",
+      "technical_cover": false
+    },
+    "DOOR_P01_PIVO_B": {
+      "source_count": 27,
+      "state": "COMMON",
+      "technical_cover": false
+    },
+    "R04_CORR": {
+      "source_count": 22,
+      "state": "R04_CORR",
+      "technical_cover": false
+    },
+    "COMMON_A16": {
+      "source_count": 68,
+      "state": "COMMON",
+      "technical_cover": false
+    },
+    "COMMON_A04": {
+      "source_count": 21,
+      "state": "COMMON",
+      "technical_cover": false
+    },
+    "DOOR_P03_PIVO": {
+      "source_count": 22,
+      "state": "COMMON",
+      "technical_cover": false
+    },
+    "COMMON_C04": {
+      "source_count": 34,
+      "state": "COMMON",
+      "technical_cover": false
+    },
+    "DOOR_P14_PIVO": {
+      "source_count": 22,
+      "state": "COMMON",
+      "technical_cover": false
+    },
+    "COMMON_C03": {
+      "source_count": 25,
+      "state": "COMMON",
+      "technical_cover": false
+    },
+    "DOOR_RC_R02_CORR_INTERNA_BASE_P02_PIVO": {
+      "source_count": 22,
+      "state": "R02_CORR",
+      "technical_cover": false
+    },
+    "R05_PROB": {
+      "source_count": 21,
+      "state": "R05_PROB",
+      "technical_cover": false
+    },
+    "DOOR_P15_PIVO": {
+      "source_count": 22,
+      "state": "COMMON",
+      "technical_cover": false
+    },
+    "DOOR_P19_PIVO": {
+      "source_count": 22,
+      "state": "COMMON",
+      "technical_cover": false
+    },
+    "R04_PROB": {
+      "source_count": 21,
+      "state": "R04_PROB",
+      "technical_cover": false
+    },
+    "DOOR_P08_PIVO": {
+      "source_count": 22,
+      "state": "COMMON",
+      "technical_cover": false
+    },
+    "DOOR_P13_PIVO": {
+      "source_count": 22,
+      "state": "COMMON",
+      "technical_cover": false
+    },
+    "R01_PROB": {
+      "source_count": 21,
+      "state": "R01_PROB",
+      "technical_cover": false
+    },
+    "DOOR_P04_PIVO": {
+      "source_count": 22,
+      "state": "COMMON",
+      "technical_cover": false
+    },
+    "DOOR_P05_FOLHA_CORRER": {
+      "source_count": 1,
+      "state": "COMMON",
+      "technical_cover": false
+    },
+    "DOOR_RC_R01_CORR_P10_FOLHA_CORRER": {
+      "source_count": 1,
+      "state": "R01_CORR",
+      "technical_cover": false
+    },
+    "DOOR_P09_FOLHA_CORRER": {
+      "source_count": 1,
+      "state": "COMMON",
+      "technical_cover": false
+    },
+    "DOOR_RC_R01_PROB_P10_FOLHA_CORRER": {
+      "source_count": 1,
+      "state": "R01_PROB",
+      "technical_cover": false
+    }
+  },
+  "doors": [
+    {
+      "id": "DOOR_P01_PIVO_A",
+      "label": "P01",
+      "group": "COMMON",
+      "kind": "hinged",
+      "pivot": [
+        0.0,
+        4.099999904632568,
+        0.0
+      ],
+      "initial_open": true,
+      "closed_delta": -1.5707961148672718,
+      "open_delta": 0,
+      "source_pivot": "P01_PIVO_A",
+      "source_leaf": "P01_FOLHA_A",
+      "source_names": [
+        "P01_DOBRADICA",
+        "P01_DOBRADICA.001",
+        "P01_DOBRADICA.002",
+        "P01_ESPELHO_A",
+        "P01_ESPELHO_A.001",
+        "P01_FOLHA_A",
+        "P01_MACANETA_A",
+        "P01_MACANETA_A.001",
+        "P01_PERFIL",
+        "P01_PERFIL.001",
+        "P01_PERFIL.002",
+        "P01_PERFIL.003",
+        "R03A_ENTRADA_FAIXA",
+        "R03A_ENTRADA_FAIXA.001",
+        "R03A_ENTRADA_LOGO",
+        "R03A_P01_FIXACAO_DOBRADICA",
+        "R03A_P01_FIXACAO_DOBRADICA.001",
+        "R03A_P01_FIXACAO_DOBRADICA.002",
+        "R03A_P01_FIXACAO_DOBRADICA.003",
+        "R03A_P01_FIXACAO_DOBRADICA.004",
+        "R03A_P01_FIXACAO_DOBRADICA.005",
+        "R03A_P01_PARAFUSO",
+        "R03A_P01_PARAFUSO.001",
+        "R03A_P01_PARAFUSO.002",
+        "R03A_P01_PARAFUSO.003",
+        "R03A_P01_ROSETA",
+        "R03A_P01_ROSETA.001"
+      ],
+      "leaf_bounds": [
+        [
+          -0.8925,
+          4.091,
+          0.015
+        ],
+        [
+          -0.0075,
+          4.109,
+          2.09
+        ]
+      ],
+      "aperture": [
+        0.09999999999999999,
+        5.0,
+        1.05
+      ]
+    },
+    {
+      "id": "DOOR_P01_PIVO_B",
+      "label": "P01",
+      "group": "COMMON",
+      "kind": "hinged",
+      "pivot": [
+        0.0,
+        5.900000095367432,
+        0.0
+      ],
+      "initial_open": true,
+      "closed_delta": 1.5707961148672718,
+      "open_delta": 0,
+      "source_pivot": "P01_PIVO_B",
+      "source_leaf": "P01_FOLHA_B",
+      "source_names": [
+        "P01_DOBRADICA.003",
+        "P01_DOBRADICA.004",
+        "P01_DOBRADICA.005",
+        "P01_ESPELHO_B",
+        "P01_ESPELHO_B.001",
+        "P01_FOLHA_B",
+        "P01_MACANETA_B",
+        "P01_MACANETA_B.001",
+        "P01_PERFIL.004",
+        "P01_PERFIL.005",
+        "P01_PERFIL.006",
+        "P01_PERFIL.007",
+        "R03A_ENTRADA_FAIXA.002",
+        "R03A_ENTRADA_FAIXA.003",
+        "R03A_ENTRADA_LOGO.001",
+        "R03A_P01_FIXACAO_DOBRADICA.006",
+        "R03A_P01_FIXACAO_DOBRADICA.007",
+        "R03A_P01_FIXACAO_DOBRADICA.008",
+        "R03A_P01_FIXACAO_DOBRADICA.009",
+        "R03A_P01_FIXACAO_DOBRADICA.010",
+        "R03A_P01_FIXACAO_DOBRADICA.011",
+        "R03A_P01_PARAFUSO.004",
+        "R03A_P01_PARAFUSO.005",
+        "R03A_P01_PARAFUSO.006",
+        "R03A_P01_PARAFUSO.007",
+        "R03A_P01_ROSETA.002",
+        "R03A_P01_ROSETA.003"
+      ],
+      "leaf_bounds": [
+        [
+          -0.8925,
+          5.891,
+          0.015
+        ],
+        [
+          -0.0075,
+          5.909,
+          2.09
+        ]
+      ],
+      "aperture": [
+        0.09999999999999999,
+        5.0,
+        1.05
+      ]
+    },
+    {
+      "id": "DOOR_P03_PIVO",
+      "label": "P03",
+      "group": "COMMON",
+      "kind": "hinged",
+      "pivot": [
+        0.550000011920929,
+        2.5999999046325684,
+        0.0
+      ],
+      "initial_open": false,
+      "closed_delta": 0,
+      "open_delta": -1.5707965387225284,
+      "source_pivot": "P03_PIVO",
+      "source_leaf": "P03_FOLHA",
+      "source_names": [
+        "P03_DOBRADICA",
+        "P03_DOBRADICA.001",
+        "P03_DOBRADICA.002",
+        "P03_ESPELHO",
+        "P03_ESPELHO.001",
+        "P03_FOLHA",
+        "P03_MACANETA",
+        "P03_MACANETA.001",
+        "R03A_P03_FIXACAO_DOBRADICA",
+        "R03A_P03_FIXACAO_DOBRADICA.001",
+        "R03A_P03_FIXACAO_DOBRADICA.002",
+        "R03A_P03_FIXACAO_DOBRADICA.003",
+        "R03A_P03_FIXACAO_DOBRADICA.004",
+        "R03A_P03_FIXACAO_DOBRADICA.005",
+        "R03A_P03_PARAFUSO",
+        "R03A_P03_PARAFUSO.001",
+        "R03A_P03_PARAFUSO.002",
+        "R03A_P03_PARAFUSO.003",
+        "R03A_P03_PROTECAO_INFERIOR",
+        "R03A_P03_PROTECAO_INFERIOR.001",
+        "R03A_P03_ROSETA",
+        "R03A_P03_ROSETA.001"
+      ],
+      "leaf_bounds": [
+        [
+          0.5575,
+          2.58,
+          0.015
+        ],
+        [
+          1.4425,
+          2.62,
+          2.09
+        ]
+      ],
+      "aperture": [
+        1.0,
+        2.675,
+        1.05
+      ]
+    },
+    {
+      "id": "DOOR_P04_PIVO",
+      "label": "P04",
+      "group": "COMMON",
+      "kind": "hinged",
+      "pivot": [
+        3.549999952316284,
+        2.5999999046325684,
+        0.0
+      ],
+      "initial_open": false,
+      "closed_delta": 0,
+      "open_delta": -1.5707965387225005,
+      "source_pivot": "P04_PIVO",
+      "source_leaf": "P04_FOLHA",
+      "source_names": [
+        "P04_DOBRADICA",
+        "P04_DOBRADICA.001",
+        "P04_DOBRADICA.002",
+        "P04_ESPELHO",
+        "P04_ESPELHO.001",
+        "P04_FOLHA",
+        "P04_MACANETA",
+        "P04_MACANETA.001",
+        "R03A_P04_FIXACAO_DOBRADICA",
+        "R03A_P04_FIXACAO_DOBRADICA.001",
+        "R03A_P04_FIXACAO_DOBRADICA.002",
+        "R03A_P04_FIXACAO_DOBRADICA.003",
+        "R03A_P04_FIXACAO_DOBRADICA.004",
+        "R03A_P04_FIXACAO_DOBRADICA.005",
+        "R03A_P04_PARAFUSO",
+        "R03A_P04_PARAFUSO.001",
+        "R03A_P04_PARAFUSO.002",
+        "R03A_P04_PARAFUSO.003",
+        "R03A_P04_PROTECAO_INFERIOR",
+        "R03A_P04_PROTECAO_INFERIOR.001",
+        "R03A_P04_ROSETA",
+        "R03A_P04_ROSETA.001"
+      ],
+      "leaf_bounds": [
+        [
+          3.5575,
+          2.58,
+          0.015
+        ],
+        [
+          4.4425,
+          2.62,
+          2.09
+        ]
+      ],
+      "aperture": [
+        4.0,
+        2.675,
+        1.05
+      ]
+    },
+    {
+      "id": "DOOR_P06_PIVO",
+      "label": "P06",
+      "group": "COMMON",
+      "kind": "hinged",
+      "pivot": [
+        9.350000381469727,
+        4.25,
+        0.0
+      ],
+      "initial_open": false,
+      "closed_delta": 0,
+      "open_delta": 1.5707963267948966,
+      "source_pivot": "P06_PIVO",
+      "source_leaf": "P06_FOLHA",
+      "source_names": [
+        "P06_DOBRADICA",
+        "P06_DOBRADICA.001",
+        "P06_DOBRADICA.002",
+        "P06_ESPELHO",
+        "P06_ESPELHO.001",
+        "P06_FOLHA",
+        "P06_MACANETA",
+        "P06_MACANETA.001",
+        "R03A_P06_FIXACAO_DOBRADICA",
+        "R03A_P06_FIXACAO_DOBRADICA.001",
+        "R03A_P06_FIXACAO_DOBRADICA.002",
+        "R03A_P06_FIXACAO_DOBRADICA.003",
+        "R03A_P06_FIXACAO_DOBRADICA.004",
+        "R03A_P06_FIXACAO_DOBRADICA.005",
+        "R03A_P06_PARAFUSO",
+        "R03A_P06_PARAFUSO.001",
+        "R03A_P06_PARAFUSO.002",
+        "R03A_P06_PARAFUSO.003",
+        "R03A_P06_PROTECAO_INFERIOR",
+        "R03A_P06_PROTECAO_INFERIOR.001",
+        "R03A_P06_ROSETA",
+        "R03A_P06_ROSETA.001"
+      ],
+      "leaf_bounds": [
+        [
+          9.3575,
+          4.23,
+          0.015
+        ],
+        [
+          10.2425,
+          4.27,
+          2.09
+        ]
+      ],
+      "aperture": [
+        9.8,
+        4.175,
+        1.05
+      ]
+    },
+    {
+      "id": "DOOR_P07_PIVO",
+      "label": "P07",
+      "group": "COMMON",
+      "kind": "hinged",
+      "pivot": [
+        6.550000190734863,
+        2.450000047683716,
+        0.0
+      ],
+      "initial_open": false,
+      "closed_delta": 0,
+      "open_delta": -1.5707962208310393,
+      "source_pivot": "P07_PIVO",
+      "source_leaf": "P07_FOLHA",
+      "source_names": [
+        "P07_DOBRADICA",
+        "P07_DOBRADICA.001",
+        "P07_DOBRADICA.002",
+        "P07_ESPELHO",
+        "P07_ESPELHO.001",
+        "P07_FOLHA",
+        "P07_MACANETA",
+        "P07_MACANETA.001",
+        "R03A_P07_FIXACAO_DOBRADICA",
+        "R03A_P07_FIXACAO_DOBRADICA.001",
+        "R03A_P07_FIXACAO_DOBRADICA.002",
+        "R03A_P07_FIXACAO_DOBRADICA.003",
+        "R03A_P07_FIXACAO_DOBRADICA.004",
+        "R03A_P07_FIXACAO_DOBRADICA.005",
+        "R03A_P07_PARAFUSO",
+        "R03A_P07_PARAFUSO.001",
+        "R03A_P07_PARAFUSO.002",
+        "R03A_P07_PARAFUSO.003",
+        "R03A_P07_PROTECAO_INFERIOR",
+        "R03A_P07_PROTECAO_INFERIOR.001",
+        "R03A_P07_ROSETA",
+        "R03A_P07_ROSETA.001"
+      ],
+      "leaf_bounds": [
+        [
+          6.5575,
+          2.43,
+          0.015
+        ],
+        [
+          7.4425,
+          2.47,
+          2.09
+        ]
+      ],
+      "aperture": [
+        7.0,
+        2.525,
+        1.05
+      ]
+    },
+    {
+      "id": "DOOR_P08_PIVO",
+      "label": "P08",
+      "group": "COMMON",
+      "kind": "hinged",
+      "pivot": [
+        9.350000381469727,
+        2.450000047683716,
+        0.0
+      ],
+      "initial_open": false,
+      "closed_delta": 0,
+      "open_delta": -1.570796220830994,
+      "source_pivot": "P08_PIVO",
+      "source_leaf": "P08_FOLHA",
+      "source_names": [
+        "P08_DOBRADICA",
+        "P08_DOBRADICA.001",
+        "P08_DOBRADICA.002",
+        "P08_ESPELHO",
+        "P08_ESPELHO.001",
+        "P08_FOLHA",
+        "P08_MACANETA",
+        "P08_MACANETA.001",
+        "R03A_P08_FIXACAO_DOBRADICA",
+        "R03A_P08_FIXACAO_DOBRADICA.001",
+        "R03A_P08_FIXACAO_DOBRADICA.002",
+        "R03A_P08_FIXACAO_DOBRADICA.003",
+        "R03A_P08_FIXACAO_DOBRADICA.004",
+        "R03A_P08_FIXACAO_DOBRADICA.005",
+        "R03A_P08_PARAFUSO",
+        "R03A_P08_PARAFUSO.001",
+        "R03A_P08_PARAFUSO.002",
+        "R03A_P08_PARAFUSO.003",
+        "R03A_P08_PROTECAO_INFERIOR",
+        "R03A_P08_PROTECAO_INFERIOR.001",
+        "R03A_P08_ROSETA",
+        "R03A_P08_ROSETA.001"
+      ],
+      "leaf_bounds": [
+        [
+          9.3575,
+          2.43,
+          0.015
+        ],
+        [
+          10.2425,
+          2.47,
+          2.09
+        ]
+      ],
+      "aperture": [
+        9.8,
+        2.525,
+        1.05
+      ]
+    },
+    {
+      "id": "DOOR_P11_PIVO",
+      "label": "P11",
+      "group": "COMMON",
+      "kind": "hinged",
+      "pivot": [
+        1.0,
+        9.399999618530273,
+        0.0
+      ],
+      "initial_open": false,
+      "closed_delta": 0,
+      "open_delta": 1.5707965243453526,
+      "source_pivot": "P11_PIVO",
+      "source_leaf": "P11_FOLHA",
+      "source_names": [
+        "P11_DOBRADICA",
+        "P11_DOBRADICA.001",
+        "P11_DOBRADICA.002",
+        "P11_ESPELHO",
+        "P11_ESPELHO.001",
+        "P11_FOLHA",
+        "P11_MACANETA",
+        "P11_MACANETA.001",
+        "R03A_P11_FIXACAO_DOBRADICA",
+        "R03A_P11_FIXACAO_DOBRADICA.001",
+        "R03A_P11_FIXACAO_DOBRADICA.002",
+        "R03A_P11_FIXACAO_DOBRADICA.003",
+        "R03A_P11_FIXACAO_DOBRADICA.004",
+        "R03A_P11_FIXACAO_DOBRADICA.005",
+        "R03A_P11_PARAFUSO",
+        "R03A_P11_PARAFUSO.001",
+        "R03A_P11_PARAFUSO.002",
+        "R03A_P11_PARAFUSO.003",
+        "R03A_P11_PROTECAO_INFERIOR",
+        "R03A_P11_PROTECAO_INFERIOR.001",
+        "R03A_P11_ROSETA",
+        "R03A_P11_ROSETA.001"
+      ],
+      "leaf_bounds": [
+        [
+          1.0075,
+          9.379999,
+          0.015
+        ],
+        [
+          2.1925,
+          9.42,
+          2.09
+        ]
+      ],
+      "aperture": [
+        1.6,
+        9.325,
+        1.05
+      ]
+    },
+    {
+      "id": "DOOR_P12_PIVO",
+      "label": "P12",
+      "group": "COMMON",
+      "kind": "hinged",
+      "pivot": [
+        5.949999809265137,
+        9.399999618530273,
+        0.0
+      ],
+      "initial_open": false,
+      "closed_delta": 0,
+      "open_delta": 1.57079652434529,
+      "source_pivot": "P12_PIVO",
+      "source_leaf": "P12_FOLHA",
+      "source_names": [
+        "P12_DOBRADICA",
+        "P12_DOBRADICA.001",
+        "P12_DOBRADICA.002",
+        "P12_ESPELHO",
+        "P12_ESPELHO.001",
+        "P12_FOLHA",
+        "P12_MACANETA",
+        "P12_MACANETA.001",
+        "R03A_P12_FIXACAO_DOBRADICA",
+        "R03A_P12_FIXACAO_DOBRADICA.001",
+        "R03A_P12_FIXACAO_DOBRADICA.002",
+        "R03A_P12_FIXACAO_DOBRADICA.003",
+        "R03A_P12_FIXACAO_DOBRADICA.004",
+        "R03A_P12_FIXACAO_DOBRADICA.005",
+        "R03A_P12_PARAFUSO",
+        "R03A_P12_PARAFUSO.001",
+        "R03A_P12_PARAFUSO.002",
+        "R03A_P12_PARAFUSO.003",
+        "R03A_P12_PROTECAO_INFERIOR",
+        "R03A_P12_PROTECAO_INFERIOR.001",
+        "R03A_P12_ROSETA",
+        "R03A_P12_ROSETA.001"
+      ],
+      "leaf_bounds": [
+        [
+          5.9575,
+          9.379999,
+          0.015
+        ],
+        [
+          7.1425,
+          9.42,
+          2.09
+        ]
+      ],
+      "aperture": [
+        6.550000000000001,
+        9.325,
+        1.05
+      ]
+    },
+    {
+      "id": "DOOR_P13_PIVO",
+      "label": "P13",
+      "group": "COMMON",
+      "kind": "hinged",
+      "pivot": [
+        10.899999618530273,
+        9.399999618530273,
+        0.0
+      ],
+      "initial_open": false,
+      "closed_delta": 0,
+      "open_delta": 1.5707965243452269,
+      "source_pivot": "P13_PIVO",
+      "source_leaf": "P13_FOLHA",
+      "source_names": [
+        "P13_DOBRADICA",
+        "P13_DOBRADICA.001",
+        "P13_DOBRADICA.002",
+        "P13_ESPELHO",
+        "P13_ESPELHO.001",
+        "P13_FOLHA",
+        "P13_MACANETA",
+        "P13_MACANETA.001",
+        "R03A_P13_FIXACAO_DOBRADICA",
+        "R03A_P13_FIXACAO_DOBRADICA.001",
+        "R03A_P13_FIXACAO_DOBRADICA.002",
+        "R03A_P13_FIXACAO_DOBRADICA.003",
+        "R03A_P13_FIXACAO_DOBRADICA.004",
+        "R03A_P13_FIXACAO_DOBRADICA.005",
+        "R03A_P13_PARAFUSO",
+        "R03A_P13_PARAFUSO.001",
+        "R03A_P13_PARAFUSO.002",
+        "R03A_P13_PARAFUSO.003",
+        "R03A_P13_PROTECAO_INFERIOR",
+        "R03A_P13_PROTECAO_INFERIOR.001",
+        "R03A_P13_ROSETA",
+        "R03A_P13_ROSETA.001"
+      ],
+      "leaf_bounds": [
+        [
+          10.9075,
+          9.379999,
+          0.015
+        ],
+        [
+          12.0925,
+          9.42,
+          2.09
+        ]
+      ],
+      "aperture": [
+        11.49999975,
+        9.325,
+        1.05
+      ]
+    },
+    {
+      "id": "DOOR_P14_PIVO",
+      "label": "P14",
+      "group": "COMMON",
+      "kind": "hinged",
+      "pivot": [
+        15.850000381469727,
+        9.399999618530273,
+        0.0
+      ],
+      "initial_open": false,
+      "closed_delta": 0,
+      "open_delta": 1.5655031576829916,
+      "source_pivot": "P14_PIVO",
+      "source_leaf": "P14_FOLHA",
+      "source_names": [
+        "P14_DOBRADICA",
+        "P14_DOBRADICA.001",
+        "P14_DOBRADICA.002",
+        "P14_ESPELHO",
+        "P14_ESPELHO.001",
+        "P14_FOLHA",
+        "P14_MACANETA",
+        "P14_MACANETA.001",
+        "R03A_P14_FIXACAO_DOBRADICA",
+        "R03A_P14_FIXACAO_DOBRADICA.001",
+        "R03A_P14_FIXACAO_DOBRADICA.002",
+        "R03A_P14_FIXACAO_DOBRADICA.003",
+        "R03A_P14_FIXACAO_DOBRADICA.004",
+        "R03A_P14_FIXACAO_DOBRADICA.005",
+        "R03A_P14_PARAFUSO",
+        "R03A_P14_PARAFUSO.001",
+        "R03A_P14_PARAFUSO.002",
+        "R03A_P14_PARAFUSO.003",
+        "R03A_P14_PROTECAO_INFERIOR",
+        "R03A_P14_PROTECAO_INFERIOR.001",
+        "R03A_P14_ROSETA",
+        "R03A_P14_ROSETA.001"
+      ],
+      "leaf_bounds": [
+        [
+          15.857393,
+          9.38004,
+          0.015
+        ],
+        [
+          17.042589,
+          9.426311,
+          2.09
+        ]
+      ],
+      "aperture": [
+        16.4500005,
+        9.325,
+        1.05
+      ]
+    },
+    {
+      "id": "DOOR_P15_PIVO",
+      "label": "P15",
+      "group": "COMMON",
+      "kind": "hinged",
+      "pivot": [
+        13.649999618530273,
+        4.650000095367432,
+        0.0
+      ],
+      "initial_open": false,
+      "closed_delta": 0,
+      "open_delta": 1.5707965387225773,
+      "source_pivot": "P15_PIVO",
+      "source_leaf": "P15_FOLHA",
+      "source_names": [
+        "P15_DOBRADICA",
+        "P15_DOBRADICA.001",
+        "P15_DOBRADICA.002",
+        "P15_ESPELHO",
+        "P15_ESPELHO.001",
+        "P15_FOLHA",
+        "P15_MACANETA",
+        "P15_MACANETA.001",
+        "R03A_P15_FIXACAO_DOBRADICA",
+        "R03A_P15_FIXACAO_DOBRADICA.001",
+        "R03A_P15_FIXACAO_DOBRADICA.002",
+        "R03A_P15_FIXACAO_DOBRADICA.003",
+        "R03A_P15_FIXACAO_DOBRADICA.004",
+        "R03A_P15_FIXACAO_DOBRADICA.005",
+        "R03A_P15_PARAFUSO",
+        "R03A_P15_PARAFUSO.001",
+        "R03A_P15_PARAFUSO.002",
+        "R03A_P15_PARAFUSO.003",
+        "R03A_P15_PROTECAO_INFERIOR",
+        "R03A_P15_PROTECAO_INFERIOR.001",
+        "R03A_P15_ROSETA",
+        "R03A_P15_ROSETA.001"
+      ],
+      "leaf_bounds": [
+        [
+          13.657499,
+          4.63,
+          0.015
+        ],
+        [
+          14.5425,
+          4.67,
+          2.09
+        ]
+      ],
+      "aperture": [
+        14.0999995,
+        4.575,
+        1.05
+      ]
+    },
+    {
+      "id": "DOOR_P16_PIVO",
+      "label": "P16",
+      "group": "COMMON",
+      "kind": "hinged",
+      "pivot": [
+        16.549999237060547,
+        4.650000095367432,
+        0.0
+      ],
+      "initial_open": false,
+      "closed_delta": 0,
+      "open_delta": 1.5707965387221625,
+      "source_pivot": "P16_PIVO",
+      "source_leaf": "P16_FOLHA",
+      "source_names": [
+        "P16_DOBRADICA",
+        "P16_DOBRADICA.001",
+        "P16_DOBRADICA.002",
+        "P16_ESPELHO",
+        "P16_ESPELHO.001",
+        "P16_FOLHA",
+        "P16_MACANETA",
+        "P16_MACANETA.001",
+        "R03A_P16_FIXACAO_DOBRADICA",
+        "R03A_P16_FIXACAO_DOBRADICA.001",
+        "R03A_P16_FIXACAO_DOBRADICA.002",
+        "R03A_P16_FIXACAO_DOBRADICA.003",
+        "R03A_P16_FIXACAO_DOBRADICA.004",
+        "R03A_P16_FIXACAO_DOBRADICA.005",
+        "R03A_P16_PARAFUSO",
+        "R03A_P16_PARAFUSO.001",
+        "R03A_P16_PARAFUSO.002",
+        "R03A_P16_PARAFUSO.003",
+        "R03A_P16_PROTECAO_INFERIOR",
+        "R03A_P16_PROTECAO_INFERIOR.001",
+        "R03A_P16_ROSETA",
+        "R03A_P16_ROSETA.001"
+      ],
+      "leaf_bounds": [
+        [
+          16.557501,
+          4.63,
+          0.015
+        ],
+        [
+          17.442499,
+          4.67,
+          2.09
+        ]
+      ],
+      "aperture": [
+        16.999999,
+        4.575,
+        1.05
+      ]
+    },
+    {
+      "id": "DOOR_P17_PIVO",
+      "label": "P17",
+      "group": "COMMON",
+      "kind": "hinged",
+      "pivot": [
+        13.649999618530273,
+        2.8499999046325684,
+        0.0
+      ],
+      "initial_open": false,
+      "closed_delta": 0,
+      "open_delta": -1.5707965387225786,
+      "source_pivot": "P17_PIVO",
+      "source_leaf": "P17_FOLHA",
+      "source_names": [
+        "P17_DOBRADICA",
+        "P17_DOBRADICA.001",
+        "P17_DOBRADICA.002",
+        "P17_ESPELHO",
+        "P17_ESPELHO.001",
+        "P17_FOLHA",
+        "P17_MACANETA",
+        "P17_MACANETA.001",
+        "R03A_P17_FIXACAO_DOBRADICA",
+        "R03A_P17_FIXACAO_DOBRADICA.001",
+        "R03A_P17_FIXACAO_DOBRADICA.002",
+        "R03A_P17_FIXACAO_DOBRADICA.003",
+        "R03A_P17_FIXACAO_DOBRADICA.004",
+        "R03A_P17_FIXACAO_DOBRADICA.005",
+        "R03A_P17_PARAFUSO",
+        "R03A_P17_PARAFUSO.001",
+        "R03A_P17_PARAFUSO.002",
+        "R03A_P17_PARAFUSO.003",
+        "R03A_P17_PROTECAO_INFERIOR",
+        "R03A_P17_PROTECAO_INFERIOR.001",
+        "R03A_P17_ROSETA",
+        "R03A_P17_ROSETA.001"
+      ],
+      "leaf_bounds": [
+        [
+          13.657499,
+          2.83,
+          0.015
+        ],
+        [
+          14.5425,
+          2.87,
+          2.09
+        ]
+      ],
+      "aperture": [
+        14.0999995,
+        2.925,
+        1.05
+      ]
+    },
+    {
+      "id": "DOOR_P18_PIVO",
+      "label": "P18",
+      "group": "COMMON",
+      "kind": "hinged",
+      "pivot": [
+        15.869999885559082,
+        2.8499999046325684,
+        0.0
+      ],
+      "initial_open": false,
+      "closed_delta": 0,
+      "open_delta": -1.5707965387227043,
+      "source_pivot": "P18_PIVO",
+      "source_leaf": "P18_FOLHA",
+      "source_names": [
+        "P18_DOBRADICA",
+        "P18_DOBRADICA.001",
+        "P18_DOBRADICA.002",
+        "P18_ESPELHO",
+        "P18_ESPELHO.001",
+        "P18_FOLHA",
+        "P18_MACANETA",
+        "P18_MACANETA.001",
+        "R03A_P18_FIXACAO_DOBRADICA",
+        "R03A_P18_FIXACAO_DOBRADICA.001",
+        "R03A_P18_FIXACAO_DOBRADICA.002",
+        "R03A_P18_FIXACAO_DOBRADICA.003",
+        "R03A_P18_FIXACAO_DOBRADICA.004",
+        "R03A_P18_FIXACAO_DOBRADICA.005",
+        "R03A_P18_PARAFUSO",
+        "R03A_P18_PARAFUSO.001",
+        "R03A_P18_PARAFUSO.002",
+        "R03A_P18_PARAFUSO.003",
+        "R03A_P18_PROTECAO_INFERIOR",
+        "R03A_P18_PROTECAO_INFERIOR.001",
+        "R03A_P18_ROSETA",
+        "R03A_P18_ROSETA.001"
+      ],
+      "leaf_bounds": [
+        [
+          15.8775,
+          2.83,
+          0.015
+        ],
+        [
+          16.762499,
+          2.87,
+          2.09
+        ]
+      ],
+      "aperture": [
+        16.32000025,
+        2.925,
+        1.05
+      ]
+    },
+    {
+      "id": "DOOR_P19_PIVO",
+      "label": "P19",
+      "group": "COMMON",
+      "kind": "hinged",
+      "pivot": [
+        17.200000762939453,
+        0.0,
+        0.0
+      ],
+      "initial_open": false,
+      "closed_delta": 0,
+      "open_delta": -1.5707963267948966,
+      "source_pivot": "P19_PIVO",
+      "source_leaf": "P19_FOLHA",
+      "source_names": [
+        "P19_DOBRADICA",
+        "P19_DOBRADICA.001",
+        "P19_DOBRADICA.002",
+        "P19_ESPELHO",
+        "P19_ESPELHO.001",
+        "P19_FOLHA",
+        "P19_MACANETA",
+        "P19_MACANETA.001",
+        "R03A_P19_FIXACAO_DOBRADICA",
+        "R03A_P19_FIXACAO_DOBRADICA.001",
+        "R03A_P19_FIXACAO_DOBRADICA.002",
+        "R03A_P19_FIXACAO_DOBRADICA.003",
+        "R03A_P19_FIXACAO_DOBRADICA.004",
+        "R03A_P19_FIXACAO_DOBRADICA.005",
+        "R03A_P19_PARAFUSO",
+        "R03A_P19_PARAFUSO.001",
+        "R03A_P19_PARAFUSO.002",
+        "R03A_P19_PARAFUSO.003",
+        "R03A_P19_PROTECAO_INFERIOR",
+        "R03A_P19_PROTECAO_INFERIOR.001",
+        "R03A_P19_ROSETA",
+        "R03A_P19_ROSETA.001"
+      ],
+      "leaf_bounds": [
+        [
+          17.207502,
+          -0.02,
+          0.015
+        ],
+        [
+          18.092501,
+          0.02,
+          2.09
+        ]
+      ],
+      "aperture": [
+        17.6500005,
+        0.09999999999999999,
+        1.05
+      ]
+    },
+    {
+      "id": "DOOR_P20_PIVO",
+      "label": "P20",
+      "group": "COMMON",
+      "kind": "hinged",
+      "pivot": [
+        18.649999618530273,
+        0.0,
+        0.0
+      ],
+      "initial_open": false,
+      "closed_delta": 0,
+      "open_delta": -1.5707963267948966,
+      "source_pivot": "P20_PIVO",
+      "source_leaf": "P20_FOLHA",
+      "source_names": [
+        "P20_DOBRADICA",
+        "P20_DOBRADICA.001",
+        "P20_DOBRADICA.002",
+        "P20_ESPELHO",
+        "P20_ESPELHO.001",
+        "P20_FOLHA",
+        "P20_MACANETA",
+        "P20_MACANETA.001",
+        "R03A_P20_FIXACAO_DOBRADICA",
+        "R03A_P20_FIXACAO_DOBRADICA.001",
+        "R03A_P20_FIXACAO_DOBRADICA.002",
+        "R03A_P20_FIXACAO_DOBRADICA.003",
+        "R03A_P20_FIXACAO_DOBRADICA.004",
+        "R03A_P20_FIXACAO_DOBRADICA.005",
+        "R03A_P20_PARAFUSO",
+        "R03A_P20_PARAFUSO.001",
+        "R03A_P20_PARAFUSO.002",
+        "R03A_P20_PARAFUSO.003",
+        "R03A_P20_PROTECAO_INFERIOR",
+        "R03A_P20_PROTECAO_INFERIOR.001",
+        "R03A_P20_ROSETA",
+        "R03A_P20_ROSETA.001"
+      ],
+      "leaf_bounds": [
+        [
+          18.657501,
+          -0.02,
+          0.015
+        ],
+        [
+          19.5425,
+          0.02,
+          2.09
+        ]
+      ],
+      "aperture": [
+        19.0999995,
+        0.09999999999999999,
+        1.05
+      ]
+    },
+    {
+      "id": "DOOR_BASE_P02_PIVO",
+      "label": "P02",
+      "group": "COMMON",
+      "kind": "hinged",
+      "pivot": [
+        20.0,
+        7.650000095367432,
+        0.0
+      ],
+      "initial_open": false,
+      "closed_delta": 0,
+      "open_delta": -1.5707963267948948,
+      "source_pivot": "BASE_P02_PIVO",
+      "source_leaf": "BASE_P02_FOLHA",
+      "source_names": [
+        "BASE_P02_DOBRADICA",
+        "BASE_P02_DOBRADICA.001",
+        "BASE_P02_DOBRADICA.002",
+        "BASE_P02_ESPELHO",
+        "BASE_P02_ESPELHO.001",
+        "BASE_P02_FOLHA",
+        "BASE_P02_MACANETA",
+        "BASE_P02_MACANETA.001",
+        "BASE_R03A_P02_FIXACAO_DOBRADICA",
+        "BASE_R03A_P02_FIXACAO_DOBRADICA.001",
+        "BASE_R03A_P02_FIXACAO_DOBRADICA.002",
+        "BASE_R03A_P02_FIXACAO_DOBRADICA.003",
+        "BASE_R03A_P02_FIXACAO_DOBRADICA.004",
+        "BASE_R03A_P02_FIXACAO_DOBRADICA.005",
+        "BASE_R03A_P02_PARAFUSO",
+        "BASE_R03A_P02_PARAFUSO.001",
+        "BASE_R03A_P02_PARAFUSO.002",
+        "BASE_R03A_P02_PARAFUSO.003",
+        "BASE_R03A_P02_PROTECAO_INFERIOR",
+        "BASE_R03A_P02_PROTECAO_INFERIOR.001",
+        "BASE_R03A_P02_ROSETA",
+        "BASE_R03A_P02_ROSETA.001"
+      ],
+      "leaf_bounds": [
+        [
+          19.98,
+          7.6575,
+          0.015
+        ],
+        [
+          20.02,
+          8.8425,
+          2.09
+        ]
+      ],
+      "aperture": [
+        19.9,
+        8.25,
+        1.05
+      ]
+    },
+    {
+      "id": "DOOR_RC_R02_PROB_INTERNA_BASE_P02_PIVO",
+      "label": "P02 interna",
+      "group": "R02_PROB",
+      "kind": "hinged",
+      "pivot": [
+        18.950000762939453,
+        7.949999809265137,
+        0.0
+      ],
+      "initial_open": true,
+      "closed_delta": -1.5707960089035997,
+      "open_delta": 0,
+      "source_pivot": "RC_R02_PROB_INTERNA_BASE_P02_PIVO",
+      "source_leaf": "RC_R02_PROB_INTERNA_BASE_P02_FOLHA",
+      "source_names": [
+        "RC_R02_PROB_INTERNA_BASE_P02_DOBRADICA",
+        "RC_R02_PROB_INTERNA_BASE_P02_DOBRADICA.001",
+        "RC_R02_PROB_INTERNA_BASE_P02_DOBRADICA.002",
+        "RC_R02_PROB_INTERNA_BASE_P02_ESPELHO",
+        "RC_R02_PROB_INTERNA_BASE_P02_ESPELHO.001",
+        "RC_R02_PROB_INTERNA_BASE_P02_FOLHA",
+        "RC_R02_PROB_INTERNA_BASE_P02_MACANETA",
+        "RC_R02_PROB_INTERNA_BASE_P02_MACANETA.001",
+        "RC_R02_PROB_INTERNA_BASE_R03A_P02_FIXACAO_DOBRADICA",
+        "RC_R02_PROB_INTERNA_BASE_R03A_P02_FIXACAO_DOBRADICA.001",
+        "RC_R02_PROB_INTERNA_BASE_R03A_P02_FIXACAO_DOBRADICA.002",
+        "RC_R02_PROB_INTERNA_BASE_R03A_P02_FIXACAO_DOBRADICA.003",
+        "RC_R02_PROB_INTERNA_BASE_R03A_P02_FIXACAO_DOBRADICA.004",
+        "RC_R02_PROB_INTERNA_BASE_R03A_P02_FIXACAO_DOBRADICA.005",
+        "RC_R02_PROB_INTERNA_BASE_R03A_P02_PARAFUSO",
+        "RC_R02_PROB_INTERNA_BASE_R03A_P02_PARAFUSO.001",
+        "RC_R02_PROB_INTERNA_BASE_R03A_P02_PARAFUSO.002",
+        "RC_R02_PROB_INTERNA_BASE_R03A_P02_PARAFUSO.003",
+        "RC_R02_PROB_INTERNA_BASE_R03A_P02_PROTECAO_INFERIOR",
+        "RC_R02_PROB_INTERNA_BASE_R03A_P02_PROTECAO_INFERIOR.001",
+        "RC_R02_PROB_INTERNA_BASE_R03A_P02_ROSETA",
+        "RC_R02_PROB_INTERNA_BASE_R03A_P02_ROSETA.001"
+      ],
+      "leaf_bounds": [
+        [
+          17.7575,
+          7.93,
+          0.015
+        ],
+        [
+          18.942501,
+          7.97,
+          2.09
+        ]
+      ],
+      "aperture": [
+        18.950001,
+        8.55,
+        1.05
+      ]
+    },
+    {
+      "id": "DOOR_RC_R02_CORR_INTERNA_BASE_P02_PIVO",
+      "label": "P02 interna",
+      "group": "R02_CORR",
+      "kind": "hinged",
+      "pivot": [
+        18.399999618530273,
+        7.650000095367432,
+        0.0
+      ],
+      "initial_open": true,
+      "closed_delta": -1.5707964857405825,
+      "open_delta": 0,
+      "source_pivot": "RC_R02_CORR_INTERNA_BASE_P02_PIVO",
+      "source_leaf": "RC_R02_CORR_INTERNA_BASE_P02_FOLHA",
+      "source_names": [
+        "RC_R02_CORR_INTERNA_BASE_P02_DOBRADICA",
+        "RC_R02_CORR_INTERNA_BASE_P02_DOBRADICA.001",
+        "RC_R02_CORR_INTERNA_BASE_P02_DOBRADICA.002",
+        "RC_R02_CORR_INTERNA_BASE_P02_ESPELHO",
+        "RC_R02_CORR_INTERNA_BASE_P02_ESPELHO.001",
+        "RC_R02_CORR_INTERNA_BASE_P02_FOLHA",
+        "RC_R02_CORR_INTERNA_BASE_P02_MACANETA",
+        "RC_R02_CORR_INTERNA_BASE_P02_MACANETA.001",
+        "RC_R02_CORR_INTERNA_BASE_R03A_P02_FIXACAO_DOBRADICA",
+        "RC_R02_CORR_INTERNA_BASE_R03A_P02_FIXACAO_DOBRADICA.001",
+        "RC_R02_CORR_INTERNA_BASE_R03A_P02_FIXACAO_DOBRADICA.002",
+        "RC_R02_CORR_INTERNA_BASE_R03A_P02_FIXACAO_DOBRADICA.003",
+        "RC_R02_CORR_INTERNA_BASE_R03A_P02_FIXACAO_DOBRADICA.004",
+        "RC_R02_CORR_INTERNA_BASE_R03A_P02_FIXACAO_DOBRADICA.005",
+        "RC_R02_CORR_INTERNA_BASE_R03A_P02_PARAFUSO",
+        "RC_R02_CORR_INTERNA_BASE_R03A_P02_PARAFUSO.001",
+        "RC_R02_CORR_INTERNA_BASE_R03A_P02_PARAFUSO.002",
+        "RC_R02_CORR_INTERNA_BASE_R03A_P02_PARAFUSO.003",
+        "RC_R02_CORR_INTERNA_BASE_R03A_P02_PROTECAO_INFERIOR",
+        "RC_R02_CORR_INTERNA_BASE_R03A_P02_PROTECAO_INFERIOR.001",
+        "RC_R02_CORR_INTERNA_BASE_R03A_P02_ROSETA",
+        "RC_R02_CORR_INTERNA_BASE_R03A_P02_ROSETA.001"
+      ],
+      "leaf_bounds": [
+        [
+          17.207499,
+          7.63,
+          0.015
+        ],
+        [
+          18.3925,
+          7.67,
+          2.09
+        ]
+      ],
+      "aperture": [
+        18.4,
+        8.25,
+        1.05
+      ]
+    },
+    {
+      "id": "DOOR_P05_FOLHA_CORRER",
+      "label": "P05 de correr",
+      "group": "COMMON",
+      "kind": "sliding",
+      "pivot": [
+        8.1499995,
+        4.305,
+        1.0475
+      ],
+      "initial_open": true,
+      "closed_translation": [
+        -1.100000999999999,
+        0,
+        0
+      ],
+      "source_leaf": "P05_FOLHA_CORRER",
+      "source_names": [
+        "P05_FOLHA_CORRER"
+      ],
+      "leaf_bounds": [
+        [
+          7.599999,
+          4.285,
+          0.015
+        ],
+        [
+          8.7,
+          4.325,
+          2.08
+        ]
+      ],
+      "aperture": [
+        7.049998500000001,
+        4.305,
+        1.0475
+      ]
+    },
+    {
+      "id": "DOOR_RC_R01_CORR_P10_FOLHA_CORRER",
+      "label": "P10 de correr",
+      "group": "R01_CORR",
+      "kind": "sliding",
+      "pivot": [
+        13.6000005,
+        7.305,
+        1.0475
+      ],
+      "initial_open": true,
+      "closed_translation": [
+        -1.2000010000000003,
+        0,
+        0
+      ],
+      "source_leaf": "RC_R01_CORR_P10_FOLHA_CORRER",
+      "source_names": [
+        "RC_R01_CORR_P10_FOLHA_CORRER"
+      ],
+      "leaf_bounds": [
+        [
+          13.0,
+          7.285,
+          0.015
+        ],
+        [
+          14.200001,
+          7.325,
+          2.08
+        ]
+      ],
+      "aperture": [
+        12.3999995,
+        7.305,
+        1.0475
+      ]
+    },
+    {
+      "id": "DOOR_P09_FOLHA_CORRER",
+      "label": "P09 de correr",
+      "group": "COMMON",
+      "kind": "sliding",
+      "pivot": [
+        11.7049995,
+        4.45,
+        1.0475
+      ],
+      "initial_open": true,
+      "closed_translation": [
+        0,
+        -1.1,
+        0
+      ],
+      "source_leaf": "P09_FOLHA_CORRER",
+      "source_names": [
+        "P09_FOLHA_CORRER"
+      ],
+      "leaf_bounds": [
+        [
+          11.684999,
+          3.9,
+          0.015
+        ],
+        [
+          11.725,
+          5.0,
+          2.08
+        ]
+      ],
+      "aperture": [
+        11.7049995,
+        3.35,
+        1.0475
+      ]
+    },
+    {
+      "id": "DOOR_RC_R01_PROB_P10_FOLHA_CORRER",
+      "label": "P10 de correr",
+      "group": "R01_PROB",
+      "kind": "sliding",
+      "pivot": [
+        13.3,
+        7.305,
+        1.0475
+      ],
+      "initial_open": true,
+      "closed_translation": [
+        -1.0,
+        0,
+        0
+      ],
+      "source_leaf": "RC_R01_PROB_P10_FOLHA_CORRER",
+      "source_names": [
+        "RC_R01_PROB_P10_FOLHA_CORRER"
+      ],
+      "leaf_bounds": [
+        [
+          12.8,
+          7.285,
+          0.015
+        ],
+        [
+          13.8,
+          7.325,
+          2.08
+        ]
+      ],
+      "aperture": [
+        12.3,
+        7.305,
+        1.0475
+      ]
+    }
+  ],
+  "colliders": [
+    {
+      "id": "COL_ADM_ARQUIVO",
+      "source": "ADM_ARQUIVO",
+      "group": "COMMON_A02",
+      "kind": "furniture",
+      "min": [
+        0.31,
+        0.31,
+        0.0
+      ],
+      "max": [
+        0.77,
+        0.89,
+        1.6
+      ]
+    },
+    {
+      "id": "COL_DEF_EST_P01",
+      "source": "DEF_EST_P01",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        2.6,
+        14.65,
+        0.0
+      ],
+      "max": [
+        2.9,
+        15.0,
+        3.1
+      ]
+    },
+    {
+      "id": "COL_F002_louvca_cuba",
+      "source": "F002_louvca_cuba",
+      "group": "COMMON_A08",
+      "kind": "furniture",
+      "min": [
+        0.33079,
+        13.126,
+        0.66
+      ],
+      "max": [
+        0.72421,
+        13.624,
+        0.845
+      ]
+    },
+    {
+      "id": "COL_F003_caixaria",
+      "source": "F003_caixaria",
+      "group": "COMMON_A08",
+      "kind": "furniture",
+      "min": [
+        0.26,
+        13.809,
+        0.115
+      ],
+      "max": [
+        0.82,
+        14.641001,
+        1.985
+      ]
+    },
+    {
+      "id": "COL_F004_assento",
+      "source": "F004_assento",
+      "group": "COMMON_A08",
+      "kind": "furniture",
+      "min": [
+        2.2,
+        12.014999,
+        0.66
+      ],
+      "max": [
+        2.8,
+        12.635,
+        0.78
+      ]
+    },
+    {
+      "id": "COL_F004_assento_concha",
+      "source": "F004_assento_concha",
+      "group": "COMMON_A08",
+      "kind": "furniture",
+      "min": [
+        2.1825,
+        12.0075,
+        0.615
+      ],
+      "max": [
+        2.8175,
+        12.6425,
+        0.675
+      ]
+    },
+    {
+      "id": "COL_F004_assento_vivo",
+      "source": "F004_assento_vivo",
+      "group": "COMMON_A08",
+      "kind": "furniture",
+      "min": [
+        2.208702,
+        12.024052,
+        0.7506
+      ],
+      "max": [
+        2.7913,
+        12.625948,
+        0.7542
+      ]
+    },
+    {
+      "id": "COL_F004_carenagem",
+      "source": "F004_carenagem",
+      "group": "COMMON_A08",
+      "kind": "furniture",
+      "min": [
+        2.355,
+        12.085,
+        0.27
+      ],
+      "max": [
+        2.645,
+        12.464999,
+        0.65
+      ]
+    },
+    {
+      "id": "COL_F004_perneira",
+      "source": "F004_perneira",
+      "group": "COMMON_A08",
+      "kind": "furniture",
+      "min": [
+        2.25,
+        11.377933,
+        0.423442
+      ],
+      "max": [
+        2.75,
+        11.992068,
+        0.716558
+      ]
+    },
+    {
+      "id": "COL_F004_perneira_concha",
+      "source": "F004_perneira_concha",
+      "group": "COMMON_A08",
+      "kind": "furniture",
+      "min": [
+        2.2325,
+        11.378525,
+        0.3699
+      ],
+      "max": [
+        2.7675,
+        11.991476,
+        0.620099
+      ]
+    },
+    {
+      "id": "COL_F004_perneira_vivo",
+      "source": "F004_perneira_vivo",
+      "group": "COMMON_A08",
+      "kind": "furniture",
+      "min": [
+        2.256952,
+        11.393637,
+        0.505027
+      ],
+      "max": [
+        2.74305,
+        11.958009,
+        0.691465
+      ]
+    },
+    {
+      "id": "COL_F004_unidade_agua",
+      "source": "F004_unidade_agua",
+      "group": "COMMON_A08",
+      "kind": "furniture",
+      "min": [
+        1.935,
+        12.465,
+        0.165
+      ],
+      "max": [
+        2.165,
+        12.865,
+        0.895
+      ]
+    },
+    {
+      "id": "COL_F005_assento",
+      "source": "F005_assento",
+      "group": "COMMON_A08",
+      "kind": "furniture",
+      "min": [
+        3.47475,
+        12.85775,
+        0.4
+      ],
+      "max": [
+        3.97525,
+        13.29225,
+        0.51
+      ]
+    },
+    {
+      "id": "COL_F005_assento_vivo",
+      "source": "F005_assento_vivo",
+      "group": "COMMON_A08",
+      "kind": "furniture",
+      "min": [
+        3.481711,
+        12.863556,
+        0.4829
+      ],
+      "max": [
+        3.968291,
+        13.286444,
+        0.4865
+      ]
+    },
+    {
+      "id": "COL_F008_caixaria",
+      "source": "F008_caixaria",
+      "group": "COMMON_A09",
+      "kind": "furniture",
+      "min": [
+        6.409,
+        14.18,
+        0.115
+      ],
+      "max": [
+        9.491,
+        14.710001,
+        0.835
+      ]
+    },
+    {
+      "id": "COL_F008_tampo",
+      "source": "F008_tampo",
+      "group": "COMMON_A09",
+      "kind": "furniture",
+      "min": [
+        6.395,
+        14.144,
+        0.82
+      ],
+      "max": [
+        9.505,
+        14.726001,
+        0.85
+      ]
+    },
+    {
+      "id": "COL_F009_louvca_cuba",
+      "source": "F009_louvca_cuba",
+      "group": "COMMON_A09",
+      "kind": "furniture",
+      "min": [
+        5.28079,
+        13.126,
+        0.66
+      ],
+      "max": [
+        5.67421,
+        13.624,
+        0.845
+      ]
+    },
+    {
+      "id": "COL_F010_caixaria",
+      "source": "F010_caixaria",
+      "group": "COMMON_A09",
+      "kind": "furniture",
+      "min": [
+        5.21,
+        13.809,
+        0.115
+      ],
+      "max": [
+        5.77,
+        14.641001,
+        1.985
+      ]
+    },
+    {
+      "id": "COL_F011_assento",
+      "source": "F011_assento",
+      "group": "COMMON_A09",
+      "kind": "furniture",
+      "min": [
+        7.15,
+        12.014999,
+        0.66
+      ],
+      "max": [
+        7.75,
+        12.635,
+        0.78
+      ]
+    },
+    {
+      "id": "COL_F011_assento_concha",
+      "source": "F011_assento_concha",
+      "group": "COMMON_A09",
+      "kind": "furniture",
+      "min": [
+        7.1325,
+        12.0075,
+        0.615
+      ],
+      "max": [
+        7.7675,
+        12.6425,
+        0.675
+      ]
+    },
+    {
+      "id": "COL_F011_assento_vivo",
+      "source": "F011_assento_vivo",
+      "group": "COMMON_A09",
+      "kind": "furniture",
+      "min": [
+        7.158702,
+        12.024052,
+        0.7506
+      ],
+      "max": [
+        7.7413,
+        12.625948,
+        0.7542
+      ]
+    },
+    {
+      "id": "COL_F011_carenagem",
+      "source": "F011_carenagem",
+      "group": "COMMON_A09",
+      "kind": "furniture",
+      "min": [
+        7.305,
+        12.085,
+        0.27
+      ],
+      "max": [
+        7.595,
+        12.464999,
+        0.65
+      ]
+    },
+    {
+      "id": "COL_F011_perneira",
+      "source": "F011_perneira",
+      "group": "COMMON_A09",
+      "kind": "furniture",
+      "min": [
+        7.2,
+        11.377933,
+        0.423442
+      ],
+      "max": [
+        7.7,
+        11.992068,
+        0.716558
+      ]
+    },
+    {
+      "id": "COL_F011_perneira_concha",
+      "source": "F011_perneira_concha",
+      "group": "COMMON_A09",
+      "kind": "furniture",
+      "min": [
+        7.1825,
+        11.378525,
+        0.3699
+      ],
+      "max": [
+        7.7175,
+        11.991476,
+        0.620099
+      ]
+    },
+    {
+      "id": "COL_F011_perneira_vivo",
+      "source": "F011_perneira_vivo",
+      "group": "COMMON_A09",
+      "kind": "furniture",
+      "min": [
+        7.206952,
+        11.393637,
+        0.505027
+      ],
+      "max": [
+        7.69305,
+        11.958009,
+        0.691465
+      ]
+    },
+    {
+      "id": "COL_F011_unidade_agua",
+      "source": "F011_unidade_agua",
+      "group": "COMMON_A09",
+      "kind": "furniture",
+      "min": [
+        6.885,
+        12.465,
+        0.165
+      ],
+      "max": [
+        7.115,
+        12.865,
+        0.895
+      ]
+    },
+    {
+      "id": "COL_F012_assento",
+      "source": "F012_assento",
+      "group": "COMMON_A09",
+      "kind": "furniture",
+      "min": [
+        8.42475,
+        12.85775,
+        0.4
+      ],
+      "max": [
+        8.92525,
+        13.29225,
+        0.51
+      ]
+    },
+    {
+      "id": "COL_F012_assento_vivo",
+      "source": "F012_assento_vivo",
+      "group": "COMMON_A09",
+      "kind": "furniture",
+      "min": [
+        8.431711,
+        12.863556,
+        0.4829
+      ],
+      "max": [
+        8.918291,
+        13.286444,
+        0.4865
+      ]
+    },
+    {
+      "id": "COL_F015_caixaria",
+      "source": "F015_caixaria",
+      "group": "COMMON_A10",
+      "kind": "furniture",
+      "min": [
+        11.358999,
+        14.18,
+        0.115
+      ],
+      "max": [
+        14.441,
+        14.710001,
+        0.835
+      ]
+    },
+    {
+      "id": "COL_F015_tampo",
+      "source": "F015_tampo",
+      "group": "COMMON_A10",
+      "kind": "furniture",
+      "min": [
+        11.344999,
+        14.144,
+        0.82
+      ],
+      "max": [
+        14.455,
+        14.726001,
+        0.85
+      ]
+    },
+    {
+      "id": "COL_F016_louvca_cuba",
+      "source": "F016_louvca_cuba",
+      "group": "COMMON_A10",
+      "kind": "furniture",
+      "min": [
+        10.23079,
+        13.126,
+        0.66
+      ],
+      "max": [
+        10.624209,
+        13.624,
+        0.845
+      ]
+    },
+    {
+      "id": "COL_F017_caixaria",
+      "source": "F017_caixaria",
+      "group": "COMMON_A10",
+      "kind": "furniture",
+      "min": [
+        10.16,
+        13.809,
+        0.115
+      ],
+      "max": [
+        10.719999,
+        14.641001,
+        1.985
+      ]
+    },
+    {
+      "id": "COL_F018_assento",
+      "source": "F018_assento",
+      "group": "COMMON_A10",
+      "kind": "furniture",
+      "min": [
+        12.099999,
+        12.014999,
+        0.66
+      ],
+      "max": [
+        12.7,
+        12.635,
+        0.78
+      ]
+    },
+    {
+      "id": "COL_F018_assento_concha",
+      "source": "F018_assento_concha",
+      "group": "COMMON_A10",
+      "kind": "furniture",
+      "min": [
+        12.0825,
+        12.0075,
+        0.615
+      ],
+      "max": [
+        12.7175,
+        12.6425,
+        0.675
+      ]
+    },
+    {
+      "id": "COL_F018_assento_vivo",
+      "source": "F018_assento_vivo",
+      "group": "COMMON_A10",
+      "kind": "furniture",
+      "min": [
+        12.108702,
+        12.024052,
+        0.7506
+      ],
+      "max": [
+        12.691299,
+        12.625948,
+        0.7542
+      ]
+    },
+    {
+      "id": "COL_F018_carenagem",
+      "source": "F018_carenagem",
+      "group": "COMMON_A10",
+      "kind": "furniture",
+      "min": [
+        12.254999,
+        12.085,
+        0.27
+      ],
+      "max": [
+        12.545,
+        12.464999,
+        0.65
+      ]
+    },
+    {
+      "id": "COL_F018_perneira",
+      "source": "F018_perneira",
+      "group": "COMMON_A10",
+      "kind": "furniture",
+      "min": [
+        12.15,
+        11.377933,
+        0.423442
+      ],
+      "max": [
+        12.65,
+        11.992068,
+        0.716558
+      ]
+    },
+    {
+      "id": "COL_F018_perneira_concha",
+      "source": "F018_perneira_concha",
+      "group": "COMMON_A10",
+      "kind": "furniture",
+      "min": [
+        12.1325,
+        11.378525,
+        0.3699
+      ],
+      "max": [
+        12.6675,
+        11.991476,
+        0.620099
+      ]
+    },
+    {
+      "id": "COL_F018_perneira_vivo",
+      "source": "F018_perneira_vivo",
+      "group": "COMMON_A10",
+      "kind": "furniture",
+      "min": [
+        12.156952,
+        11.393637,
+        0.505027
+      ],
+      "max": [
+        12.643049,
+        11.958009,
+        0.691465
+      ]
+    },
+    {
+      "id": "COL_F019_assento",
+      "source": "F019_assento",
+      "group": "COMMON_A10",
+      "kind": "furniture",
+      "min": [
+        13.37475,
+        12.85775,
+        0.4
+      ],
+      "max": [
+        13.87525,
+        13.29225,
+        0.51
+      ]
+    },
+    {
+      "id": "COL_F019_assento_vivo",
+      "source": "F019_assento_vivo",
+      "group": "COMMON_A10",
+      "kind": "furniture",
+      "min": [
+        13.381711,
+        12.863556,
+        0.4829
+      ],
+      "max": [
+        13.868291,
+        13.286444,
+        0.4865
+      ]
+    },
+    {
+      "id": "COL_F022_tampo",
+      "source": "F022_tampo",
+      "group": "COMMON_A10",
+      "kind": "furniture",
+      "min": [
+        10.349999,
+        11.25,
+        0.7
+      ],
+      "max": [
+        11.3,
+        11.85,
+        0.75
+      ]
+    },
+    {
+      "id": "COL_F023_assento",
+      "source": "F023_assento",
+      "group": "COMMON_A10",
+      "kind": "furniture",
+      "min": [
+        10.5725,
+        10.69725,
+        0.4
+      ],
+      "max": [
+        11.0275,
+        11.05275,
+        0.51
+      ]
+    },
+    {
+      "id": "COL_F023_assento_vivo",
+      "source": "F023_assento_vivo",
+      "group": "COMMON_A10",
+      "kind": "furniture",
+      "min": [
+        10.578663,
+        10.701674,
+        0.4829
+      ],
+      "max": [
+        11.021336,
+        11.048326,
+        0.4865
+      ]
+    },
+    {
+      "id": "COL_F024_corpo",
+      "source": "F024_corpo",
+      "group": "COMMON_A10",
+      "kind": "furniture",
+      "min": [
+        10.25,
+        12.15,
+        0.0
+      ],
+      "max": [
+        10.85,
+        12.75,
+        0.85
+      ]
+    },
+    {
+      "id": "COL_F025_caixaria",
+      "source": "F025_caixaria",
+      "group": "COMMON_A11",
+      "kind": "furniture",
+      "min": [
+        16.309,
+        14.18,
+        0.115
+      ],
+      "max": [
+        19.391001,
+        14.710001,
+        0.835
+      ]
+    },
+    {
+      "id": "COL_F025_tampo",
+      "source": "F025_tampo",
+      "group": "COMMON_A11",
+      "kind": "furniture",
+      "min": [
+        16.295,
+        14.144,
+        0.82
+      ],
+      "max": [
+        19.405001,
+        14.726001,
+        0.85
+      ]
+    },
+    {
+      "id": "COL_F026_louvca_cuba",
+      "source": "F026_louvca_cuba",
+      "group": "COMMON_A11",
+      "kind": "furniture",
+      "min": [
+        15.18079,
+        13.126,
+        0.66
+      ],
+      "max": [
+        15.574209,
+        13.624,
+        0.845
+      ]
+    },
+    {
+      "id": "COL_F027_caixaria",
+      "source": "F027_caixaria",
+      "group": "COMMON_A11",
+      "kind": "furniture",
+      "min": [
+        15.11,
+        13.809,
+        0.115
+      ],
+      "max": [
+        15.669999,
+        14.641001,
+        1.985
+      ]
+    },
+    {
+      "id": "COL_F028_assento",
+      "source": "F028_assento",
+      "group": "COMMON_A11",
+      "kind": "furniture",
+      "min": [
+        17.050001,
+        12.014999,
+        0.66
+      ],
+      "max": [
+        17.65,
+        12.635,
+        0.78
+      ]
+    },
+    {
+      "id": "COL_F028_assento_concha",
+      "source": "F028_assento_concha",
+      "group": "COMMON_A11",
+      "kind": "furniture",
+      "min": [
+        17.032501,
+        12.0075,
+        0.615
+      ],
+      "max": [
+        17.6675,
+        12.6425,
+        0.675
+      ]
+    },
+    {
+      "id": "COL_F028_assento_vivo",
+      "source": "F028_assento_vivo",
+      "group": "COMMON_A11",
+      "kind": "furniture",
+      "min": [
+        17.058702,
+        12.024052,
+        0.7506
+      ],
+      "max": [
+        17.6413,
+        12.625948,
+        0.7542
+      ]
+    },
+    {
+      "id": "COL_F028_carenagem",
+      "source": "F028_carenagem",
+      "group": "COMMON_A11",
+      "kind": "furniture",
+      "min": [
+        17.205,
+        12.085,
+        0.27
+      ],
+      "max": [
+        17.495001,
+        12.464999,
+        0.65
+      ]
+    },
+    {
+      "id": "COL_F028_perneira",
+      "source": "F028_perneira",
+      "group": "COMMON_A11",
+      "kind": "furniture",
+      "min": [
+        17.1,
+        11.377933,
+        0.423442
+      ],
+      "max": [
+        17.6,
+        11.992068,
+        0.716558
+      ]
+    },
+    {
+      "id": "COL_F028_perneira_concha",
+      "source": "F028_perneira_concha",
+      "group": "COMMON_A11",
+      "kind": "furniture",
+      "min": [
+        17.0825,
+        11.378525,
+        0.3699
+      ],
+      "max": [
+        17.6175,
+        11.991476,
+        0.620099
+      ]
+    },
+    {
+      "id": "COL_F028_perneira_vivo",
+      "source": "F028_perneira_vivo",
+      "group": "COMMON_A11",
+      "kind": "furniture",
+      "min": [
+        17.106953,
+        11.393637,
+        0.505027
+      ],
+      "max": [
+        17.59305,
+        11.958009,
+        0.691465
+      ]
+    },
+    {
+      "id": "COL_F029_assento",
+      "source": "F029_assento",
+      "group": "COMMON_A11",
+      "kind": "furniture",
+      "min": [
+        18.324751,
+        12.85775,
+        0.4
+      ],
+      "max": [
+        18.825251,
+        13.29225,
+        0.51
+      ]
+    },
+    {
+      "id": "COL_F029_assento_vivo",
+      "source": "F029_assento_vivo",
+      "group": "COMMON_A11",
+      "kind": "furniture",
+      "min": [
+        18.331711,
+        12.863556,
+        0.4829
+      ],
+      "max": [
+        18.818293,
+        13.286444,
+        0.4865
+      ]
+    },
+    {
+      "id": "COL_F032_tampo",
+      "source": "F032_tampo",
+      "group": "COMMON_A11",
+      "kind": "furniture",
+      "min": [
+        15.299999,
+        11.25,
+        0.7
+      ],
+      "max": [
+        16.25,
+        11.85,
+        0.75
+      ]
+    },
+    {
+      "id": "COL_F033_assento",
+      "source": "F033_assento",
+      "group": "COMMON_A11",
+      "kind": "furniture",
+      "min": [
+        15.5225,
+        10.797251,
+        0.4
+      ],
+      "max": [
+        15.9775,
+        11.15275,
+        0.51
+      ]
+    },
+    {
+      "id": "COL_F033_assento_vivo",
+      "source": "F033_assento_vivo",
+      "group": "COMMON_A11",
+      "kind": "furniture",
+      "min": [
+        15.528663,
+        10.801674,
+        0.4829
+      ],
+      "max": [
+        15.971335,
+        11.148327,
+        0.4865
+      ]
+    },
+    {
+      "id": "COL_F034_assento",
+      "source": "F034_assento",
+      "group": "COMMON_A01",
+      "kind": "furniture",
+      "min": [
+        0.31975,
+        6.313,
+        0.4
+      ],
+      "max": [
+        0.82025,
+        6.787,
+        0.51
+      ]
+    },
+    {
+      "id": "COL_F034_assento_vivo",
+      "source": "F034_assento_vivo",
+      "group": "COMMON_A01",
+      "kind": "furniture",
+      "min": [
+        0.326711,
+        6.319498,
+        0.4829
+      ],
+      "max": [
+        0.813291,
+        6.780503,
+        0.4865
+      ]
+    },
+    {
+      "id": "COL_F035_assento",
+      "source": "F035_assento",
+      "group": "COMMON_A01",
+      "kind": "furniture",
+      "min": [
+        0.96475,
+        6.313,
+        0.4
+      ],
+      "max": [
+        1.46525,
+        6.787,
+        0.51
+      ]
+    },
+    {
+      "id": "COL_F035_assento_vivo",
+      "source": "F035_assento_vivo",
+      "group": "COMMON_A01",
+      "kind": "furniture",
+      "min": [
+        0.971711,
+        6.319498,
+        0.4829
+      ],
+      "max": [
+        1.458291,
+        6.780503,
+        0.4865
+      ]
+    },
+    {
+      "id": "COL_F036_assento",
+      "source": "F036_assento",
+      "group": "COMMON_A01",
+      "kind": "furniture",
+      "min": [
+        1.60975,
+        6.313,
+        0.4
+      ],
+      "max": [
+        2.11025,
+        6.787,
+        0.51
+      ]
+    },
+    {
+      "id": "COL_F036_assento_vivo",
+      "source": "F036_assento_vivo",
+      "group": "COMMON_A01",
+      "kind": "furniture",
+      "min": [
+        1.616711,
+        6.319498,
+        0.4829
+      ],
+      "max": [
+        2.103291,
+        6.780503,
+        0.4865
+      ]
+    },
+    {
+      "id": "COL_F037_assento",
+      "source": "F037_assento",
+      "group": "COMMON_A01",
+      "kind": "furniture",
+      "min": [
+        2.25475,
+        6.313,
+        0.4
+      ],
+      "max": [
+        2.75525,
+        6.787,
+        0.51
+      ]
+    },
+    {
+      "id": "COL_F037_assento_vivo",
+      "source": "F037_assento_vivo",
+      "group": "COMMON_A01",
+      "kind": "furniture",
+      "min": [
+        2.261711,
+        6.319498,
+        0.4829
+      ],
+      "max": [
+        2.748291,
+        6.780503,
+        0.4865
+      ]
+    },
+    {
+      "id": "COL_F038_assento",
+      "source": "F038_assento",
+      "group": "COMMON_A01",
+      "kind": "furniture",
+      "min": [
+        2.89975,
+        6.313,
+        0.4
+      ],
+      "max": [
+        3.40025,
+        6.787,
+        0.51
+      ]
+    },
+    {
+      "id": "COL_F038_assento_vivo",
+      "source": "F038_assento_vivo",
+      "group": "COMMON_A01",
+      "kind": "furniture",
+      "min": [
+        2.906711,
+        6.319498,
+        0.4829
+      ],
+      "max": [
+        3.393291,
+        6.780503,
+        0.4865
+      ]
+    },
+    {
+      "id": "COL_F040_assento",
+      "source": "F040_assento",
+      "group": "COMMON_A01",
+      "kind": "furniture",
+      "min": [
+        1.56975,
+        3.063,
+        0.4
+      ],
+      "max": [
+        2.07025,
+        3.537,
+        0.51
+      ]
+    },
+    {
+      "id": "COL_F040_assento_vivo",
+      "source": "F040_assento_vivo",
+      "group": "COMMON_A01",
+      "kind": "furniture",
+      "min": [
+        1.576709,
+        3.069497,
+        0.4829
+      ],
+      "max": [
+        2.063289,
+        3.530503,
+        0.4865
+      ]
+    },
+    {
+      "id": "COL_F041_assento",
+      "source": "F041_assento",
+      "group": "COMMON_A01",
+      "kind": "furniture",
+      "min": [
+        2.22975,
+        3.063,
+        0.4
+      ],
+      "max": [
+        2.73025,
+        3.537,
+        0.51
+      ]
+    },
+    {
+      "id": "COL_F041_assento_vivo",
+      "source": "F041_assento_vivo",
+      "group": "COMMON_A01",
+      "kind": "furniture",
+      "min": [
+        2.236709,
+        3.069497,
+        0.4829
+      ],
+      "max": [
+        2.723289,
+        3.530503,
+        0.4865
+      ]
+    },
+    {
+      "id": "COL_F042_assento",
+      "source": "F042_assento",
+      "group": "COMMON_A01",
+      "kind": "furniture",
+      "min": [
+        2.88975,
+        3.063,
+        0.4
+      ],
+      "max": [
+        3.39025,
+        3.537,
+        0.51
+      ]
+    },
+    {
+      "id": "COL_F042_assento_vivo",
+      "source": "F042_assento_vivo",
+      "group": "COMMON_A01",
+      "kind": "furniture",
+      "min": [
+        2.896709,
+        3.069497,
+        0.4829
+      ],
+      "max": [
+        3.383289,
+        3.530503,
+        0.4865
+      ]
+    },
+    {
+      "id": "COL_F043_corpo",
+      "source": "F043_corpo",
+      "group": "COMMON_A01",
+      "kind": "furniture",
+      "min": [
+        4.7125,
+        4.56,
+        0.06
+      ],
+      "max": [
+        5.3375,
+        6.64,
+        0.86
+      ]
+    },
+    {
+      "id": "COL_F044_assento",
+      "source": "F044_assento",
+      "group": "COMMON_A01",
+      "kind": "furniture",
+      "min": [
+        5.5025,
+        5.2225,
+        0.4
+      ],
+      "max": [
+        5.8975,
+        5.6775,
+        0.51
+      ]
+    },
+    {
+      "id": "COL_F044_assento_vivo",
+      "source": "F044_assento_vivo",
+      "group": "COMMON_A01",
+      "kind": "furniture",
+      "min": [
+        5.507615,
+        5.228662,
+        0.4829
+      ],
+      "max": [
+        5.892385,
+        5.671335,
+        0.4865
+      ]
+    },
+    {
+      "id": "COL_F045_tampo",
+      "source": "F045_tampo",
+      "group": "COMMON_A02",
+      "kind": "furniture",
+      "min": [
+        1.65,
+        0.55,
+        0.7
+      ],
+      "max": [
+        2.95,
+        1.15,
+        0.75
+      ]
+    },
+    {
+      "id": "COL_F046_assento",
+      "source": "F046_assento",
+      "group": "COMMON_A02",
+      "kind": "furniture",
+      "min": [
+        2.0725,
+        1.3025,
+        0.4
+      ],
+      "max": [
+        2.5275,
+        1.6975,
+        0.51
+      ]
+    },
+    {
+      "id": "COL_F046_assento_vivo",
+      "source": "F046_assento_vivo",
+      "group": "COMMON_A02",
+      "kind": "furniture",
+      "min": [
+        2.078665,
+        1.307615,
+        0.4829
+      ],
+      "max": [
+        2.521338,
+        1.692385,
+        0.4865
+      ]
+    },
+    {
+      "id": "COL_F047_caixaria",
+      "source": "F047_caixaria",
+      "group": "COMMON_A03",
+      "kind": "furniture",
+      "min": [
+        4.859,
+        0.41,
+        0.115
+      ],
+      "max": [
+        5.891,
+        0.97,
+        1.785
+      ]
+    },
+    {
+      "id": "COL_F047_tampo",
+      "source": "F047_tampo",
+      "group": "COMMON_A03",
+      "kind": "furniture",
+      "min": [
+        4.845,
+        0.394,
+        1.77
+      ],
+      "max": [
+        5.905,
+        1.006,
+        1.8
+      ]
+    },
+    {
+      "id": "COL_F048_caixaria",
+      "source": "F048_caixaria",
+      "group": "COMMON_A03",
+      "kind": "furniture",
+      "min": [
+        5.48,
+        1.209,
+        0.115
+      ],
+      "max": [
+        5.94,
+        2.291,
+        1.785
+      ]
+    },
+    {
+      "id": "COL_F048_tampo",
+      "source": "F048_tampo",
+      "group": "COMMON_A03",
+      "kind": "furniture",
+      "min": [
+        5.444,
+        1.195,
+        1.77
+      ],
+      "max": [
+        5.956,
+        2.305,
+        1.8
+      ]
+    },
+    {
+      "id": "COL_F051_assento",
+      "source": "F051_assento",
+      "group": "COMMON_A05",
+      "kind": "furniture",
+      "min": [
+        9.210999,
+        6.134521,
+        0.436
+      ],
+      "max": [
+        9.689,
+        6.76548,
+        0.459
+      ]
+    },
+    {
+      "id": "COL_F051_bacia",
+      "source": "F051_bacia",
+      "group": "COMMON_A05",
+      "kind": "furniture",
+      "min": [
+        9.22,
+        6.1441,
+        0.2
+      ],
+      "max": [
+        9.679999,
+        6.7559,
+        0.435
+      ]
+    },
+    {
+      "id": "COL_F051_pedestal",
+      "source": "F051_pedestal",
+      "group": "COMMON_A05",
+      "kind": "furniture",
+      "min": [
+        9.255,
+        6.2065,
+        0.02
+      ],
+      "max": [
+        9.645,
+        6.7135,
+        0.39
+      ]
+    },
+    {
+      "id": "COL_F052_louvca_cuba",
+      "source": "F052_louvca_cuba",
+      "group": "COMMON_A05",
+      "kind": "furniture",
+      "min": [
+        10.826,
+        6.62379,
+        0.64
+      ],
+      "max": [
+        11.323999,
+        7.01721,
+        0.825
+      ]
+    },
+    {
+      "id": "COL_F053_assento",
+      "source": "F053_assento",
+      "group": "COMMON_A06",
+      "kind": "furniture",
+      "min": [
+        6.461,
+        0.50452,
+        0.436
+      ],
+      "max": [
+        6.939,
+        1.13548,
+        0.459
+      ]
+    },
+    {
+      "id": "COL_F053_bacia",
+      "source": "F053_bacia",
+      "group": "COMMON_A06",
+      "kind": "furniture",
+      "min": [
+        6.47,
+        0.5141,
+        0.2
+      ],
+      "max": [
+        6.93,
+        1.1259,
+        0.435
+      ]
+    },
+    {
+      "id": "COL_F053_pedestal",
+      "source": "F053_pedestal",
+      "group": "COMMON_A06",
+      "kind": "furniture",
+      "min": [
+        6.505,
+        0.5565,
+        0.02
+      ],
+      "max": [
+        6.895,
+        1.0635,
+        0.39
+      ]
+    },
+    {
+      "id": "COL_F054_louvca_cuba",
+      "source": "F054_louvca_cuba",
+      "group": "COMMON_A06",
+      "kind": "furniture",
+      "min": [
+        8.076,
+        0.28279,
+        0.64
+      ],
+      "max": [
+        8.573999,
+        0.67621,
+        0.825
+      ]
+    },
+    {
+      "id": "COL_F055_assento",
+      "source": "F055_assento",
+      "group": "COMMON_A07",
+      "kind": "furniture",
+      "min": [
+        9.210999,
+        0.50452,
+        0.436
+      ],
+      "max": [
+        9.689,
+        1.13548,
+        0.459
+      ]
+    },
+    {
+      "id": "COL_F055_bacia",
+      "source": "F055_bacia",
+      "group": "COMMON_A07",
+      "kind": "furniture",
+      "min": [
+        9.219999,
+        0.5141,
+        0.2
+      ],
+      "max": [
+        9.68,
+        1.1259,
+        0.435
+      ]
+    },
+    {
+      "id": "COL_F055_pedestal",
+      "source": "F055_pedestal",
+      "group": "COMMON_A07",
+      "kind": "furniture",
+      "min": [
+        9.255,
+        0.5565,
+        0.02
+      ],
+      "max": [
+        9.645,
+        1.0635,
+        0.39
+      ]
+    },
+    {
+      "id": "COL_F056_louvca_cuba",
+      "source": "F056_louvca_cuba",
+      "group": "COMMON_A07",
+      "kind": "furniture",
+      "min": [
+        10.826,
+        0.28279,
+        0.64
+      ],
+      "max": [
+        11.323999,
+        0.67621,
+        0.825
+      ]
+    },
+    {
+      "id": "COL_F057_caixaria",
+      "source": "F057_caixaria",
+      "group": "COMMON_A12",
+      "kind": "furniture",
+      "min": [
+        13.509,
+        6.530001,
+        0.115
+      ],
+      "max": [
+        15.790999,
+        7.01,
+        0.835
+      ]
+    },
+    {
+      "id": "COL_F058_louvca_cuba",
+      "source": "F058_louvca_cuba",
+      "group": "COMMON_A12",
+      "kind": "furniture",
+      "min": [
+        15.499791,
+        4.876,
+        0.64
+      ],
+      "max": [
+        15.89321,
+        5.374,
+        0.825
+      ]
+    },
+    {
+      "id": "COL_F061_louvca_cuba",
+      "source": "F061_louvca_cuba",
+      "group": "COMMON_A13",
+      "kind": "furniture",
+      "min": [
+        19.299789,
+        4.876,
+        0.64
+      ],
+      "max": [
+        19.693211,
+        5.374,
+        0.825
+      ]
+    },
+    {
+      "id": "COL_F062_caixaria",
+      "source": "F062_caixaria",
+      "group": "COMMON_A14",
+      "kind": "furniture",
+      "min": [
+        14.209001,
+        0.36,
+        0.115
+      ],
+      "max": [
+        15.391,
+        0.87,
+        0.885
+      ]
+    },
+    {
+      "id": "COL_F063_tampo",
+      "source": "F063_tampo",
+      "group": "COMMON_A14",
+      "kind": "furniture",
+      "min": [
+        14.5,
+        1.55,
+        0.7
+      ],
+      "max": [
+        15.4,
+        2.05,
+        0.75
+      ]
+    },
+    {
+      "id": "COL_F064_assento",
+      "source": "F064_assento",
+      "group": "COMMON_A14",
+      "kind": "furniture",
+      "min": [
+        14.62025,
+        2.19725,
+        0.4
+      ],
+      "max": [
+        15.02975,
+        2.55275,
+        0.51
+      ]
+    },
+    {
+      "id": "COL_F064_assento_vivo",
+      "source": "F064_assento_vivo",
+      "group": "COMMON_A14",
+      "kind": "furniture",
+      "min": [
+        14.625618,
+        2.201674,
+        0.4829
+      ],
+      "max": [
+        15.024384,
+        2.548326,
+        0.4865
+      ]
+    },
+    {
+      "id": "COL_F065_louvca_cuba",
+      "source": "F065_louvca_cuba",
+      "group": "COMMON_A15",
+      "kind": "furniture",
+      "min": [
+        16.101,
+        0.31639,
+        0.64
+      ],
+      "max": [
+        16.599001,
+        0.70981,
+        0.825
+      ]
+    },
+    {
+      "id": "COL_F066_motor",
+      "source": "F066_motor",
+      "group": "COMMON_A16",
+      "kind": "furniture",
+      "min": [
+        17.51,
+        0.76,
+        0.5
+      ],
+      "max": [
+        17.870001,
+        1.09,
+        0.74
+      ]
+    },
+    {
+      "id": "COL_F066_reservatorio",
+      "source": "F066_reservatorio",
+      "group": "COMMON_A16",
+      "kind": "furniture",
+      "min": [
+        17.5,
+        0.735,
+        0.05
+      ],
+      "max": [
+        17.880001,
+        1.115,
+        0.51
+      ]
+    },
+    {
+      "id": "COL_F067_corpo",
+      "source": "F067_corpo",
+      "group": "COMMON_A17",
+      "kind": "furniture",
+      "min": [
+        18.574999,
+        1.0275,
+        0.015
+      ],
+      "max": [
+        19.025,
+        1.5225,
+        0.785
+      ]
+    },
+    {
+      "id": "COL_F068_corpo",
+      "source": "F068_corpo",
+      "group": "COMMON_A17",
+      "kind": "furniture",
+      "min": [
+        19.174999,
+        1.0275,
+        0.015
+      ],
+      "max": [
+        19.625,
+        1.5225,
+        0.785
+      ]
+    },
+    {
+      "id": "COL_J02_MARCO",
+      "source": "J02_MARCO",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        5.9325,
+        14.82,
+        1.1
+      ],
+      "max": [
+        5.9675,
+        14.98,
+        2.4
+      ]
+    },
+    {
+      "id": "COL_J02_MARCO.001",
+      "source": "J02_MARCO.001",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        8.032499,
+        14.82,
+        1.1
+      ],
+      "max": [
+        8.067499,
+        14.98,
+        2.4
+      ]
+    },
+    {
+      "id": "COL_J03_MARCO",
+      "source": "J03_MARCO",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        10.8825,
+        14.82,
+        1.1
+      ],
+      "max": [
+        10.9175,
+        14.98,
+        2.4
+      ]
+    },
+    {
+      "id": "COL_J03_MARCO.001",
+      "source": "J03_MARCO.001",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        12.9825,
+        14.82,
+        1.1
+      ],
+      "max": [
+        13.0175,
+        14.98,
+        2.4
+      ]
+    },
+    {
+      "id": "COL_J04_MARCO",
+      "source": "J04_MARCO",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        15.8325,
+        14.82,
+        1.1
+      ],
+      "max": [
+        15.8675,
+        14.98,
+        2.4
+      ]
+    },
+    {
+      "id": "COL_J04_MARCO.001",
+      "source": "J04_MARCO.001",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        17.932501,
+        14.82,
+        1.1
+      ],
+      "max": [
+        17.967501,
+        14.98,
+        2.4
+      ]
+    },
+    {
+      "id": "COL_J05_MARCO",
+      "source": "J05_MARCO",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        0.02,
+        6.0825,
+        1.1
+      ],
+      "max": [
+        0.18,
+        6.1175,
+        2.4
+      ]
+    },
+    {
+      "id": "COL_J05_MARCO.001",
+      "source": "J05_MARCO.001",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        0.02,
+        6.8325,
+        1.1
+      ],
+      "max": [
+        0.18,
+        6.8675,
+        2.4
+      ]
+    },
+    {
+      "id": "COL_J06_MARCO",
+      "source": "J06_MARCO",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        1.5325,
+        0.02,
+        1.1
+      ],
+      "max": [
+        1.5675,
+        0.18,
+        2.4
+      ]
+    },
+    {
+      "id": "COL_J06_MARCO.001",
+      "source": "J06_MARCO.001",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        2.7325,
+        0.02,
+        1.1
+      ],
+      "max": [
+        2.7675,
+        0.18,
+        2.4
+      ]
+    },
+    {
+      "id": "COL_J07_MARCO",
+      "source": "J07_MARCO",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        7.5325,
+        0.02,
+        1.65
+      ],
+      "max": [
+        7.5675,
+        0.18,
+        2.25
+      ]
+    },
+    {
+      "id": "COL_J07_MARCO.001",
+      "source": "J07_MARCO.001",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        8.2825,
+        0.02,
+        1.65
+      ],
+      "max": [
+        8.3175,
+        0.18,
+        2.25
+      ]
+    },
+    {
+      "id": "COL_J08_MARCO",
+      "source": "J08_MARCO",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        10.3325,
+        0.02,
+        1.65
+      ],
+      "max": [
+        10.3675,
+        0.18,
+        2.25
+      ]
+    },
+    {
+      "id": "COL_J08_MARCO.001",
+      "source": "J08_MARCO.001",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        11.0825,
+        0.02,
+        1.65
+      ],
+      "max": [
+        11.1175,
+        0.18,
+        2.25
+      ]
+    },
+    {
+      "id": "COL_J09_MARCO",
+      "source": "J09_MARCO",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        19.82,
+        5.8325,
+        1.3
+      ],
+      "max": [
+        19.98,
+        5.8675,
+        2.4
+      ]
+    },
+    {
+      "id": "COL_J09_MARCO.001",
+      "source": "J09_MARCO.001",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        19.82,
+        6.6325,
+        1.3
+      ],
+      "max": [
+        19.98,
+        6.6675,
+        2.4
+      ]
+    },
+    {
+      "id": "COL_J10_MARCO",
+      "source": "J10_MARCO",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        14.2325,
+        0.02,
+        1.2
+      ],
+      "max": [
+        14.2675,
+        0.18,
+        2.4
+      ]
+    },
+    {
+      "id": "COL_J10_MARCO.001",
+      "source": "J10_MARCO.001",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        15.2325,
+        0.02,
+        1.2
+      ],
+      "max": [
+        15.2675,
+        0.18,
+        2.4
+      ]
+    },
+    {
+      "id": "COL_MESA_ESPERA_TAMPO",
+      "source": "MESA_ESPERA_TAMPO",
+      "group": "COMMON_A01",
+      "kind": "furniture",
+      "min": [
+        3.48,
+        3.84,
+        0.5165
+      ],
+      "max": [
+        3.96,
+        4.32,
+        0.5435
+      ]
+    },
+    {
+      "id": "COL_P01_MARCO",
+      "source": "P01_MARCO",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        0.02,
+        4.0825,
+        0.0
+      ],
+      "max": [
+        0.18,
+        4.1175,
+        2.1
+      ]
+    },
+    {
+      "id": "COL_P01_MARCO.001",
+      "source": "P01_MARCO.001",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        0.02,
+        5.8825,
+        0.0
+      ],
+      "max": [
+        0.18,
+        5.9175,
+        2.1
+      ]
+    },
+    {
+      "id": "COL_P02_MARCO",
+      "source": "P02_MARCO",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        19.82,
+        7.6325,
+        0.0
+      ],
+      "max": [
+        19.98,
+        7.6675,
+        2.1
+      ]
+    },
+    {
+      "id": "COL_P02_MARCO.001",
+      "source": "P02_MARCO.001",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        19.82,
+        8.8325,
+        0.0
+      ],
+      "max": [
+        19.98,
+        8.8675,
+        2.1
+      ]
+    },
+    {
+      "id": "COL_P03_MARCO",
+      "source": "P03_MARCO",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        0.5325,
+        2.595,
+        0.0
+      ],
+      "max": [
+        0.5675,
+        2.755,
+        2.1
+      ]
+    },
+    {
+      "id": "COL_P03_MARCO.001",
+      "source": "P03_MARCO.001",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        1.4325,
+        2.595,
+        0.0
+      ],
+      "max": [
+        1.4675,
+        2.755,
+        2.1
+      ]
+    },
+    {
+      "id": "COL_P04_MARCO",
+      "source": "P04_MARCO",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        3.5325,
+        2.595,
+        0.0
+      ],
+      "max": [
+        3.5675,
+        2.755,
+        2.1
+      ]
+    },
+    {
+      "id": "COL_P04_MARCO.001",
+      "source": "P04_MARCO.001",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        4.4325,
+        2.595,
+        0.0
+      ],
+      "max": [
+        4.4675,
+        2.755,
+        2.1
+      ]
+    },
+    {
+      "id": "COL_P05_MARCO",
+      "source": "P05_MARCO",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        6.4825,
+        4.095,
+        0.0
+      ],
+      "max": [
+        6.5175,
+        4.255,
+        2.1
+      ]
+    },
+    {
+      "id": "COL_P05_MARCO.001",
+      "source": "P05_MARCO.001",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        7.5825,
+        4.095,
+        0.0
+      ],
+      "max": [
+        7.6175,
+        4.255,
+        2.1
+      ]
+    },
+    {
+      "id": "COL_P06_MARCO",
+      "source": "P06_MARCO",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        9.3325,
+        4.095,
+        0.0
+      ],
+      "max": [
+        9.3675,
+        4.255,
+        2.1
+      ]
+    },
+    {
+      "id": "COL_P06_MARCO.001",
+      "source": "P06_MARCO.001",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        10.2325,
+        4.095,
+        0.0
+      ],
+      "max": [
+        10.2675,
+        4.255,
+        2.1
+      ]
+    },
+    {
+      "id": "COL_P07_MARCO",
+      "source": "P07_MARCO",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        6.5325,
+        2.445,
+        0.0
+      ],
+      "max": [
+        6.5675,
+        2.605,
+        2.1
+      ]
+    },
+    {
+      "id": "COL_P07_MARCO.001",
+      "source": "P07_MARCO.001",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        7.4325,
+        2.445,
+        0.0
+      ],
+      "max": [
+        7.4675,
+        2.605,
+        2.1
+      ]
+    },
+    {
+      "id": "COL_P08_MARCO",
+      "source": "P08_MARCO",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        9.3325,
+        2.445,
+        0.0
+      ],
+      "max": [
+        9.3675,
+        2.605,
+        2.1
+      ]
+    },
+    {
+      "id": "COL_P08_MARCO.001",
+      "source": "P08_MARCO.001",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        10.2325,
+        2.445,
+        0.0
+      ],
+      "max": [
+        10.2675,
+        2.605,
+        2.1
+      ]
+    },
+    {
+      "id": "COL_P09_MARCO",
+      "source": "P09_MARCO",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        11.495,
+        2.7825,
+        0.0
+      ],
+      "max": [
+        11.655,
+        2.8175,
+        2.1
+      ]
+    },
+    {
+      "id": "COL_P09_MARCO.001",
+      "source": "P09_MARCO.001",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        11.495,
+        3.8825,
+        0.0
+      ],
+      "max": [
+        11.655,
+        3.9175,
+        2.1
+      ]
+    },
+    {
+      "id": "COL_P11_MARCO",
+      "source": "P11_MARCO",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        0.9825,
+        9.245,
+        0.0
+      ],
+      "max": [
+        1.0175,
+        9.405,
+        2.1
+      ]
+    },
+    {
+      "id": "COL_P11_MARCO.001",
+      "source": "P11_MARCO.001",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        2.1825,
+        9.245,
+        0.0
+      ],
+      "max": [
+        2.2175,
+        9.405,
+        2.1
+      ]
+    },
+    {
+      "id": "COL_P12_MARCO",
+      "source": "P12_MARCO",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        5.9325,
+        9.245,
+        0.0
+      ],
+      "max": [
+        5.9675,
+        9.405,
+        2.1
+      ]
+    },
+    {
+      "id": "COL_P12_MARCO.001",
+      "source": "P12_MARCO.001",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        7.1325,
+        9.245,
+        0.0
+      ],
+      "max": [
+        7.1675,
+        9.405,
+        2.1
+      ]
+    },
+    {
+      "id": "COL_P13_MARCO",
+      "source": "P13_MARCO",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        10.8825,
+        9.245,
+        0.0
+      ],
+      "max": [
+        10.9175,
+        9.405,
+        2.1
+      ]
+    },
+    {
+      "id": "COL_P13_MARCO.001",
+      "source": "P13_MARCO.001",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        12.0825,
+        9.245,
+        0.0
+      ],
+      "max": [
+        12.117499,
+        9.405,
+        2.1
+      ]
+    },
+    {
+      "id": "COL_P14_MARCO",
+      "source": "P14_MARCO",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        15.8325,
+        9.245,
+        0.0
+      ],
+      "max": [
+        15.8675,
+        9.405,
+        2.1
+      ]
+    },
+    {
+      "id": "COL_P14_MARCO.001",
+      "source": "P14_MARCO.001",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        17.032501,
+        9.245,
+        0.0
+      ],
+      "max": [
+        17.067501,
+        9.405,
+        2.1
+      ]
+    },
+    {
+      "id": "COL_P15_MARCO",
+      "source": "P15_MARCO",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        13.6325,
+        4.495,
+        0.0
+      ],
+      "max": [
+        13.6675,
+        4.655,
+        2.1
+      ]
+    },
+    {
+      "id": "COL_P15_MARCO.001",
+      "source": "P15_MARCO.001",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        14.532499,
+        4.495,
+        0.0
+      ],
+      "max": [
+        14.567499,
+        4.655,
+        2.1
+      ]
+    },
+    {
+      "id": "COL_P16_MARCO",
+      "source": "P16_MARCO",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        16.532499,
+        4.495,
+        0.0
+      ],
+      "max": [
+        16.567499,
+        4.655,
+        2.1
+      ]
+    },
+    {
+      "id": "COL_P16_MARCO.001",
+      "source": "P16_MARCO.001",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        17.432499,
+        4.495,
+        0.0
+      ],
+      "max": [
+        17.467499,
+        4.655,
+        2.1
+      ]
+    },
+    {
+      "id": "COL_P17_MARCO",
+      "source": "P17_MARCO",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        13.6325,
+        2.845,
+        0.0
+      ],
+      "max": [
+        13.6675,
+        3.005,
+        2.1
+      ]
+    },
+    {
+      "id": "COL_P17_MARCO.001",
+      "source": "P17_MARCO.001",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        14.532499,
+        2.845,
+        0.0
+      ],
+      "max": [
+        14.567499,
+        3.005,
+        2.1
+      ]
+    },
+    {
+      "id": "COL_P18_MARCO",
+      "source": "P18_MARCO",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        15.8525,
+        2.845,
+        0.0
+      ],
+      "max": [
+        15.8875,
+        3.005,
+        2.1
+      ]
+    },
+    {
+      "id": "COL_P18_MARCO.001",
+      "source": "P18_MARCO.001",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        16.752501,
+        2.845,
+        0.0
+      ],
+      "max": [
+        16.7875,
+        3.005,
+        2.1
+      ]
+    },
+    {
+      "id": "COL_P19_MARCO",
+      "source": "P19_MARCO",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        17.182501,
+        0.02,
+        0.0
+      ],
+      "max": [
+        17.217501,
+        0.18,
+        2.1
+      ]
+    },
+    {
+      "id": "COL_P19_MARCO.001",
+      "source": "P19_MARCO.001",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        18.0825,
+        0.02,
+        0.0
+      ],
+      "max": [
+        18.1175,
+        0.18,
+        2.1
+      ]
+    },
+    {
+      "id": "COL_P20_MARCO",
+      "source": "P20_MARCO",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        18.6325,
+        0.02,
+        0.0
+      ],
+      "max": [
+        18.6675,
+        0.18,
+        2.1
+      ]
+    },
+    {
+      "id": "COL_P20_MARCO.001",
+      "source": "P20_MARCO.001",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        19.532499,
+        0.02,
+        0.0
+      ],
+      "max": [
+        19.567499,
+        0.18,
+        2.1
+      ]
+    },
+    {
+      "id": "COL_R02_LAYOUT_F059_autoclave_corpo",
+      "source": "R02_LAYOUT_F059_autoclave_corpo",
+      "group": "COMMON_A13",
+      "kind": "furniture",
+      "min": [
+        17.4412,
+        6.525,
+        0.86
+      ],
+      "max": [
+        18.026802,
+        6.995,
+        1.32
+      ]
+    },
+    {
+      "id": "COL_R02_LAYOUT_F059_caixaria",
+      "source": "R02_LAYOUT_F059_caixaria",
+      "group": "COMMON_A13",
+      "kind": "furniture",
+      "min": [
+        16.197041,
+        6.530001,
+        0.115
+      ],
+      "max": [
+        18.50296,
+        7.01,
+        0.835
+      ]
+    },
+    {
+      "id": "COL_R02_LAYOUT_F059_tampo",
+      "source": "R02_LAYOUT_F059_tampo",
+      "group": "COMMON_A13",
+      "kind": "furniture",
+      "min": [
+        16.183601,
+        6.494,
+        0.82
+      ],
+      "max": [
+        18.516399,
+        7.026,
+        0.85
+      ]
+    },
+    {
+      "id": "COL_R02_LAYOUT_F060_caixaria",
+      "source": "R02_LAYOUT_F060_caixaria",
+      "group": "COMMON_A13",
+      "kind": "furniture",
+      "min": [
+        17.84,
+        4.679,
+        0.115
+      ],
+      "max": [
+        18.34,
+        5.761,
+        1.785
+      ]
+    },
+    {
+      "id": "COL_R02_LAYOUT_F060_tampo",
+      "source": "R02_LAYOUT_F060_tampo",
+      "group": "COMMON_A13",
+      "kind": "furniture",
+      "min": [
+        17.824001,
+        4.665,
+        1.77
+      ],
+      "max": [
+        18.375999,
+        5.775,
+        1.8
+      ]
+    },
+    {
+      "id": "COL_R03_NORTE_COMUM_DIVISORIA_1",
+      "source": "R03_NORTE_COMUM_DIVISORIA_1",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        5.6,
+        7.1,
+        0.0
+      ],
+      "max": [
+        6.15,
+        7.25,
+        3.0
+      ]
+    },
+    {
+      "id": "COL_R03_NORTE_COMUM_DIVISORIA_2",
+      "source": "R03_NORTE_COMUM_DIVISORIA_2",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        8.75,
+        7.1,
+        0.0
+      ],
+      "max": [
+        11.799999,
+        7.25,
+        3.0
+      ]
+    },
+    {
+      "id": "COL_R04_PROB_J01_MARCO",
+      "source": "R04_PROB_J01_MARCO",
+      "group": "R04_PROB",
+      "kind": "wall",
+      "min": [
+        0.9825,
+        14.82,
+        1.1
+      ],
+      "max": [
+        1.0175,
+        14.98,
+        2.4
+      ]
+    },
+    {
+      "id": "COL_R04_PROB_J01_MARCO.001",
+      "source": "R04_PROB_J01_MARCO.001",
+      "group": "R04_PROB",
+      "kind": "wall",
+      "min": [
+        3.0825,
+        14.82,
+        1.1
+      ],
+      "max": [
+        3.1175,
+        14.98,
+        2.4
+      ]
+    },
+    {
+      "id": "COL_RC3_AJUSTE_F001_caixaria",
+      "source": "RC3_AJUSTE_F001_caixaria",
+      "group": "COMMON_A08",
+      "kind": "furniture",
+      "min": [
+        1.459,
+        14.18,
+        0.115
+      ],
+      "max": [
+        4.541,
+        14.710001,
+        0.835
+      ]
+    },
+    {
+      "id": "COL_RC3_AJUSTE_F001_tampo",
+      "source": "RC3_AJUSTE_F001_tampo",
+      "group": "COMMON_A08",
+      "kind": "furniture",
+      "min": [
+        1.445,
+        14.144,
+        0.82
+      ],
+      "max": [
+        4.555,
+        14.726001,
+        0.85
+      ]
+    },
+    {
+      "id": "COL_RC_R01_PROB_P10_MARCO",
+      "source": "RC_R01_PROB_P10_MARCO",
+      "group": "R01_PROB",
+      "kind": "wall",
+      "min": [
+        11.7825,
+        7.095,
+        0.0
+      ],
+      "max": [
+        11.8175,
+        7.255,
+        2.1
+      ]
+    },
+    {
+      "id": "COL_RC_R01_PROB_P10_MARCO.001",
+      "source": "RC_R01_PROB_P10_MARCO.001",
+      "group": "R01_PROB",
+      "kind": "wall",
+      "min": [
+        12.7825,
+        7.095,
+        0.0
+      ],
+      "max": [
+        12.8175,
+        7.255,
+        2.1
+      ]
+    },
+    {
+      "id": "COL_RC_R02_FECHAMENTO_A13",
+      "source": "RC_R02_FECHAMENTO_A13",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        13.0,
+        7.1,
+        0.0
+      ],
+      "max": [
+        19.799999,
+        7.25,
+        3.0
+      ]
+    },
+    {
+      "id": "COL_RC_R02_PROB_INTERNA_P02_MARCO",
+      "source": "RC_R02_PROB_INTERNA_P02_MARCO",
+      "group": "R02_PROB",
+      "kind": "wall",
+      "min": [
+        18.870001,
+        7.9325,
+        0.0
+      ],
+      "max": [
+        19.030001,
+        7.9675,
+        2.1
+      ]
+    },
+    {
+      "id": "COL_RC_R02_PROB_INTERNA_P02_MARCO.001",
+      "source": "RC_R02_PROB_INTERNA_P02_MARCO.001",
+      "group": "R02_PROB",
+      "kind": "wall",
+      "min": [
+        18.870001,
+        9.1325,
+        0.0
+      ],
+      "max": [
+        19.030001,
+        9.1675,
+        2.1
+      ]
+    },
+    {
+      "id": "COL_RC_R03_PROB_R03_CORR_DIVISORIA_1",
+      "source": "RC_R03_PROB_R03_CORR_DIVISORIA_1",
+      "group": "R03_PROB",
+      "kind": "wall",
+      "min": [
+        6.15,
+        7.1,
+        0.0
+      ],
+      "max": [
+        8.75,
+        7.25,
+        3.0
+      ]
+    },
+    {
+      "id": "COL_RC_R03_PROB_R03_CORR_F049_assento",
+      "source": "RC_R03_PROB_R03_CORR_F049_assento",
+      "group": "R03_PROB",
+      "kind": "furniture",
+      "min": [
+        6.461,
+        6.134521,
+        0.436
+      ],
+      "max": [
+        6.939,
+        6.76548,
+        0.459
+      ]
+    },
+    {
+      "id": "COL_RC_R03_PROB_R03_CORR_F049_bacia",
+      "source": "RC_R03_PROB_R03_CORR_F049_bacia",
+      "group": "R03_PROB",
+      "kind": "furniture",
+      "min": [
+        6.47,
+        6.1441,
+        0.2
+      ],
+      "max": [
+        6.93,
+        6.7559,
+        0.435
+      ]
+    },
+    {
+      "id": "COL_RC_R03_PROB_R03_CORR_F049_pedestal",
+      "source": "RC_R03_PROB_R03_CORR_F049_pedestal",
+      "group": "R03_PROB",
+      "kind": "furniture",
+      "min": [
+        6.505,
+        6.2065,
+        0.02
+      ],
+      "max": [
+        6.895,
+        6.7135,
+        0.39
+      ]
+    },
+    {
+      "id": "COL_RC_R03_PROB_R03_CORR_F050_louvca_cuba",
+      "source": "RC_R03_PROB_R03_CORR_F050_louvca_cuba",
+      "group": "R03_PROB",
+      "kind": "furniture",
+      "min": [
+        7.226,
+        6.62379,
+        0.67
+      ],
+      "max": [
+        7.724,
+        7.01721,
+        0.8
+      ]
+    },
+    {
+      "id": "COL_T01_MARCO",
+      "source": "T01_MARCO",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        15.995001,
+        6.2825,
+        0.9
+      ],
+      "max": [
+        16.155001,
+        6.3175,
+        1.5
+      ]
+    },
+    {
+      "id": "COL_T01_MARCO.001",
+      "source": "T01_MARCO.001",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        15.995001,
+        6.8825,
+        0.9
+      ],
+      "max": [
+        16.155001,
+        6.9175,
+        1.5
+      ]
+    },
+    {
+      "id": "COL_VASO",
+      "source": "VASO",
+      "group": "COMMON_A01",
+      "kind": "furniture",
+      "min": [
+        5.5,
+        6.64,
+        0.0
+      ],
+      "max": [
+        5.82,
+        6.96,
+        0.3526
+      ]
+    },
+    {
+      "id": "COL_W01_S001",
+      "source": "W01_S001",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "max": [
+        1.55,
+        0.2,
+        3.0
+      ]
+    },
+    {
+      "id": "COL_W01_S002",
+      "source": "W01_S002",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        1.55,
+        0.0,
+        0.0
+      ],
+      "max": [
+        2.75,
+        0.2,
+        1.1
+      ]
+    },
+    {
+      "id": "COL_W01_S004",
+      "source": "W01_S004",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        2.75,
+        0.0,
+        0.0
+      ],
+      "max": [
+        7.55,
+        0.2,
+        3.0
+      ]
+    },
+    {
+      "id": "COL_W01_S005",
+      "source": "W01_S005",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        7.55,
+        0.0,
+        0.0
+      ],
+      "max": [
+        8.3,
+        0.2,
+        1.65
+      ]
+    },
+    {
+      "id": "COL_W01_S007",
+      "source": "W01_S007",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        8.3,
+        0.0,
+        0.0
+      ],
+      "max": [
+        10.349999,
+        0.2,
+        3.0
+      ]
+    },
+    {
+      "id": "COL_W01_S008",
+      "source": "W01_S008",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        10.35,
+        0.0,
+        0.0
+      ],
+      "max": [
+        11.1,
+        0.2,
+        1.65
+      ]
+    },
+    {
+      "id": "COL_W01_S010",
+      "source": "W01_S010",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        11.1,
+        0.0,
+        0.0
+      ],
+      "max": [
+        14.25,
+        0.2,
+        3.0
+      ]
+    },
+    {
+      "id": "COL_W01_S011",
+      "source": "W01_S011",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        14.25,
+        0.0,
+        0.0
+      ],
+      "max": [
+        15.25,
+        0.2,
+        1.2
+      ]
+    },
+    {
+      "id": "COL_W01_S013",
+      "source": "W01_S013",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        15.25,
+        0.0,
+        0.0
+      ],
+      "max": [
+        17.200001,
+        0.2,
+        3.0
+      ]
+    },
+    {
+      "id": "COL_W01_S015",
+      "source": "W01_S015",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        18.1,
+        0.0,
+        0.0
+      ],
+      "max": [
+        18.65,
+        0.2,
+        3.0
+      ]
+    },
+    {
+      "id": "COL_W01_S017",
+      "source": "W01_S017",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        19.549999,
+        0.0,
+        0.0
+      ],
+      "max": [
+        20.0,
+        0.2,
+        3.0
+      ]
+    },
+    {
+      "id": "COL_W02_S018",
+      "source": "W02_S018",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        0.0,
+        14.799999,
+        0.0
+      ],
+      "max": [
+        1.0,
+        15.0,
+        3.0
+      ]
+    },
+    {
+      "id": "COL_W02_S019",
+      "source": "W02_S019",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        1.0,
+        14.799999,
+        0.0
+      ],
+      "max": [
+        3.1,
+        15.0,
+        1.1
+      ]
+    },
+    {
+      "id": "COL_W02_S021",
+      "source": "W02_S021",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        3.1,
+        14.799999,
+        0.0
+      ],
+      "max": [
+        5.95,
+        15.0,
+        3.0
+      ]
+    },
+    {
+      "id": "COL_W02_S022",
+      "source": "W02_S022",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        5.95,
+        14.799999,
+        0.0
+      ],
+      "max": [
+        8.05,
+        15.0,
+        1.1
+      ]
+    },
+    {
+      "id": "COL_W02_S024",
+      "source": "W02_S024",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        8.05,
+        14.799999,
+        0.0
+      ],
+      "max": [
+        10.900001,
+        15.0,
+        3.0
+      ]
+    },
+    {
+      "id": "COL_W02_S025",
+      "source": "W02_S025",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        10.9,
+        14.799999,
+        0.0
+      ],
+      "max": [
+        13.0,
+        15.0,
+        1.1
+      ]
+    },
+    {
+      "id": "COL_W02_S027",
+      "source": "W02_S027",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        13.0,
+        14.799999,
+        0.0
+      ],
+      "max": [
+        15.85,
+        15.0,
+        3.0
+      ]
+    },
+    {
+      "id": "COL_W02_S028",
+      "source": "W02_S028",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        15.849999,
+        14.799999,
+        0.0
+      ],
+      "max": [
+        17.949999,
+        15.0,
+        1.1
+      ]
+    },
+    {
+      "id": "COL_W02_S030",
+      "source": "W02_S030",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        17.950001,
+        14.799999,
+        0.0
+      ],
+      "max": [
+        20.0,
+        15.0,
+        3.0
+      ]
+    },
+    {
+      "id": "COL_W03_S031",
+      "source": "W03_S031",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        0.0,
+        0.2,
+        0.0
+      ],
+      "max": [
+        0.2,
+        4.1,
+        3.0
+      ]
+    },
+    {
+      "id": "COL_W03_S033",
+      "source": "W03_S033",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        0.0,
+        5.9,
+        0.0
+      ],
+      "max": [
+        0.2,
+        6.1,
+        3.0
+      ]
+    },
+    {
+      "id": "COL_W03_S034",
+      "source": "W03_S034",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        0.0,
+        6.1,
+        0.0
+      ],
+      "max": [
+        0.2,
+        6.85,
+        1.1
+      ]
+    },
+    {
+      "id": "COL_W03_S036",
+      "source": "W03_S036",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        0.0,
+        6.85,
+        0.0
+      ],
+      "max": [
+        0.2,
+        14.799999,
+        3.0
+      ]
+    },
+    {
+      "id": "COL_W04_S037",
+      "source": "W04_S037",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        19.799999,
+        0.2,
+        0.0
+      ],
+      "max": [
+        20.0,
+        5.85,
+        3.0
+      ]
+    },
+    {
+      "id": "COL_W04_S038",
+      "source": "W04_S038",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        19.799999,
+        5.85,
+        0.0
+      ],
+      "max": [
+        20.0,
+        6.65,
+        1.3
+      ]
+    },
+    {
+      "id": "COL_W04_S040",
+      "source": "W04_S040",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        19.799999,
+        6.65,
+        0.0
+      ],
+      "max": [
+        20.0,
+        7.65,
+        3.0
+      ]
+    },
+    {
+      "id": "COL_W04_S042",
+      "source": "W04_S042",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        19.799999,
+        8.85,
+        0.0
+      ],
+      "max": [
+        20.0,
+        14.799999,
+        3.0
+      ]
+    },
+    {
+      "id": "COL_W05_S043",
+      "source": "W05_S043",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        0.2,
+        9.25,
+        0.0
+      ],
+      "max": [
+        1.0,
+        9.4,
+        3.0
+      ]
+    },
+    {
+      "id": "COL_W05_S047",
+      "source": "W05_S047",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        7.15,
+        9.25,
+        0.0
+      ],
+      "max": [
+        10.9,
+        9.4,
+        3.0
+      ]
+    },
+    {
+      "id": "COL_W05_S049",
+      "source": "W05_S049",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        12.1,
+        9.25,
+        0.0
+      ],
+      "max": [
+        15.85,
+        9.4,
+        3.0
+      ]
+    },
+    {
+      "id": "COL_W05_S051",
+      "source": "W05_S051",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        17.049999,
+        9.25,
+        0.0
+      ],
+      "max": [
+        19.799999,
+        9.4,
+        3.0
+      ]
+    },
+    {
+      "id": "COL_W06_S052",
+      "source": "W06_S052",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        0.2,
+        7.1,
+        0.0
+      ],
+      "max": [
+        3.8,
+        7.25,
+        3.0
+      ]
+    },
+    {
+      "id": "COL_W07_S057",
+      "source": "W07_S057",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        5.0,
+        9.400001,
+        0.0
+      ],
+      "max": [
+        5.15,
+        14.8,
+        3.0
+      ]
+    },
+    {
+      "id": "COL_W08_S058",
+      "source": "W08_S058",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        9.95,
+        9.400001,
+        0.0
+      ],
+      "max": [
+        10.099999,
+        14.8,
+        3.0
+      ]
+    },
+    {
+      "id": "COL_W09_S059",
+      "source": "W09_S059",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        14.900001,
+        9.400001,
+        0.0
+      ],
+      "max": [
+        15.05,
+        14.8,
+        3.0
+      ]
+    },
+    {
+      "id": "COL_W10_S060",
+      "source": "W10_S060",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        6.0,
+        0.2,
+        0.0
+      ],
+      "max": [
+        6.15,
+        2.6,
+        3.0
+      ]
+    },
+    {
+      "id": "COL_W10_S062",
+      "source": "W10_S062",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        6.0,
+        4.1,
+        0.0
+      ],
+      "max": [
+        6.15,
+        7.1,
+        3.0
+      ]
+    },
+    {
+      "id": "COL_W11_S063",
+      "source": "W11_S063",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        11.5,
+        0.2,
+        0.0
+      ],
+      "max": [
+        11.65,
+        2.8,
+        3.0
+      ]
+    },
+    {
+      "id": "COL_W11_S065",
+      "source": "W11_S065",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        11.5,
+        3.9,
+        0.0
+      ],
+      "max": [
+        11.65,
+        7.1,
+        3.0
+      ]
+    },
+    {
+      "id": "COL_W12_S066",
+      "source": "W12_S066",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        13.150001,
+        0.2,
+        0.0
+      ],
+      "max": [
+        13.3,
+        3.0,
+        3.0
+      ]
+    },
+    {
+      "id": "COL_W13_S069",
+      "source": "W13_S069",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        0.2,
+        2.6,
+        0.0
+      ],
+      "max": [
+        0.55,
+        2.75,
+        3.0
+      ]
+    },
+    {
+      "id": "COL_W13_S071",
+      "source": "W13_S071",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        1.45,
+        2.6,
+        0.0
+      ],
+      "max": [
+        3.55,
+        2.75,
+        3.0
+      ]
+    },
+    {
+      "id": "COL_W13_S073",
+      "source": "W13_S073",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        4.45,
+        2.6,
+        0.0
+      ],
+      "max": [
+        6.0,
+        2.75,
+        3.0
+      ]
+    },
+    {
+      "id": "COL_W14_S074",
+      "source": "W14_S074",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        3.1,
+        0.2,
+        0.0
+      ],
+      "max": [
+        3.25,
+        2.6,
+        3.0
+      ]
+    },
+    {
+      "id": "COL_W15_S075",
+      "source": "W15_S075",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        6.15,
+        2.45,
+        0.0
+      ],
+      "max": [
+        6.55,
+        2.6,
+        3.0
+      ]
+    },
+    {
+      "id": "COL_W15_S077",
+      "source": "W15_S077",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        7.45,
+        2.45,
+        0.0
+      ],
+      "max": [
+        9.349999,
+        2.6,
+        3.0
+      ]
+    },
+    {
+      "id": "COL_W15_S079",
+      "source": "W15_S079",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        10.25,
+        2.45,
+        0.0
+      ],
+      "max": [
+        11.5,
+        2.6,
+        3.0
+      ]
+    },
+    {
+      "id": "COL_W16_S080",
+      "source": "W16_S080",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        6.15,
+        4.1,
+        0.0
+      ],
+      "max": [
+        6.5,
+        4.25,
+        3.0
+      ]
+    },
+    {
+      "id": "COL_W16_S082",
+      "source": "W16_S082",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        7.6,
+        4.1,
+        0.0
+      ],
+      "max": [
+        9.35,
+        4.25,
+        3.0
+      ]
+    },
+    {
+      "id": "COL_W16_S084",
+      "source": "W16_S084",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        10.25,
+        4.1,
+        0.0
+      ],
+      "max": [
+        11.5,
+        4.25,
+        3.0
+      ]
+    },
+    {
+      "id": "COL_W17_S085",
+      "source": "W17_S085",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        8.75,
+        0.2,
+        0.0
+      ],
+      "max": [
+        8.9,
+        2.45,
+        3.0
+      ]
+    },
+    {
+      "id": "COL_W18_S086",
+      "source": "W18_S086",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        8.75,
+        4.25,
+        0.0
+      ],
+      "max": [
+        8.9,
+        7.1,
+        3.0
+      ]
+    },
+    {
+      "id": "COL_W19_S087",
+      "source": "W19_S087",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        13.3,
+        2.85,
+        0.0
+      ],
+      "max": [
+        13.650001,
+        3.0,
+        3.0
+      ]
+    },
+    {
+      "id": "COL_W19_S089",
+      "source": "W19_S089",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        14.55,
+        2.85,
+        0.0
+      ],
+      "max": [
+        15.87,
+        3.0,
+        3.0
+      ]
+    },
+    {
+      "id": "COL_W19_S091",
+      "source": "W19_S091",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        16.77,
+        2.85,
+        0.0
+      ],
+      "max": [
+        19.799999,
+        3.0,
+        3.0
+      ]
+    },
+    {
+      "id": "COL_W20_S092",
+      "source": "W20_S092",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        13.3,
+        4.5,
+        0.0
+      ],
+      "max": [
+        13.650001,
+        4.65,
+        3.0
+      ]
+    },
+    {
+      "id": "COL_W20_S094",
+      "source": "W20_S094",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        14.55,
+        4.5,
+        0.0
+      ],
+      "max": [
+        16.549999,
+        4.65,
+        3.0
+      ]
+    },
+    {
+      "id": "COL_W20_S096",
+      "source": "W20_S096",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        17.450001,
+        4.5,
+        0.0
+      ],
+      "max": [
+        19.799999,
+        4.65,
+        3.0
+      ]
+    },
+    {
+      "id": "COL_W21_S097",
+      "source": "W21_S097",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        16.0,
+        4.65,
+        0.0
+      ],
+      "max": [
+        16.150002,
+        6.3,
+        3.0
+      ]
+    },
+    {
+      "id": "COL_W21_S098",
+      "source": "W21_S098",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        16.0,
+        6.3,
+        0.0
+      ],
+      "max": [
+        16.150002,
+        6.9,
+        0.9
+      ]
+    },
+    {
+      "id": "COL_W21_S099",
+      "source": "W21_S099",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        16.0,
+        6.3,
+        1.5
+      ],
+      "max": [
+        16.150002,
+        6.9,
+        3.0
+      ]
+    },
+    {
+      "id": "COL_W21_S100",
+      "source": "W21_S100",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        16.0,
+        6.9,
+        0.0
+      ],
+      "max": [
+        16.150002,
+        7.1,
+        3.0
+      ]
+    },
+    {
+      "id": "COL_W22_S101",
+      "source": "W22_S101",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        15.6,
+        0.2,
+        0.0
+      ],
+      "max": [
+        15.75,
+        2.85,
+        3.0
+      ]
+    },
+    {
+      "id": "COL_W23_S102",
+      "source": "W23_S102",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        16.949999,
+        0.2,
+        0.0
+      ],
+      "max": [
+        17.1,
+        2.85,
+        3.0
+      ]
+    },
+    {
+      "id": "COL_W24_S103",
+      "source": "W24_S103",
+      "group": "COMMON_EXTERIOR",
+      "kind": "wall",
+      "min": [
+        18.299999,
+        0.2,
+        0.0
+      ],
+      "max": [
+        18.450001,
+        2.85,
+        3.0
+      ]
+    },
+    {
+      "id": "COL_R03_CORR_DIVISORIA_1",
+      "source": "R03_CORR_DIVISORIA_1",
+      "group": "R03_CORR",
+      "kind": "wall",
+      "min": [
+        6.15,
+        7.1,
+        0.0
+      ],
+      "max": [
+        8.75,
+        7.25,
+        3.0
+      ]
+    },
+    {
+      "id": "COL_R03_CORR_F049_assento",
+      "source": "R03_CORR_F049_assento",
+      "group": "R03_CORR",
+      "kind": "furniture",
+      "min": [
+        6.461,
+        6.134521,
+        0.436
+      ],
+      "max": [
+        6.939,
+        6.76548,
+        0.459
+      ]
+    },
+    {
+      "id": "COL_R03_CORR_F049_bacia",
+      "source": "R03_CORR_F049_bacia",
+      "group": "R03_CORR",
+      "kind": "furniture",
+      "min": [
+        6.47,
+        6.1441,
+        0.2
+      ],
+      "max": [
+        6.93,
+        6.7559,
+        0.435
+      ]
+    },
+    {
+      "id": "COL_R03_CORR_F049_pedestal",
+      "source": "R03_CORR_F049_pedestal",
+      "group": "R03_CORR",
+      "kind": "furniture",
+      "min": [
+        6.505,
+        6.2065,
+        0.02
+      ],
+      "max": [
+        6.895,
+        6.7135,
+        0.39
+      ]
+    },
+    {
+      "id": "COL_R03_CORR_F050_louvca_cuba",
+      "source": "R03_CORR_F050_louvca_cuba",
+      "group": "R03_CORR",
+      "kind": "furniture",
+      "min": [
+        8.076,
+        6.62379,
+        0.67
+      ],
+      "max": [
+        8.573999,
+        7.01721,
+        0.8
+      ]
+    },
+    {
+      "id": "COL_R04_CORR_FECHAMENTO_LATERAL",
+      "source": "R04_CORR_FECHAMENTO_LATERAL",
+      "group": "R04_CORR",
+      "kind": "wall",
+      "min": [
+        2.5,
+        14.799999,
+        1.1
+      ],
+      "max": [
+        3.1,
+        15.0,
+        2.4
+      ]
+    },
+    {
+      "id": "COL_R04_CORR_J01_MARCO",
+      "source": "R04_CORR_J01_MARCO",
+      "group": "R04_CORR",
+      "kind": "wall",
+      "min": [
+        0.9875,
+        14.82,
+        1.1
+      ],
+      "max": [
+        1.0125,
+        14.98,
+        2.4
+      ]
+    },
+    {
+      "id": "COL_R04_CORR_J01_MARCO.001",
+      "source": "R04_CORR_J01_MARCO.001",
+      "group": "R04_CORR",
+      "kind": "wall",
+      "min": [
+        2.4875,
+        14.82,
+        1.1
+      ],
+      "max": [
+        2.5125,
+        14.98,
+        2.4
+      ]
+    },
+    {
+      "id": "COL_RC_R01_CORR_P10_MARCO",
+      "source": "RC_R01_CORR_P10_MARCO",
+      "group": "R01_CORR",
+      "kind": "wall",
+      "min": [
+        11.7825,
+        7.095,
+        0.0
+      ],
+      "max": [
+        11.8175,
+        7.255,
+        2.1
+      ]
+    },
+    {
+      "id": "COL_RC_R01_CORR_P10_MARCO.001",
+      "source": "RC_R01_CORR_P10_MARCO.001",
+      "group": "R01_CORR",
+      "kind": "wall",
+      "min": [
+        12.9825,
+        7.095,
+        0.0
+      ],
+      "max": [
+        13.0175,
+        7.255,
+        2.1
+      ]
+    },
+    {
+      "id": "COL_RC_R02_CORR_INTERNA_P02_MARCO",
+      "source": "RC_R02_CORR_INTERNA_P02_MARCO",
+      "group": "R02_CORR",
+      "kind": "wall",
+      "min": [
+        18.32,
+        7.6325,
+        0.0
+      ],
+      "max": [
+        18.48,
+        7.6675,
+        2.1
+      ]
+    },
+    {
+      "id": "COL_RC_R02_CORR_INTERNA_P02_MARCO.001",
+      "source": "RC_R02_CORR_INTERNA_P02_MARCO.001",
+      "group": "R02_CORR",
+      "kind": "wall",
+      "min": [
+        18.32,
+        8.8325,
+        0.0
+      ],
+      "max": [
+        18.48,
+        8.8675,
+        2.1
+      ]
+    }
+  ]
+}

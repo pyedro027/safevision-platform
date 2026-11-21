@@ -1,0 +1,13 @@
+.env
+.env.*
+!.env.example
+node_modules/
+.vercel/
+.openai/
+__pycache__/
+*.blend
+*.blend1
+*.glb
+*.zip
+*.tar.gz
+*.log

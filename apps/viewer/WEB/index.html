@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Clínica ÁUREA · SAFEVISION 3D</title><link rel="icon" href="data:,"><link rel="stylesheet" href="tour.css"><link rel="stylesheet" href="inspection.css"></head>
+<body>
+<canvas id="tour" tabindex="0" aria-label="Exploração tridimensional da Clínica ÁUREA"></canvas>
+<div id="markers" hidden></div>
+<header id="hud" hidden>
+ <a class="brand" href="#" id="brandHome" aria-label="Abrir menu"><span class="brand-symbol">S<span>3D</span></span><span>SAFEVISION <b>3D</b><small>CLÍNICA ÁUREA <i>· V03</i></small></span></a>
+ <div class="place"><span class="live-dot"></span><span id="roomName">Recepção e espera</span><small id="stateLabel">Geometria original</small></div>
+ <nav aria-label="Ferramentas do tour"><button id="roomsButton">Ambientes</button><button id="risksButton">Riscos · R <span class="count">5</span></button><button id="cleanButton" title="Alternar identificação digital sem alterar os estados · C">Arquitetura limpa</button><button id="homeButton" title="Retornar à recepção">Recepção</button><button id="pauseButton" class="menu-button" aria-label="Pausar exploração">Ⅱ</button></nav>
+ <nav id="riskQuickList" aria-label="Localizar riscos R01 a R05" hidden></nav>
+</header>
+<div id="entry" class="screen"><section class="welcome card">
+ <div class="eyebrow">SAFEVISION 3D <span>PROJETO INTEGRADOR · DEMONSTRAÇÃO V03</span></div>
+ <div class="entry-rule"></div><p class="caption">EXPLORAÇÃO ARQUITETÔNICA</p><h1>Entre na<br>Clínica <em>ÁUREA.</em></h1>
+ <p class="intro">Percorra o projeto e explore os pontos de inspeção antes da construção.</p>
+ <div class="facts"><span><b>21</b> setores</span><span><b>05</b> casos documentados</span><span><b>V03</b> modelo oficial</span></div>
+ <div class="progress"><div id="progressFill"></div></div><p id="loadMessage" class="loading" aria-live="polite">Preparando o ambiente 3D…</p>
+ <button id="startButton" class="primary start" disabled>Iniciar exploração <span>↗</span></button>
+ <div class="entry-controls"><span><kbd>W A S D</kbd> caminhar</span><span><kbd>Mouse</kbd> olhar</span><span><kbd>E</kbd> interagir</span><span><kbd>Esc</kbd> pausar</span></div>
+ <p class="fine">Protótipo demonstrativo. Casos previamente identificados; propostas conceituais sujeitas à validação técnica.</p>
+</section><div class="entry-credit">CLÍNICA ÁUREA <span>Odontologia & estética</span></div></div>
+<aside id="roomsPanel" class="drawer left" hidden aria-label="Ambientes"><div class="drawer-head"><div><p class="caption">EXPLORAR O PROJETO</p><h2>Ambientes</h2></div><button class="icon close-panel" aria-label="Fechar ambientes">×</button></div><p class="subtle">Selecione um ponto livre para iniciar a visita.</p><div id="roomList" class="room-list"></div></aside>
+<aside id="riskPanel" class="drawer right" hidden aria-label="Ficha de inspeção">
+ <div class="drawer-head"><div><p class="caption">INSPEÇÃO DE PROJETO</p><h2>Casos documentados</h2></div><button class="icon close-panel" aria-label="Fechar inspeção">×</button></div>
+ <div id="riskTabs" class="risk-tabs"></div><div id="riskContent"></div>
+</aside>
+<div id="pause" class="screen shade" hidden><section class="pause-card card"><p class="caption">CLÍNICA ÁUREA · V03</p><h2>Exploração pausada</h2><p class="subtle">Continue de onde parou ou escolha um novo ponto.</p><button id="resumeButton" class="primary">Retomar exploração</button><button id="pauseHome" class="secondary">Retornar à recepção</button><button id="pauseRooms" class="secondary">Escolher ambiente</button><button id="pauseRisks" class="secondary">Inspecionar riscos</button><button id="pauseClean" class="secondary">Arquitetura limpa</button>
+ <details id="settings"><summary>Configurações e controles</summary><label>Velocidade <output id="speedValue">1,35 m/s</output><input id="speed" type="range" min="0.6" max="2" step="0.05" value="1.35"></label><label>Sensibilidade do mouse <output id="sensitivityValue">1,00×</output><input id="sensitivity" type="range" min="0.25" max="2" step="0.05" value="1"></label><label class="check"><input id="invertY" type="checkbox"> Inverter eixo vertical</label><label>Qualidade visual<select id="quality"><option value="low" selected>Desempenho</option><option value="balanced">Equilibrado</option><option value="high">Nitidez</option></select></label><label class="check"><input id="markersCheck" type="checkbox" checked> Exibir marcadores de inspeção</label><label class="check"><input id="metricsCheck" type="checkbox"> Mostrar desempenho</label><p class="fine">WASD: caminhar. Mouse: olhar. E: risco próximo ou porta. F: porta quando também há risco. R: lista de riscos. C: arquitetura limpa. Tab: liberar cursor para os botões e retomar. Esc: pausa. Se o cursor não ficar preso, segure e arraste sobre a imagem. As setas também controlam o olhar.</p></details>
+ <button id="exitButton" class="text-button">Sair para a tela inicial</button></section></div>
+<div id="bottom" hidden><div class="nav-hint"><kbd>W A S D</kbd> caminhar <span id="mouseHint">mouse para olhar</span> <kbd>Tab</kbd> cursor · <kbd>R</kbd> riscos · <kbd>C</kbd> marcações · <kbd>Esc</kbd> menu</div><div class="context-actions"><button id="nearbyButton" hidden></button><button id="doorButton" hidden></button></div><div id="metrics" hidden></div></div>
+<div id="toast" role="status" hidden></div><div id="technicalLabel" hidden>R05 · vista técnica do entre-forro <span>Ocultação temporária de cobertura para inspeção</span></div>
+<script src="loading-guard.js"></script><script src="vendor/babylon.js"></script><script src="vendor/babylonjs.loaders.min.js"></script><script type="module" src="tour.js"></script>
+</body></html>
