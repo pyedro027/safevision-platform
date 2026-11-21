@@ -16,3 +16,5 @@ O GLB monolítico excede o limite por arquivo de 50 MB do Storage Free. Para pro
 - [Compilação e sites estáticos na Vercel](https://vercel.com/docs/builds)
 - [Limites de upload do Supabase Storage](https://supabase.com/docs/guides/storage/uploads/file-limits)
 - [Controle de acesso do Supabase Storage](https://supabase.com/docs/guides/storage/security/access-control)
+
+Para concluir a homologação XR, testar controles físicos, conforto, desempenho e painel em HTTPS no Meta Quest 2. Registrar a versão do navegador e a escala XR usada.

@@ -15,3 +15,7 @@ Aplicação estática em HTML, CSS e JavaScript ES Modules. O Babylon.js 9.30.0 
 O visualizador valida SHA-256 de cada segmento e reúne os bytes em um Blob GLB temporário. O manifesto, os segmentos, as fichas e o HDR usam caminhos relativos. Os estados PROB e CORR ligam e desligam grupos e colisores associados. A edição futura da geometria deve ocorrer em uma cópia do Blender e ter revisão explícita de navegação e dos cinco riscos.
 
 O PR de preparação #1 descreve uma arquitetura futura. A importação parte de main e registra a arquitetura existente em paralelo. Antes de combinar os PRs, conciliar README, .gitignore, ARQUITETURA, ROADMAP e IMPORTAR_VERSAO_C em revisão própria.
+
+## Direção da Platform V1
+
+O planejamento do PR #1 separa portal, identidade, projetos e arquivos privados. O visualizador continua como módulo estático. Auth, autorização por proprietário e Storage privado serão desenvolvidos em ambiente de desenvolvimento. A prévia deve ficar separada da publicação estável da C.
