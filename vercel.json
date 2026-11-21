@@ -6,7 +6,8 @@
   "outputDirectory": "dist",
   "git": {
     "deploymentEnabled": {
-      "integration/auth-preview-e2e": false
+      "integration/auth-preview-e2e": false,
+      "feature/safevision-studio-demo": false
     }
   }
 }

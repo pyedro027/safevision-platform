@@ -1,0 +1,222 @@
+.hero .studio-link {
+  background: transparent;
+  border-color: #81a597;
+  color: #f0f7e9;
+}
+.studio {
+  position: relative;
+}
+.studio-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) minmax(0, .88fr);
+  gap: 20px;
+  align-items: start;
+}
+.studio-card, .studio-demo {
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--white);
+  overflow: hidden;
+}
+.studio-card, .studio-demo-copy {
+  padding: clamp(19px, 3.2vw, 32px);
+}
+.studio-card h2, .studio-demo h2 {
+  font-size: clamp(1.25rem, 2vw, 1.65rem);
+  line-height: 1.2;
+}
+.studio-drop {
+  display: grid;
+  place-content: center;
+  min-height: 132px;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  background: #f1f7ee;
+  border: 1px dashed #739387;
+  border-radius: 10px;
+  color: #174539;
+  cursor: pointer;
+  transition: background-color .16s;
+}
+.studio-drop:hover, .studio-drop.studio-dragging {
+  background: #e3f1db;
+}
+.studio-drop:focus-within {
+  outline: 3px solid #2c815f;
+  outline-offset: 3px;
+}
+.studio-drop input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  height: 100%;
+  margin: 0;
+  cursor: pointer;
+}
+.studio-file-prompt, .studio-files small {
+  font-size: .84rem;
+  font-weight: 400;
+}
+.studio-expected {
+  color: var(--action);
+  margin-bottom: 16px;
+  font-size: .88rem;
+}
+.studio-expected summary {
+  cursor: pointer;
+  width: fit-content;
+}
+.studio-expected ul {
+  padding-inline-start: 20px;
+  overflow-wrap: anywhere;
+}
+.studio-files, .studio-cases {
+  list-style: none;
+  padding: 0;
+}
+.studio-files {
+  margin: 0;
+}
+.studio-files li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  border-top: 1px solid var(--line);
+  overflow-wrap: anywhere;
+}
+.studio-files small {
+  display: block;
+  color: var(--muted);
+}
+.studio-feedback, .studio-load-status {
+  padding: 11px 14px;
+  border-radius: 8px;
+  background: #f0f5ef;
+  color: #204436;
+  margin: 12px 0;
+}
+.studio-import button:disabled {
+  cursor: default;
+}
+.studio-demo {
+  background: var(--green);
+  color: #f6fbf3;
+}
+.studio-demo img, .studio-result img {
+  width: 100%;
+  display: block;
+  aspect-ratio: 16/10;
+  object-fit: cover;
+}
+.studio-demo p {
+  color: #d9e9dd;
+}
+.studio-demo button {
+  background: var(--accent);
+  color: var(--green);
+}
+.studio-progress {
+  max-width: 720px;
+}
+.studio-progress progress {
+  width: 100%;
+  height: 12px;
+  accent-color: var(--action);
+}
+.studio-steps {
+  margin-top: 17px;
+  padding-inline-start: 26px;
+  color: var(--muted);
+}
+.studio-steps li {
+  padding: 9px 0 9px 5px;
+  border-bottom: 1px solid var(--line);
+}
+.studio-steps li[data-complete="true"] {
+  color: var(--green);
+}
+.studio-steps li[data-complete="true"]::marker {
+  content: '✓ ';
+  color: var(--action);
+}
+.studio-steps li[aria-current="step"] {
+  color: var(--ink);
+  font-weight: 700;
+}
+.studio-result-top {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, .75fr);
+  align-items: center;
+  gap: clamp(18px, 3vw, 32px);
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 22px;
+  margin-bottom: 19px;
+}
+.studio-result img {
+  border-radius: 10px;
+}
+.studio-cases {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 0;
+}
+.studio-cases button {
+  gap: 7px;
+  text-align: start;
+}
+.studio-cases strong {
+  color: #26493a;
+}
+.studio-error [role="alert"] {
+  color: #7f2a20;
+  overflow-wrap: anywhere;
+}
+.studio-viewer {
+  position: absolute;
+  inset: 0 0 auto;
+  visibility: hidden;
+  width: 100%;
+  pointer-events: none;
+}
+.studio-viewer-live {
+  position: static;
+  visibility: visible;
+  pointer-events: auto;
+}
+.studio-viewer-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 8px;
+  border: 1px solid var(--line);
+  border-radius: 11px 11px 0 0;
+  background: var(--white);
+}
+.studio-frame iframe {
+  display: block;
+  width: 100%;
+  height: clamp(470px, 73vh, 780px);
+  border: 0;
+  border-radius: 0 0 11px 11px;
+  background: #153b32;
+}
+@media (max-width: 800px) {
+  .studio-grid, .studio-result-top {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .studio-demo img, .studio-result img {
+    max-height: 230px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .studio-drop {
+    transition: none;
+  }
+}
