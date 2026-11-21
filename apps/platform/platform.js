@@ -10,6 +10,14 @@ const state = {
 };
 let messageTimer;
 
+// The SDK only emits PASSWORD_RECOVERY after a successful PKCE exchange.
+// Open the recovery screen even if there is no verifier in this browser.
+if (state.accountMode === 'recovery') {
+  const url = new URL(location.href);
+  url.hash = 'conta';
+  history.replaceState(null, '', url);
+}
+
 function escape(value) {
   return String(value ?? '').replace(/[&<>"']/g, char => ({
     '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
@@ -122,7 +130,10 @@ async function loadWorkspace() {
   const user = state.session?.user.id;
   if (!user) return;
   state.phase = 'loading';
-  render();
+  const renderWorkspace = () => {
+    if (state.accountMode !== 'recovery' || location.hash !== '#conta') render();
+  };
+  renderWorkspace();
   try {
     const [projects, profile] = await Promise.all([
       state.client.from('projects').select('id,title,description,updated_at').order('updated_at', { ascending: false }).order('id'),
@@ -138,7 +149,7 @@ async function loadWorkspace() {
     state.profile = null;
     state.phase = 'error';
   }
-  render();
+  renderWorkspace();
 }
 
 function sessionChanged(event, session) {
@@ -161,7 +172,9 @@ function sessionChanged(event, session) {
 
 function recoveryReturn() {
   const url = new URL(location.href);
-  url.searchParams.delete('recuperar');
+  for (const field of ['recuperar', 'code', 'error', 'error_code', 'error_description']) {
+    url.searchParams.delete(field);
+  }
   url.hash = 'conta';
   history.replaceState(null, '', url);
   state.accountMode = 'login';

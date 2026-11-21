@@ -21,3 +21,5 @@ Para modelos próprios futuros, a coluna opcional `model_object_key` reserva a r
 - [Limites de Storage](https://supabase.com/docs/guides/storage/uploads/file-limits)
 - [Supabase local](https://supabase.com/docs/guides/local-development)
 - [Cobrança de branches](https://supabase.com/docs/guides/platform/manage-your-usage/branching)
+
+O [plano da Missão 07](PLANO_AUTH_PREVIEW_07.md) especifica os dois retornos propostos e o ensaio remoto. O cadastro e a confirmação obrigatória foram verificados no endpoint público `/auth/v1/settings`. Ainda é necessário entrar no painel administrativo e conferir a lista atual de retornos, Site URL, templates, SMTP e limites antes de salvar qualquer alteração.

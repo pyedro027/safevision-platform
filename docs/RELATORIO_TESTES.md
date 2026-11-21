@@ -38,3 +38,7 @@ Em 21/11/2026, a [prévia protegida](https://safevision-platform-4y8u5a0md-pyedr
 Os sete binários baixados por HTTPS tiveram HTTP 200, tamanhos e hashes individuais esperados. A concatenação recompôs 113.018.368 bytes com o SHA-256 original. O navegador indicou contexto seguro. O carregamento medido pelo visualizador foi de aproximadamente 8,8 s nesta rodada, sem garantia de desempenho para outras redes ou para o Quest 2. [Evidência](qa-vercel-preview.json)
 
 O dashboard recebeu configuração Supabase vazia. Auth remoto, CRUD remoto, e-mails e headset continuam pendentes. O ensaio RLS foi repetido localmente e passou. A inspeção do Supabase remoto foi somente de leitura.
+
+## Missão 07 — PKCE no navegador local
+
+`tests/platform_browser.py` usa Chrome, Playwright e o SDK Supabase do projeto. Com API simulada, conferiu URL exata de retorno, desafios S256, a troca com verificador correspondente, a recusa em outro perfil sem verificador e o formulário de senha. Também conferiu credenciais inválidas, sessão após reload, perfil, CRUD, histórico, logout e responsividade. A primeira rodada reproduziu o retorno incorreto à visão geral. Depois da correção, a suíte passou. Cadastro remoto, entrega de e-mail e isolamento por sessões Auth reais continuam pendentes.

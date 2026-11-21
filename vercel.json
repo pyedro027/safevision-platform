@@ -3,5 +3,10 @@
   "framework": null,
   "installCommand": "",
   "buildCommand": "node scripts/build-platform.mjs",
-  "outputDirectory": "dist"
+  "outputDirectory": "dist",
+  "git": {
+    "deploymentEnabled": {
+      "integration/auth-preview-e2e": false
+    }
+  }
 }

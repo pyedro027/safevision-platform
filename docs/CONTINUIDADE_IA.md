@@ -36,3 +36,9 @@ A primeira ação agora é obter a autorização explícita para a migração no
 O ponto anterior é histórico. Em 21/11/2026 a migração inicial foi aplicada uma única vez no `safevision3d` autorizado. O histórico remoto é `20261121204325`. Esta branch ajusta o nome do arquivo ao registro remoto, com o SQL e o SHA-256 preservados. Antes de qualquer comando de migração, confira se o checkout contém `supabase/migrations/20261121204325_platform_foundation.sql`. Não reaplique a versão histórica `20261121194021`.
 
 Foram confirmadas as três tabelas, oito políticas e três gatilhos. A API anônima foi negada nas três tabelas. A validação Auth com duas contas reais ainda está pendente. Primeira ação da próxima execução: confirmar o escopo para configurar Auth e Vercel Preview e obter duas contas de teste autorizadas. A prévia atual da V1 segue disponível com a Clínica ÁUREA e sem backend configurado. Veja [a auditoria e o plano de integração](RELATORIO_MIGRACAO_SUPABASE_06.md).
+
+## Missão 07 — preparação da integração
+
+O [plano de Auth e Preview](PLANO_AUTH_PREVIEW_07.md) registra as aprovações específicas solicitadas, o alias exato, as duas URLs de retorno e o roteiro com dois usuários. O conector confirmou provedor de e-mail ativo, cadastro permitido e confirmação obrigatória. O navegador não tinha sessão administrativa Supabase. A lista de retornos, o Site URL, os templates, SMTP e limites continuam pendentes de inspeção autenticada.
+
+A branch `integration/auth-preview-e2e` corrige o encaminhamento de recuperação sem verificador PKCE e expande o ensaio de Chrome com respostas simuladas. Ela desativa seu deploy automático para permitir revisão antes da aprovação. Primeira ação: confirmar as duas autorizações, abrir sessão administrativa Supabase para inspeção e combinar duas contas de teste controladas. A migração remota já existe e não deve ser reaplicada.

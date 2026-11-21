@@ -17,5 +17,7 @@ O Chrome confirmou contexto seguro. A sessão imersiva e a interação com contr
 
 Após a Missão 06, o esquema do Supabase está pronto, mas a prévia atual ainda usa `config.json` vazio. O próximo deploy conectado deve receber `SUPABASE_URL` e `SUPABASE_PUBLISHABLE_KEY` exclusivamente em Preview. O comando de build gera a configuração pública. A chave ativa foi confirmada pelo conector oficial, sem registro do valor. Veja [o relatório da migração](RELATORIO_MIGRACAO_SUPABASE_06.md).
 
+A [proposta da Missão 07](PLANO_AUTH_PREVIEW_07.md) restringe as variáveis à branch `integration/supabase-remote-validation`. O alias dessa branch retornou configuração vazia. A prévia conectada depende de aprovação específica. A branch de revisão da correção PKCE desativa seu deploy automático, sem alterar as regras de outras branches.
+
 - [Configuração estática](https://vercel.com/docs/project-configuration/vercel-json)
 - [Limites da Vercel](https://vercel.com/docs/limits)
