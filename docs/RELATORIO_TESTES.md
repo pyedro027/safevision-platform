@@ -30,3 +30,11 @@ Em 21/11/2026 a cópia consolidada passou nos 42 hashes, na reconstrução dos s
 | Vercel e Supabase remotos | PENDENTE | A equipe Vercel foi autorizada. Ainda é preciso confirmar o plano e criar a prévia. O Supabase precisa de projeto dedicado e capacidade gratuita confirmada. |
 
 Para repetir, gere `dist` com `node scripts/build-platform.mjs`. Execute `python tests/platform_browser.py` com Playwright 1.65.2 e Chrome. Para teste do banco, passe o caminho do `dist/index.js` do pacote PGlite 0.5.17 para `node tests/rls.mjs`.
+
+## Retomada com Vercel Preview real
+
+Em 21/11/2026, a [prévia protegida](https://safevision-platform-4y8u5a0md-pyedros-projects.vercel.app/) serviu o commit `593e343`. O Chrome 157 com RX 580 abriu o dashboard, entrou em `/clinica/` e renderizou a cena. WASD, seta, arrasto do mouse e Avançar/Parar foram verificados. Uma porta foi exercitada pela API interna. Os cinco casos alternaram PROB/CORR. Não houve respostas HTTP de erro ou erros de console durante o roteiro.
+
+Os sete binários baixados por HTTPS tiveram HTTP 200, tamanhos e hashes individuais esperados. A concatenação recompôs 113.018.368 bytes com o SHA-256 original. O navegador indicou contexto seguro. O carregamento medido pelo visualizador foi de aproximadamente 8,8 s nesta rodada, sem garantia de desempenho para outras redes ou para o Quest 2. [Evidência](qa-vercel-preview.json)
+
+O dashboard recebeu configuração Supabase vazia. Auth remoto, CRUD remoto, e-mails e headset continuam pendentes. O ensaio RLS foi repetido localmente e passou. A inspeção do Supabase remoto foi somente de leitura.

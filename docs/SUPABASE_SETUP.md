@@ -1,6 +1,10 @@
 # Preparação do Supabase
 
-O conector autenticado não encontrou um projeto SAFEVISION de desenvolvimento. A migração está versionada em `supabase/migrations/20261121194021_platform_foundation.sql` e foi validada localmente em PostgreSQL/PGlite 0.5.17. Nenhum projeto remoto recebeu migrações. O plano Free documenta dois projetos ativos e a organização listada já tem dois ativos. A possibilidade de uma vaga gratuita deve ser confirmada no destino antes de provisionar.
+O projeto confirmado é `safevision3d` (`qltabckpluhxnskxgofx`), região `us-east-1`, estado `ACTIVE_HEALTHY`. Em 21/11/2026 o conector listou zero tabelas públicas, zero políticas públicas, zero migrações e nenhuma branch isolada. A branch principal está designada produção. A migração `supabase/migrations/20261121194021_platform_foundation.sql` aguarda autorização explícita para escrita nesse destino.
+
+Uma consulta de leitura confirmou PostgreSQL 17.12, `auth.users`, `auth.uid()` e `gen_random_uuid()`. O SQL passou novamente em PostgreSQL local via PGlite 0.5.17. Isso valida a migração e seus pré-requisitos observáveis, sem executar DDL no remoto. Nenhuma configuração Auth, URL ou chave foi alterada.
+
+Alternativa gratuita e isolada: usar a pilha Supabase local com runtime de contêiner. Docker não estava disponível nesta sessão Windows. Uma branch hospedada é isolada, mas pode ter cobrança. Não foi criada. O projeto confirmado deve ser reaproveitado conforme autorização do responsável.
 
 O esquema contém `profiles`, `projects` e `project_versions`. O histórico registra automaticamente criação e mudança real de título ou descrição. O dashboard lista, cria, edita e exclui metadados no projeto próprio. A exclusão confirmada também remove o histórico do registro.
 
@@ -15,3 +19,5 @@ Para modelos próprios futuros, a coluna opcional `model_object_key` reserva a r
 - [Cobrança e cotas de projetos](https://supabase.com/docs/guides/platform/billing-on-supabase)
 - [Cadastro com e-mail](https://supabase.com/docs/reference/javascript/auth-signup)
 - [Limites de Storage](https://supabase.com/docs/guides/storage/uploads/file-limits)
+- [Supabase local](https://supabase.com/docs/guides/local-development)
+- [Cobrança de branches](https://supabase.com/docs/guides/platform/manage-your-usage/branching)
