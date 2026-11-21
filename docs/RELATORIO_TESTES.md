@@ -48,3 +48,7 @@ O dashboard recebeu configuração Supabase vazia. Auth remoto, CRUD remoto, e-m
 Chrome 157 na prévia real do commit `6a2a926`. Abriram dashboard, login e recuperação sem verificador. O Auth público retornou HTTP 200 via navegador. A Data API negou leitura anônima nas três tabelas (401 / 42501). O tour renderizou e passou na navegação, porta representativa, colisão F060 e transição PROB/CORR dos cinco riscos. Os sete segmentos foram baixados por HTTPS e recompuseram o hash original.
 
 Cadastro remoto, entrega e confirmação, troca real de código PKCE, login, recuperação de senha, CRUD e isolamento de dois usuários autenticados aguardam autorização das caixas de teste e configuração das URLs. Não houve teste físico Quest. [Evidência](qa-auth-preview-08.json)
+
+## Missão 09 — Cadastro confirmado e sessão observada
+
+Cadastro e entrega do e-mail de confirmação foram relatados pelo responsável. Uma consulta agregada confirmou uma conta com e-mail confirmado e registro de entrada. A captura na origem canônica evidencia sessão ativa, painel e leitura de um projeto existente. Um novo login com senha, recuperação real, CRUD com gravação e RLS entre duas contas continuam sem observação. [Resultados e pendências](RELATORIO_MISSAO_09.md)

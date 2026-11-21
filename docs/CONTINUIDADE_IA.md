@@ -48,3 +48,7 @@ A branch `integration/auth-preview-e2e` corrige o encaminhamento de recuperaçã
 As autorizações da Missão 08 substituíram o plano histórico da Missão 07. A [prévia HTTPS](https://safevision-platform-2bzty7au8-pyedros-projects.vercel.app/) está `READY` no deploy `dpl_Aq1pu45FoBBxKpAzLXvqZ71TqFza` do commit corrigido `6a2a926`. As duas variáveis do Supabase estão restritas a Preview e à branch `integration/auth-preview-e2e`. O código do visualizador e o histórico de migração permanecem iguais.
 
 Primeiro passo: entrar no painel administrativo Supabase ou pedir ao responsável para confirmar que as duas URLs exatas do deploy canônico foram adicionadas. A seguir, usar duas caixas de teste controladas e o mesmo perfil de navegador por fluxo PKCE. A conexão pública de Auth foi confirmada. Cadastro, entrega de e-mail, sessão real, persistência e acesso cruzado entre usuários ainda não foram homologados. [Relatório e roteiro](RELATORIO_MISSAO_08.md)
+
+## Missão 09 — Conta A confirmada
+
+O responsável confirmou que os dois retornos exatos da prévia canônica permaneceram salvos e relatou o recebimento do e-mail de cadastro. A leitura agregada do Supabase encontrou uma conta com e-mail confirmado, nenhuma pendente e uma com registro de entrada. A captura do responsável mostra a sessão ativa e um projeto carregado na Visão geral. A primeira ação pendente é observar um login novo com senha e confirmar uma segunda caixa controlada pelo responsável. Use o [relatório da Missão 09](RELATORIO_MISSAO_09.md) para retomar recuperação, CRUD e RLS A/B.

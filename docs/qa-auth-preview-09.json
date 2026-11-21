@@ -1,0 +1,163 @@
+{
+  "url": "https://safevision-platform-2bzty7au8-pyedros-projects.vercel.app/",
+  "browser": "157.0.8103.80",
+  "dashboard": true,
+  "secure_context": true,
+  "supabase_configured": true,
+  "supabase_auth_settings": {
+    "http": 200,
+    "email": true,
+    "signup": true,
+    "confirmationRequired": true
+  },
+  "recovery_without_verifier": true,
+  "door": {
+    "id": "DOOR_P03_PIVO",
+    "before": 0,
+    "after": 1,
+    "opened": true
+  },
+  "screen_navigation": {
+    "before": [
+      1.9,
+      5,
+      1.6533000204622745
+    ],
+    "after": [
+      2.0902997414415294,
+      5.00019030667594,
+      1.6533000073790554
+    ],
+    "moved": true,
+    "stop": true
+  },
+  "locomotion": {
+    "w": true,
+    "s": true,
+    "a": true,
+    "d": true,
+    "ArrowRight": true
+  },
+  "mouse_drag": true,
+  "xr_capable": false,
+  "collision": {
+    "checked": true,
+    "obstacle": "COL_R02_LAYOUT_F060_caixaria",
+    "stoppedX": 17.58749969482423,
+    "blocked": true
+  },
+  "risks": {
+    "R01": {
+      "case": "R01",
+      "markerConstructed": true,
+      "technical": false,
+      "checkedStates": [
+        "CORR",
+        "PROB"
+      ]
+    },
+    "R02": {
+      "case": "R02",
+      "markerConstructed": true,
+      "technical": false,
+      "checkedStates": [
+        "CORR",
+        "PROB"
+      ]
+    },
+    "R03": {
+      "case": "R03",
+      "markerConstructed": true,
+      "technical": false,
+      "checkedStates": [
+        "CORR",
+        "PROB"
+      ]
+    },
+    "R04": {
+      "case": "R04",
+      "markerConstructed": true,
+      "technical": false,
+      "checkedStates": [
+        "CORR",
+        "PROB"
+      ]
+    },
+    "R05": {
+      "case": "R05",
+      "markerConstructed": true,
+      "technical": true,
+      "checkedStates": [
+        "CORR",
+        "PROB"
+      ]
+    }
+  },
+  "glb_segments": [
+    {
+      "file": "clinica-v03-00.bin",
+      "bytes": 16777216,
+      "sha256": "809ba20468fa32ae22ca4e695ab71e0792253c46d7d84d9a4457a01ab64bcbb7",
+      "http": 200
+    },
+    {
+      "file": "clinica-v03-01.bin",
+      "bytes": 16777216,
+      "sha256": "ae9ab3ac1fca966e1ecdc7b6b0f399f5f653542ce4c9f37fab26a39e1cbac2f6",
+      "http": 200
+    },
+    {
+      "file": "clinica-v03-02.bin",
+      "bytes": 16777216,
+      "sha256": "11cd478fb65606d98cb259e327c08f45da750b2859dceac268092d1b970f2a30",
+      "http": 200
+    },
+    {
+      "file": "clinica-v03-03.bin",
+      "bytes": 16777216,
+      "sha256": "d502093bbae8a74671fa6681b159d28837aca109c683b846d234b40b9363b85c",
+      "http": 200
+    },
+    {
+      "file": "clinica-v03-04.bin",
+      "bytes": 16777216,
+      "sha256": "34f161ac3b7e690f38bdbbeb309d10c892e890f99cbdc2417417b1738ccb2248",
+      "http": 200
+    },
+    {
+      "file": "clinica-v03-05.bin",
+      "bytes": 16777216,
+      "sha256": "570759f224dc976aa191eeb0380c1e8d7b0ad1c42bc7cf0aa8b64fe69426b3f8",
+      "http": 200
+    },
+    {
+      "file": "clinica-v03-06.bin",
+      "bytes": 12355072,
+      "sha256": "7712d9edc1a9d4edf3f8facc92610511c9e4d0628fdc815df9aada2319f73277",
+      "http": 200
+    }
+  ],
+  "glb": {
+    "bytes": 113018368,
+    "sha256": "911f6af402a19aca8b6825ab6df840b56d3100089cbb69e4c0d4a705588402f0"
+  },
+  "errors": [],
+  "http_errors": [],
+  "anonymous_data_api": [
+    {
+      "table": "profiles",
+      "http": 401,
+      "sqlstate": "42501"
+    },
+    {
+      "table": "projects",
+      "http": 401,
+      "sqlstate": "42501"
+    },
+    {
+      "table": "project_versions",
+      "http": 401,
+      "sqlstate": "42501"
+    }
+  ]
+}

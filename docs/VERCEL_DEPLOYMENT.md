@@ -23,3 +23,7 @@ O deploy manual da Missão 08 substitui essa proposta histórica. [Preview conec
 
 - [Configuração estática](https://vercel.com/docs/project-configuration/vercel-json)
 - [Limites da Vercel](https://vercel.com/docs/limits)
+
+## Missão 09 — Validação na mesma prévia
+
+O deploy protegido `dpl_Aq1pu45FoBBxKpAzLXvqZ71TqFza`, commit `6a2a926`, permaneceu como ambiente de homologação. A captura do responsável confirmou abertura da Visão geral com sessão ativa e um projeto existente. Use a URL canônica em ambos os perfis de teste e confirme antes o acesso Vercel de cada um. O relatório documenta o escopo da validação. [Missão 09](RELATORIO_MISSAO_09.md)
