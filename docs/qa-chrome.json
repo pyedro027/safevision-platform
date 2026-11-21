@@ -1,0 +1,483 @@
+{
+  "browser": "157.0.8103.80",
+  "snapshot": {
+    "babylon": "9.30.0",
+    "loadMs": 1188.5999999998603,
+    "quality": "balanced",
+    "viewport": [
+      1150,
+      712
+    ],
+    "renderSize": [
+      1150,
+      712
+    ],
+    "fps": 11.971268954515851,
+    "drawCalls": 1556,
+    "activeMeshes": 402,
+    "totalVertices": 2384959,
+    "materials": 45,
+    "textures": 8,
+    "navigation": {
+      "position": [
+        1.9,
+        4.999,
+        1.65
+      ],
+      "rotation": [
+        0,
+        -1.569796290720596,
+        0
+      ],
+      "active": false,
+      "pointerLocked": false,
+      "speed": 1.35
+    },
+    "model": {
+      "states": {
+        "R01": "PROB",
+        "R02": "PROB",
+        "R03": "PROB",
+        "R04": "PROB",
+        "R05": "PROB"
+      },
+      "technical": false,
+      "groups": [
+        {
+          "id": "COMMON_EXTERIOR",
+          "enabled": true
+        },
+        {
+          "id": "DOOR_P07_PIVO",
+          "enabled": true
+        },
+        {
+          "id": "COMMON_A11",
+          "enabled": true
+        },
+        {
+          "id": "R05_CORR",
+          "enabled": false
+        },
+        {
+          "id": "COMMON_A10",
+          "enabled": true
+        },
+        {
+          "id": "COMMON_A14",
+          "enabled": true
+        },
+        {
+          "id": "COMMON_A15",
+          "enabled": true
+        },
+        {
+          "id": "COMMON_A13",
+          "enabled": true
+        },
+        {
+          "id": "COMMON_A01",
+          "enabled": true
+        },
+        {
+          "id": "COMMON_A08",
+          "enabled": true
+        },
+        {
+          "id": "DOOR_P16_PIVO",
+          "enabled": true
+        },
+        {
+          "id": "DOOR_P17_PIVO",
+          "enabled": true
+        },
+        {
+          "id": "R03_PROB",
+          "enabled": true
+        },
+        {
+          "id": "R02_PROB",
+          "enabled": true
+        },
+        {
+          "id": "COMMON_A02",
+          "enabled": true
+        },
+        {
+          "id": "COMMON_C01",
+          "enabled": true
+        },
+        {
+          "id": "COMMON_A07",
+          "enabled": true
+        },
+        {
+          "id": "COMMON_A09",
+          "enabled": true
+        },
+        {
+          "id": "DOOR_BASE_P02_PIVO",
+          "enabled": true
+        },
+        {
+          "id": "R05_COBERTURA",
+          "enabled": true
+        },
+        {
+          "id": "DOOR_P18_PIVO",
+          "enabled": true
+        },
+        {
+          "id": "COMMON_A06",
+          "enabled": true
+        },
+        {
+          "id": "DOOR_P20_PIVO",
+          "enabled": true
+        },
+        {
+          "id": "R03_CORR",
+          "enabled": false
+        },
+        {
+          "id": "COMMON_C02",
+          "enabled": true
+        },
+        {
+          "id": "DOOR_RC_R02_PROB_INTERNA_BASE_P02_PIVO",
+          "enabled": true
+        },
+        {
+          "id": "R01_CORR",
+          "enabled": false
+        },
+        {
+          "id": "COMMON_A17",
+          "enabled": true
+        },
+        {
+          "id": "R02_CORR",
+          "enabled": false
+        },
+        {
+          "id": "COMMON_A12",
+          "enabled": true
+        },
+        {
+          "id": "DOOR_P06_PIVO",
+          "enabled": true
+        },
+        {
+          "id": "DOOR_P01_PIVO_A",
+          "enabled": true
+        },
+        {
+          "id": "COMMON_A03",
+          "enabled": true
+        },
+        {
+          "id": "DOOR_P11_PIVO",
+          "enabled": true
+        },
+        {
+          "id": "DOOR_P12_PIVO",
+          "enabled": true
+        },
+        {
+          "id": "COMMON_A05",
+          "enabled": true
+        },
+        {
+          "id": "DOOR_P01_PIVO_B",
+          "enabled": true
+        },
+        {
+          "id": "R04_CORR",
+          "enabled": false
+        },
+        {
+          "id": "COMMON_A16",
+          "enabled": true
+        },
+        {
+          "id": "COMMON_A04",
+          "enabled": true
+        },
+        {
+          "id": "DOOR_P03_PIVO",
+          "enabled": true
+        },
+        {
+          "id": "COMMON_C04",
+          "enabled": true
+        },
+        {
+          "id": "DOOR_P14_PIVO",
+          "enabled": true
+        },
+        {
+          "id": "COMMON_C03",
+          "enabled": true
+        },
+        {
+          "id": "DOOR_RC_R02_CORR_INTERNA_BASE_P02_PIVO",
+          "enabled": false
+        },
+        {
+          "id": "R05_PROB",
+          "enabled": true
+        },
+        {
+          "id": "DOOR_P15_PIVO",
+          "enabled": true
+        },
+        {
+          "id": "DOOR_P19_PIVO",
+          "enabled": true
+        },
+        {
+          "id": "R04_PROB",
+          "enabled": true
+        },
+        {
+          "id": "DOOR_P08_PIVO",
+          "enabled": true
+        },
+        {
+          "id": "DOOR_P13_PIVO",
+          "enabled": true
+        },
+        {
+          "id": "R01_PROB",
+          "enabled": true
+        },
+        {
+          "id": "DOOR_P04_PIVO",
+          "enabled": true
+        },
+        {
+          "id": "DOOR_P05_FOLHA_CORRER",
+          "enabled": true
+        },
+        {
+          "id": "DOOR_RC_R01_CORR_P10_FOLHA_CORRER",
+          "enabled": false
+        },
+        {
+          "id": "DOOR_P09_FOLHA_CORRER",
+          "enabled": true
+        },
+        {
+          "id": "DOOR_RC_R01_PROB_P10_FOLHA_CORRER",
+          "enabled": true
+        }
+      ],
+      "doors": [
+        {
+          "id": "DOOR_P01_PIVO_A",
+          "open": 1,
+          "enabled": true
+        },
+        {
+          "id": "DOOR_P01_PIVO_B",
+          "open": 1,
+          "enabled": true
+        },
+        {
+          "id": "DOOR_P03_PIVO",
+          "open": 0,
+          "enabled": true
+        },
+        {
+          "id": "DOOR_P04_PIVO",
+          "open": 0,
+          "enabled": true
+        },
+        {
+          "id": "DOOR_P06_PIVO",
+          "open": 0,
+          "enabled": true
+        },
+        {
+          "id": "DOOR_P07_PIVO",
+          "open": 0,
+          "enabled": true
+        },
+        {
+          "id": "DOOR_P08_PIVO",
+          "open": 0,
+          "enabled": true
+        },
+        {
+          "id": "DOOR_P11_PIVO",
+          "open": 0,
+          "enabled": true
+        },
+        {
+          "id": "DOOR_P12_PIVO",
+          "open": 0,
+          "enabled": true
+        },
+        {
+          "id": "DOOR_P13_PIVO",
+          "open": 0,
+          "enabled": true
+        },
+        {
+          "id": "DOOR_P14_PIVO",
+          "open": 0,
+          "enabled": true
+        },
+        {
+          "id": "DOOR_P15_PIVO",
+          "open": 0,
+          "enabled": true
+        },
+        {
+          "id": "DOOR_P16_PIVO",
+          "open": 0,
+          "enabled": true
+        },
+        {
+          "id": "DOOR_P17_PIVO",
+          "open": 0,
+          "enabled": true
+        },
+        {
+          "id": "DOOR_P18_PIVO",
+          "open": 0,
+          "enabled": true
+        },
+        {
+          "id": "DOOR_P19_PIVO",
+          "open": 0,
+          "enabled": true
+        },
+        {
+          "id": "DOOR_P20_PIVO",
+          "open": 0,
+          "enabled": true
+        },
+        {
+          "id": "DOOR_BASE_P02_PIVO",
+          "open": 0,
+          "enabled": true
+        },
+        {
+          "id": "DOOR_RC_R02_PROB_INTERNA_BASE_P02_PIVO",
+          "open": 1,
+          "enabled": true
+        },
+        {
+          "id": "DOOR_RC_R02_CORR_INTERNA_BASE_P02_PIVO",
+          "open": 1,
+          "enabled": false
+        },
+        {
+          "id": "DOOR_P05_FOLHA_CORRER",
+          "open": 1,
+          "enabled": true
+        },
+        {
+          "id": "DOOR_RC_R01_CORR_P10_FOLHA_CORRER",
+          "open": 1,
+          "enabled": false
+        },
+        {
+          "id": "DOOR_P09_FOLHA_CORRER",
+          "open": 1,
+          "enabled": true
+        },
+        {
+          "id": "DOOR_RC_R01_PROB_P10_FOLHA_CORRER",
+          "open": 1,
+          "enabled": true
+        }
+      ],
+      "loadMs": 1188.5999999998603
+    },
+    "memory": {
+      "used": 201508931,
+      "total": 248186887
+    }
+  },
+  "render": "ANGLE (AMD, AMD Radeon RX 580 2048SP (0x00006FDF) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+  "door": {
+    "id": "DOOR_P03_PIVO",
+    "before": 0,
+    "after": 1,
+    "opened": true
+  },
+  "screen_navigation": {
+    "before": [
+      1.9,
+      5,
+      1.6533000204622745
+    ],
+    "after": [
+      2.0902997414415294,
+      5.00019030667594,
+      1.6533000073790554
+    ],
+    "moved": true,
+    "stop": true
+  },
+  "locomotion": {
+    "w": true,
+    "s": true,
+    "a": true,
+    "d": true,
+    "ArrowRight": true
+  },
+  "mouse_drag": true,
+  "xr_capable": false,
+  "risks": {
+    "R01": {
+      "case": "R01",
+      "markerConstructed": true,
+      "technical": false,
+      "checkedStates": [
+        "CORR",
+        "PROB"
+      ]
+    },
+    "R02": {
+      "case": "R02",
+      "markerConstructed": true,
+      "technical": false,
+      "checkedStates": [
+        "CORR",
+        "PROB"
+      ]
+    },
+    "R03": {
+      "case": "R03",
+      "markerConstructed": true,
+      "technical": false,
+      "checkedStates": [
+        "CORR",
+        "PROB"
+      ]
+    },
+    "R04": {
+      "case": "R04",
+      "markerConstructed": true,
+      "technical": false,
+      "checkedStates": [
+        "CORR",
+        "PROB"
+      ]
+    },
+    "R05": {
+      "case": "R05",
+      "markerConstructed": true,
+      "technical": true,
+      "checkedStates": [
+        "CORR",
+        "PROB"
+      ]
+    }
+  },
+  "errors": [],
+  "http_errors": []
+}

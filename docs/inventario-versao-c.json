@@ -1,0 +1,328 @@
+{
+  "files": [
+    {
+      "path": "_headers",
+      "bytes": 217,
+      "sha256": "b04988f38aeedc88fc72dccbde5f7ce1355848eea9c10bbc092ad365e16e0dc3"
+    },
+    {
+      "path": "app.css",
+      "bytes": 5108,
+      "sha256": "b0de1ef72883ffbca57fa7faf69139025c1c6e522c8cf386474ce07cf73b6fda"
+    },
+    {
+      "path": "app.js",
+      "bytes": 10520,
+      "sha256": "adf87da40774b9feecfdbdfa53e5e7c915348771cfb30cd96ed61041b9f03146"
+    },
+    {
+      "path": "assets/recepcao.png",
+      "bytes": 1797613,
+      "sha256": "fffcd8a2c5318f4cd9cc317991b4850630f6c1777a1c89468a4cdcfc099c1373"
+    },
+    {
+      "path": "index.html",
+      "bytes": 1305,
+      "sha256": "ed837d331a7631af0eb9ecf2459e5d62c45ac6262a907b298f7768bd7c59b0d8"
+    },
+    {
+      "path": "MODELO/clinica-v03-00.bin",
+      "bytes": 16777216,
+      "sha256": "809ba20468fa32ae22ca4e695ab71e0792253c46d7d84d9a4457a01ab64bcbb7"
+    },
+    {
+      "path": "MODELO/clinica-v03-01.bin",
+      "bytes": 16777216,
+      "sha256": "ae9ab3ac1fca966e1ecdc7b6b0f399f5f653542ce4c9f37fab26a39e1cbac2f6"
+    },
+    {
+      "path": "MODELO/clinica-v03-02.bin",
+      "bytes": 16777216,
+      "sha256": "11cd478fb65606d98cb259e327c08f45da750b2859dceac268092d1b970f2a30"
+    },
+    {
+      "path": "MODELO/clinica-v03-03.bin",
+      "bytes": 16777216,
+      "sha256": "d502093bbae8a74671fa6681b159d28837aca109c683b846d234b40b9363b85c"
+    },
+    {
+      "path": "MODELO/clinica-v03-04.bin",
+      "bytes": 16777216,
+      "sha256": "34f161ac3b7e690f38bdbbeb309d10c892e890f99cbdc2417417b1738ccb2248"
+    },
+    {
+      "path": "MODELO/clinica-v03-05.bin",
+      "bytes": 16777216,
+      "sha256": "570759f224dc976aa191eeb0380c1e8d7b0ad1c42bc7cf0aa8b64fe69426b3f8"
+    },
+    {
+      "path": "MODELO/clinica-v03-06.bin",
+      "bytes": 12355072,
+      "sha256": "7712d9edc1a9d4edf3f8facc92610511c9e4d0628fdc815df9aada2319f73277"
+    },
+    {
+      "path": "MODELO/model-manifest.json",
+      "bytes": 1253,
+      "sha256": "bdff610461c03a8af61b67572a15b844809dc2aac87532280247d3f7055e9b8f"
+    },
+    {
+      "path": "MODELO/nav_config.json",
+      "bytes": 124292,
+      "sha256": "59e5b65d7755b2754cad003178a8cb2d67b5d256ab76da85d775898a59bfd231"
+    },
+    {
+      "path": "WEB/assets/ambiente_v03.hdr",
+      "bytes": 1435119,
+      "sha256": "fd94c84997b8a3c353b62c2125a9b44e19509956986a126e472684432a02d798"
+    },
+    {
+      "path": "WEB/data/fichas/R01.json",
+      "bytes": 10014,
+      "sha256": "033710b9911b563f6b432a9be3c4135282e391c8d3cca7227b1dab3399447259"
+    },
+    {
+      "path": "WEB/data/fichas/R01.md",
+      "bytes": 9311,
+      "sha256": "7d168620b7fc9be401292b7a5bdf840a37e6902cd1d8142b4bc19c87242fc9d1"
+    },
+    {
+      "path": "WEB/data/fichas/R02.json",
+      "bytes": 12963,
+      "sha256": "7301811f793f2c77b60cdc0f4ff231691b22ab29bc32837a137de90668d15222"
+    },
+    {
+      "path": "WEB/data/fichas/R02.md",
+      "bytes": 12216,
+      "sha256": "98dd5b8b492c84014bf74374667bb2ecaba41e1bdc532dcbd398933ed176c65a"
+    },
+    {
+      "path": "WEB/data/fichas/R03.json",
+      "bytes": 9382,
+      "sha256": "686c1d4fd29abc594548afd7a92e6a7f8139655b9d47fe13dfeb2841ced820c3"
+    },
+    {
+      "path": "WEB/data/fichas/R03.md",
+      "bytes": 8705,
+      "sha256": "283b7e4ee0a8b05c536760928290e28f0f97655e1b7f53464788a026b39a0cc0"
+    },
+    {
+      "path": "WEB/data/fichas/R04.json",
+      "bytes": 5587,
+      "sha256": "8d62fc42c8e1be3d11b812ef9c49bb255d70484e5459bad5050c53f394e3bc5f"
+    },
+    {
+      "path": "WEB/data/fichas/R04.md",
+      "bytes": 4930,
+      "sha256": "845ec6e9c5492a607735ccfb32716a91c5e1576078a680877b6709f4a4d85340"
+    },
+    {
+      "path": "WEB/data/fichas/R05.json",
+      "bytes": 6992,
+      "sha256": "2d3fab7470ec5fe3a7c36b5333cd8fd05cee892df56c3c8b8dd73dce76a68f96"
+    },
+    {
+      "path": "WEB/data/fichas/R05.md",
+      "bytes": 6318,
+      "sha256": "8e2800246ca005c7d185773f843e855a734df51744c9ea35b19ba7192ef2a732"
+    },
+    {
+      "path": "WEB/index.html",
+      "bytes": 5890,
+      "sha256": "7e31f7b95da487c88ee81cc95eaf2cd80dd53f887631973f85d7d43a04af059e"
+    },
+    {
+      "path": "WEB/inspection.css",
+      "bytes": 1912,
+      "sha256": "25ecad27d372cd3b3968adc212b126d1719e9a62a3fc2178677f834f1b01d1d8"
+    },
+    {
+      "path": "WEB/loading-guard.js",
+      "bytes": 1300,
+      "sha256": "ed216200d99de88e636914a9879ab692a013febacf81ce1d4288d1986b90abed"
+    },
+    {
+      "path": "WEB/modules/bridge.js",
+      "bytes": 2701,
+      "sha256": "d865b9af0b79bfdd0d543d5a186d8d42f63d0817a645b0a9098c6f027a119bc2"
+    },
+    {
+      "path": "WEB/modules/input-math.js",
+      "bytes": 1144,
+      "sha256": "d63095efb859c42ce14dfb5b4cfbd5ff64556f3f58b20b2f5ba84e46b77248e7"
+    },
+    {
+      "path": "WEB/modules/inspection.js",
+      "bytes": 4481,
+      "sha256": "14dce88471e3479949d8c6aa34984acfe15d8ded163b737dc4d59c0071e39c0e"
+    },
+    {
+      "path": "WEB/modules/interface.js",
+      "bytes": 11615,
+      "sha256": "90806be7361834465f3a6230879a3c3bdf3c410b29305cbdf38eb8062624ee64"
+    },
+    {
+      "path": "WEB/modules/model.js",
+      "bytes": 7723,
+      "sha256": "3d766aa8a3ab1f2b974220748d9fca78b5c3830f7852f1d6bc23cc6b08832431"
+    },
+    {
+      "path": "WEB/modules/navigation.js",
+      "bytes": 7304,
+      "sha256": "9beaf3202a6869399be313302146028efdb37fde055ade0c0b6f74b718ba272c"
+    },
+    {
+      "path": "WEB/modules/presentation-controls.js",
+      "bytes": 5892,
+      "sha256": "767ef1d7b51b87d3cd012fd7e42455f9e3c3eed73641bc3583be8ccb2dcda0c3"
+    },
+    {
+      "path": "WEB/modules/quality.js",
+      "bytes": 1130,
+      "sha256": "73b0b1f8f0861ccee7e235ce371e8a72edc67e49c9b4755c0258ca32c782f87a"
+    },
+    {
+      "path": "WEB/modules/r05-technical.js",
+      "bytes": 2536,
+      "sha256": "f09ba5f351c9c07e4a85bea0a1a97d1897b32eace2668897aee5d50d0a266eee"
+    },
+    {
+      "path": "WEB/modules/xr.js",
+      "bytes": 15206,
+      "sha256": "7804bed4db583246d82f71a32c3270fb5d45084495a9064575c0d3de37aeccb6"
+    },
+    {
+      "path": "WEB/tour.css",
+      "bytes": 11576,
+      "sha256": "a225a9c8ec16c45180eef8a9c4aa90996e5d9cdfe9b8f9c2ed05c331177aa3eb"
+    },
+    {
+      "path": "WEB/tour.js",
+      "bytes": 7841,
+      "sha256": "66a43335e69ae61f955c19ef5a06daec7bfb87584cbdbcba8646af8755d52e4d"
+    },
+    {
+      "path": "WEB/vendor/babylon.js",
+      "bytes": 8620599,
+      "sha256": "e9b1eb08b4efbcfb4206847e47d2cc33074e498760bdaf5a0447090b7c4772fc"
+    },
+    {
+      "path": "WEB/vendor/babylonjs.loaders.min.js",
+      "bytes": 849596,
+      "sha256": "547d1abc5ec729367fdb4d01c1d581943f2a010bfbf80a500cdf7a5200585368"
+    }
+  ],
+  "bytes": 126038659,
+  "glb_bytes": 113018368,
+  "glb_sha256": "911f6af402a19aca8b6825ab6df840b56d3100089cbb69e4c0d4a705588402f0",
+  "largest_blob": 16777216,
+  "dependencies": [
+    [
+      "index.html",
+      "app.css"
+    ],
+    [
+      "index.html",
+      "app.js"
+    ],
+    [
+      "WEB/index.html",
+      "WEB/tour.css"
+    ],
+    [
+      "WEB/index.html",
+      "WEB/inspection.css"
+    ],
+    [
+      "WEB/index.html",
+      "WEB/loading-guard.js"
+    ],
+    [
+      "WEB/index.html",
+      "WEB/vendor/babylon.js"
+    ],
+    [
+      "WEB/index.html",
+      "WEB/vendor/babylonjs.loaders.min.js"
+    ],
+    [
+      "WEB/index.html",
+      "WEB/tour.js"
+    ],
+    [
+      "WEB/modules/bridge.js",
+      "WEB/modules/xr.js"
+    ],
+    [
+      "WEB/modules/inspection.js",
+      "WEB/modules/model.js"
+    ],
+    [
+      "WEB/modules/inspection.js",
+      "WEB/modules/r05-technical.js"
+    ],
+    [
+      "WEB/modules/interface.js",
+      "WEB/modules/inspection.js"
+    ],
+    [
+      "WEB/modules/navigation.js",
+      "WEB/modules/model.js"
+    ],
+    [
+      "WEB/modules/navigation.js",
+      "WEB/modules/input-math.js"
+    ],
+    [
+      "WEB/modules/presentation-controls.js",
+      "WEB/modules/input-math.js"
+    ],
+    [
+      "WEB/modules/presentation-controls.js",
+      "WEB/modules/quality.js"
+    ],
+    [
+      "WEB/modules/r05-technical.js",
+      "WEB/modules/model.js"
+    ],
+    [
+      "WEB/modules/xr.js",
+      "WEB/modules/model.js"
+    ],
+    [
+      "WEB/modules/xr.js",
+      "WEB/modules/input-math.js"
+    ],
+    [
+      "WEB/modules/xr.js",
+      "WEB/modules/quality.js"
+    ],
+    [
+      "WEB/tour.js",
+      "WEB/modules/presentation-controls.js"
+    ],
+    [
+      "WEB/tour.js",
+      "WEB/modules/bridge.js"
+    ],
+    [
+      "WEB/tour.js",
+      "WEB/modules/model.js"
+    ],
+    [
+      "WEB/tour.js",
+      "WEB/modules/navigation.js"
+    ],
+    [
+      "WEB/tour.js",
+      "WEB/modules/inspection.js"
+    ],
+    [
+      "WEB/tour.js",
+      "WEB/modules/interface.js"
+    ],
+    [
+      "WEB/tour.js",
+      "WEB/modules/quality.js"
+    ]
+  ]
+}
