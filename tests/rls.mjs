@@ -9,7 +9,7 @@ const { PGlite } = await import(pathToFileURL(resolve(process.argv[2])).href);
 const database = new PGlite();
 const alice = '11111111-1111-4111-8111-111111111111';
 const bob = '22222222-2222-4222-8222-222222222222';
-const migration = new URL('../supabase/migrations/20261121194021_platform_foundation.sql', import.meta.url);
+const migration = new URL('../supabase/migrations/20261121204325_platform_foundation.sql', import.meta.url);
 const query = (statement, values = []) => database.query(statement, values);
 const use = async (role, user = '') => {
   await database.exec(`reset role; set role ${role};`);
@@ -34,6 +34,8 @@ try {
   const { rows: [project] } = await query("insert into projects(title) values ('Área de teste') returning id, owner_id");
   assert.equal(project.owner_id, alice);
   assert.equal((await query("update projects set title = 'Revisado' where id=$1 returning id", [project.id])).rows.length, 1);
+  assert.equal((await query('select id from project_versions')).rows.length, 2);
+  await query('update projects set title = title, description = description where id=$1', [project.id]);
   assert.equal((await query('select id from project_versions')).rows.length, 2);
   await assert.rejects(query("insert into project_versions(project_id,title,description) values ($1,'x','')", [project.id]), { code: '42501' });
   await assert.rejects(query('update projects set owner_id=$1', [bob]), { code: '42501' });

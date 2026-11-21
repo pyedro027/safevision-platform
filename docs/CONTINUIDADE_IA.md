@@ -30,3 +30,9 @@ Primeira ação da próxima execução: verificar as confirmações da Vercel e 
 O ponto de retomada acima é histórico. A [Vercel Preview](https://safevision-platform-4y8u5a0md-pyedros-projects.vercel.app/) está `READY` no projeto existente, commit `593e343`. Dashboard, visualizador, navegação, cinco riscos e sete binários foram verificados em HTTPS. O GLB recompôs o SHA-256 original. Veja [evidência do navegador](qa-vercel-preview.json) e [registro de implantação](VERCEL_DEPLOYMENT.md).
 
 A primeira ação agora é obter a autorização explícita para a migração no projeto `safevision3d` (`qltabckpluhxnskxgofx`, `us-east-1`), cuja branch principal é produção, ou seguir com um ambiente local isolado. A inspeção encontrou zero tabelas públicas, zero políticas públicas e zero migrações. Depois da autorização, aplicar somente a migração versionada, validar Auth/RLS com duas contas e configurar as variáveis públicas e redirecionamentos para a prévia. Não alterar a produção Vercel, a `main` ou `apps/viewer/`.
+
+## Missão 06 — migração aplicada
+
+O ponto anterior é histórico. Em 21/11/2026 a migração inicial foi aplicada uma única vez no `safevision3d` autorizado. O histórico remoto é `20261121204325`. Esta branch ajusta o nome do arquivo ao registro remoto, com o SQL e o SHA-256 preservados. Antes de qualquer comando de migração, confira se o checkout contém `supabase/migrations/20261121204325_platform_foundation.sql`. Não reaplique a versão histórica `20261121194021`.
+
+Foram confirmadas as três tabelas, oito políticas e três gatilhos. A API anônima foi negada nas três tabelas. A validação Auth com duas contas reais ainda está pendente. Primeira ação da próxima execução: confirmar o escopo para configurar Auth e Vercel Preview e obter duas contas de teste autorizadas. A prévia atual da V1 segue disponível com a Clínica ÁUREA e sem backend configurado. Veja [a auditoria e o plano de integração](RELATORIO_MIGRACAO_SUPABASE_06.md).
