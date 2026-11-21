@@ -1,3 +1,5 @@
+import { projectOverview, studioEntry, clinicPage, settingsPage, navigation, serviceName } from './workspace.js';
+navigation();
 import { mountStudio } from './studio/studio.js';
 
 const screen = document.querySelector('#screen');
@@ -5,7 +7,6 @@ const dialog = document.querySelector('#dialog');
 const feedback = document.querySelector('#feedback');
 const dateFormat = new Intl.DateTimeFormat('pt-BR', { dateStyle: 'medium', timeStyle: 'short' });
 const routes = new Set(['inicio', 'projetos', 'studio', 'aurea', 'conta', 'configuracoes']);
-const risks = ['Circulação', 'Rota de saída', 'Acessibilidade', 'Janela e pilar', 'Tubulação e viga'];
 const state = {
   client: null, session: null, phase: 'loading', projects: [], profile: null,
   accountMode: new URLSearchParams(location.search).has('recuperar') ? 'recovery' : 'login'
@@ -43,25 +44,18 @@ function button(label, action, style = '') {
   return `<button type="button" class="${style}" data-action="${action}">${label}</button>`;
 }
 
-function hero() {
-  return `<article class="hero"><div class="hero-content">
-    <h2>Clínica ÁUREA</h2><p class="muted">Inspecione cinco casos didáticos de arquitetura, acessibilidade e instalações no modelo original da clínica.</p>
-    <div class="actions"><a class="button" href="./clinica/">Abrir demonstração 3D</a>
-    <a class="button studio-link" href="#studio">Abrir SAFEVISION Studio</a></div>
-    </div><img src="./clinica/assets/recepcao.png" alt="Recepção da Clínica ÁUREA modelada em 3D"></article>`;
-}
-
 function projectList(projects) {
   if (!projects.length) return '<p class="muted">Você ainda não tem projetos.</p>';
   return `<ul class="project-list">${projects.map(project => `<li>
     <button type="button" data-action="details" data-id="${escape(project.id)}">${escape(project.title)}</button>
-    <small>Atualizado em ${dateFormat.format(new Date(project.updated_at))}</small>
+    <p>${escape(project.description)}</p><small>ID · ${escape(project.id)}</small><small>Atualizado em ${dateFormat.format(new Date(project.updated_at))}</small>
   </li>`).join('')}</ul>`;
 }
 
 function projectStatus() {
   if (state.phase === 'loading') return '<p>Carregando projetos…</p>';
   if (state.phase === 'error') return `<p>Não foi possível carregar seus dados.</p>${button('Tentar novamente','retry')}`;
+  if (state.phase === 'config-error') return '<p role="alert">Falha ao iniciar a conexão. Recarregue a página para tentar novamente.</p>';
   if (!state.client) return '<p class="muted">O serviço de contas e projetos ainda não foi configurado neste ambiente.</p>';
   if (!state.session) return '<p><a href="#conta">Entre na sua conta</a> para acessar seus projetos privados.</p>';
   return '';
@@ -69,19 +63,21 @@ function projectStatus() {
 
 function overview() {
   const status = projectStatus();
-  return heading('Visão geral', 'Organize projetos e consulte a demonstração de inspeção tridimensional.') + hero()
-    + `<div class="section-grid"><section class="panel"><h2>Meus projetos</h2>${status || `<p class="stat">${state.projects.length}</p><a href="#projetos">Gerenciar projetos</a>`}</section>
-    <section class="panel"><h2>Projetos recentes</h2>${status ? '<p class="muted">A lista aparece quando seus projetos são carregados.</p>' : projectList(state.projects.slice(0, 5))}</section></div>`;
+  return heading('Visão geral', 'Explore o projeto em três dimensões e examine as decisões antes da obra.')
+    + projectOverview() + '<div class="work-grid">' + studioEntry()
+    + `<section class="panel"><h2>Projetos privados</h2>${status || projectList(state.projects.slice(0, 3))}
+      <a href="#projetos">Gerenciar projetos →</a></section></div>`;
 }
 
 function projectsPage() {
   const status = projectStatus();
   return heading('Meus projetos', 'Consulte e gerencie os metadados dos seus projetos privados.')
-    + `<section class="panel"><div class="heading-row"><h2>Projetos</h2>${status ? '' : button('Novo projeto','new')}</div>${status || projectList(state.projects)}</section>`;
+    + `<section class="panel"><div class="heading-row"><h2>Projetos</h2>${status ? '' : button('Novo projeto','new')}</div>${status || projectList(state.projects)}</section>
+    <aside class="project-demo"><img src="./media/aurea.webp" alt=""><div><small>Demonstração disponível</small><h2>Clínica ÁUREA</h2><p>Consulte a modelagem de referência e as cinco fichas de inspeção.</p><a href="#aurea">Conhecer o projeto →</a></div></aside>`;
 }
 
 function account() {
-  if (!state.client) return heading('Conta', 'O serviço de autenticação não está disponível neste ambiente.');
+  if (!state.client) return heading('Conta', serviceName(state)) + '<section class="panel"><h2>Acesso ao espaço privado</h2><p>Perfil, projetos e histórico ficam disponíveis com a integração de contas ativa. Você pode explorar a demonstração neste ambiente.</p><a class="button" href="#studio">Experimentar o Studio</a></section>';
   if (state.accountMode === 'recovery') {
     return heading('Redefinir senha', 'Defina a senha da sua conta a partir do link de recuperação.')
       + `<section class="panel">${state.session ? `<form data-form="password">
@@ -114,6 +110,7 @@ function render() {
     else link.removeAttribute('aria-current');
   }
   document.querySelector('#account-link').textContent = state.session?.user.email || 'Entrar';
+  document.querySelector('#breadcrumb').textContent = document.querySelector('nav [aria-current]')?.textContent || '';
   if (route === 'studio') {
     if (!closeStudio) closeStudio = mountStudio(screen);
     return;
@@ -122,13 +119,9 @@ function render() {
   closeStudio = undefined;
   if (route === 'inicio') screen.innerHTML = overview();
   if (route === 'projetos') screen.innerHTML = projectsPage();
-  if (route === 'conta') screen.innerHTML = account();
-  if (route === 'aurea') screen.innerHTML = heading('Clínica ÁUREA', 'Projeto demonstrativo da Versão C, com navegação e inspeção em 3D.')
-    + hero() + `<section class="panel" style="margin-top:16px"><h2>Casos disponíveis</h2><ul class="risk-list">${risks.map((risk, index) => `<li><strong>R0${index + 1}</strong> · ${risk}</li>`).join('')}</ul></section>`;
-  if (route === 'configuracoes') screen.innerHTML = heading('Configurações', 'Informações sobre este ambiente de trabalho.')
-    + `<section class="panel"><h2>Versão e serviços</h2><dl><dt>Plataforma</dt><dd>V1 · desenvolvimento</dd>
-      <dt>Visualizador</dt><dd>Clínica ÁUREA · Versão C · Babylon.js</dd><dt>Dados de projetos</dt><dd>${state.client ? 'Supabase configurado' : 'Supabase sem configuração'}</dd>
-      <dt>Modelos próprios</dt><dd>Upload ainda indisponível</dd></dl></section>`;
+  if (route === 'conta') screen.innerHTML = '<div class="account-layout"><div>' + account() + '</div><aside class="account-art"><img src="./media/r01.webp" alt="Detalhe de circulação da Clínica ÁUREA"><a href="./clinica/#inspection/R01">R01 · Circulação ↗</a></aside></div>';
+  if (route === 'aurea') screen.innerHTML = clinicPage();
+  if (route === 'configuracoes') screen.innerHTML = heading('Configurações', 'Consulte os recursos e as condições desta execução.') + settingsPage(state);
 }
 
 function unwrap(result) {
@@ -331,6 +324,9 @@ document.body.addEventListener('submit', async event => {
   const control = form.querySelector('button:not([type=button])');
   if (!state.client || control.disabled) return;
   control.disabled = true;
+  const originalLabel = control.textContent;
+  control.textContent = 'Aguarde…';
+  form.setAttribute('aria-busy', 'true');
   try {
     const result = await submit(form, new FormData(form));
     if (result) notice(result);
@@ -341,6 +337,8 @@ document.body.addEventListener('submit', async event => {
     else notice(message, true);
   } finally {
     control.disabled = false;
+    control.textContent = originalLabel;
+    form.removeAttribute('aria-busy');
     for (const input of form.querySelectorAll('[type=password]')) input.value = '';
   }
 });
@@ -363,7 +361,7 @@ try {
     render();
   }
 } catch {
-  state.phase = 'ready';
+  state.phase = 'config-error';
   render();
   notice('Não foi possível inicializar a conexão com o serviço de contas.', true);
 }
