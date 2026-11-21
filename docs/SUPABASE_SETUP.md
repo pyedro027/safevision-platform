@@ -1,14 +1,14 @@
 # Preparação do Supabase
 
-O projeto confirmado é `safevision3d` (`qltabckpluhxnskxgofx`), região `us-east-1`, estado `ACTIVE_HEALTHY`. Em 21/11/2026 o conector listou zero tabelas públicas, zero políticas públicas, zero migrações e nenhuma branch isolada. A branch principal está designada produção. A migração `supabase/migrations/20261121194021_platform_foundation.sql` aguarda autorização explícita para escrita nesse destino.
+O projeto confirmado é `safevision3d` (`qltabckpluhxnskxgofx`), região `us-east-1`, estado `ACTIVE_HEALTHY`. Em 21/11/2026, após aprovação técnica e autorização escopada à branch principal, a migração foi aplicada e identificada no histórico como `20261121204325`. O arquivo renomeado `supabase/migrations/20261121204325_platform_foundation.sql` preserva o SQL do arquivo original `20261121194021_platform_foundation.sql`. Não reaplique o timestamp anterior a partir de branches históricas.
 
-Uma consulta de leitura confirmou PostgreSQL 17.12, `auth.users`, `auth.uid()` e `gen_random_uuid()`. O SQL passou novamente em PostgreSQL local via PGlite 0.5.17. Isso valida a migração e seus pré-requisitos observáveis, sem executar DDL no remoto. Nenhuma configuração Auth, URL ou chave foi alterada.
+O catálogo PostgreSQL 17.12 confirmou três tabelas, RLS ativa, oito políticas, duas funções e três gatilhos. O teste sem sessão pela Data API retornou HTTP 401 nas três tabelas. O teste com duas contas Auth continua pendente. Nenhuma configuração Auth, URL ou chave foi alterada. Consulte [o relatório da migração](RELATORIO_MIGRACAO_SUPABASE_06.md).
 
 Alternativa gratuita e isolada: usar a pilha Supabase local com runtime de contêiner. Docker não estava disponível nesta sessão Windows. Uma branch hospedada é isolada, mas pode ter cobrança. Não foi criada. O projeto confirmado deve ser reaproveitado conforme autorização do responsável.
 
 O esquema contém `profiles`, `projects` e `project_versions`. O histórico registra automaticamente criação e mudança real de título ou descrição. O dashboard lista, cria, edita e exclui metadados no projeto próprio. A exclusão confirmada também remove o histórico do registro.
 
-Em um ambiente de desenvolvimento dedicado e aprovado, aplique a migração versionada e confira o diff do esquema. Verifique a configuração do provedor e-mail do Supabase Auth. Configure Site URL e Redirect URLs apenas para a origem prevista e o endereço local usado nos testes. Permita também a URL de recuperação com `?recuperar=1`. O fluxo PKCE deve ser concluído no navegador que solicitou o link.
+No destino autorizado para a próxima etapa, verifique a configuração do provedor de e-mail do Supabase Auth. Configure Site URL e Redirect URLs apenas para a origem prevista e o endereço local usado nos testes. Permita também a URL de recuperação com `?recuperar=1`. O fluxo PKCE deve ser concluído no navegador que solicitou o link.
 
 Exporte `SUPABASE_URL` e `SUPABASE_PUBLISHABLE_KEY` no ambiente que executa `node scripts/build-platform.mjs`. Em uma futura prévia, configure ambas com escopo Preview e valide as origens de redirecionamento. A chave publishable será lida pelo navegador em `config.json`. A política de acesso fica no banco. Nunca passe uma chave administrativa. Sem as variáveis, a demonstração abre normalmente e o dashboard sinaliza que contas e projetos estão indisponíveis.
 

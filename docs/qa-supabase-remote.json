@@ -1,0 +1,443 @@
+{
+  "project": "safevision3d",
+  "project_ref": "qltabckpluhxnskxgofx",
+  "region": "us-east-1",
+  "source_commit": "5102b4d319b0720a14055a7551cae13c38f021cf",
+  "source_migration_version": "20261121194021",
+  "sql_sha256": "d84a34a2063c09a71765598b6cbdbc5bc20ab4dd96ea9eb3f5581840e4146d9c",
+  "sql_bytes": 4568,
+  "before": {
+    "version": "17.12",
+    "execution_role": "postgres",
+    "read_only": "off",
+    "database_create": true,
+    "public_create": true,
+    "auth_references": true,
+    "auth_uid": true,
+    "uuid_generator": true,
+    "schemas": [
+      "auth",
+      "extensions",
+      "graphql",
+      "graphql_public",
+      "information_schema",
+      "public",
+      "realtime",
+      "storage",
+      "vault"
+    ],
+    "public_relations": [],
+    "public_policies": 0,
+    "candidate_schema_functions": 0,
+    "candidate_schema_triggers": 0,
+    "roles": [
+      "anon",
+      "authenticated",
+      "postgres"
+    ]
+  },
+  "migration_history": [
+    {
+      "version": "20261121204325",
+      "name": "platform_foundation"
+    }
+  ],
+  "apply_success": true,
+  "after": {
+    "tables": [
+      {
+        "relname": "profiles",
+        "relrowsecurity": true,
+        "relforcerowsecurity": false
+      },
+      {
+        "relname": "project_versions",
+        "relrowsecurity": true,
+        "relforcerowsecurity": false
+      },
+      {
+        "relname": "projects",
+        "relrowsecurity": true,
+        "relforcerowsecurity": false
+      }
+    ],
+    "columns": [
+      {
+        "name": "id",
+        "type": "uuid",
+        "table": "profiles",
+        "default": "auth.uid()",
+        "nullable": "NO"
+      },
+      {
+        "name": "display_name",
+        "type": "text",
+        "table": "profiles",
+        "default": null,
+        "nullable": "NO"
+      },
+      {
+        "name": "id",
+        "type": "uuid",
+        "table": "project_versions",
+        "default": "gen_random_uuid()",
+        "nullable": "NO"
+      },
+      {
+        "name": "project_id",
+        "type": "uuid",
+        "table": "project_versions",
+        "default": null,
+        "nullable": "NO"
+      },
+      {
+        "name": "title",
+        "type": "text",
+        "table": "project_versions",
+        "default": null,
+        "nullable": "NO"
+      },
+      {
+        "name": "description",
+        "type": "text",
+        "table": "project_versions",
+        "default": null,
+        "nullable": "NO"
+      },
+      {
+        "name": "model_object_key",
+        "type": "text",
+        "table": "project_versions",
+        "default": null,
+        "nullable": "YES"
+      },
+      {
+        "name": "recorded_at",
+        "type": "timestamp with time zone",
+        "table": "project_versions",
+        "default": "now()",
+        "nullable": "NO"
+      },
+      {
+        "name": "id",
+        "type": "uuid",
+        "table": "projects",
+        "default": "gen_random_uuid()",
+        "nullable": "NO"
+      },
+      {
+        "name": "owner_id",
+        "type": "uuid",
+        "table": "projects",
+        "default": "auth.uid()",
+        "nullable": "NO"
+      },
+      {
+        "name": "title",
+        "type": "text",
+        "table": "projects",
+        "default": null,
+        "nullable": "NO"
+      },
+      {
+        "name": "description",
+        "type": "text",
+        "table": "projects",
+        "default": "''::text",
+        "nullable": "NO"
+      },
+      {
+        "name": "model_object_key",
+        "type": "text",
+        "table": "projects",
+        "default": null,
+        "nullable": "YES"
+      },
+      {
+        "name": "created_at",
+        "type": "timestamp with time zone",
+        "table": "projects",
+        "default": "now()",
+        "nullable": "NO"
+      },
+      {
+        "name": "updated_at",
+        "type": "timestamp with time zone",
+        "table": "projects",
+        "default": "now()",
+        "nullable": "NO"
+      }
+    ],
+    "constraints": [
+      {
+        "name": "profiles_display_name_check",
+        "table": "profiles",
+        "definition": "CHECK (((char_length(btrim(display_name)) >= 1) AND (char_length(btrim(display_name)) <= 100)))"
+      },
+      {
+        "name": "profiles_id_fkey",
+        "table": "profiles",
+        "definition": "FOREIGN KEY (id) REFERENCES auth.users(id) ON DELETE CASCADE"
+      },
+      {
+        "name": "profiles_pkey",
+        "table": "profiles",
+        "definition": "PRIMARY KEY (id)"
+      },
+      {
+        "name": "project_versions_pkey",
+        "table": "project_versions",
+        "definition": "PRIMARY KEY (id)"
+      },
+      {
+        "name": "project_versions_project_id_fkey",
+        "table": "project_versions",
+        "definition": "FOREIGN KEY (project_id) REFERENCES projects(id) ON DELETE CASCADE"
+      },
+      {
+        "name": "projects_description_check",
+        "table": "projects",
+        "definition": "CHECK ((char_length(description) <= 2000))"
+      },
+      {
+        "name": "projects_model_object_key_check",
+        "table": "projects",
+        "definition": "CHECK (((model_object_key IS NULL) OR ((char_length(model_object_key) >= 1) AND (char_length(model_object_key) <= 512))))"
+      },
+      {
+        "name": "projects_owner_id_fkey",
+        "table": "projects",
+        "definition": "FOREIGN KEY (owner_id) REFERENCES auth.users(id) ON DELETE CASCADE"
+      },
+      {
+        "name": "projects_pkey",
+        "table": "projects",
+        "definition": "PRIMARY KEY (id)"
+      },
+      {
+        "name": "projects_title_check",
+        "table": "projects",
+        "definition": "CHECK (((char_length(btrim(title)) >= 1) AND (char_length(btrim(title)) <= 120)))"
+      }
+    ],
+    "indexes": [
+      {
+        "name": "profiles_pkey",
+        "table": "profiles",
+        "definition": "CREATE UNIQUE INDEX profiles_pkey ON public.profiles USING btree (id)"
+      },
+      {
+        "name": "project_versions_pkey",
+        "table": "project_versions",
+        "definition": "CREATE UNIQUE INDEX project_versions_pkey ON public.project_versions USING btree (id)"
+      },
+      {
+        "name": "project_versions_recent",
+        "table": "project_versions",
+        "definition": "CREATE INDEX project_versions_recent ON public.project_versions USING btree (project_id, recorded_at DESC)"
+      },
+      {
+        "name": "projects_owner_recent",
+        "table": "projects",
+        "definition": "CREATE INDEX projects_owner_recent ON public.projects USING btree (owner_id, updated_at DESC, id)"
+      },
+      {
+        "name": "projects_pkey",
+        "table": "projects",
+        "definition": "CREATE UNIQUE INDEX projects_pkey ON public.projects USING btree (id)"
+      }
+    ],
+    "policies": [
+      {
+        "name": "profile_create",
+        "check": "(id = ( SELECT auth.uid() AS uid))",
+        "roles": [
+          "authenticated"
+        ],
+        "table": "profiles",
+        "using": null,
+        "command": "INSERT"
+      },
+      {
+        "name": "profile_edit",
+        "check": "(id = ( SELECT auth.uid() AS uid))",
+        "roles": [
+          "authenticated"
+        ],
+        "table": "profiles",
+        "using": "(id = ( SELECT auth.uid() AS uid))",
+        "command": "UPDATE"
+      },
+      {
+        "name": "profile_read",
+        "check": null,
+        "roles": [
+          "authenticated"
+        ],
+        "table": "profiles",
+        "using": "(id = ( SELECT auth.uid() AS uid))",
+        "command": "SELECT"
+      },
+      {
+        "name": "history_read",
+        "check": null,
+        "roles": [
+          "authenticated"
+        ],
+        "table": "project_versions",
+        "using": "(EXISTS ( SELECT 1\n   FROM projects p\n  WHERE ((p.id = project_versions.project_id) AND (p.owner_id = ( SELECT auth.uid() AS uid)))))",
+        "command": "SELECT"
+      },
+      {
+        "name": "project_create",
+        "check": "(owner_id = ( SELECT auth.uid() AS uid))",
+        "roles": [
+          "authenticated"
+        ],
+        "table": "projects",
+        "using": null,
+        "command": "INSERT"
+      },
+      {
+        "name": "project_delete",
+        "check": null,
+        "roles": [
+          "authenticated"
+        ],
+        "table": "projects",
+        "using": "(owner_id = ( SELECT auth.uid() AS uid))",
+        "command": "DELETE"
+      },
+      {
+        "name": "project_edit",
+        "check": "(owner_id = ( SELECT auth.uid() AS uid))",
+        "roles": [
+          "authenticated"
+        ],
+        "table": "projects",
+        "using": "(owner_id = ( SELECT auth.uid() AS uid))",
+        "command": "UPDATE"
+      },
+      {
+        "name": "project_read",
+        "check": null,
+        "roles": [
+          "authenticated"
+        ],
+        "table": "projects",
+        "using": "(owner_id = ( SELECT auth.uid() AS uid))",
+        "command": "SELECT"
+      }
+    ],
+    "triggers": [
+      {
+        "name": "record_new_project",
+        "table": "projects",
+        "enabled": "O",
+        "definition": "CREATE TRIGGER record_new_project AFTER INSERT ON public.projects FOR EACH ROW EXECUTE FUNCTION safevision_private.record_project_version()"
+      },
+      {
+        "name": "record_project_edit",
+        "table": "projects",
+        "enabled": "O",
+        "definition": "CREATE TRIGGER record_project_edit AFTER UPDATE OF title, description, model_object_key ON public.projects FOR EACH ROW WHEN ((((old.title IS DISTINCT FROM new.title) OR (old.description IS DISTINCT FROM new.description)) OR (old.model_object_key IS DISTINCT FROM new.model_object_key))) EXECUTE FUNCTION safevision_private.record_project_version()"
+      },
+      {
+        "name": "touch_project",
+        "table": "projects",
+        "enabled": "O",
+        "definition": "CREATE TRIGGER touch_project BEFORE UPDATE OF title, description, model_object_key ON public.projects FOR EACH ROW EXECUTE FUNCTION safevision_private.touch_project()"
+      }
+    ],
+    "functions": [
+      {
+        "name": "record_project_version",
+        "definer": true,
+        "settings": [
+          "search_path=\"\""
+        ],
+        "anon_execute": false,
+        "public_execute": false,
+        "authenticated_execute": false
+      },
+      {
+        "name": "touch_project",
+        "definer": false,
+        "settings": [
+          "search_path=\"\""
+        ],
+        "anon_execute": false,
+        "public_execute": false,
+        "authenticated_execute": false
+      }
+    ],
+    "privileges": [
+      {
+        "table": "profiles",
+        "anon_delete": false,
+        "anon_insert": false,
+        "anon_select": false,
+        "anon_update": false,
+        "auth_delete": false,
+        "auth_select": true,
+        "auth_insert_columns": [
+          "display_name"
+        ],
+        "auth_update_columns": [
+          "display_name"
+        ]
+      },
+      {
+        "table": "project_versions",
+        "anon_delete": false,
+        "anon_insert": false,
+        "anon_select": false,
+        "anon_update": false,
+        "auth_delete": false,
+        "auth_select": true,
+        "auth_insert_columns": [],
+        "auth_update_columns": []
+      },
+      {
+        "table": "projects",
+        "anon_delete": false,
+        "anon_insert": false,
+        "anon_select": false,
+        "anon_update": false,
+        "auth_delete": true,
+        "auth_select": true,
+        "auth_insert_columns": [
+          "title",
+          "description"
+        ],
+        "auth_update_columns": [
+          "title",
+          "description"
+        ]
+      }
+    ],
+    "anon_private_usage": false,
+    "authenticated_private_usage": false
+  },
+  "anonymous_data_api": [
+    {
+      "table": "profiles",
+      "status": 401,
+      "code": "42501",
+      "returnedRows": null
+    },
+    {
+      "table": "projects",
+      "status": 401,
+      "code": "42501",
+      "returnedRows": null
+    },
+    {
+      "table": "project_versions",
+      "status": 401,
+      "code": "42501",
+      "returnedRows": null
+    }
+  ],
+  "real_auth_users_tested": false
+}

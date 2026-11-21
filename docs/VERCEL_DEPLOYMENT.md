@@ -15,5 +15,7 @@ O total da distribuição original da clínica é 126.038.659 bytes. Cada segmen
 
 O Chrome confirmou contexto seguro. A sessão imersiva e a interação com controles físicos dependem de teste no Quest 2. A configuração `_headers` integra a distribuição original. A aplicação desses cabeçalhos pela Vercel não foi confirmada.
 
+Após a Missão 06, o esquema do Supabase está pronto, mas a prévia atual ainda usa `config.json` vazio. O próximo deploy conectado deve receber `SUPABASE_URL` e `SUPABASE_PUBLISHABLE_KEY` exclusivamente em Preview. O comando de build gera a configuração pública. A chave ativa foi confirmada pelo conector oficial, sem registro do valor. Veja [o relatório da migração](RELATORIO_MIGRACAO_SUPABASE_06.md).
+
 - [Configuração estática](https://vercel.com/docs/project-configuration/vercel-json)
 - [Limites da Vercel](https://vercel.com/docs/limits)
