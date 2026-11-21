@@ -24,3 +24,9 @@ O PR #3 reúne os históricos. Esta branch adiciona dashboard e migração testa
 - **Supabase.** Último estado observado: conector autenticado, sem ambiente SAFEVISION dedicado. A organização identificada tinha dois projetos ativos. Confirme destino, região e capacidade gratuita antes de provisionar. `supabase/migrations/20261121194021_platform_foundation.sql` não foi aplicada remotamente.
 
 Primeira ação da próxima execução: verificar as confirmações da Vercel e do Supabase e reconfirmar os destinos. Validar a prévia da fundação em HTTPS antes de usar o dashboard com contas reais. Verificar os sete segmentos no servidor e a reconstrução no navegador. Depois aplicar a migração somente ao ambiente Supabase de desenvolvimento autorizado, validar Auth e RLS com duas contas e testar o dashboard conectado. O headset continua a cargo da homologação física. Siga o [protocolo de relatório](../AGENTS.md) a cada entrega.
+
+## Retomada após a primeira prévia HTTPS
+
+O ponto de retomada acima é histórico. A [Vercel Preview](https://safevision-platform-4y8u5a0md-pyedros-projects.vercel.app/) está `READY` no projeto existente, commit `593e343`. Dashboard, visualizador, navegação, cinco riscos e sete binários foram verificados em HTTPS. O GLB recompôs o SHA-256 original. Veja [evidência do navegador](qa-vercel-preview.json) e [registro de implantação](VERCEL_DEPLOYMENT.md).
+
+A primeira ação agora é obter a autorização explícita para a migração no projeto `safevision3d` (`qltabckpluhxnskxgofx`, `us-east-1`), cuja branch principal é produção, ou seguir com um ambiente local isolado. A inspeção encontrou zero tabelas públicas, zero políticas públicas e zero migrações. Depois da autorização, aplicar somente a migração versionada, validar Auth/RLS com duas contas e configurar as variáveis públicas e redirecionamentos para a prévia. Não alterar a produção Vercel, a `main` ou `apps/viewer/`.
