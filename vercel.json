@@ -9,7 +9,8 @@
       "integration/auth-preview-e2e": false,
       "feature/safevision-studio-demo": false,
       "feature/platform-v1-premium-ui": false,
-      "feature/inspection-reports-v1": false
+      "feature/inspection-reports-v1": false,
+      "feature/inspection-cloud-sync-v1": false
     }
   }
 }

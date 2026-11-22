@@ -25,3 +25,7 @@ nav a[href="#relatorios"]::before {content:"▤" / ""}
  .record-text {orphans:3;widows:3}
  .inspection-report footer {margin-top:6mm;break-inside:avoid}
 }
+
+#screen fieldset {border:1px solid var(--line);min-width:0;padding:12px}
+#screen fieldset input[type=checkbox] {display:inline;width:auto}
+#screen fieldset button {margin:4px}
