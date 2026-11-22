@@ -1,0 +1,52 @@
+{
+  "inspection": {
+    "browser": "157.0.8103.80",
+    "cases_saved": 5,
+    "evaluated_in_test": 2,
+    "exported_A4_pages": 6,
+    "invalid_storage_recovery": "passed",
+    "mobile_width": 375,
+    "viewer_from_form": "R05",
+    "page_errors": []
+  },
+  "studio_regression": {
+    "interface": "passed",
+    "official_pdfs": 2,
+    "request_methods": [
+      "GET"
+    ],
+    "same_origin_only": true,
+    "external_api_calls": 0,
+    "failure_and_retry": "passed",
+    "single_scene_on_repeat": true,
+    "initial_segment_requests": 7,
+    "risk_states": [
+      "R01",
+      "R02",
+      "R03",
+      "R04",
+      "R05"
+    ],
+    "glb_bytes": 113018368,
+    "glb_sha256": "911f6af402a19aca8b6825ab6df840b56d3100089cbb69e4c0d4a705588402f0",
+    "page_errors": [],
+    "console_errors": [],
+    "unexpected_http_errors": [],
+    "browser": "157.0.8103.80"
+  },
+  "original_viewer_files_verified": 42,
+  "evidence": [
+    "01-dashboard.png",
+    "02-inspecoes.png",
+    "R01.png",
+    "R03.png",
+    "R05.png",
+    "formulario.png",
+    "impressao.png",
+    "mobile.png",
+    "relatorio-exemplo.pdf",
+    "relatorio.png",
+    "resumo.png",
+    "visualizador.png"
+  ]
+}
