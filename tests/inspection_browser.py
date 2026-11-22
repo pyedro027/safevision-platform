@@ -45,6 +45,7 @@ with sync_playwright() as pw:
     expect(page.get_by_label("Observações",exact=True)).to_have_value("Teste local · R05")
     page.get_by_label("Observações",exact=True).fill("<b>Texto revisado</b>")
     page.get_by_role("button",name="Salvar rascunho").click()
+    shot("salvo-local")
     page.get_by_role("button",name="Visualizar R05 em 3D").click()
     expect(page.locator(".inspection-view p")).to_have_text("Inspeção em 3D · R05",timeout=120000)
     frame=page.frames[-1]
@@ -82,7 +83,7 @@ with sync_playwright() as pw:
     page.once("dialog",lambda d:d.accept())
     page.get_by_role("button",name="Limpar registro R05").click()
     expect(page.get_by_label("Observações",exact=True)).to_have_value("")
-    page.evaluate("localStorage.setItem('safevision:inspection:v1:guest:aurea-v03:R05','invalid')")
+    page.evaluate("localStorage.setItem('safevision:inspection:v2:guest:aurea-v03:R05','invalid')")
     page.reload()
     expect(page.get_by_role("alert")).to_contain_text("armazenamento")
     page.once("dialog",lambda d:d.accept())

@@ -20,6 +20,11 @@ if (url) {
   }
 }
 
+const syncInspections = process.env.SAFEVISION_INSPECTION_SYNC === '1';
+if (syncInspections && (!url || !['localhost','127.0.0.1'].includes(new URL(url).hostname))) {
+  throw new Error('A sincronização da Missão 14 requer um Supabase isolado em loopback.');
+}
+
 const vendor = JSON.parse(await readFile(path('apps/platform/vendor/provenance.json'), 'utf8'));
 const sdk = await readFile(path('apps/platform/vendor/supabase.js'));
 if (createHash('sha256').update(sdk).digest('hex') !== vendor.sha256) {
@@ -30,5 +35,5 @@ await rm(output, { recursive: true, force: true });
 await mkdir(output, { recursive: true });
 await cp(source, output, { recursive: true });
 await cp(path('apps/viewer/'), path('dist/clinica/'), { recursive: true });
-await writeFile(path('dist/config.json'), JSON.stringify(url ? { url, key } : {}));
+await writeFile(path('dist/config.json'), JSON.stringify(url ? { url, key, ...(syncInspections && { inspectionSync: true }) } : {}));
 console.log('Distribuição gerada em dist/. Visualizador preservado em dist/clinica/.');

@@ -1,0 +1,66 @@
+{
+  "postgres_isolated": {
+    "engine": "PGlite",
+    "identities": 2,
+    "rls_crud_revision": "passed",
+    "http_adapter": "simulated"
+  },
+  "chrome": {
+    "auth_and_http": "simulated",
+    "account_and_projects": "passed",
+    "explicit_import_and_cancel": "passed",
+    "offline_and_503": "passed",
+    "conflict_and_archive": "passed",
+    "report_origin": "passed",
+    "widths": [
+      375,
+      430,
+      768,
+      1024,
+      1440,
+      1920
+    ]
+  },
+  "local_inspection_pdf_a4_pages": 6,
+  "studio": {
+    "interface": "passed",
+    "official_pdfs": 2,
+    "request_methods": [
+      "GET"
+    ],
+    "same_origin_only": true,
+    "external_api_calls": 0,
+    "failure_and_retry": "passed",
+    "single_scene_on_repeat": true,
+    "initial_segment_requests": 7,
+    "risk_states": [
+      "R01",
+      "R02",
+      "R03",
+      "R04",
+      "R05"
+    ],
+    "glb_bytes": 113018368,
+    "glb_sha256": "911f6af402a19aca8b6825ab6df840b56d3100089cbb69e4c0d4a705588402f0",
+    "page_errors": [],
+    "console_errors": [],
+    "unexpected_http_errors": [],
+    "browser": "157.0.8103.80"
+  },
+  "viewer_original_files": 42,
+  "remote_mutations": 0,
+  "full_local_supabase_stack": "unavailable_without_docker",
+  "screenshots": [
+    "02-inspecoes-sem-integracao.png",
+    "m14-03-conta-simulada.png",
+    "m14-05-confirmacao-simulada.png",
+    "m14-06-offline-simulada.png",
+    "m14-07-pendente-simulada.png",
+    "m14-08-erro-simulado.png",
+    "m14-09-conflito-simulado.png",
+    "m14-11-importacao-simulada.png",
+    "m14-12-relatorio-simulado.png",
+    "m14-13-mobile.png",
+    "salvo-local-sem-integracao.png"
+  ]
+}

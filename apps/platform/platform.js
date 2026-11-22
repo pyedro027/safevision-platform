@@ -125,7 +125,7 @@ function render() {
   closeStudio?.();
   closeStudio = undefined;
   if (inspection) {
-    if (!disposeInspection) disposeInspection = mountInspection(screen, hash, state.session?.user.id);
+    if (!disposeInspection) disposeInspection = mountInspection(screen, hash, state.session?.user.id, state.client, state.inspectionConfig);
     return;
   }
   if (route === 'inicio') screen.innerHTML = overview();
@@ -363,6 +363,7 @@ try {
   if (!response.ok) throw new Error('Configuração indisponível.');
   const config = await response.json();
   if (config.url && config.key) {
+    if (config.inspectionSync === true && ['127.0.0.1','localhost'].includes(new URL(config.url).hostname)) state.inspectionConfig = config;
     state.client = window.supabase.createClient(config.url, config.key, {
       auth: { flowType: 'pkce', storageKey: 'safevision-platform-v1' }
     });

@@ -68,3 +68,7 @@ A branch feature/platform-v1-premium-ui reúne o redesign das seis rotas sobre o
 ## Missão 13 — Inspeções e relatórios
 
 Rascunhos locais por caso, acesso ao visualizador e relatório A4 foram testados sobre a base aprovada do PR #9. A proposta de persistência remota está em docs e aguarda revisão. [Relatório e evidências](RELATORIO_MISSAO_13.md)
+
+## Missão 14 — Persistência híbrida
+
+O modo local permanece ativo por padrão. Sincronização, resolução de conflitos e importação têm testes no Marco A. O relatório indica a origem da avaliação. Consulte os limites da validação e o plano para uma ativação autorizada. [Relatório da Missão 14](RELATORIO_MISSAO_14.md)

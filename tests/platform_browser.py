@@ -8,6 +8,7 @@ import os
 from pathlib import Path
 import threading
 import time
+from uuid import uuid4
 from urllib.parse import parse_qs, urlsplit
 
 from playwright.sync_api import expect, sync_playwright
@@ -26,6 +27,9 @@ history = []
 profiles = []
 requests = []
 challenges = {}
+reviews = {}
+review_requests = []
+fail_reviews = False
 
 
 def jwt_part(payload):
@@ -39,7 +43,7 @@ def simulated_api(route):
     requests.append((method, path))
     data = request.post_data_json if request.post_data else {}
     if path == "/config.json":
-        response = {"url": origin, "key": "sb_publishable_test_fixture"}
+        response = {"url": origin, "key": "sb_publishable_test_fixture", "inspectionSync": True}
     elif path == "/auth/v1/token":
         grant = parse_qs(urlsplit(request.url).query)["grant_type"][0]
         if grant == "pkce":
@@ -69,6 +73,22 @@ def simulated_api(route):
         if method == "PUT":
             assert data["password"] == "test-new-password-456"
         response = user
+    elif path == "/rest/v1/inspection_reviews":
+        review_requests.append(method)
+        if fail_reviews:
+            return route.fulfill(status=503, json={})
+        code = parse_qs(urlsplit(request.url).query)["case_code"][0][3:]
+        row = reviews.get(code)
+        if method == "GET":
+            response = [row] if row else []
+        elif method == "PATCH" and (not row or "revision=eq."+row["revision"] not in request.url):
+            response = []
+        elif method == "POST" and row:
+            return route.fulfill(status=409,json={})
+        else:
+            reviews[code] = {**(row or {}), **data, "owner_id": user["id"],"revision":str(uuid4()),
+                             "created_at":timestamp,"updated_at":timestamp}
+            response = [reviews[code]]
     elif path == "/rest/v1/projects":
         if method == "POST":
             assert set(data) == {"title", "description"}
@@ -188,6 +208,61 @@ try:
         page.get_by_role("button", name="Salvar perfil").click()
         expect(page.locator("#feedback")).to_contain_text("Perfil atualizado")
         capture("10-conta-simulada")
+        capture("m14-03-conta-simulada")
+        page.evaluate("""() => localStorage.setItem('safevision:inspection:v1:guest:aurea-v03:R02',
+            JSON.stringify({status:'Em análise',notes:'Rascunho visitante',advice:'',date:new Date().toISOString()}))""")
+        page.goto(origin + "/#inspecoes")
+        page.get_by_text("Importar rascunhos de visitante").click()
+        page.get_by_role("checkbox",name="R02",exact=False).check()
+        capture("m14-11-importacao-simulada")
+        page.get_by_role("button",name="Cancelar importação").click()
+        assert review_requests == []
+        page.get_by_text("Importar rascunhos de visitante").click()
+        expect(page.get_by_role("checkbox",name="R02",exact=False)).not_to_be_checked()
+        page.get_by_role("checkbox",name="R02",exact=False).check()
+        page.get_by_role("button",name="Importar selecionados").click()
+        expect(page.get_by_text("Local · sincronização pendente")).to_be_visible()
+        capture("m14-07-pendente-simulada")
+        assert review_requests == []
+        sync = page.get_by_role("button",name="Sincronizar avaliações")
+        page.evaluate("Object.defineProperty(navigator,'onLine',{configurable:true,value:false})")
+        sync.click()
+        expect(page.get_by_text("Sem conexão. Os rascunhos pendentes",exact=False)).to_be_visible()
+        capture("m14-06-offline-simulada")
+        page.evaluate("delete navigator.onLine")
+        fail_reviews = True
+        sync.click()
+        expect(page.get_by_text("HTTP 503",exact=False)).to_be_visible()
+        capture("m14-08-erro-simulado")
+        fail_reviews = False
+        sync.click()
+        expect(page.get_by_text("Cópia confirmada na nuvem")).to_be_visible()
+        assert reviews["R02"]["notes"] == "Rascunho visitante"
+        capture("m14-05-confirmacao-simulada")
+        page.goto(origin + "/#inspecoes/R02")
+        page.get_by_label("Observações",exact=True).fill("Versão deste navegador")
+        page.get_by_role("button",name="Salvar rascunho").click()
+        reviews["R02"].update(notes="Versão de outro dispositivo",revision=str(uuid4()))
+        page.goto(origin + "/#inspecoes")
+        sync.click()
+        expect(page.get_by_text("Conflito em R02",exact=False)).to_be_visible()
+        expect(page.get_by_text("Versão de outro dispositivo",exact=False)).to_be_visible()
+        capture("m14-09-conflito-simulado")
+        for width in (375,430,768,1024,1440,1920):
+            page.set_viewport_size({"width":width,"height":880})
+            assert page.evaluate("document.documentElement.scrollWidth <= innerWidth")
+            if width == 375:
+                capture("m14-13-mobile")
+        page.set_viewport_size({"width":1200,"height":800})
+        page.get_by_role("button",name="Manter versão da nuvem").click()
+        expect(page.get_by_text("Cópia confirmada na nuvem")).to_be_visible()
+        page.goto(origin + "/#inspecoes/R02")
+        page.get_by_text("Versões preservadas neste navegador").click()
+        expect(page.get_by_text("Versão deste navegador",exact=False)).to_be_visible()
+        page.goto(origin + "/#relatorios")
+        expect(page.get_by_text("Versão de outro dispositivo",exact=True)).to_be_visible()
+        capture("m14-12-relatorio-simulado")
+        page.goto(origin + "/#conta")
         page.get_by_role("button", name="Sair", exact=True).click()
         expect(page.get_by_role("heading", name="Visão geral")).to_be_visible()
         page.set_viewport_size({"width":390, "height":844})
