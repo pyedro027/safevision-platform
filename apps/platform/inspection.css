@@ -1,0 +1,27 @@
+nav a[href="#inspecoes"]::before {content:"◎" / ""}
+nav a[href="#relatorios"]::before {content:"▤" / ""}
+.inspection-grid {display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:var(--space);align-items:start}
+.inspection-grid .panel {width:100%;max-width:none}
+.inspection-grid select {display:block;width:100%;padding:10px;border:1px solid var(--line);border-radius:6px;font:inherit}
+.case-photo {width:100%;max-height:240px;object-fit:cover;border-radius:6px}
+.inspection-grid h3,.report-sheet h3 {margin:15px 0 6px}
+.inspection-view iframe {width:100%;height:74vh;border:0}
+.inspection-report {background:white;max-width:850px;margin:18px auto;color:var(--ink);overflow-wrap:anywhere}
+.report-cover,.report-sheet,.inspection-report footer {padding:var(--space);border-bottom:1px solid var(--line)}
+.report-cover img {width:100%;max-height:250px;object-fit:cover}
+.report-cover small,.report-sheet small {color:var(--action);font-family:var(--mono)}
+.record-text {white-space:pre-wrap;overflow-wrap:anywhere}
+@media(max-width:800px){.inspection-grid{grid-template-columns:1fr}}
+@page {size:A4 portrait;margin:16mm}
+@media print {
+ body:has(.inspection-report),body:has(.inspection-report) main {display:block;background:white}
+ body:has(.inspection-report) :is(.sidebar,.top,.skip,#feedback,.report-tools,dialog){display:none!important}
+ body:has(.inspection-report) #screen,.inspection-report {width:auto;max-width:none;margin:0;padding:0}
+ .inspection-report {font-size:10pt;line-height:1.4}
+ .report-cover,.report-sheet,.inspection-report footer {border:0;padding:0}
+ .report-sheet {break-before:page}
+ .report-sheet img {height:48mm;object-fit:contain;object-position:left}
+ .report-sheet h2,.report-sheet h3,.report-sheet h4 {break-after:avoid}
+ .record-text {orphans:3;widows:3}
+ .inspection-report footer {margin-top:6mm;break-inside:avoid}
+}

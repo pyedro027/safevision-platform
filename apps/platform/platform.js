@@ -1,3 +1,4 @@
+import { mountInspection } from './inspection.js';
 import { projectOverview, studioEntry, clinicPage, settingsPage, navigation, serviceName } from './workspace.js';
 navigation();
 import { mountStudio } from './studio/studio.js';
@@ -13,6 +14,8 @@ const state = {
 };
 let messageTimer;
 let closeStudio;
+let inspectionKey = '';
+let disposeInspection;
 
 // The SDK only emits PASSWORD_RECOVERY after a successful PKCE exchange.
 // Open the recovery screen even if there is no verifier in this browser.
@@ -104,7 +107,11 @@ function account() {
 
 function render() {
   const hash = location.hash.slice(1);
-  const route = routes.has(hash) ? hash : 'inicio';
+  const module = hash.split('/')[0];
+  const inspection = ['inspecoes', 'relatorios'].includes(module);
+  const route = inspection ? module : routes.has(hash) ? hash : 'inicio';
+  const key = inspection ? JSON.stringify([hash, state.session?.user.id]) : '';
+  if (inspectionKey !== key) { disposeInspection?.(); disposeInspection = undefined; inspectionKey = key; }
   for (const link of document.querySelectorAll('nav a')) {
     if (link.hash === '#' + route) link.setAttribute('aria-current', 'page');
     else link.removeAttribute('aria-current');
@@ -117,6 +124,10 @@ function render() {
   }
   closeStudio?.();
   closeStudio = undefined;
+  if (inspection) {
+    if (!disposeInspection) disposeInspection = mountInspection(screen, hash, state.session?.user.id);
+    return;
+  }
   if (route === 'inicio') screen.innerHTML = overview();
   if (route === 'projetos') screen.innerHTML = projectsPage();
   if (route === 'conta') screen.innerHTML = '<div class="account-layout"><div>' + account() + '</div><aside class="account-art"><img src="./media/r01.webp" alt="Detalhe de circulação da Clínica ÁUREA"><a href="./clinica/#inspection/R01">R01 · Circulação ↗</a></aside></div>';
