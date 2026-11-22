@@ -107,6 +107,9 @@ try:
             options = {"executable_path": os.environ["CHROME_PATH"]}
         browser = playwright.chromium.launch(**options)
         page = browser.new_page(viewport={"width": 1200, "height": 800})
+        def capture(name):
+            if os.getenv("REDESIGN_EVIDENCE"):
+                page.screenshot(path=Path(os.environ["REDESIGN_EVIDENCE"]) / (name + ".png"), full_page=True)
         errors = []
         page.on("pageerror", lambda error: errors.append(str(error)))
         page.goto(origin)
@@ -118,6 +121,11 @@ try:
             page.route(origin + pattern, simulated_api)
         page.goto(origin + "/#conta")
         page.reload()
+        capture("09-conta-visitante")
+        page.goto(origin + "/#projetos")
+        expect(page.get_by_text("para acessar seus projetos privados.", exact=False)).to_be_visible()
+        capture("03-projetos-visitante")
+        page.goto(origin + "/#conta")
         page.get_by_role("button", name="Criar conta").click()
         page.get_by_label("E-mail").fill(user["email"])
         page.get_by_label("Senha").fill("test-password-123")
@@ -162,6 +170,8 @@ try:
         page.get_by_label("Título").fill("Projeto <b>QA</b>")
         page.get_by_label("Descrição").fill("Descrição de teste")
         page.get_by_role("button", name="Salvar projeto").click()
+        expect(page.get_by_role("button", name="Projeto <b>QA</b>")).to_be_visible()
+        capture("04-projetos-dados-simulados")
         page.get_by_role("button", name="Projeto <b>QA</b>").click()
         expect(page.get_by_role("dialog")).to_contain_text("Histórico")
         page.get_by_role("button", name="Editar").click()
@@ -177,9 +187,11 @@ try:
         page.get_by_label("Nome de exibição").fill("Operador QA")
         page.get_by_role("button", name="Salvar perfil").click()
         expect(page.locator("#feedback")).to_contain_text("Perfil atualizado")
+        capture("10-conta-simulada")
         page.get_by_role("button", name="Sair", exact=True).click()
         expect(page.get_by_role("heading", name="Visão geral")).to_be_visible()
         page.set_viewport_size({"width":390, "height":844})
+        page.get_by_role("button", name="Menu", exact=True).click()
         page.get_by_role("link", name="Clínica ÁUREA", exact=True).click()
         expect(page.get_by_role("heading", name="Casos disponíveis")).to_be_visible()
         assert page.evaluate("document.documentElement.scrollWidth === innerWidth")

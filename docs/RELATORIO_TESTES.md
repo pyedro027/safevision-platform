@@ -60,3 +60,7 @@ Chrome 157 revalidou a prévia protegida, a Clínica ÁUREA e o SHA-256 do GLB. 
 ## Missão 11 — SAFEVISION Studio
 
 A rodada local com Chrome passou em seleção e validação dos dois PDFs reais, responsividade, teclado, falha, cancelamento, repetição sem baixar os segmentos novamente e regressão 3D de R01–R05. O build local do Studio não fez chamadas externas. A regressão de conta e projetos usou API simulada. [Relatório](RELATORIO_STUDIO_DEMO.md) · [Evidência](qa-studio-demo.json)
+
+## Missão 12 — Revisão visual local
+
+A branch feature/platform-v1-premium-ui reúne o redesign das seis rotas sobre o PR #8. Chrome passou nas seis larguras, na regressão do Studio e no dashboard com API simulada. A próxima ação é a revisão visual pelo proprietário. [Relatório e capturas](RELATORIO_REDESIGN_12.md)
