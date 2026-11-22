@@ -1,0 +1,5 @@
+# RLS e concorrência
+
+A migração cria public.inspection_reviews com uma linha por proprietário, modelo e caso. A PK composta também sustenta o filtro por proprietário e a busca por caso. O proprietário vem de auth.uid(). authenticated pode consultar e excluir linhas próprias, criar nos campos permitidos e atualizar apenas status, observações e recomendação. anon não recebe privilégios. Owner, revisão e datas são protegidos por grants. A política usa USING e WITH CHECK com a identidade autenticada. O trigger de revisão roda como invocador em schema privado.
+
+O cliente compara a revisão em toda atualização. O controle otimista protege os clientes que seguem o protocolo. Um cliente autenticado que deliberadamente omita esse filtro ainda pode editar sua própria linha dentro dos grants. A RLS continua impondo a propriedade. Os testes com duas identidades e papel anônimo executaram SQL real em PGlite. A interface Chrome usou um mock identificado para Auth e HTTP. A pilha integrada GoTrue e PostgREST aguarda ambiente com Docker ou infraestrutura isolada autorizada.
