@@ -64,3 +64,7 @@ A rodada local com Chrome passou em seleção e validação dos dois PDFs reais,
 ## Missão 12 — Revisão visual local
 
 A branch feature/platform-v1-premium-ui reúne o redesign das seis rotas sobre o PR #8. Chrome passou nas seis larguras, na regressão do Studio e no dashboard com API simulada. A próxima ação é a revisão visual pelo proprietário. [Relatório e capturas](RELATORIO_REDESIGN_12.md)
+
+## Missão 13 — Inspeções e relatórios
+
+Rascunhos locais por caso, acesso ao visualizador e relatório A4 foram testados sobre a base aprovada do PR #9. A proposta de persistência remota está em docs e aguarda revisão. [Relatório e evidências](RELATORIO_MISSAO_13.md)
