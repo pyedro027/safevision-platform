@@ -72,3 +72,7 @@ Rascunhos locais por caso, acesso ao visualizador e relatório A4 foram testados
 ## Missão 14 — Persistência híbrida
 
 O modo local permanece ativo por padrão. Sincronização, resolução de conflitos e importação têm testes no Marco A. O relatório indica a origem da avaliação. Consulte os limites da validação e o plano para uma ativação autorizada. [Relatório da Missão 14](RELATORIO_MISSAO_14.md)
+
+## Missão 15 — Contas e projetos
+
+A branch feature/accounts-projects-v2 deriva do PR #11. Revise a carteira em loopback na porta 4181. O shell do tour é a primeira prioridade futura da M16. A M14B aguarda autorização independente. [Relatório](RELATORIO_MISSAO_15.md) · [QA](QA_MISSAO_15.md)

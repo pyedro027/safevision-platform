@@ -1,0 +1,302 @@
+[
+  {
+    "file": "01-login-desktop.png",
+    "route": "conta",
+    "viewport": {
+      "width": 1440,
+      "height": 950
+    },
+    "environment": "Chrome local · API simulada",
+    "identity": "visitante"
+  },
+  {
+    "file": "02-login-mobile.png",
+    "route": "conta",
+    "viewport": {
+      "width": 375,
+      "height": 812
+    },
+    "environment": "Chrome local · API simulada",
+    "identity": "visitante"
+  },
+  {
+    "file": "03-cadastro.png",
+    "route": "conta",
+    "viewport": {
+      "width": 1440,
+      "height": 950
+    },
+    "environment": "Chrome local · API simulada",
+    "identity": "visitante"
+  },
+  {
+    "file": "04-recuperacao.png",
+    "route": "conta",
+    "viewport": {
+      "width": 1440,
+      "height": 950
+    },
+    "environment": "Chrome local · API simulada",
+    "identity": "visitante"
+  },
+  {
+    "file": "05-erro-credenciais.png",
+    "route": "conta",
+    "viewport": {
+      "width": 1440,
+      "height": 950
+    },
+    "environment": "Chrome local · API simulada",
+    "identity": "visitante"
+  },
+  {
+    "file": "06-perfil.png",
+    "route": "conta",
+    "viewport": {
+      "width": 1440,
+      "height": 950
+    },
+    "environment": "Chrome local · API simulada",
+    "identity": "A simulada"
+  },
+  {
+    "file": "07-projetos-visitante.png",
+    "route": "projetos",
+    "viewport": {
+      "width": 1440,
+      "height": 950
+    },
+    "environment": "Chrome local · API simulada",
+    "identity": "visitante"
+  },
+  {
+    "file": "08-projetos-vazio.png",
+    "route": "projetos",
+    "viewport": {
+      "width": 1440,
+      "height": 950
+    },
+    "environment": "Chrome local · API simulada",
+    "identity": "A simulada"
+  },
+  {
+    "file": "09-projetos-grade.png",
+    "route": "projetos",
+    "viewport": {
+      "width": 1440,
+      "height": 950
+    },
+    "environment": "Chrome local · API simulada",
+    "identity": "A simulada"
+  },
+  {
+    "file": "10-projetos-lista.png",
+    "route": "projetos",
+    "viewport": {
+      "width": 1440,
+      "height": 950
+    },
+    "environment": "Chrome local · API simulada",
+    "identity": "A simulada"
+  },
+  {
+    "file": "11-pesquisa.png",
+    "route": "projetos",
+    "viewport": {
+      "width": 1440,
+      "height": 950
+    },
+    "environment": "Chrome local · API simulada",
+    "identity": "A simulada"
+  },
+  {
+    "file": "12-sem-resultados.png",
+    "route": "projetos",
+    "viewport": {
+      "width": 1440,
+      "height": 950
+    },
+    "environment": "Chrome local · API simulada",
+    "identity": "A simulada"
+  },
+  {
+    "file": "13-ordenacao.png",
+    "route": "projetos",
+    "viewport": {
+      "width": 1440,
+      "height": 950
+    },
+    "environment": "Chrome local · API simulada",
+    "identity": "A simulada"
+  },
+  {
+    "file": "14-novo-projeto.png",
+    "route": "projetos",
+    "viewport": {
+      "width": 1440,
+      "height": 950
+    },
+    "environment": "Chrome local · API simulada",
+    "identity": "A simulada"
+  },
+  {
+    "file": "15-novo-preenchido.png",
+    "route": "projetos",
+    "viewport": {
+      "width": 1440,
+      "height": 950
+    },
+    "environment": "Chrome local · API simulada",
+    "identity": "A simulada"
+  },
+  {
+    "file": "16-criacao-confirmada.png",
+    "route": "projetos",
+    "viewport": {
+      "width": 1440,
+      "height": 950
+    },
+    "environment": "Chrome local · API simulada",
+    "identity": "A simulada"
+  },
+  {
+    "file": "17-detalhes.png",
+    "route": "projetos/86adc636-902a-42d9-b42a-5ab9b1e6cde2",
+    "viewport": {
+      "width": 1440,
+      "height": 950
+    },
+    "environment": "Chrome local · API simulada",
+    "identity": "A simulada"
+  },
+  {
+    "file": "18-historico.png",
+    "route": "projetos/86adc636-902a-42d9-b42a-5ab9b1e6cde2",
+    "viewport": {
+      "width": 1440,
+      "height": 950
+    },
+    "environment": "Chrome local · API simulada",
+    "identity": "A simulada"
+  },
+  {
+    "file": "19-edicao.png",
+    "route": "projetos/86adc636-902a-42d9-b42a-5ab9b1e6cde2",
+    "viewport": {
+      "width": 1440,
+      "height": 950
+    },
+    "environment": "Chrome local · API simulada",
+    "identity": "A simulada"
+  },
+  {
+    "file": "20-confirmacao-exclusao.png",
+    "route": "projetos/86adc636-902a-42d9-b42a-5ab9b1e6cde2",
+    "viewport": {
+      "width": 1440,
+      "height": 950
+    },
+    "environment": "Chrome local · API simulada",
+    "identity": "A simulada"
+  },
+  {
+    "file": "21-modelo-ausente.png",
+    "route": "projetos/86adc636-902a-42d9-b42a-5ab9b1e6cde2",
+    "viewport": {
+      "width": 1440,
+      "height": 950
+    },
+    "environment": "Chrome local · API simulada",
+    "identity": "A simulada"
+  },
+  {
+    "file": "22-falha-de-comunicacao.png",
+    "route": "projetos/86adc636-902a-42d9-b42a-5ab9b1e6cde2",
+    "viewport": {
+      "width": 1440,
+      "height": 950
+    },
+    "environment": "Chrome local · API simulada",
+    "identity": "A simulada"
+  },
+  {
+    "file": "23-projetos-mobile.png",
+    "route": "projetos",
+    "viewport": {
+      "width": 375,
+      "height": 812
+    },
+    "environment": "Chrome local · API simulada",
+    "identity": "A simulada"
+  },
+  {
+    "file": "24-detalhes-mobile.png",
+    "route": "projetos/86adc636-902a-42d9-b42a-5ab9b1e6cde2",
+    "viewport": {
+      "width": 375,
+      "height": 812
+    },
+    "environment": "Chrome local · API simulada",
+    "identity": "A simulada"
+  },
+  {
+    "file": "25-demonstracao-separada.png",
+    "route": "projetos",
+    "viewport": {
+      "width": 1440,
+      "height": 950
+    },
+    "environment": "Chrome local · API simulada",
+    "identity": "A simulada"
+  },
+  {
+    "file": "26-dashboard.png",
+    "route": "inicio",
+    "viewport": {
+      "width": 1440,
+      "height": 950
+    },
+    "environment": "Chrome local · API simulada",
+    "identity": "visitante"
+  },
+  {
+    "file": "27-studio.png",
+    "route": "studio",
+    "viewport": {
+      "width": 1440,
+      "height": 950
+    },
+    "environment": "Chrome local · API simulada",
+    "identity": "visitante"
+  },
+  {
+    "file": "28-inspecoes.png",
+    "route": "inspecoes",
+    "viewport": {
+      "width": 1440,
+      "height": 950
+    },
+    "environment": "Chrome local · API simulada",
+    "identity": "visitante"
+  },
+  {
+    "file": "29-relatorios.png",
+    "route": "relatorios",
+    "viewport": {
+      "width": 1440,
+      "height": 950
+    },
+    "environment": "Chrome local · API simulada",
+    "identity": "visitante"
+  },
+  {
+    "file": "30-navegacao-demonstrativa.png",
+    "route": "aurea",
+    "viewport": {
+      "width": 1440,
+      "height": 950
+    },
+    "environment": "Chrome local · API simulada",
+    "identity": "visitante"
+  }
+]
