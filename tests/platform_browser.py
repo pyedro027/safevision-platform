@@ -1,125 +1,12 @@
-"""Browser checks with a simulated API. Does not contact Supabase or send email."""
-import base64
-import functools
-import hashlib
-import http.server
-import json
+"""Browser regression with the real SDK and a loopback HTTP fixture."""
 import os
 from pathlib import Path
-import threading
-import time
 from uuid import uuid4
-from urllib.parse import parse_qs, urlsplit
-
 from playwright.sync_api import expect, sync_playwright
+import platform_fixture as fixture
+from platform_fixture import origin, server, simulated_api, user, requests, review_requests, reviews, timestamp
 
-root = Path(__file__).resolve().parents[1]
-server = http.server.ThreadingHTTPServer(
-    ("127.0.0.1", 0),
-    functools.partial(http.server.SimpleHTTPRequestHandler, directory=root / "dist"),
-)
-origin = f"http://127.0.0.1:{server.server_port}"
-threading.Thread(target=server.serve_forever, daemon=True).start()
-timestamp = "2026-11-21T13:00:00.000Z"
-user = {"id": "11111111-1111-4111-8111-111111111111", "email": "qa@example.invalid"}
-projects = []
-history = []
-profiles = []
-requests = []
-challenges = {}
-reviews = {}
-review_requests = []
-fail_reviews = False
-
-
-def jwt_part(payload):
-    return base64.urlsafe_b64encode(json.dumps(payload).encode()).decode().rstrip("=")
-
-
-def simulated_api(route):
-    request = route.request
-    path = urlsplit(request.url).path
-    method = request.method
-    requests.append((method, path))
-    data = request.post_data_json if request.post_data else {}
-    if path == "/config.json":
-        response = {"url": origin, "key": "sb_publishable_test_fixture", "inspectionSync": True}
-    elif path == "/auth/v1/token":
-        grant = parse_qs(urlsplit(request.url).query)["grant_type"][0]
-        if grant == "pkce":
-            action = {"signup-code": "signup", "recovery-code": "recover"}[data["auth_code"]]
-            verifier = data["code_verifier"].encode()
-            challenge = base64.urlsafe_b64encode(hashlib.sha256(verifier).digest()).decode().rstrip("=")
-            assert challenge == challenges[action]
-        else:
-            assert grant == "password" and data["email"] == user["email"]
-            if data["password"] != "test-password-123":
-                return route.fulfill(status=400, json={"code": "invalid_credentials", "message": "Invalid login credentials"})
-        exp = int(time.time()) + 3600
-        token = f"{jwt_part({'alg':'HS256'})}.{jwt_part({'sub':user['id'], 'exp':exp})}.fixture"
-        response = {"access_token": token, "refresh_token": "fixture", "token_type": "bearer",
-                    "expires_in": 3600, "expires_at": exp, "user": user}
-    elif path == "/auth/v1/logout":
-        return route.fulfill(status=204, body="")
-    elif path in ("/auth/v1/signup", "/auth/v1/recover"):
-        action = path.rsplit("/", 1)[1]
-        destination = parse_qs(urlsplit(request.url).query)["redirect_to"][0]
-        assert destination == origin + ("/" if action == "signup" else "/?recuperar=1")
-        assert data["code_challenge_method"] == "s256"
-        assert len(data["code_challenge"]) == 43
-        challenges[action] = data["code_challenge"]
-        response = user if action == "signup" else {}
-    elif path == "/auth/v1/user":
-        if method == "PUT":
-            assert data["password"] == "test-new-password-456"
-        response = user
-    elif path == "/rest/v1/inspection_reviews":
-        review_requests.append(method)
-        if fail_reviews:
-            return route.fulfill(status=503, json={})
-        code = parse_qs(urlsplit(request.url).query)["case_code"][0][3:]
-        row = reviews.get(code)
-        if method == "GET":
-            response = [row] if row else []
-        elif method == "PATCH" and (not row or "revision=eq."+row["revision"] not in request.url):
-            response = []
-        elif method == "POST" and row:
-            return route.fulfill(status=409,json={})
-        else:
-            reviews[code] = {**(row or {}), **data, "owner_id": user["id"],"revision":str(uuid4()),
-                             "created_at":timestamp,"updated_at":timestamp}
-            response = [reviews[code]]
-    elif path == "/rest/v1/projects":
-        if method == "POST":
-            assert set(data) == {"title", "description"}
-            project = {**data, "id": "22222222-2222-4222-8222-222222222222", "updated_at": timestamp}
-            projects.append(project)
-            history.append({**data, "recorded_at": timestamp})
-            response = project
-        elif method == "PATCH":
-            assert "id=eq." in request.url
-            projects[0].update(data)
-            history.insert(0, {**data, "recorded_at": timestamp})
-            response = projects[0]
-        elif method == "DELETE":
-            assert "id=eq." in request.url
-            response = projects.pop()
-            history.clear()
-        else:
-            response = projects
-    elif path == "/rest/v1/profiles":
-        if method in ("POST", "PATCH"):
-            profiles[:] = [data]
-            response = data
-        else:
-            response = profiles
-    elif path == "/rest/v1/project_versions":
-        response = history
-    else:
-        raise AssertionError((method, path))
-    route.fulfill(status=200, json=response)
-
-
+fixture.start()
 try:
     with sync_playwright() as playwright:
         options = {"channel": "chrome"}
@@ -180,26 +67,25 @@ try:
         page.get_by_label("E-mail").fill(user["email"])
         page.get_by_label("Senha").fill("senha-incorreta")
         page.get_by_role("button", name="Entrar").click()
-        expect(page.locator("#feedback")).to_contain_text("Invalid login credentials")
+        expect(page.locator("#feedback")).to_contain_text("E-mail ou senha incorretos")
         page.get_by_label("E-mail").fill(user["email"])
         page.get_by_label("Senha").fill("test-password-123")
         page.get_by_role("button", name="Entrar").click()
         page.get_by_role("link", name="Meus projetos", exact=True).click()
         expect(page.get_by_text("Você ainda não tem projetos.")).to_be_visible()
         page.get_by_role("button", name="Novo projeto").click()
-        page.get_by_label("Título").fill("Projeto <b>QA</b>")
+        page.get_by_label("Nome do projeto").fill("Projeto <b>QA</b>")
         page.get_by_label("Descrição").fill("Descrição de teste")
-        page.get_by_role("button", name="Salvar projeto").click()
-        expect(page.get_by_role("button", name="Projeto <b>QA</b>")).to_be_visible()
+        page.get_by_role("button", name="Criar projeto").click()
+        expect(page.get_by_role("link", name="Projeto <b>QA</b>")).to_be_visible()
         capture("04-projetos-dados-simulados")
-        page.get_by_role("button", name="Projeto <b>QA</b>").click()
-        expect(page.get_by_role("dialog")).to_contain_text("Histórico")
+        page.get_by_role("link", name="Projeto <b>QA</b>").click()
+        expect(page.get_by_role("heading",name="Histórico do projeto")).to_be_visible()
         page.get_by_role("button", name="Editar").click()
-        page.get_by_label("Título").fill("Projeto revisado")
-        page.get_by_role("button", name="Salvar projeto").click()
+        page.get_by_label("Nome do projeto").fill("Projeto revisado")
+        page.get_by_role("button", name="Salvar alterações").click()
         page.reload()
-        page.get_by_role("button", name="Projeto revisado").click()
-        expect(page.get_by_role("dialog")).to_contain_text("Projeto <b>QA</b>")
+        expect(page.locator("#project-history")).to_contain_text("Projeto <b>QA</b>")
         page.get_by_role("button", name="Excluir", exact=True).click()
         page.get_by_role("button", name="Excluir projeto").click()
         expect(page.get_by_text("Você ainda não tem projetos.")).to_be_visible()
@@ -230,11 +116,11 @@ try:
         expect(page.get_by_text("Sem conexão. Os rascunhos pendentes",exact=False)).to_be_visible()
         capture("m14-06-offline-simulada")
         page.evaluate("delete navigator.onLine")
-        fail_reviews = True
+        fixture.fail_reviews = True
         sync.click()
         expect(page.get_by_text("HTTP 503",exact=False)).to_be_visible()
         capture("m14-08-erro-simulado")
-        fail_reviews = False
+        fixture.fail_reviews = False
         sync.click()
         expect(page.get_by_text("Cópia confirmada na nuvem")).to_be_visible()
         assert reviews["R02"]["notes"] == "Rascunho visitante"

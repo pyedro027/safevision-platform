@@ -62,7 +62,7 @@ function projectList(projects) {
 
 function projectStatus() {
   if (state.phase === 'loading') return '<p>Carregando projetos…</p>';
-  if (state.phase === 'identity-error') return '<p role="alert">Não foi possível verificar a sessão.</p>'+button('Verificar sessão','verify','secondary');
+  if (state.phase === 'identity-error') return '<p role="alert">Não foi possível verificar a sessão.</p>'+button('Verificar sessão','verify','secondary')+' '+button('Sair desta sessão','logout','secondary');
   if (state.phase === 'error') return `<p>Não foi possível carregar seus dados.</p>${button('Tentar novamente','retry')}`;
   if (state.phase === 'config-error') return '<p role="alert">Falha ao iniciar a conexão. Recarregue a página para tentar novamente.</p>';
   if (!state.client) return '<p class="muted">O serviço de contas e projetos ainda não foi configurado neste ambiente.</p>';
@@ -309,6 +309,18 @@ document.body.addEventListener('click', async event => {
     render();
     return screen.querySelector('input')?.focus();
   }
+  if (action === 'logout') {
+    control.disabled = true;
+    try {
+      unwrap(await state.client.auth.signOut({ scope: 'local' }));
+      location.hash = 'inicio';
+      notice('Sessão encerrada.');
+    } catch {
+      control.disabled = false;
+      notice('Não foi possível sair. Tente novamente.', true);
+    }
+    return;
+  }
   if (!state.session) return;
   if (action === 'view') {
     filters.view = control.dataset.view;
@@ -324,18 +336,6 @@ document.body.addEventListener('click', async event => {
   }
   if (action === 'history') return loadHistory(historyView);
   if (action === 'retry') return loadWorkspace();
-  if (action === 'logout') {
-    control.disabled = true;
-    try {
-      unwrap(await state.client.auth.signOut({ scope: 'local' }));
-      location.hash = 'inicio';
-      notice('Sessão encerrada.');
-    } catch {
-      control.disabled = false;
-      notice('Não foi possível sair. Tente novamente.', true);
-    }
-    return;
-  }
   if (action === 'new') return projectForm();
   const project = state.projects.find(item => item.id === control.dataset.id);
   if (!project) return;
