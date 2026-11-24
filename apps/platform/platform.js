@@ -20,6 +20,8 @@ let destination = 'inicio';
 let sessionController;
 let workspaceRead = 0;
 let recoveryUser;
+let verification = 0;
+let pendingRecovery;
 let historyView;
 let messageTimer;
 let closeStudio;
@@ -60,10 +62,11 @@ function projectList(projects) {
 
 function projectStatus() {
   if (state.phase === 'loading') return '<p>Carregando projetos…</p>';
+  if (state.phase === 'identity-error') return '<p role="alert">Não foi possível verificar a sessão.</p>'+button('Verificar sessão','verify','secondary');
   if (state.phase === 'error') return `<p>Não foi possível carregar seus dados.</p>${button('Tentar novamente','retry')}`;
   if (state.phase === 'config-error') return '<p role="alert">Falha ao iniciar a conexão. Recarregue a página para tentar novamente.</p>';
   if (!state.client) return '<p class="muted">O serviço de contas e projetos ainda não foi configurado neste ambiente.</p>';
-  if (!state.session) return '<p><a href="#conta">Entre na sua conta</a> para acessar seus projetos privados.</p>';
+  if (!state.session) return '<p><a href="#conta">Entre na sua conta</a> para acessar seus projetos privados.</p><a href="#conta" data-action="create-account">Criar conta</a>';
   return '';
 }
 
@@ -76,6 +79,7 @@ function overview() {
 }
 
 function account() {
+  if (state.phase === 'identity-error') return heading('Conta','Confirme a conexão para recuperar seu perfil.')+projectStatus();
   if (state.phase === 'loading' && !state.session) return heading('Conta', 'Verificando sessão…');
   if (!state.client) return heading('Conta', serviceName(state)) + '<section class="panel"><h2>Acesso ao espaço privado</h2><p>Perfil, projetos e histórico ficam disponíveis com a integração de contas ativa. Você pode explorar a demonstração neste ambiente.</p><a class="button" href="#studio">Experimentar o Studio</a></section>';
   if (state.accountMode === 'recovery') {
@@ -174,6 +178,38 @@ async function loadWorkspace() {
   renderWorkspace();
 }
 
+// Auth events are synchronous SDK callbacks. Verify restored identity outside the SDK lock.
+function receiveSession(event, session) {
+  const ticket = ++verification;
+  if (!session) {
+    pendingRecovery = undefined;
+    sessionChanged(event, null);
+    return;
+  }
+  if (event === 'PASSWORD_RECOVERY') pendingRecovery = session.user.id;
+  if (state.session?.user.id === session.user.id && event !== 'INITIAL_SESSION') {
+    sessionChanged(event, {...session, user:state.session.user});
+    return;
+  }
+  sessionChanged('INITIAL_SESSION', null);
+  state.phase = 'loading';
+  render();
+  setTimeout(async () => {
+    try {
+      const {data,error} = await state.client.auth.getUser(session.access_token);
+      if (ticket !== verification) return;
+      if (error || !data.user || data.user.id !== session.user.id) throw Error('Sessão indisponível');
+      const kind = pendingRecovery === data.user.id ? 'PASSWORD_RECOVERY' : event;
+      pendingRecovery = undefined;
+      sessionChanged(kind,{...session,user:data.user});
+    } catch {
+      if (ticket !== verification) return;
+      state.phase = 'identity-error';
+      render();
+    }
+  },0);
+}
+
 function sessionChanged(event, session) {
   const changed = state.session?.user.id !== session?.user.id;
   if (changed || !session) recoveryUser = undefined;
@@ -236,7 +272,7 @@ async function loadHistory(view) {
     view.rows.push(...page);
     view.node.innerHTML = versionList(view.rows) + (page.length === 20 ? button('Ver mais versões','history','secondary') : '');
   } catch {
-    if (view.node.isConnected) view.node.innerHTML = versionList(view.rows) + '<p>Falha ao carregar o histórico.</p>'+button('Tentar novamente','history','secondary');
+    if (view.node.isConnected) view.node.innerHTML = (view.rows.length ? versionList(view.rows) : '') + '<p>Falha ao carregar o histórico.</p>'+button('Tentar novamente','history','secondary');
   } finally { view.pending = false; }
 }
 
@@ -256,6 +292,7 @@ document.body.addEventListener('click', async event => {
   if (event.target.closest('a[href="#conta"]')) destination = privateRoute.test(location.hash.slice(1)) ? location.hash.slice(1) : 'inicio';
   if (!control) return;
   const action = control.dataset.action;
+  if (action === 'create-account') { state.accountMode = 'signup'; return; }
   if (action === 'show-password') {
     const input = document.getElementById('auth-password');
     const show = input.type === 'password';
@@ -264,6 +301,7 @@ document.body.addEventListener('click', async event => {
     control.setAttribute('aria-pressed',String(show));
     return;
   }
+  if (action === 'verify') { location.reload(); return; }
   if (action === 'close') return dialog.close();
   if (action === 'return-login') return recoveryReturn();
   if (['login', 'signup', 'reset'].includes(action)) {
@@ -388,10 +426,13 @@ document.body.addEventListener('submit', async event => {
     if (result && (!owner || owner === state.session?.user.id)) notice(result);
   } catch (error) {
     if (!form.isConnected) return;
-    const message = error.code === 'invalid_credentials' ? 'E-mail ou senha incorretos.' :
+    const message = (error.code === 'invalid_credentials' || error.message === 'Invalid login credentials') ? 'E-mail ou senha incorretos.' :
       error.code === 'PGRST116' ? 'O registro mudou ou está indisponível. Copie seu texto e recarregue antes de tentar novamente.' :
       error.message?.startsWith('Informe ') ? error.message :
-      'Não foi possível confirmar a operação. Confira os dados e a conexão. Antes de repetir um salvamento, consulte seus projetos.';
+      ['project','delete'].includes(form.dataset.form) ?
+        'Não foi possível confirmar a operação. Consulte seus projetos antes de repetir o salvamento.' :
+        error.status === 429 ? 'Muitas tentativas. Aguarde antes de tentar novamente.' :
+        'Não foi possível concluir. Confira os dados e a conexão e tente novamente.';
     const status = form.querySelector('[data-dialog-status]');
     if (status) status.textContent = message;
     else notice(message, true);
@@ -418,7 +459,7 @@ try {
     state.client = window.supabase.createClient(config.url, config.key, {
       auth: { flowType: 'pkce', storageKey: 'safevision-platform-v1' }
     });
-    state.client.auth.onAuthStateChange(sessionChanged);
+    state.client.auth.onAuthStateChange(receiveSession);
   } else {
     state.phase = 'ready';
     render();
