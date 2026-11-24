@@ -67,7 +67,8 @@
   },
   "deployment_status": {
     "branch_autodeploy": false,
-    "production": "dpl_36t2LjWc8yGfNAjngMS5Gy8RC44r"
+    "production": "dpl_36t2LjWc8yGfNAjngMS5Gy8RC44r",
+    "branch_deployments": 0
   },
   "limitations": [
     "Sem Auth e PostgREST integrados com duas contas reais",
@@ -379,14 +380,14 @@
     {
       "id": 51,
       "criterion": "PR em rascunho aberto.",
-      "status": "pending",
-      "evidence": "Aguardar criação do PR"
+      "status": "verified",
+      "evidence": "https://github.com/pyedro027/safevision-platform/pull/12"
     },
     {
       "id": 52,
       "criterion": "Aplicação disponível localmente.",
       "status": "verified",
-      "evidence": "QA_MISSAO_15.md"
+      "evidence": "http://127.0.0.1:4181/#projetos"
     },
     {
       "id": 53,
@@ -400,5 +401,9 @@
       "status": "verified",
       "evidence": "QA_MISSAO_15.md"
     }
-  ]
+  ],
+  "local_review": {
+    "url": "http://127.0.0.1:4181/#projetos",
+    "observed": "Tela de visitante no navegador integrado; configuração local usa chave publicável do projeto hospedado."
+  }
 }
