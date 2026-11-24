@@ -1,3 +1,5 @@
+import { projectData } from './project-data.js';
+import { projectsPage, projectDetail, projectResults, versionList, escapeText as escape } from './projects.js';
 import { mountInspection } from './inspection.js';
 import { projectOverview, studioEntry, clinicPage, settingsPage, navigation, serviceName } from './workspace.js';
 navigation();
@@ -12,6 +14,15 @@ const state = {
   client: null, session: null, phase: 'loading', projects: [], profile: null,
   accountMode: new URLSearchParams(location.search).has('recuperar') ? 'recovery' : 'login'
 };
+const filters = { search:'', sort:'recent', view:'grade' };
+const privateRoute = /^projetos(?:\/[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12})?$/i;
+let destination = 'inicio';
+let sessionController;
+let workspaceRead = 0;
+let recoveryUser;
+let verification = 0;
+let pendingRecovery;
+let historyView;
 let messageTimer;
 let closeStudio;
 let inspectionKey = '';
@@ -23,12 +34,6 @@ if (state.accountMode === 'recovery') {
   const url = new URL(location.href);
   url.hash = 'conta';
   history.replaceState(null, '', url);
-}
-
-function escape(value) {
-  return String(value ?? '').replace(/[&<>"']/g, char => ({
-    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
-  }[char]));
 }
 
 function notice(text, error = false) {
@@ -57,10 +62,11 @@ function projectList(projects) {
 
 function projectStatus() {
   if (state.phase === 'loading') return '<p>Carregando projetos…</p>';
+  if (state.phase === 'identity-error') return '<p role="alert">Não foi possível verificar a sessão.</p>'+button('Verificar sessão','verify','secondary')+' '+button('Sair desta sessão','logout','secondary');
   if (state.phase === 'error') return `<p>Não foi possível carregar seus dados.</p>${button('Tentar novamente','retry')}`;
   if (state.phase === 'config-error') return '<p role="alert">Falha ao iniciar a conexão. Recarregue a página para tentar novamente.</p>';
   if (!state.client) return '<p class="muted">O serviço de contas e projetos ainda não foi configurado neste ambiente.</p>';
-  if (!state.session) return '<p><a href="#conta">Entre na sua conta</a> para acessar seus projetos privados.</p>';
+  if (!state.session) return '<p><a href="#conta">Entre na sua conta</a> para acessar seus projetos privados.</p><a href="#conta" data-action="create-account">Criar conta</a>';
   return '';
 }
 
@@ -72,33 +78,28 @@ function overview() {
       <a href="#projetos">Gerenciar projetos →</a></section></div>`;
 }
 
-function projectsPage() {
-  const status = projectStatus();
-  return heading('Meus projetos', 'Consulte e gerencie os metadados dos seus projetos privados.')
-    + `<section class="panel"><div class="heading-row"><h2>Projetos</h2>${status ? '' : button('Novo projeto','new')}</div>${status || projectList(state.projects)}</section>
-    <aside class="project-demo"><img src="./media/aurea.webp" alt=""><div><small>Demonstração disponível</small><h2>Clínica ÁUREA</h2><p>Consulte a modelagem de referência e as cinco fichas de inspeção.</p><a href="#aurea">Conhecer o projeto →</a></div></aside>`;
-}
-
 function account() {
+  if (state.phase === 'identity-error') return heading('Conta','Confirme a conexão para recuperar seu perfil.')+projectStatus();
+  if (state.phase === 'loading' && !state.session) return heading('Conta', 'Verificando sessão…');
   if (!state.client) return heading('Conta', serviceName(state)) + '<section class="panel"><h2>Acesso ao espaço privado</h2><p>Perfil, projetos e histórico ficam disponíveis com a integração de contas ativa. Você pode explorar a demonstração neste ambiente.</p><a class="button" href="#studio">Experimentar o Studio</a></section>';
   if (state.accountMode === 'recovery') {
     return heading('Redefinir senha', 'Defina a senha da sua conta a partir do link de recuperação.')
-      + `<section class="panel">${state.session ? `<form data-form="password">
-          <label>Nova senha<input name="password" type="password" minlength="8" autocomplete="new-password" required></label><button>Salvar senha</button>
+      + `<section class="panel">${recoveryUser && recoveryUser === state.session?.user.id ? `<form data-form="password">
+          <label>Nova senha<input name="password" type="password" autocomplete="new-password" required></label><button>Salvar senha</button>
         </form>` : '<p>O link de recuperação está expirado, inválido ou precisa ser aberto no navegador que iniciou a solicitação.</p><a href="#conta" data-action="return-login">Voltar ao login</a>'}</section>`;
   }
   if (state.session) {
     return heading('Conta', 'Dados do seu perfil na SAFEVISION Platform.')
-      + `<section class="panel"><h2>Perfil</h2><p>${escape(state.session.user.email)}</p>
+      + `<section class="panel"><div class="profile-ident"><span class="initial" aria-hidden="true">${escape((state.profile?.display_name || state.session.user.email || '').slice(0,1).toUpperCase())}</span><div><h2>Perfil</h2><p>${escape(state.session.user.email)}</p></div></div><p class="muted">${state.phase === 'ready' ? state.projects.length+' projetos privados' : 'Dados da conta indisponíveis'}</p>${state.phase==='error' ? button('Tentar novamente','retry','secondary') : ''}
       <form data-form="profile"><label>Nome de exibição<input name="display_name" maxlength="100" required value="${escape(state.profile?.display_name)}"></label>
-      <div class="actions"><button ${state.phase === 'loading' ? 'disabled' : ''}>Salvar perfil</button>${button('Sair','logout','secondary')}</div></form></section>`;
+      <div class="actions"><button ${state.phase !== 'ready' ? 'disabled' : ''}>Salvar perfil</button>${button('Sair','logout','secondary')}</div></form></section>`;
   }
   const mode = state.accountMode;
   const title = { login:'Entrar', signup:'Criar conta', reset:'Recuperar senha' }[mode];
   return heading(title, 'Use seu e-mail para acessar a área de projetos.') + `<section class="panel">
     <form data-form="${mode}">
-      <label>E-mail<input name="email" type="email" autocomplete="email" required></label>
-      ${mode === 'reset' ? '' : `<label>Senha<input name="password" type="password" ${mode === 'signup' ? 'minlength="8"' : ''} autocomplete="${mode === 'signup' ? 'new-password' : 'current-password'}" required></label>`}
+      <label for="auth-email">E-mail</label><input id="auth-email" name="email" type="email" autocomplete="email" required>
+      ${mode === 'reset' ? '' : `<label for="auth-password">Senha</label><div class="password-field"><input id="auth-password" name="password" type="password" autocomplete="${mode === 'signup' ? 'new-password' : 'current-password'}" required><button type="button" class="secondary" data-action="show-password" aria-controls="auth-password" aria-pressed="false">Mostrar</button></div>`}
       <div class="actions"><button>${title}</button>${mode !== 'login' ? button('Voltar ao login','login','secondary') : ''}</div>
     </form>
     ${mode === 'login' ? `<div class="actions" style="margin-top:14px">${button('Criar conta','signup','secondary')}${button('Esqueci a senha','reset','secondary')}</div>` : ''}
@@ -109,14 +110,14 @@ function render() {
   const hash = location.hash.slice(1);
   const module = hash.split('/')[0];
   const inspection = ['inspecoes', 'relatorios'].includes(module);
-  const route = inspection ? module : routes.has(hash) ? hash : 'inicio';
+  const route = inspection || module === 'projetos' ? module : routes.has(hash) ? hash : 'inicio';
   const key = inspection ? JSON.stringify([hash, state.session?.user.id]) : '';
   if (inspectionKey !== key) { disposeInspection?.(); disposeInspection = undefined; inspectionKey = key; }
   for (const link of document.querySelectorAll('nav a')) {
     if (link.hash === '#' + route) link.setAttribute('aria-current', 'page');
     else link.removeAttribute('aria-current');
   }
-  document.querySelector('#account-link').textContent = state.session?.user.email || 'Entrar';
+  document.querySelector('#account-link').textContent = state.profile?.display_name || state.session?.user.email || 'Entrar';
   document.querySelector('#breadcrumb').textContent = document.querySelector('nav [aria-current]')?.textContent || '';
   if (route === 'studio') {
     if (!closeStudio) closeStudio = mountStudio(screen);
@@ -129,8 +130,19 @@ function render() {
     return;
   }
   if (route === 'inicio') screen.innerHTML = overview();
-  if (route === 'projetos') screen.innerHTML = projectsPage();
-  if (route === 'conta') screen.innerHTML = '<div class="account-layout"><div>' + account() + '</div><aside class="account-art"><img src="./media/r01.webp" alt="Detalhe de circulação da Clínica ÁUREA"><a href="./clinica/#inspection/R01">R01 · Circulação ↗</a></aside></div>';
+  if (route === 'projetos') {
+    const status = projectStatus();
+    if (hash === 'projetos') screen.innerHTML = projectsPage(state,status,filters);
+    else {
+      const project = privateRoute.test(hash) && state.projects.find(item => item.id === hash.slice(9));
+      screen.innerHTML = projectDetail(project,status);
+      if (project && !status) {
+        historyView = { node:screen.querySelector('#project-history'), id:project.id, rows:[], more:true };
+        loadHistory(historyView);
+      }
+    }
+  }
+  if (route === 'conta') screen.innerHTML = '<div class="account-layout accounts-v2"><div>' + account() + '</div><aside class="account-art"><img src="./clinica/assets/recepcao.png" alt="Recepção da Clínica ÁUREA"><a href="#aurea">Explorar a Clínica ÁUREA →</a></aside></div>';
   if (route === 'aurea') screen.innerHTML = clinicPage();
   if (route === 'configuracoes') screen.innerHTML = heading('Configurações', 'Consulte os recursos e as condições desta execução.') + settingsPage(state);
 }
@@ -143,6 +155,7 @@ function unwrap(result) {
 async function loadWorkspace() {
   const user = state.session?.user.id;
   if (!user) return;
+  const request = ++workspaceRead;
   state.phase = 'loading';
   const renderWorkspace = () => {
     if (state.accountMode !== 'recovery' || location.hash !== '#conta') render();
@@ -150,15 +163,14 @@ async function loadWorkspace() {
   renderWorkspace();
   try {
     const [projects, profile] = await Promise.all([
-      state.client.from('projects').select('id,title,description,updated_at').order('updated_at', { ascending: false }).order('id'),
-      state.client.from('profiles').select('display_name').maybeSingle()
+      state.data.projects(), state.data.profile()
     ]);
-    if (state.session?.user.id !== user) return;
-    state.projects = unwrap(projects);
-    state.profile = unwrap(profile);
+    if (state.session?.user.id !== user || request !== workspaceRead) return;
+    state.projects = projects;
+    state.profile = profile;
     state.phase = 'ready';
   } catch {
-    if (state.session?.user.id !== user) return;
+    if (state.session?.user.id !== user || request !== workspaceRead) return;
     state.projects = [];
     state.profile = null;
     state.phase = 'error';
@@ -166,14 +178,57 @@ async function loadWorkspace() {
   renderWorkspace();
 }
 
+// Auth events are synchronous SDK callbacks. Verify restored identity outside the SDK lock.
+function receiveSession(event, session) {
+  const ticket = ++verification;
+  if (!session) {
+    pendingRecovery = undefined;
+    sessionChanged(event, null);
+    return;
+  }
+  if (event === 'PASSWORD_RECOVERY') pendingRecovery = session.user.id;
+  if (state.session?.user.id === session.user.id && event !== 'INITIAL_SESSION') {
+    sessionChanged(event, {...session, user:state.session.user});
+    return;
+  }
+  sessionChanged('INITIAL_SESSION', null);
+  state.phase = 'loading';
+  render();
+  setTimeout(async () => {
+    try {
+      const {data,error} = await state.client.auth.getUser(session.access_token);
+      if (ticket !== verification) return;
+      if (error || !data.user || data.user.id !== session.user.id) throw Error('Sessão indisponível');
+      const kind = pendingRecovery === data.user.id ? 'PASSWORD_RECOVERY' : event;
+      pendingRecovery = undefined;
+      sessionChanged(kind,{...session,user:data.user});
+    } catch {
+      if (ticket !== verification) return;
+      state.phase = 'identity-error';
+      render();
+    }
+  },0);
+}
+
 function sessionChanged(event, session) {
   const changed = state.session?.user.id !== session?.user.id;
+  if (changed || !session) recoveryUser = undefined;
   state.session = session;
+  if (event === 'SIGNED_OUT') { destination = 'inicio'; state.accountMode = 'login'; }
+
   if (event === 'PASSWORD_RECOVERY') {
+    recoveryUser = session?.user.id;
     state.accountMode = 'recovery';
     location.hash = 'conta';
   }
   if (changed || event === 'INITIAL_SESSION') {
+    sessionController?.abort();
+    sessionController = new AbortController();
+    state.data = session ? projectData(state.config, state.client.auth,session.user.id,sessionController.signal) : null;
+    filters.search = '';
+    historyView = undefined;
+    clearTimeout(messageTimer);
+    feedback.hidden = true;
     if (dialog.open) dialog.close();
     dialog.replaceChildren();
     state.projects = [];
@@ -181,7 +236,7 @@ function sessionChanged(event, session) {
     state.phase = session ? 'loading' : 'ready';
     render();
     if (session) setTimeout(loadWorkspace, 0);
-  }
+  } else if (event === 'PASSWORD_RECOVERY') render();
 }
 
 function recoveryReturn() {
@@ -191,57 +246,62 @@ function recoveryReturn() {
   }
   url.hash = 'conta';
   history.replaceState(null, '', url);
+  recoveryUser = undefined;
   state.accountMode = 'login';
   render();
 }
 
 function projectForm(project) {
   dialog.innerHTML = `<h2 id="dialog-title">${project ? 'Editar projeto' : 'Novo projeto'}</h2>
-    <form data-form="project" data-id="${escape(project?.id)}">
-      <label>Título<input name="title" maxlength="120" required value="${escape(project?.title)}"></label>
+    <form data-form="project" data-revision="${escape(project?.updated_at)}" data-id="${escape(project?.id)}">
+      <label>Nome do projeto (obrigatório)<input name="title" maxlength="120" required value="${escape(project?.title)}"></label>
       <label>Descrição<textarea name="description" maxlength="2000">${escape(project?.description)}</textarea></label>
       <p class="muted" data-dialog-status role="status"></p>
-      <div class="actions"><button>Salvar projeto</button>${button('Cancelar','close','secondary')}</div>
+      <div class="actions"><button>${project ? 'Salvar alterações' : 'Criar projeto'}</button>${button('Cancelar','close','secondary')}</div>
     </form>`;
   if (!dialog.open) dialog.showModal();
   dialog.querySelector('input').focus();
 }
 
-async function details(project) {
-  dialog.innerHTML = `<h2 id="dialog-title">${escape(project.title)}</h2>
-    <p class="description">${escape(project.description || 'Sem descrição.')}</p>
-    <div class="actions">
-      <button type="button" data-action="edit" data-id="${escape(project.id)}">Editar</button>
-      <button type="button" data-action="confirm-delete" data-id="${escape(project.id)}" class="danger">Excluir</button>
-      ${button('Fechar','close','secondary')}
-    </div><h3 style="margin-top:16px">Histórico</h3><div id="project-history" role="status">Carregando histórico…</div>`;
-  dialog.showModal();
-  const history = dialog.querySelector('#project-history');
+async function loadHistory(view) {
+  if (!view?.node.isConnected || view.pending) return;
+  view.pending = true;
   try {
-    const versions = unwrap(await state.client.from('project_versions')
-      .select('title,description,recorded_at').eq('project_id', project.id).order('recorded_at', { ascending: false }).limit(20));
-    history.innerHTML = versions.length ? `<ul class="history">${versions.map(version => `<li>
-      <strong>${escape(version.title)}</strong><small>${dateFormat.format(new Date(version.recorded_at))}</small>
-      <p>${escape(version.description || 'Sem descrição.')}</p></li>`).join('')}</ul>` : '<p>Sem versões registradas.</p>';
+    const page = await state.data.history(view.id,view.rows.length);
+    if (!view.node.isConnected) return;
+    view.rows.push(...page);
+    view.node.innerHTML = versionList(view.rows) + (page.length === 20 ? button('Ver mais versões','history','secondary') : '');
   } catch {
-    history.textContent = 'Não foi possível carregar o histórico.';
-  }
+    if (view.node.isConnected) view.node.innerHTML = (view.rows.length ? versionList(view.rows) : '') + '<p>Falha ao carregar o histórico.</p>'+button('Tentar novamente','history','secondary');
+  } finally { view.pending = false; }
 }
 
 function confirmation(project) {
   dialog.innerHTML = `<h2 id="dialog-title">Excluir projeto?</h2>
     <p>O registro <strong>${escape(project.title)}</strong> e seu histórico serão excluídos.</p>
-    <form data-form="delete" data-id="${escape(project.id)}">
+    <form data-form="delete" data-revision="${escape(project.updated_at)}" data-id="${escape(project.id)}">
       <p class="muted" data-dialog-status role="status"></p>
       <div class="actions">${button('Cancelar','close','secondary')}<button class="danger">Excluir projeto</button></div>
     </form>`;
+  if (!dialog.open) dialog.showModal();
   dialog.querySelector('[data-action="close"]').focus();
 }
 
 document.body.addEventListener('click', async event => {
   const control = event.target.closest('[data-action]');
+  if (event.target.closest('a[href="#conta"]')) destination = privateRoute.test(location.hash.slice(1)) ? location.hash.slice(1) : 'inicio';
   if (!control) return;
   const action = control.dataset.action;
+  if (action === 'create-account') { state.accountMode = 'signup'; return; }
+  if (action === 'show-password') {
+    const input = document.getElementById('auth-password');
+    const show = input.type === 'password';
+    input.type = show ? 'text' : 'password';
+    control.textContent = show ? 'Ocultar' : 'Mostrar';
+    control.setAttribute('aria-pressed',String(show));
+    return;
+  }
+  if (action === 'verify') { location.reload(); return; }
   if (action === 'close') return dialog.close();
   if (action === 'return-login') return recoveryReturn();
   if (['login', 'signup', 'reset'].includes(action)) {
@@ -249,8 +309,6 @@ document.body.addEventListener('click', async event => {
     render();
     return screen.querySelector('input')?.focus();
   }
-  if (!state.session) return;
-  if (action === 'retry') return loadWorkspace();
   if (action === 'logout') {
     control.disabled = true;
     try {
@@ -263,12 +321,34 @@ document.body.addEventListener('click', async event => {
     }
     return;
   }
+  if (!state.session) return;
+  if (action === 'view') {
+    filters.view = control.dataset.view;
+    render();
+    screen.querySelector('[data-view="'+filters.view+'"]').focus();
+    return;
+  }
+  if (action === 'clear-search') {
+    filters.search = '';
+    render();
+    screen.querySelector('#project-search')?.focus();
+    return;
+  }
+  if (action === 'history') return loadHistory(historyView);
+  if (action === 'retry') return loadWorkspace();
   if (action === 'new') return projectForm();
   const project = state.projects.find(item => item.id === control.dataset.id);
   if (!project) return;
-  if (action === 'details') return details(project);
+  if (action === 'details') { location.hash='projetos/'+project.id; return; }
   if (action === 'edit') return projectForm(project);
   if (action === 'confirm-delete') confirmation(project);
+});
+
+screen.addEventListener('input', event => {
+  if (event.target.id !== 'project-search' && event.target.id !== 'project-sort') return;
+  if (event.target.id === 'project-search') filters.search = event.target.value;
+  else filters.sort = event.target.value;
+  screen.querySelector('#project-results').innerHTML = projectResults(state.projects,filters);
 });
 
 const returnUrl = () => new URL('./', location.href);
@@ -279,7 +359,8 @@ async function submit(form, data) {
   const credentials = { email: data.get('email')?.trim(), password: data.get('password') };
   if (action === 'login') {
     unwrap(await auth.signInWithPassword(credentials));
-    location.hash = 'inicio';
+    location.hash = destination;
+    destination = 'inicio';
     return 'Sessão iniciada.';
   }
   if (action === 'signup') {
@@ -297,6 +378,7 @@ async function submit(form, data) {
   }
   if (!state.session) throw new Error('Sessão encerrada. Entre novamente.');
   if (action === 'password') {
+    if (recoveryUser !== state.session.user.id) throw Error('Reabra o link de recuperação.');
     unwrap(await auth.updateUser({ password: credentials.password }));
     recoveryReturn();
     return 'Senha atualizada.';
@@ -304,25 +386,25 @@ async function submit(form, data) {
   if (action === 'profile') {
     const display_name = data.get('display_name').trim();
     if (!display_name) throw new Error('Informe o nome de exibição.');
-    const table = state.client.from('profiles');
-    const request = state.profile
-      ? table.update({ display_name }).eq('id', state.session.user.id)
-      : table.insert({ display_name });
-    unwrap(await request.select('display_name').single());
+    const service = state.data;
+    await service.saveProfile(display_name,Boolean(state.profile));
+    if (service !== state.data) return;
     await loadWorkspace();
     return 'Perfil atualizado.';
   }
   if (!['project', 'delete'].includes(action)) return;
-  const table = state.client.from('projects');
+  const service = state.data;
   const id = form.dataset.id;
-  if (action === 'delete') {
-    unwrap(await table.delete().eq('id', id).select('id').single());
-  } else {
-    const values = { title: data.get('title').trim(), description: data.get('description').trim() };
-    if (!values.title) throw new Error('Informe o título do projeto.');
-    const request = id ? table.update(values).eq('id', id) : table.insert(values);
-    unwrap(await request.select('id').single());
+  const original = id ? {id,updated_at:form.dataset.revision} : null;
+  if (action === 'delete') await service.remove(original);
+  else {
+    const values = {title:data.get('title').trim(),description:data.get('description').trim()};
+    if (!values.title) throw Error('Informe o nome do projeto.');
+    await service.save(original,values);
   }
+  if (service !== state.data) return;
+  if (!form.isConnected) { await loadWorkspace(); return; }
+  if (action === 'delete') location.hash = 'projetos';
   dialog.close();
   await loadWorkspace();
   return action === 'delete' ? 'Projeto excluído.' : 'Projeto salvo.';
@@ -335,14 +417,22 @@ document.body.addEventListener('submit', async event => {
   const control = form.querySelector('button:not([type=button])');
   if (!state.client || control.disabled) return;
   control.disabled = true;
+  const owner = state.session?.user.id;
   const originalLabel = control.textContent;
   control.textContent = 'Aguarde…';
   form.setAttribute('aria-busy', 'true');
   try {
     const result = await submit(form, new FormData(form));
-    if (result) notice(result);
+    if (result && (!owner || owner === state.session?.user.id)) notice(result);
   } catch (error) {
-    const message = error.message || 'Não foi possível concluir a operação.';
+    if (!form.isConnected) return;
+    const message = (error.code === 'invalid_credentials' || error.message === 'Invalid login credentials') ? 'E-mail ou senha incorretos.' :
+      error.code === 'PGRST116' ? 'O registro mudou ou está indisponível. Copie seu texto e recarregue antes de tentar novamente.' :
+      error.message?.startsWith('Informe ') ? error.message :
+      ['project','delete'].includes(form.dataset.form) ?
+        'Não foi possível confirmar a operação. Consulte seus projetos antes de repetir o salvamento.' :
+        error.status === 429 ? 'Muitas tentativas. Aguarde antes de tentar novamente.' :
+        'Não foi possível concluir. Confira os dados e a conexão e tente novamente.';
     const status = form.querySelector('[data-dialog-status]');
     if (status) status.textContent = message;
     else notice(message, true);
@@ -355,6 +445,7 @@ document.body.addEventListener('submit', async event => {
 });
 
 addEventListener('hashchange', () => {
+  if (dialog.open) dialog.close();
   if (location.hash !== '#conteudo') render();
 });
 
@@ -363,11 +454,12 @@ try {
   if (!response.ok) throw new Error('Configuração indisponível.');
   const config = await response.json();
   if (config.url && config.key) {
+    state.config = config;
     if (config.inspectionSync === true && ['127.0.0.1','localhost'].includes(new URL(config.url).hostname)) state.inspectionConfig = config;
     state.client = window.supabase.createClient(config.url, config.key, {
       auth: { flowType: 'pkce', storageKey: 'safevision-platform-v1' }
     });
-    state.client.auth.onAuthStateChange(sessionChanged);
+    state.client.auth.onAuthStateChange(receiveSession);
   } else {
     state.phase = 'ready';
     render();

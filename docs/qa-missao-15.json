@@ -1,0 +1,409 @@
+{
+  "date": "2026-11-24",
+  "base": "bf97064",
+  "implementation": "ef2a5ee",
+  "authentication": {
+    "sdk": "2.119.2",
+    "browser": "Chrome 158",
+    "auth_transport": "simulated",
+    "password_and_pkce": "simulated",
+    "token_refresh_and_failure": "simulated",
+    "hosted_end_to_end": "pending"
+  },
+  "account": "simulated",
+  "projects": "simulated_browser_and_isolated_sql",
+  "project_details": "simulated",
+  "history": "simulated_browser_and_isolated_sql",
+  "security": {
+    "cross_account_sql": "isolated",
+    "stale_browser_response": "simulated",
+    "unsafe_title_rendered_as_text": "simulated"
+  },
+  "database": {
+    "remote_metadata": "verified",
+    "migrations": [
+      "20261121204325_platform_foundation"
+    ],
+    "table_count": 3,
+    "rls_tables": 3,
+    "password_leak_protection": "disabled",
+    "full_local_stack": "unavailable"
+  },
+  "responsiveness": {
+    "widths": [
+      375,
+      430,
+      768,
+      1024,
+      1440,
+      1920
+    ],
+    "horizontal_overflow_checks": "passed"
+  },
+  "accessibility": {
+    "keyboard_and_dialog_focus": "passed",
+    "screen_reader": "pending"
+  },
+  "performance": {
+    "private_form_loads_model": false,
+    "large_account_benchmark": "pending"
+  },
+  "regression": {
+    "dashboard": "passed",
+    "studio": "passed",
+    "inspection": "passed",
+    "pdf_a4_pages": 6,
+    "motor_checks": 6
+  },
+  "viewer_integrity": {
+    "files": 42,
+    "segments": 7,
+    "bytes": 113018368,
+    "sha256": "911f6af402a19aca8b6825ab6df840b56d3100089cbb69e4c0d4a705588402f0"
+  },
+  "remote_mutations": {
+    "supabase": 0,
+    "vercel": 0
+  },
+  "deployment_status": {
+    "branch_autodeploy": false,
+    "production": "dpl_36t2LjWc8yGfNAjngMS5Gy8RC44r",
+    "branch_deployments": 0
+  },
+  "limitations": [
+    "Sem Auth e PostgREST integrados com duas contas reais",
+    "Quest 2 físico pendente",
+    "Retorno de e-mail no loopback não homologado"
+  ],
+  "evidence": "evidencias-missao-15/manifesto.json",
+  "acceptance": [
+    {
+      "id": 1,
+      "criterion": "Auditoria inicial realizada.",
+      "status": "verified",
+      "evidence": "QA_MISSAO_15.md"
+    },
+    {
+      "id": 2,
+      "criterion": "Linha de base dos testes registrada.",
+      "status": "verified",
+      "evidence": "QA_MISSAO_15.md"
+    },
+    {
+      "id": 3,
+      "criterion": "Branch correta criada.",
+      "status": "verified",
+      "evidence": "QA_MISSAO_15.md"
+    },
+    {
+      "id": 4,
+      "criterion": "Arquitetura existente preservada.",
+      "status": "verified",
+      "evidence": "QA_MISSAO_15.md"
+    },
+    {
+      "id": 5,
+      "criterion": "Login refinado.",
+      "status": "simulated",
+      "evidence": "tests/accounts_projects_browser.py e tests/platform_browser.py"
+    },
+    {
+      "id": 6,
+      "criterion": "Cadastro revisado.",
+      "status": "simulated",
+      "evidence": "tests/accounts_projects_browser.py e tests/platform_browser.py"
+    },
+    {
+      "id": 7,
+      "criterion": "Recuperação revisada.",
+      "status": "simulated",
+      "evidence": "tests/accounts_projects_browser.py e tests/platform_browser.py"
+    },
+    {
+      "id": 8,
+      "criterion": "Sessões verificadas.",
+      "status": "simulated",
+      "evidence": "tests/accounts_projects_browser.py e tests/platform_browser.py"
+    },
+    {
+      "id": 9,
+      "criterion": "Logout verificado.",
+      "status": "simulated",
+      "evidence": "tests/accounts_projects_browser.py e tests/platform_browser.py"
+    },
+    {
+      "id": 10,
+      "criterion": "Troca de contas verificada.",
+      "status": "simulated",
+      "evidence": "tests/accounts_projects_browser.py e tests/platform_browser.py"
+    },
+    {
+      "id": 11,
+      "criterion": "Perfil revisado.",
+      "status": "simulated",
+      "evidence": "tests/accounts_projects_browser.py e tests/platform_browser.py"
+    },
+    {
+      "id": 12,
+      "criterion": "Estados de erro tratados.",
+      "status": "simulated",
+      "evidence": "tests/accounts_projects_browser.py e tests/platform_browser.py"
+    },
+    {
+      "id": 13,
+      "criterion": "Meus projetos reformulado.",
+      "status": "simulated",
+      "evidence": "tests/accounts_projects_browser.py e tests/platform_browser.py"
+    },
+    {
+      "id": 14,
+      "criterion": "Cards profissionais.",
+      "status": "simulated",
+      "evidence": "tests/accounts_projects_browser.py e tests/platform_browser.py"
+    },
+    {
+      "id": 15,
+      "criterion": "Grade funcional.",
+      "status": "simulated",
+      "evidence": "tests/accounts_projects_browser.py e tests/platform_browser.py"
+    },
+    {
+      "id": 16,
+      "criterion": "Lista funcional.",
+      "status": "simulated",
+      "evidence": "tests/accounts_projects_browser.py e tests/platform_browser.py"
+    },
+    {
+      "id": 17,
+      "criterion": "Pesquisa funcional.",
+      "status": "simulated",
+      "evidence": "tests/accounts_projects_browser.py e tests/platform_browser.py"
+    },
+    {
+      "id": 18,
+      "criterion": "Ordenação funcional.",
+      "status": "simulated",
+      "evidence": "tests/accounts_projects_browser.py e tests/platform_browser.py"
+    },
+    {
+      "id": 19,
+      "criterion": "Contadores reais.",
+      "status": "simulated",
+      "evidence": "tests/accounts_projects_browser.py e tests/platform_browser.py"
+    },
+    {
+      "id": 20,
+      "criterion": "Estado visitante.",
+      "status": "simulated",
+      "evidence": "tests/accounts_projects_browser.py e tests/platform_browser.py"
+    },
+    {
+      "id": 21,
+      "criterion": "Estado vazio.",
+      "status": "simulated",
+      "evidence": "tests/accounts_projects_browser.py e tests/platform_browser.py"
+    },
+    {
+      "id": 22,
+      "criterion": "Estado de carregamento.",
+      "status": "simulated",
+      "evidence": "tests/accounts_projects_browser.py e tests/platform_browser.py"
+    },
+    {
+      "id": 23,
+      "criterion": "Estado de erro.",
+      "status": "simulated",
+      "evidence": "tests/accounts_projects_browser.py e tests/platform_browser.py"
+    },
+    {
+      "id": 24,
+      "criterion": "Criação funcional.",
+      "status": "simulated",
+      "evidence": "tests/accounts_projects_browser.py e tests/platform_browser.py"
+    },
+    {
+      "id": 25,
+      "criterion": "Edição funcional.",
+      "status": "simulated",
+      "evidence": "tests/accounts_projects_browser.py e tests/platform_browser.py"
+    },
+    {
+      "id": 26,
+      "criterion": "Exclusão confirmada.",
+      "status": "simulated",
+      "evidence": "tests/accounts_projects_browser.py e tests/platform_browser.py"
+    },
+    {
+      "id": 27,
+      "criterion": "Detalhes funcionais.",
+      "status": "simulated",
+      "evidence": "tests/accounts_projects_browser.py e tests/platform_browser.py"
+    },
+    {
+      "id": 28,
+      "criterion": "Histórico disponível.",
+      "status": "simulated",
+      "evidence": "tests/accounts_projects_browser.py e tests/platform_browser.py"
+    },
+    {
+      "id": 29,
+      "criterion": "Rotas privadas protegidas.",
+      "status": "simulated",
+      "evidence": "tests/accounts_projects_browser.py e tests/platform_browser.py"
+    },
+    {
+      "id": 30,
+      "criterion": "Acesso cruzado bloqueado nos testes aplicáveis.",
+      "status": "isolated_sql_and_remote_metadata",
+      "evidence": "tests/rls.mjs e SEGURANCA_CONTAS_PROJETOS_M15.md"
+    },
+    {
+      "id": 31,
+      "criterion": "RLS preservada.",
+      "status": "isolated_sql_and_remote_metadata",
+      "evidence": "tests/rls.mjs e SEGURANCA_CONTAS_PROJETOS_M15.md"
+    },
+    {
+      "id": 32,
+      "criterion": "Grants preservados.",
+      "status": "isolated_sql_and_remote_metadata",
+      "evidence": "tests/rls.mjs e SEGURANCA_CONTAS_PROJETOS_M15.md"
+    },
+    {
+      "id": 33,
+      "criterion": "Entradas protegidas.",
+      "status": "simulated",
+      "evidence": "tests/accounts_projects_browser.py e tests/platform_browser.py"
+    },
+    {
+      "id": 34,
+      "criterion": "Ausência de credenciais administrativas.",
+      "status": "verified",
+      "evidence": "Revisão do diff e configuração distribuída fora do Git"
+    },
+    {
+      "id": 35,
+      "criterion": "Ausência de projetos fictícios na aplicação real.",
+      "status": "verified",
+      "evidence": "Revisão do diff e configuração distribuída fora do Git"
+    },
+    {
+      "id": 36,
+      "criterion": "Clínica ÁUREA separada.",
+      "status": "verified",
+      "evidence": "QA_MISSAO_15.md"
+    },
+    {
+      "id": 37,
+      "criterion": "Recursos futuros identificados.",
+      "status": "verified",
+      "evidence": "QA_MISSAO_15.md"
+    },
+    {
+      "id": 38,
+      "criterion": "Mobile validado.",
+      "status": "verified",
+      "evidence": "QA_MISSAO_15.md"
+    },
+    {
+      "id": 39,
+      "criterion": "Navegação por teclado validada.",
+      "status": "verified",
+      "evidence": "QA_MISSAO_15.md"
+    },
+    {
+      "id": 40,
+      "criterion": "Regressão do dashboard.",
+      "status": "verified",
+      "evidence": "QA_MISSAO_15.md"
+    },
+    {
+      "id": 41,
+      "criterion": "Regressão do Studio.",
+      "status": "verified",
+      "evidence": "QA_MISSAO_15.md"
+    },
+    {
+      "id": 42,
+      "criterion": "Regressão das inspeções.",
+      "status": "verified",
+      "evidence": "QA_MISSAO_15.md"
+    },
+    {
+      "id": 43,
+      "criterion": "Regressão dos relatórios.",
+      "status": "verified",
+      "evidence": "QA_MISSAO_15.md"
+    },
+    {
+      "id": 44,
+      "criterion": "Integridade dos 42 arquivos.",
+      "status": "verified",
+      "evidence": "QA_MISSAO_15.md"
+    },
+    {
+      "id": 45,
+      "criterion": "SHA-256 do GLB confirmado.",
+      "status": "verified",
+      "evidence": "QA_MISSAO_15.md"
+    },
+    {
+      "id": 46,
+      "criterion": "Migração remota das inspeções não aplicada.",
+      "status": "verified",
+      "evidence": "Consultas MCP de catálogo, migrações e deployments"
+    },
+    {
+      "id": 47,
+      "criterion": "Produção inalterada.",
+      "status": "verified",
+      "evidence": "Consultas MCP de catálogo, migrações e deployments"
+    },
+    {
+      "id": 48,
+      "criterion": "Documentação criada.",
+      "status": "verified",
+      "evidence": "QA_MISSAO_15.md"
+    },
+    {
+      "id": 49,
+      "criterion": "QA estruturado disponível.",
+      "status": "verified",
+      "evidence": "QA_MISSAO_15.md"
+    },
+    {
+      "id": 50,
+      "criterion": "Evidências reais disponíveis.",
+      "status": "verified",
+      "evidence": "evidencias-missao-15/manifesto.json"
+    },
+    {
+      "id": 51,
+      "criterion": "PR em rascunho aberto.",
+      "status": "verified",
+      "evidence": "https://github.com/pyedro027/safevision-platform/pull/12"
+    },
+    {
+      "id": 52,
+      "criterion": "Aplicação disponível localmente.",
+      "status": "verified",
+      "evidence": "http://127.0.0.1:4181/#projetos"
+    },
+    {
+      "id": 53,
+      "criterion": "Pendências identificadas.",
+      "status": "verified",
+      "evidence": "QA_MISSAO_15.md"
+    },
+    {
+      "id": 54,
+      "criterion": "Preparação para Missão 16 documentada.",
+      "status": "verified",
+      "evidence": "QA_MISSAO_15.md"
+    }
+  ],
+  "local_review": {
+    "url": "http://127.0.0.1:4181/#projetos",
+    "observed": "Tela de visitante no navegador integrado; configuração local usa chave publicável do projeto hospedado."
+  }
+}

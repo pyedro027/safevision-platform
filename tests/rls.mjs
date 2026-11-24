@@ -49,10 +49,13 @@ try {
   assert.equal((await query('delete from projects where id=$1 returning id', [project.id])).rows.length, 0);
   await assert.rejects(query("insert into projects(owner_id,title) values ($1,'x')", [alice]), { code: '42501' });
   assert.equal((await query("insert into projects(title) values ('Projeto próprio') returning owner_id")).rows[0].owner_id, bob);
+  const bobProject = (await query('select id from projects')).rows[0].id;
   await use('anon');
+  await assert.rejects(query("insert into projects(title) values ('Visitante')"), { code: '42501' });
   await assert.rejects(query('select id from projects'), { code: '42501' });
 
   await use('authenticated', alice);
+  assert.equal((await query('select id from projects where id=$1',[bobProject])).rows.length,0);
   assert.equal((await query('delete from projects where id=$1 returning id', [project.id])).rows.length, 1);
   await database.exec('reset role');
   assert.equal((await query('select id from project_versions where project_id=$1', [project.id])).rows.length, 0);
