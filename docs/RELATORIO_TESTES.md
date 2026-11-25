@@ -1,5 +1,12 @@
 # Relatório de testes da Versão C
 
+## Demonstration Edition · Missão 16
+
+Branch `feature/demonstration-edition-v1`, derivada de `b7af326`. A entrega pode ser revisada no [PR #13](https://github.com/pyedro027/safevision-platform/pull/13). Acesse [a apresentação local](http://127.0.0.1:4181/#apresentacao) ou [o modelo](http://127.0.0.1:4181/#explorar?de=inicio). A partir da raiz do repositório, `python scripts/servir-demonstracao.py` inicia a distribuição pronta em loopback.
+
+[Relatório A–K](RELATORIO_MISSAO_16.md) · [Testes e evidências](QA_MISSAO_16.md).
+
+
 Executado em 21/11/2026 em Windows, Git 2.56.0, Node.js 24.22.3, Python 3.12, Chrome 157.0.8103.80 e Playwright 1.65.2. A aplicação foi servida via HTTP loopback de um diretório independente. O navegador foi executado sem janela visível. A segunda rodada usou aceleração de hardware AMD Radeon RX 580 e o perfil convencional Desempenho.
 
 | Teste | Procedimento e evidência | Resultado | Limite |

@@ -1,5 +1,14 @@
 # Continuidade para o próximo agente
 
+## Demonstration Edition · Missão 16
+
+Branch `feature/demonstration-edition-v1`, derivada de `b7af326`. A entrega pode ser revisada no [PR #13](https://github.com/pyedro027/safevision-platform/pull/13). Acesse [a apresentação local](http://127.0.0.1:4181/#apresentacao) ou [o modelo](http://127.0.0.1:4181/#explorar?de=inicio). A partir da raiz do repositório, `python scripts/servir-demonstracao.py` inicia a distribuição pronta em loopback.
+
+[Relatório A–K](RELATORIO_MISSAO_16.md) · [Testes e evidências](QA_MISSAO_16.md).
+
+Último commit funcional f4ac198. Obtenha o HEAD documental em git rev-parse origin/feature/demonstration-edition-v1. A primeira ação é a revisão do titular. Quest 2 físico e homologação remota continuam pendentes.
+
+
 SAFEVISION 3D usa a Clínica ÁUREA como demonstração acadêmica de inspeção de riscos pré-documentados. Use a importação da Versão C como base de regressão e consulte o PR de preparação #1 quando consolidar a proposta de plataforma. A arquitetura real é estática e usa Babylon.js. Os cinco casos são R01 circulação, R02 rota de saída, R03 acessibilidade, R04 janela e pilar e R05 tubulação e viga.
 
 O código e os sete segmentos estão em `apps/viewer`. Sirva essa pasta como raiz por HTTP local e HTTPS em um dispositivo externo. Consulte [os comandos](INSTRUCOES_EXECUCAO.md), [a arquitetura](ARQUITETURA.md), [o inventário](INVENTARIO_VERSAO_C.md) e [as evidências de teste](RELATORIO_TESTES.md).

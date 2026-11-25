@@ -46,8 +46,8 @@ with sync_playwright() as pw:
     page.get_by_label("Observações",exact=True).fill("<b>Texto revisado</b>")
     page.get_by_role("button",name="Salvar rascunho").click()
     shot("salvo-local")
-    page.get_by_role("button",name="Visualizar R05 em 3D").click()
-    expect(page.locator(".inspection-view p")).to_have_text("Inspeção em 3D · R05",timeout=120000)
+    page.get_by_role("link",name="Visualizar R05 em 3D").click()
+    expect(page.frame_locator("iframe").locator("#riskContent")).to_be_visible(timeout=120000)
     frame=page.frames[-1]
     frame.wait_for_function("window.__tourDebug.inspection.selected === 'R05'")
     for state in ("CORR","PROB"):

@@ -1,0 +1,25 @@
+{
+  "interface": "passed",
+  "official_pdfs": 2,
+  "request_methods": [
+    "GET"
+  ],
+  "same_origin_only": true,
+  "external_api_calls": 0,
+  "failure_and_retry": "passed",
+  "single_scene_on_repeat": true,
+  "initial_segment_requests": 7,
+  "risk_states": [
+    "R01",
+    "R02",
+    "R03",
+    "R04",
+    "R05"
+  ],
+  "glb_bytes": 113018368,
+  "glb_sha256": "911f6af402a19aca8b6825ab6df840b56d3100089cbb69e4c0d4a705588402f0",
+  "page_errors": [],
+  "console_errors": [],
+  "unexpected_http_errors": [],
+  "browser": "159.0.8154.33"
+}

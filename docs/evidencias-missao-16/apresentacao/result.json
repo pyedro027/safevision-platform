@@ -1,0 +1,170 @@
+{
+  "steps": 10,
+  "guest": "passed",
+  "authenticated": "simulated",
+  "private_header": "masked",
+  "guide_writes": 0,
+  "refresh": "passed",
+  "resume": "passed",
+  "browser": "159.0.8154.33",
+  "errors": [],
+  "external": [],
+  "captures": [
+    {
+      "file": "00-inicio.jpg",
+      "route": "apresentacao",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "mode": "visitante",
+      "state": "00-inicio",
+      "environment": "Chrome local isolado",
+      "browser": "159.0.8154.33"
+    },
+    {
+      "file": "etapa-01.jpg",
+      "route": "apresentacao",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "mode": "visitante",
+      "state": "etapa-01",
+      "environment": "Chrome local isolado",
+      "browser": "159.0.8154.33"
+    },
+    {
+      "file": "etapa-02.jpg",
+      "route": "apresentacao",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "mode": "visitante",
+      "state": "etapa-02",
+      "environment": "Chrome local isolado",
+      "browser": "159.0.8154.33"
+    },
+    {
+      "file": "etapa-03.jpg",
+      "route": "apresentacao",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "mode": "visitante",
+      "state": "etapa-03",
+      "environment": "Chrome local isolado",
+      "browser": "159.0.8154.33"
+    },
+    {
+      "file": "etapa-04.jpg",
+      "route": "apresentacao",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "mode": "visitante",
+      "state": "etapa-04",
+      "environment": "Chrome local isolado",
+      "browser": "159.0.8154.33"
+    },
+    {
+      "file": "etapa-05.jpg",
+      "route": "apresentacao",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "mode": "visitante",
+      "state": "etapa-05",
+      "environment": "Chrome local isolado",
+      "browser": "159.0.8154.33"
+    },
+    {
+      "file": "etapa-06.jpg",
+      "route": "apresentacao",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "mode": "visitante",
+      "state": "etapa-06",
+      "environment": "Chrome local isolado",
+      "browser": "159.0.8154.33"
+    },
+    {
+      "file": "etapa-07.jpg",
+      "route": "apresentacao",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "mode": "visitante",
+      "state": "etapa-07",
+      "environment": "Chrome local isolado",
+      "browser": "159.0.8154.33"
+    },
+    {
+      "file": "etapa-08.jpg",
+      "route": "apresentacao",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "mode": "visitante",
+      "state": "etapa-08",
+      "environment": "Chrome local isolado",
+      "browser": "159.0.8154.33"
+    },
+    {
+      "file": "etapa-09.jpg",
+      "route": "apresentacao",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "mode": "visitante",
+      "state": "etapa-09",
+      "environment": "Chrome local isolado",
+      "browser": "159.0.8154.33"
+    },
+    {
+      "file": "etapa-10.jpg",
+      "route": "apresentacao",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "mode": "visitante",
+      "state": "etapa-10",
+      "environment": "Chrome local isolado",
+      "browser": "159.0.8154.33"
+    },
+    {
+      "file": "11-encerramento.jpg",
+      "route": "apresentacao",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "mode": "visitante",
+      "state": "11-encerramento",
+      "environment": "Chrome local isolado",
+      "browser": "159.0.8154.33"
+    },
+    {
+      "file": "visao-geral-privacidade.jpg",
+      "route": "inicio",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "mode": "conta QA simulada",
+      "state": "visao-geral-privacidade",
+      "environment": "Chrome local isolado",
+      "browser": "159.0.8154.33"
+    }
+  ]
+}

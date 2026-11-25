@@ -1,0 +1,26 @@
+.viewer-shell,.studio-viewer-live {position:relative;min-width:0;background:var(--green);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.viewer-bar,.guide-head,.guide-controls {display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.viewer-bar {padding:12px 16px;background:var(--green);color:white;border-bottom:1px solid #547064}
+.viewer-title {display:grid}.viewer-title small,.guide small,.guide-head span {font:600 .75rem/1.4 var(--mono);letter-spacing:.07em}
+.viewer-title small {color:var(--accent)}.viewer-title strong {font-size:1.12rem}
+.viewer-tools,.guide-cases {display:flex;gap:6px;flex-wrap:wrap}
+.viewer-tools button {color:white;border:1px solid #809a8a;background:transparent;min-height:36px;padding:5px 11px}
+.viewer-note {width:100%;margin:0;color:var(--accent)}
+.viewer-loading {background:var(--paper);padding:var(--space);color:var(--ink)}
+.viewer-loading progress{accent-color:var(--action);width:min(380px,100%);display:block}
+.viewer-loading:not([hidden])+.studio-frame {position:absolute;visibility:hidden;inset:100% 0 auto}
+.viewer-shell:fullscreen,.studio-viewer:fullscreen,.viewer-focus {display:flex;flex-direction:column;border-radius:0;background:var(--green)}
+.viewer-focus {position:fixed;inset:0;z-index:100}
+:is(.viewer-shell:fullscreen,.studio-viewer:fullscreen,.viewer-focus) .studio-frame {flex:1;min-height:0}
+:is(.viewer-shell:fullscreen,.studio-viewer:fullscreen,.viewer-focus) iframe {height:100%}
+.guide-head {margin-bottom:16px;color:var(--action)}
+.guide-cover {display:grid;grid-template-columns:1fr 1.05fr;background:var(--green);color:white;border-radius:var(--radius);overflow:hidden}
+.guide-cover.text-only {display:block}.guide-copy {padding:clamp(20px,4vw,60px);align-self:center}
+.guide small {color:var(--accent)}.guide h1 {font:normal clamp(2.2rem,4.6vw,4.7rem)/1.02 Georgia,serif;letter-spacing:-.045em;margin:15px 0}
+.guide p {max-width:52ch;color:#e3eddf}.guide-copy button,.guide-copy .button,.guide-cases a {background:var(--accent);color:var(--green);margin-top:12px}
+.guide-cases a {padding:6px 10px;border-radius:5px}.guide-cover img {width:100%;height:100%;max-height:510px;min-height:260px;object-fit:cover}.guide-controls{margin-top:18px}
+.return-guide {display:inline-block;margin:12px var(--space) 0;padding:5px 10px;background:var(--accent);color:var(--green)}
+body[data-presenting] #account-link {font-size:0}body[data-presenting] #account-link::after {content:'Conta';font-size:.9rem}
+body[data-presenting] .work-grid .panel .project-list {display:none}
+@media(max-width:690px){.guide-cover{grid-template-columns:1fr}.guide-cover img{min-height:0;height:160px}.viewer-bar{padding:8px;gap:5px}.viewer-tools button{font-size:.8rem;padding:4px 7px}.viewer-shell iframe,.studio-frame iframe{height:max(55dvh,440px)}}
+@media print{.return-guide{display:none!important}}

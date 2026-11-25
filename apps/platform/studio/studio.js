@@ -1,3 +1,4 @@
+import { exploreLink, viewerBar } from '../exploration.js';
 import { demoFiles, validateDemoFile } from './demo-files.js';
 import { checkClinicResources, loadClinic } from './clinic-session.js';
 
@@ -81,11 +82,7 @@ const template = `<div class="studio" aria-live="off">
     </div>
   </section>
   <section class="studio-viewer" aria-label="Ambiente 3D" inert aria-hidden="true">
-    <div class="studio-viewer-toolbar">
-      <button type="button" class="secondary" data-studio-action="result">Voltar ao Studio</button>
-      <span>Clínica ÁUREA · V03</span>
-      <button type="button" class="secondary" data-studio-action="vr">Preparar modo VR</button>
-    </div>
+    <header class="viewer-bar"></header>
     <div class="studio-frame"></div>
   </section>
 </div>`;
@@ -111,6 +108,7 @@ export function mountStudio(screen) {
   let currentMode = 'demo';
   let activePanel = 'selection';
 
+  const bar = viewerBar(viewer,'studio',cmd => clinic?.send(cmd),() => {location.hash='studio';});
   function message(text) {
     feedback.hidden = !text;
     feedback.textContent = text;
@@ -196,6 +194,7 @@ export function mountStudio(screen) {
     clinic?.dispose();
     clinic = undefined;
     clinicReady = false;
+    bar.ready(false);
   }
 
   function fail(text) {
@@ -206,6 +205,7 @@ export function mountStudio(screen) {
 
   function finish() {
     clinicReady = true;
+    bar.ready(true);
     setStage(5, 'Ambiente 3D disponível.');
     find('.studio-source').textContent = currentMode === 'import'
       ? 'Origem · PDFs oficiais identificados no navegador'
@@ -235,7 +235,7 @@ export function mountStudio(screen) {
         },
         ready: finish,
         failure: fail,
-        home: returnFromViewer,
+        home: () => {location.hash = 'studio';}, vrStatus:bar.message,
       });
     } catch (error) {
       if (controller.signal.aborted) return;
@@ -246,13 +246,15 @@ export function mountStudio(screen) {
   }
 
   function openViewer(code) {
-    show('viewer', action('result'));
+    show('viewer', viewer.querySelector('[data-tool=back]'));
     clinic.send('resume');
     if (code) clinic.send('risk', { code });
   }
 
   function returnFromViewer() {
     if (activePanel !== 'viewer') return;
+    if (viewer.classList.contains('viewer-focus')) viewer.querySelector('[data-tool=focus]').click();
+    if (document.fullscreenElement === viewer) document.exitFullscreen().catch(() => {});
     clinic.send('pause');
     show('result', action('open'));
   }
@@ -303,19 +305,14 @@ export function mountStudio(screen) {
         break;
       case 'open':
       case 'risk':
-        openViewer(control.dataset.code);
+        location.hash = exploreLink('studio',control.dataset.code);
         break;
-      case 'result':
-        returnFromViewer();
-        break;
-      case 'vr':
-        clinic.send('vr');
-        frameHost.querySelector('iframe').focus();
-        break;
+
     }
   });
-  return () => {
+  return {open:openViewer,back:returnFromViewer,get prepared(){return clinicReady;},dispose() {
+    bar.dispose();
     validation++;
     releaseClinic();
-  };
+  }};
 }
