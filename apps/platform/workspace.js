@@ -1,3 +1,4 @@
+import { exploreLink } from './exploration.js';
 const cases = [
   ['Circulação', 'Largura de passagem no corredor e no marco da porta P10.'],
   ['Rota de saída', 'Duas portas sucessivas e seus eixos deslocados no vestíbulo.'],
@@ -13,13 +14,13 @@ export function studioEntry() {
 }
 
 export function projectOverview() {
-  return `<article class="feature"><div><small>Projeto demonstrativo · Vila Velha, ES</small><h2>Clínica ÁUREA</h2><p>Odontologia e estética. Explore a arquitetura e compare cinco condições documentadas antes da obra.</p><div class="actions"><a class="button" href="./clinica/">Abrir demonstração 3D</a><a href="#inspecoes">Inspecionar casos →</a></div></div><img src="./media/aurea.webp" alt="Vista externa do modelo da Clínica ÁUREA"></article>${projectFacts}`;
+  return `<article class="feature"><div><small>Projeto demonstrativo · Vila Velha, ES</small><h2>Clínica ÁUREA</h2><p>Odontologia e estética. Explore a arquitetura e compare cinco condições documentadas antes da obra.</p><div class="actions"><a class="button" href="${exploreLink('inicio')}">Abrir demonstração 3D</a><a href="#inspecoes">Inspecionar casos →</a><a href="#apresentacao">Apresentar a plataforma →</a></div></div><img src="./media/aurea.webp" alt="Vista externa do modelo da Clínica ÁUREA"></article>${projectFacts}`;
 }
 
 export function clinicPage() {
   return `<header class="clinic-cover"><img src="./clinica/assets/recepcao.png" alt="Recepção da Clínica ÁUREA"><div><small>Vila Velha · Espírito Santo</small><h1>Clínica ÁUREA</h1><p>Projeto de odontologia e estética</p></div></header>${projectFacts}
-    <div class="actions clinic-actions"><a class="button" href="./clinica/">Explorar a clínica em 3D</a><a href="#inspecoes">Registrar inspeção</a><a href="#studio">Preparar no Studio →</a></div>
-    <h2>Casos disponíveis</h2><div class="case-grid">${cases.map(([name, description], i) => `<a class="case" href="./clinica/#inspection/R0${i+1}"><img src="./media/r0${i+1}.webp" alt=""><div><small>R0${i+1} · Ficha de inspeção</small><h3>${name}</h3><p>${description}</p></div></a>`).join('')}</div>`;
+    <div class="actions clinic-actions"><a class="button" href="${exploreLink('aurea')}">Explorar a clínica em 3D</a><a href="#inspecoes">Registrar inspeção</a><a href="#studio">Preparar no Studio →</a></div>
+    <h2>Casos disponíveis</h2><div class="case-grid">${cases.map(([name, description], i) => `<a class="case" href="${exploreLink('aurea','R0'+(i+1))}"><img src="./media/r0${i+1}.webp" alt=""><div><small>R0${i+1} · Ficha de inspeção</small><h3>${name}</h3><p>${description}</p></div></a>`).join('')}</div>`;
 }
 
 export function serviceName(state) {

@@ -1,5 +1,5 @@
 const modelRoot = './clinica/MODELO/';
-const tourUrl = './clinica/WEB/index.html';
+const tourUrl = './visualizador.html';
 const startupTimeout = 210_000;
 
 export async function checkClinicResources(signal) {
@@ -13,7 +13,7 @@ export async function checkClinicResources(signal) {
   }
 }
 
-export function loadClinic(host, { progress, ready, failure, home }) {
+export function loadClinic(host, { progress, ready, failure, home, vrStatus }) {
   const listeners = new AbortController();
   const options = { signal: listeners.signal };
   const frame = document.createElement('iframe');
@@ -23,11 +23,14 @@ export function loadClinic(host, { progress, ready, failure, home }) {
 
   let timer;
   let observer;
+  let started = false;
   function watchTimeout() {
     clearTimeout(timer);
     timer = setTimeout(() => failure('O visualizador demorou para responder. Confira a rede e tente novamente.'), startupTimeout);
   }
   function send(action, data) {
+    if (listeners.signal.aborted || !['risk','vr','pause','resume'].includes(action)) return;
+    if (action === 'risk' && !/^R0[1-5]$/.test(data?.code)) return;
     frame.contentWindow?.postMessage({ channel: 'safevision', action, ...data }, location.origin);
   }
   function inspect() {
@@ -40,13 +43,25 @@ export function loadClinic(host, { progress, ready, failure, home }) {
   addEventListener('message', event => {
     if (event.origin !== location.origin || event.source !== frame.contentWindow
       || event.data?.channel !== 'safevision') return;
-    if (event.data.event === 'ready') {
+    if (event.data.event === 'ready' && !started) {
+      started = true;
+      const doc = frame.contentDocument;
+      if (doc?.body.dataset.edition !== 'integrated' || !doc.getElementById('tour') ||
+          !getComputedStyle(doc.body).getPropertyValue('--forest').trim()) {
+        return failure('Interface integrada indisponível. Refaça o carregamento.');
+      }
+      for (const button of doc.body.querySelectorAll(':scope > button')) {
+        if (button.textContent === '← Painel SAFEVISION') button.hidden = true;
+      }
       clearTimeout(timer);
       // Park the render loop while keeping the original welcome screen.
-      frame.contentWindow.__tourDebug.suspended = true;
+      const runtime = frame.contentWindow.__tourDebug;
+      if (runtime) runtime.suspended = true;
+      else send('pause');
       ready();
     }
     if (event.data.event === 'home') home();
+    if (event.data.event === 'vr-status' && typeof event.data.text === 'string') vrStatus?.(event.data.text);
   }, options);
 
   frame.addEventListener('load', () => {

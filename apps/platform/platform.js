@@ -1,3 +1,5 @@
+import { mountExploration, exploreRoute } from './exploration.js';
+import { guideActive, guideChrome, showPresentation } from './presentation.js';
 import { projectData } from './project-data.js';
 import { projectsPage, projectDetail, projectResults, versionList, escapeText as escape } from './projects.js';
 import { mountInspection } from './inspection.js';
@@ -9,7 +11,7 @@ const screen = document.querySelector('#screen');
 const dialog = document.querySelector('#dialog');
 const feedback = document.querySelector('#feedback');
 const dateFormat = new Intl.DateTimeFormat('pt-BR', { dateStyle: 'medium', timeStyle: 'short' });
-const routes = new Set(['inicio', 'projetos', 'studio', 'aurea', 'conta', 'configuracoes']);
+const routes = new Set(['inicio', 'projetos', 'studio', 'aurea', 'conta', 'configuracoes','apresentacao']);
 const state = {
   client: null, session: null, phase: 'loading', projects: [], profile: null,
   accountMode: new URLSearchParams(location.search).has('recuperar') ? 'recovery' : 'login'
@@ -25,6 +27,11 @@ let pendingRecovery;
 let historyView;
 let messageTimer;
 let closeStudio;
+let explorer;
+let explorerKey = '';
+let studioRoute = '';
+let temporary;
+let displayedHash = '';
 let inspectionKey = '';
 let disposeInspection;
 
@@ -74,7 +81,7 @@ function overview() {
   const status = projectStatus();
   return heading('Visão geral', 'Explore o projeto em três dimensões e examine as decisões antes da obra.')
     + projectOverview() + '<div class="work-grid">' + studioEntry()
-    + `<section class="panel"><h2>Projetos privados</h2>${status || projectList(state.projects.slice(0, 3))}
+    + `<section class="panel"><h2>Projetos privados</h2>${guideActive() ? '<p>Abra a carteira para mostrar os projetos da sua conta.</p>' : status || projectList(state.projects.slice(0, 3))}
       <a href="#projetos">Gerenciar projetos →</a></section></div>`;
 }
 
@@ -108,25 +115,59 @@ function account() {
 
 function render() {
   const hash = location.hash.slice(1);
-  const module = hash.split('/')[0];
+  if (hash === 'conteudo') return;
+  const module = hash.split(/[/?]/)[0];
   const inspection = ['inspecoes', 'relatorios'].includes(module);
-  const route = inspection || module === 'projetos' ? module : routes.has(hash) ? hash : 'inicio';
+  const route = inspection || module === 'projetos' || module === 'explorar' ? module : routes.has(hash) ? hash : 'inicio';
   const key = inspection ? JSON.stringify([hash, state.session?.user.id]) : '';
-  if (inspectionKey !== key) { disposeInspection?.(); disposeInspection = undefined; inspectionKey = key; }
+  const currentUser = state.session?.user.id;
+  const target = route === 'explorar' ? exploreRoute(hash) : null;
+  const draft = disposeInspection?.pending() || temporary;
+  if (draft && draft.userId === currentUser && displayedHash !== hash) {
+    if (hash === draft.route || target?.origin === draft.route) temporary = draft;
+    else if (!confirm('Sair e descartar as alterações ainda não salvas nesta ficha?')) {
+      history.replaceState(null,'','#'+displayedHash);
+      return;
+    } else temporary = undefined;
+  }
+  if (temporary && temporary.userId !== currentUser) temporary = undefined;
+  displayedHash = hash;
+  if (inspectionKey !== key) { disposeInspection?.dispose(); disposeInspection = undefined; inspectionKey = key; }
+  guideChrome(route);
   for (const link of document.querySelectorAll('nav a')) {
     if (link.hash === '#' + route) link.setAttribute('aria-current', 'page');
     else link.removeAttribute('aria-current');
   }
-  document.querySelector('#account-link').textContent = state.profile?.display_name || state.session?.user.email || 'Entrar';
+  document.querySelector('#account-link').textContent = guideActive() ? 'Conta' : state.profile?.display_name || state.session?.user.email || 'Entrar';
   document.querySelector('#breadcrumb').textContent = document.querySelector('nav [aria-current]')?.textContent || '';
+  const reuseStudio = target?.origin === 'studio' && target.valid && closeStudio?.prepared;
+  const nextKey = target && !reuseStudio ? JSON.stringify([target.origin,target.valid,Boolean(target.code)]) : '';
+  if (explorerKey !== nextKey) { explorer?.dispose(); explorer = undefined; explorerKey = nextKey; }
+  if (reuseStudio) {
+    if (studioRoute !== hash) closeStudio.open(target.code);
+    studioRoute = hash;
+    return;
+  }
   if (route === 'studio') {
+    if (studioRoute) closeStudio?.back();
+    studioRoute = '';
     if (!closeStudio) closeStudio = mountStudio(screen);
     return;
   }
-  closeStudio?.();
+  studioRoute = '';
+  closeStudio?.dispose();
   closeStudio = undefined;
+  if (target) {
+    if (!explorer) explorer = mountExploration(screen,target);
+    else explorer.update(target);
+    return;
+  }
+  if (route === 'apresentacao') { showPresentation(screen); return; }
   if (inspection) {
-    if (!disposeInspection) disposeInspection = mountInspection(screen, hash, state.session?.user.id, state.client, state.inspectionConfig);
+    if (!disposeInspection) {
+      disposeInspection = mountInspection(screen, hash, currentUser, state.client, state.inspectionConfig, temporary);
+      temporary = undefined;
+    }
     return;
   }
   if (route === 'inicio') screen.innerHTML = overview();
@@ -310,6 +351,7 @@ document.body.addEventListener('click', async event => {
     return screen.querySelector('input')?.focus();
   }
   if (action === 'logout') {
+    if ((disposeInspection?.pending() || temporary) && !confirm('Encerrar a sessão e descartar a edição não salva?')) return;
     control.disabled = true;
     try {
       unwrap(await state.client.auth.signOut({ scope: 'local' }));
@@ -444,6 +486,9 @@ document.body.addEventListener('submit', async event => {
   }
 });
 
+addEventListener('beforeunload', event => {
+  if (disposeInspection?.pending() || temporary) { event.preventDefault(); event.returnValue = ''; }
+});
 addEventListener('hashchange', () => {
   if (dialog.open) dialog.close();
   if (location.hash !== '#conteudo') render();

@@ -1,0 +1,52 @@
+/* Applied only to the generated platform entry. Native controls retain their handlers. */
+:root {--forest:#133c33;--leaf:#d7e9a8;--paper:#f3f3ed;--ink:#172c27;--edge:#cdd5c9;--copper:#87502c}
+body {font:15px/1.4 "Segoe UI",system-ui,sans-serif;color:var(--ink)}
+#entry {background:#24453a url("./clinica/assets/recepcao.png") center / cover no-repeat;align-items:end;padding:clamp(12px,3vw,40px)}
+.welcome {width:min(375px,100%);background:var(--forest);color:white;border:0;border-radius:9px;padding:clamp(16px,2.4vw,28px);max-height:94vh;box-shadow:0 3px 24px #10271f33}
+.welcome .eyebrow {font:600 11px/1.5 monospace;color:var(--leaf);letter-spacing:.07em}
+.welcome h1 {font:normal clamp(30px,3.7vw,52px)/1.04 Georgia,serif;letter-spacing:-.035em;margin:8px 0}
+.welcome .intro,.welcome .loading,.welcome .fine,.welcome .presentation-entry small {color:#e2e9da}
+.welcome .intro {margin-bottom:10px}.welcome .start {background:var(--leaf);color:var(--forest);font-weight:650}
+.welcome .facts,.entry-rule,.welcome .caption,.entry-credit,.welcome .entry-controls {display:none}
+.welcome .presentation-entry {margin-block:8px;border:1px solid #819e8d;border-radius:5px;padding:8px;font-size:13px}
+.presentation-entry label,.presentation-entry select,.presentation-entry legend,.welcome .presentation-entry small {font-size:12px}
+.welcome .progress {margin-top:10px}.welcome .fine {font-size:11px;margin-top:8px}
+#hud {inset:12px 12px auto;background:var(--forest);color:white;border:0;border-radius:8px;padding:9px 12px;gap:12px;box-shadow:0 2px 12px #122c2226}
+#hud .brand {color:var(--leaf)}#hud .brand small,#hud .brand i,#hud .place small {color:#d7e5db}
+#hud .brand-symbol {background:var(--leaf);color:var(--forest)}
+#hud nav button {color:white;background:transparent}
+#hud nav button:hover,#hud #cleanButton[aria-pressed=true]{background:#355f50}
+#hud #riskQuickList {background:var(--paper);box-shadow:none;border:1px solid var(--edge)}
+#riskQuickList button {color:var(--copper)!important}
+.drawer,.pause-card {background:var(--paper);border:1px solid var(--edge);border-radius:8px;box-shadow:0 3px 16px #152b2224;color:var(--ink)}
+.drawer {top:110px;bottom:18px;z-index:75;width:min(355px,94%);padding:17px}
+.drawer-head {padding-bottom:10px;border-bottom:1px solid var(--edge)}
+.caption,.drawer .local,.drawer .subtle,.card-section p,.card-section li,details p,details li,.proposal-note,.pause-card .subtle {color:#45594f}
+.drawer h2,.pause-card h2 {font-weight:650;letter-spacing:-.035em}
+.room-list {gap:0;margin-top:10px}.room-list button {background:white;border-radius:0;border-width:0 0 1px;padding:9px;font-size:13px;color:var(--ink)}
+.risk-tabs {gap:3px;margin:12px 0}.risk-tabs button {background:white}
+.risk-tabs button[aria-selected=true],.compare .problem[aria-pressed=true] {background:var(--copper);color:white}
+.compare .proposal[aria-pressed=true],.primary {background:var(--forest);color:white}
+.pause-card {padding:19px;max-height:94vh}.pause-card .secondary {margin-top:5px}
+#technicalLabel {top:auto;bottom:12px;background:var(--forest);max-width:46%}
+#riskPanel.technical-panel {top:110px;bottom:auto;max-height:calc(100% - 125px)}
+#screenControls {z-index:18;width:min(320px,88%);bottom:47px;background:var(--forest);border-radius:6px}
+#screenControls .screen-directions button {min-height:34px;font-size:13px}
+#hud .count {background:var(--leaf);color:var(--forest)}
+#enterVR {z-index:90!important;bottom:10px!important;background:var(--forest)!important;color:white!important}
+#bottom {z-index:15;bottom:8px}.nav-hint {font-size:10px}
+button:focus-visible,a:focus-visible,summary:focus-visible {outline:3px solid #ffa956;outline-offset:2px}
+@media(max-width:750px){
+ #hud {inset:4px 4px auto;display:grid;grid-template-columns:auto 1fr;gap:3px 7px;padding:5px}
+ #hud .brand {font-size:10px}#hud .brand small{display:none}
+ #hud .place {max-width:none;padding-left:7px}
+ #hud nav:not(#riskQuickList) {grid-column:1/-1;gap:1px}#hud nav button{font-size:11px;padding:6px}
+ #homeButton {display:inline-block}#hud #riskQuickList {top:100%;gap:1px}#riskQuickList button{padding:4px 8px}
+ .drawer,#riskPanel.technical-panel {top:106px;bottom:6px;left:auto;right:5px;width:min(320px,88%);max-height:calc(100% - 112px)}
+ #technicalLabel {max-width:90%;bottom:5px}
+ .welcome .fine {display:none}
+}
+@media(max-height:480px){.welcome,.pause-card {max-height:94vh;overflow:auto}#entry{padding:5px}.drawer,#riskPanel.technical-panel{bottom:4px}.nav-hint{display:none}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+
+#review-case:not([hidden]) {display:inline-block;margin:12px 0;color:var(--forest);font-weight:650}

@@ -35,5 +35,26 @@ await rm(output, { recursive: true, force: true });
 await mkdir(output, { recursive: true });
 await cp(source, output, { recursive: true });
 await cp(path('apps/viewer/'), path('dist/clinica/'), { recursive: true });
+const inventory = JSON.parse(await readFile(path('docs/inventario-versao-c.json'), 'utf8'));
+for (const entry of inventory.files) {
+  const distributed = await readFile(path('dist/clinica/' + entry.path));
+  if (distributed.length !== entry.bytes || createHash('sha256').update(distributed).digest('hex') !== entry.sha256) {
+    throw new Error('A cópia distribuída diverge do inventário: ' + entry.path);
+  }
+}
+// Derive only the entry document. All scripts, data and scene assets are served from the verified original.
+const originalEntry = await readFile(path('apps/viewer/WEB/index.html'), 'utf8');
+for (const id of ['tour','entry','hud','loadMessage','riskContent','startButton']) {
+  if (!originalEntry.includes(`id="${id}"`)) throw Error('Entrada do tour incompatível: '+id);
+}
+const integratedEntry = originalEntry.replace('<head>', '<head><base href="./clinica/WEB/">')
+  .replace('</head>', '<link rel="stylesheet" href="../../viewer-interior.css"></head>')
+  .replace('<div id="riskContent"></div>', '<div id="riskContent"></div><a id="review-case" target="_parent" hidden>Avaliar este caso</a>')
+  .replace('</body>', '<script type="module" src="../../viewer-controls.js"></script></body>')
+  .replace('<body>', '<body data-edition="integrated">')
+  .replace('SAFEVISION 3D <span>PROJETO INTEGRADOR · DEMONSTRAÇÃO V03</span>', 'SAFEVISION Platform')
+  .replace('Entre na<br>Clínica <em>ÁUREA.</em>', 'Clínica ÁUREA')
+  .replace('SAFEVISION <b>3D</b>', 'SAFEVISION <b>Platform</b>');
+await writeFile(path('dist/visualizador.html'), integratedEntry);
 await writeFile(path('dist/config.json'), JSON.stringify(url ? { url, key, ...(syncInspections && { inspectionSync: true }) } : {}));
 console.log('Distribuição gerada em dist/. Visualizador preservado em dist/clinica/.');
