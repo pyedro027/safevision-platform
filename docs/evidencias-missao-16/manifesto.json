@@ -1,0 +1,789 @@
+[
+  {
+    "file": "visualizador/caso-desconhecido.jpg",
+    "route": "explorar/R09?de=https://example.invalid",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "mode": "visitante",
+    "state": "caso-desconhecido",
+    "environment": "Chrome local isolado",
+    "browser": "159.0.8154.33",
+    "model": "Interface da plataforma",
+    "observation": "Captura da execução Playwright com recursos locais.",
+    "result": "passed"
+  },
+  {
+    "file": "visualizador/falha-e-retentativa.jpg",
+    "route": "explorar?de=inicio",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "mode": "visitante",
+    "state": "falha-e-retentativa",
+    "environment": "Chrome local isolado",
+    "browser": "159.0.8154.33",
+    "model": "Interface da plataforma",
+    "observation": "Captura da execução Playwright com recursos locais.",
+    "result": "passed"
+  },
+  {
+    "file": "visualizador/carregamento-apos-retentativa.jpg",
+    "route": "explorar?de=inicio",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "mode": "visitante",
+    "state": "carregamento-apos-retentativa",
+    "environment": "Chrome local isolado",
+    "browser": "159.0.8154.33",
+    "model": "Interface da plataforma",
+    "observation": "Captura da execução Playwright com recursos locais.",
+    "result": "passed"
+  },
+  {
+    "file": "visualizador/entrada-integrada.jpg",
+    "route": "explorar?de=inicio",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "mode": "visitante",
+    "state": "entrada-integrada",
+    "environment": "Chrome local isolado",
+    "browser": "159.0.8154.33",
+    "model": "Modelo real",
+    "observation": "Captura da execução Playwright com recursos locais.",
+    "result": "passed"
+  },
+  {
+    "file": "visualizador/tela-cheia.jpg",
+    "route": "explorar?de=inicio",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "mode": "visitante",
+    "state": "tela-cheia",
+    "environment": "Chrome local isolado",
+    "browser": "159.0.8154.33",
+    "model": "Modelo real",
+    "observation": "Captura da execução Playwright com recursos locais.",
+    "result": "passed"
+  },
+  {
+    "file": "visualizador/exploracao.jpg",
+    "route": "explorar?de=inicio",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "mode": "visitante",
+    "state": "exploracao",
+    "environment": "Chrome local isolado",
+    "browser": "159.0.8154.33",
+    "model": "Modelo real",
+    "observation": "Captura da execução Playwright com recursos locais.",
+    "result": "passed"
+  },
+  {
+    "file": "visualizador/ambientes.jpg",
+    "route": "explorar?de=inicio",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "mode": "visitante",
+    "state": "ambientes",
+    "environment": "Chrome local isolado",
+    "browser": "159.0.8154.33",
+    "model": "Modelo real",
+    "observation": "Captura da execução Playwright com recursos locais.",
+    "result": "passed"
+  },
+  {
+    "file": "visualizador/arquitetura-limpa.jpg",
+    "route": "explorar?de=inicio",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "mode": "visitante",
+    "state": "arquitetura-limpa",
+    "environment": "Chrome local isolado",
+    "browser": "159.0.8154.33",
+    "model": "Modelo real",
+    "observation": "Captura da execução Playwright com recursos locais.",
+    "result": "passed"
+  },
+  {
+    "file": "visualizador/pausa-configuracoes.jpg",
+    "route": "explorar?de=inicio",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "mode": "visitante",
+    "state": "pausa-configuracoes",
+    "environment": "Chrome local isolado",
+    "browser": "159.0.8154.33",
+    "model": "Modelo real",
+    "observation": "Captura da execução Playwright com recursos locais.",
+    "result": "passed"
+  },
+  {
+    "file": "visualizador/R01-CORR.jpg",
+    "route": "explorar?de=inicio",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "mode": "visitante",
+    "state": "R01-CORR",
+    "environment": "Chrome local isolado",
+    "browser": "159.0.8154.33",
+    "model": "Modelo real",
+    "observation": "Captura da execução Playwright com recursos locais.",
+    "result": "passed"
+  },
+  {
+    "file": "visualizador/R01-PROB.jpg",
+    "route": "explorar?de=inicio",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "mode": "visitante",
+    "state": "R01-PROB",
+    "environment": "Chrome local isolado",
+    "browser": "159.0.8154.33",
+    "model": "Modelo real",
+    "observation": "Captura da execução Playwright com recursos locais.",
+    "result": "passed"
+  },
+  {
+    "file": "visualizador/R02-CORR.jpg",
+    "route": "explorar?de=inicio",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "mode": "visitante",
+    "state": "R02-CORR",
+    "environment": "Chrome local isolado",
+    "browser": "159.0.8154.33",
+    "model": "Modelo real",
+    "observation": "Captura da execução Playwright com recursos locais.",
+    "result": "passed"
+  },
+  {
+    "file": "visualizador/R02-PROB.jpg",
+    "route": "explorar?de=inicio",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "mode": "visitante",
+    "state": "R02-PROB",
+    "environment": "Chrome local isolado",
+    "browser": "159.0.8154.33",
+    "model": "Modelo real",
+    "observation": "Captura da execução Playwright com recursos locais.",
+    "result": "passed"
+  },
+  {
+    "file": "visualizador/R03-CORR.jpg",
+    "route": "explorar?de=inicio",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "mode": "visitante",
+    "state": "R03-CORR",
+    "environment": "Chrome local isolado",
+    "browser": "159.0.8154.33",
+    "model": "Modelo real",
+    "observation": "Captura da execução Playwright com recursos locais.",
+    "result": "passed"
+  },
+  {
+    "file": "visualizador/R03-PROB.jpg",
+    "route": "explorar?de=inicio",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "mode": "visitante",
+    "state": "R03-PROB",
+    "environment": "Chrome local isolado",
+    "browser": "159.0.8154.33",
+    "model": "Modelo real",
+    "observation": "Captura da execução Playwright com recursos locais.",
+    "result": "passed"
+  },
+  {
+    "file": "visualizador/R04-CORR.jpg",
+    "route": "explorar?de=inicio",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "mode": "visitante",
+    "state": "R04-CORR",
+    "environment": "Chrome local isolado",
+    "browser": "159.0.8154.33",
+    "model": "Modelo real",
+    "observation": "Captura da execução Playwright com recursos locais.",
+    "result": "passed"
+  },
+  {
+    "file": "visualizador/R04-PROB.jpg",
+    "route": "explorar?de=inicio",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "mode": "visitante",
+    "state": "R04-PROB",
+    "environment": "Chrome local isolado",
+    "browser": "159.0.8154.33",
+    "model": "Modelo real",
+    "observation": "Captura da execução Playwright com recursos locais.",
+    "result": "passed"
+  },
+  {
+    "file": "visualizador/R05-CORR.jpg",
+    "route": "explorar?de=inicio",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "mode": "visitante",
+    "state": "R05-CORR",
+    "environment": "Chrome local isolado",
+    "browser": "159.0.8154.33",
+    "model": "Modelo real",
+    "observation": "Captura da execução Playwright com recursos locais.",
+    "result": "passed"
+  },
+  {
+    "file": "visualizador/R05-PROB.jpg",
+    "route": "explorar?de=inicio",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "mode": "visitante",
+    "state": "R05-PROB",
+    "environment": "Chrome local isolado",
+    "browser": "159.0.8154.33",
+    "model": "Modelo real",
+    "observation": "Captura da execução Playwright com recursos locais.",
+    "result": "passed"
+  },
+  {
+    "file": "visualizador/tela-375.jpg",
+    "route": "explorar?de=inicio",
+    "viewport": {
+      "width": 375,
+      "height": 812
+    },
+    "mode": "visitante",
+    "state": "tela-375",
+    "environment": "Chrome local isolado",
+    "browser": "159.0.8154.33",
+    "model": "Modelo real",
+    "observation": "Captura da execução Playwright com recursos locais.",
+    "result": "passed"
+  },
+  {
+    "file": "visualizador/tela-1920.jpg",
+    "route": "explorar?de=inicio",
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "mode": "visitante",
+    "state": "tela-1920",
+    "environment": "Chrome local isolado",
+    "browser": "159.0.8154.33",
+    "model": "Modelo real",
+    "observation": "Captura da execução Playwright com recursos locais.",
+    "result": "passed"
+  },
+  {
+    "file": "visualizador/tela-844.jpg",
+    "route": "explorar?de=inicio",
+    "viewport": {
+      "width": 844,
+      "height": 390
+    },
+    "mode": "visitante",
+    "state": "tela-844",
+    "environment": "Chrome local isolado",
+    "browser": "159.0.8154.33",
+    "model": "Modelo real",
+    "observation": "Captura da execução Playwright com recursos locais.",
+    "result": "passed"
+  },
+  {
+    "file": "visualizador/retorno-rascunho.jpg",
+    "route": "inspecoes/R03",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "mode": "visitante",
+    "state": "retorno-rascunho",
+    "environment": "Chrome local isolado",
+    "browser": "159.0.8154.33",
+    "model": "Interface da plataforma",
+    "observation": "Captura da execução Playwright com recursos locais.",
+    "result": "passed"
+  },
+  {
+    "file": "apresentacao/00-inicio.jpg",
+    "route": "apresentacao",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "mode": "visitante",
+    "state": "00-inicio",
+    "environment": "Chrome local isolado",
+    "browser": "159.0.8154.33",
+    "model": "Interface da plataforma",
+    "observation": "Captura da execução Playwright com recursos locais.",
+    "result": "passed"
+  },
+  {
+    "file": "apresentacao/etapa-01.jpg",
+    "route": "apresentacao",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "mode": "visitante",
+    "state": "etapa-01",
+    "environment": "Chrome local isolado",
+    "browser": "159.0.8154.33",
+    "model": "Interface da plataforma",
+    "observation": "Captura da execução Playwright com recursos locais.",
+    "result": "passed"
+  },
+  {
+    "file": "apresentacao/etapa-02.jpg",
+    "route": "apresentacao",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "mode": "visitante",
+    "state": "etapa-02",
+    "environment": "Chrome local isolado",
+    "browser": "159.0.8154.33",
+    "model": "Interface da plataforma",
+    "observation": "Captura da execução Playwright com recursos locais.",
+    "result": "passed"
+  },
+  {
+    "file": "apresentacao/etapa-03.jpg",
+    "route": "apresentacao",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "mode": "visitante",
+    "state": "etapa-03",
+    "environment": "Chrome local isolado",
+    "browser": "159.0.8154.33",
+    "model": "Interface da plataforma",
+    "observation": "Captura da execução Playwright com recursos locais.",
+    "result": "passed"
+  },
+  {
+    "file": "apresentacao/etapa-04.jpg",
+    "route": "apresentacao",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "mode": "visitante",
+    "state": "etapa-04",
+    "environment": "Chrome local isolado",
+    "browser": "159.0.8154.33",
+    "model": "Interface da plataforma",
+    "observation": "Captura da execução Playwright com recursos locais.",
+    "result": "passed"
+  },
+  {
+    "file": "apresentacao/etapa-05.jpg",
+    "route": "apresentacao",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "mode": "visitante",
+    "state": "etapa-05",
+    "environment": "Chrome local isolado",
+    "browser": "159.0.8154.33",
+    "model": "Interface da plataforma",
+    "observation": "Captura da execução Playwright com recursos locais.",
+    "result": "passed"
+  },
+  {
+    "file": "apresentacao/etapa-06.jpg",
+    "route": "apresentacao",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "mode": "visitante",
+    "state": "etapa-06",
+    "environment": "Chrome local isolado",
+    "browser": "159.0.8154.33",
+    "model": "Interface da plataforma",
+    "observation": "Captura da execução Playwright com recursos locais.",
+    "result": "passed"
+  },
+  {
+    "file": "apresentacao/etapa-07.jpg",
+    "route": "apresentacao",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "mode": "visitante",
+    "state": "etapa-07",
+    "environment": "Chrome local isolado",
+    "browser": "159.0.8154.33",
+    "model": "Interface da plataforma",
+    "observation": "Captura da execução Playwright com recursos locais.",
+    "result": "passed"
+  },
+  {
+    "file": "apresentacao/etapa-08.jpg",
+    "route": "apresentacao",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "mode": "visitante",
+    "state": "etapa-08",
+    "environment": "Chrome local isolado",
+    "browser": "159.0.8154.33",
+    "model": "Interface da plataforma",
+    "observation": "Captura da execução Playwright com recursos locais.",
+    "result": "passed"
+  },
+  {
+    "file": "apresentacao/etapa-09.jpg",
+    "route": "apresentacao",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "mode": "visitante",
+    "state": "etapa-09",
+    "environment": "Chrome local isolado",
+    "browser": "159.0.8154.33",
+    "model": "Interface da plataforma",
+    "observation": "Captura da execução Playwright com recursos locais.",
+    "result": "passed"
+  },
+  {
+    "file": "apresentacao/etapa-10.jpg",
+    "route": "apresentacao",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "mode": "visitante",
+    "state": "etapa-10",
+    "environment": "Chrome local isolado",
+    "browser": "159.0.8154.33",
+    "model": "Interface da plataforma",
+    "observation": "Captura da execução Playwright com recursos locais.",
+    "result": "passed"
+  },
+  {
+    "file": "apresentacao/11-encerramento.jpg",
+    "route": "apresentacao",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "mode": "visitante",
+    "state": "11-encerramento",
+    "environment": "Chrome local isolado",
+    "browser": "159.0.8154.33",
+    "model": "Interface da plataforma",
+    "observation": "Captura da execução Playwright com recursos locais.",
+    "result": "passed"
+  },
+  {
+    "file": "apresentacao/visao-geral-privacidade.jpg",
+    "route": "inicio",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "mode": "conta QA simulada",
+    "state": "visao-geral-privacidade",
+    "environment": "Chrome local isolado",
+    "browser": "159.0.8154.33",
+    "model": "Interface da plataforma",
+    "observation": "Captura da execução Playwright com recursos locais.",
+    "result": "passed"
+  },
+  {
+    "file": "integracao/inicio-1440.png",
+    "state": "inicio-1440",
+    "route": "inicio",
+    "viewport": {
+      "width": 1440,
+      "height": 1016
+    },
+    "image_pixels": [
+      1440,
+      1016
+    ],
+    "browser": "158.0.8127.37",
+    "mode": "visitante",
+    "model": "Interface da plataforma",
+    "environment": "Chrome local",
+    "observation": "Reexecução da regressão de interface.",
+    "result": "passed"
+  },
+  {
+    "file": "integracao/aurea-1440.png",
+    "state": "aurea-1440",
+    "route": "aurea",
+    "viewport": {
+      "width": 1440,
+      "height": 1036
+    },
+    "image_pixels": [
+      1440,
+      1036
+    ],
+    "browser": "158.0.8127.37",
+    "mode": "visitante",
+    "model": "Interface da plataforma",
+    "environment": "Chrome local",
+    "observation": "Reexecução da regressão de interface.",
+    "result": "passed"
+  },
+  {
+    "file": "integracao/studio.png",
+    "state": "studio",
+    "route": "studio",
+    "viewport": {
+      "width": 1350,
+      "height": 920
+    },
+    "image_pixels": [
+      1350,
+      920
+    ],
+    "browser": "159.0.8154.33",
+    "mode": "visitante",
+    "model": "Interface do Studio",
+    "environment": "Chrome local",
+    "observation": "Studio com o par oficial de PDFs.",
+    "result": "passed"
+  },
+  {
+    "file": "integracao/documentos-oficiais.png",
+    "state": "documentos-oficiais",
+    "route": "studio",
+    "viewport": {
+      "width": 1350,
+      "height": 920
+    },
+    "image_pixels": [
+      1350,
+      920
+    ],
+    "browser": "159.0.8154.33",
+    "mode": "visitante",
+    "model": "Interface do Studio",
+    "environment": "Chrome local",
+    "observation": "Studio com o par oficial de PDFs.",
+    "result": "passed"
+  },
+  {
+    "file": "integracao/studio-pronto.png",
+    "state": "studio-pronto",
+    "route": "studio",
+    "viewport": {
+      "width": 1350,
+      "height": 920
+    },
+    "image_pixels": [
+      1350,
+      920
+    ],
+    "browser": "159.0.8154.33",
+    "mode": "visitante",
+    "model": "Modelo real",
+    "environment": "Chrome local",
+    "observation": "Studio com o par oficial de PDFs.",
+    "result": "passed"
+  },
+  {
+    "file": "integracao/depois-r05.png",
+    "state": "depois-r05",
+    "route": "explorar/R05?de=studio",
+    "viewport": {
+      "width": 1350,
+      "height": 920
+    },
+    "image_pixels": [
+      1350,
+      989
+    ],
+    "browser": "159.0.8154.33",
+    "mode": "visitante",
+    "model": "Modelo real",
+    "environment": "Chrome local",
+    "observation": "Studio com o par oficial de PDFs.",
+    "result": "passed"
+  },
+  {
+    "file": "integracao/antes-r05.png",
+    "state": "antes-r05",
+    "route": "studio",
+    "viewport": {
+      "width": 1350,
+      "height": 920
+    },
+    "image_pixels": [
+      1350,
+      978
+    ],
+    "browser": "158.0.8127.37",
+    "mode": "visitante",
+    "model": "Modelo real",
+    "environment": "Chrome local",
+    "observation": "Antes da edição, sobre b7af326.",
+    "result": "passed"
+  },
+  {
+    "file": "integracao/formulario.png",
+    "state": "formulario",
+    "route": "inspecoes/R03",
+    "viewport": {
+      "width": 1440,
+      "height": 950
+    },
+    "image_pixels": [
+      1440,
+      950
+    ],
+    "browser": "158.0.8127.37",
+    "mode": "visitante",
+    "model": "Dados de avaliação QA",
+    "environment": "Chrome local",
+    "observation": "Regressão de inspeções e impressão.",
+    "result": "passed"
+  },
+  {
+    "file": "integracao/relatorio.png",
+    "state": "relatorio",
+    "route": "relatorios",
+    "viewport": {
+      "width": 1440,
+      "height": 950
+    },
+    "image_pixels": [
+      1440,
+      950
+    ],
+    "browser": "158.0.8127.37",
+    "mode": "visitante",
+    "model": "Dados de avaliação QA",
+    "environment": "Chrome local",
+    "observation": "Regressão de inspeções e impressão.",
+    "result": "passed"
+  },
+  {
+    "file": "integracao/impressao.png",
+    "state": "impressao",
+    "route": "relatorios",
+    "viewport": {
+      "width": 1440,
+      "height": 950
+    },
+    "image_pixels": [
+      1440,
+      950
+    ],
+    "browser": "158.0.8127.37",
+    "mode": "visitante",
+    "model": "Dados de avaliação QA",
+    "environment": "Chrome local",
+    "observation": "Regressão de inspeções e impressão.",
+    "result": "passed"
+  },
+  {
+    "file": "integracao/01-login-desktop.png",
+    "state": "01-login-desktop",
+    "route": "conta",
+    "viewport": {
+      "width": 1440,
+      "height": 950
+    },
+    "image_pixels": [
+      1440,
+      950
+    ],
+    "browser": "158.0.8127.37",
+    "mode": "visitante",
+    "model": "SDK real com API simulada",
+    "environment": "Chrome local",
+    "observation": "Somente identidades sintéticas do teste de contas.",
+    "result": "passed"
+  },
+  {
+    "file": "integracao/09-projetos-grade.png",
+    "state": "09-projetos-grade",
+    "route": "projetos",
+    "viewport": {
+      "width": 1440,
+      "height": 950
+    },
+    "image_pixels": [
+      1440,
+      950
+    ],
+    "browser": "158.0.8127.37",
+    "mode": "A simulada",
+    "model": "SDK real com API simulada",
+    "environment": "Chrome local",
+    "observation": "Somente identidades sintéticas do teste de contas.",
+    "result": "passed"
+  },
+  {
+    "file": "integracao/17-detalhes.png",
+    "state": "17-detalhes",
+    "route": "projetos/b6a9300b-24dc-4294-ba2f-bbc4f87528bc",
+    "viewport": {
+      "width": 1440,
+      "height": 950
+    },
+    "image_pixels": [
+      1440,
+      950
+    ],
+    "browser": "158.0.8127.37",
+    "mode": "A simulada",
+    "model": "SDK real com API simulada",
+    "environment": "Chrome local",
+    "observation": "Somente identidades sintéticas do teste de contas.",
+    "result": "passed"
+  }
+]

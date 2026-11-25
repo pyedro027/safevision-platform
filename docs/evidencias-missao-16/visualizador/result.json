@@ -1,0 +1,323 @@
+{
+  "ready_seconds": 2.94,
+  "fullscreen": "Chrome headless",
+  "pointer_lock": true,
+  "first_load_segments": 7,
+  "cases": 5,
+  "states_per_case": 2,
+  "rooms": 21,
+  "dimensions": [
+    [
+      375,
+      812
+    ],
+    [
+      430,
+      932
+    ],
+    [
+      768,
+      1024
+    ],
+    [
+      1024,
+      768
+    ],
+    [
+      1440,
+      900
+    ],
+    [
+      1920,
+      1080
+    ],
+    [
+      844,
+      390
+    ]
+  ],
+  "draft_return": "preserved",
+  "discard": "confirmed",
+  "retry": "passed",
+  "browser": "159.0.8154.33",
+  "errors": [],
+  "external": [],
+  "captures": [
+    {
+      "file": "caso-desconhecido.jpg",
+      "route": "explorar/R09?de=https://example.invalid",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "mode": "visitante",
+      "state": "caso-desconhecido",
+      "environment": "Chrome local isolado",
+      "browser": "159.0.8154.33"
+    },
+    {
+      "file": "falha-e-retentativa.jpg",
+      "route": "explorar?de=inicio",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "mode": "visitante",
+      "state": "falha-e-retentativa",
+      "environment": "Chrome local isolado",
+      "browser": "159.0.8154.33"
+    },
+    {
+      "file": "carregamento-apos-retentativa.jpg",
+      "route": "explorar?de=inicio",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "mode": "visitante",
+      "state": "carregamento-apos-retentativa",
+      "environment": "Chrome local isolado",
+      "browser": "159.0.8154.33"
+    },
+    {
+      "file": "entrada-integrada.jpg",
+      "route": "explorar?de=inicio",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "mode": "visitante",
+      "state": "entrada-integrada",
+      "environment": "Chrome local isolado",
+      "browser": "159.0.8154.33"
+    },
+    {
+      "file": "tela-cheia.jpg",
+      "route": "explorar?de=inicio",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "mode": "visitante",
+      "state": "tela-cheia",
+      "environment": "Chrome local isolado",
+      "browser": "159.0.8154.33"
+    },
+    {
+      "file": "exploracao.jpg",
+      "route": "explorar?de=inicio",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "mode": "visitante",
+      "state": "exploracao",
+      "environment": "Chrome local isolado",
+      "browser": "159.0.8154.33"
+    },
+    {
+      "file": "ambientes.jpg",
+      "route": "explorar?de=inicio",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "mode": "visitante",
+      "state": "ambientes",
+      "environment": "Chrome local isolado",
+      "browser": "159.0.8154.33"
+    },
+    {
+      "file": "arquitetura-limpa.jpg",
+      "route": "explorar?de=inicio",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "mode": "visitante",
+      "state": "arquitetura-limpa",
+      "environment": "Chrome local isolado",
+      "browser": "159.0.8154.33"
+    },
+    {
+      "file": "pausa-configuracoes.jpg",
+      "route": "explorar?de=inicio",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "mode": "visitante",
+      "state": "pausa-configuracoes",
+      "environment": "Chrome local isolado",
+      "browser": "159.0.8154.33"
+    },
+    {
+      "file": "R01-CORR.jpg",
+      "route": "explorar?de=inicio",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "mode": "visitante",
+      "state": "R01-CORR",
+      "environment": "Chrome local isolado",
+      "browser": "159.0.8154.33"
+    },
+    {
+      "file": "R01-PROB.jpg",
+      "route": "explorar?de=inicio",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "mode": "visitante",
+      "state": "R01-PROB",
+      "environment": "Chrome local isolado",
+      "browser": "159.0.8154.33"
+    },
+    {
+      "file": "R02-CORR.jpg",
+      "route": "explorar?de=inicio",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "mode": "visitante",
+      "state": "R02-CORR",
+      "environment": "Chrome local isolado",
+      "browser": "159.0.8154.33"
+    },
+    {
+      "file": "R02-PROB.jpg",
+      "route": "explorar?de=inicio",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "mode": "visitante",
+      "state": "R02-PROB",
+      "environment": "Chrome local isolado",
+      "browser": "159.0.8154.33"
+    },
+    {
+      "file": "R03-CORR.jpg",
+      "route": "explorar?de=inicio",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "mode": "visitante",
+      "state": "R03-CORR",
+      "environment": "Chrome local isolado",
+      "browser": "159.0.8154.33"
+    },
+    {
+      "file": "R03-PROB.jpg",
+      "route": "explorar?de=inicio",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "mode": "visitante",
+      "state": "R03-PROB",
+      "environment": "Chrome local isolado",
+      "browser": "159.0.8154.33"
+    },
+    {
+      "file": "R04-CORR.jpg",
+      "route": "explorar?de=inicio",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "mode": "visitante",
+      "state": "R04-CORR",
+      "environment": "Chrome local isolado",
+      "browser": "159.0.8154.33"
+    },
+    {
+      "file": "R04-PROB.jpg",
+      "route": "explorar?de=inicio",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "mode": "visitante",
+      "state": "R04-PROB",
+      "environment": "Chrome local isolado",
+      "browser": "159.0.8154.33"
+    },
+    {
+      "file": "R05-CORR.jpg",
+      "route": "explorar?de=inicio",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "mode": "visitante",
+      "state": "R05-CORR",
+      "environment": "Chrome local isolado",
+      "browser": "159.0.8154.33"
+    },
+    {
+      "file": "R05-PROB.jpg",
+      "route": "explorar?de=inicio",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "mode": "visitante",
+      "state": "R05-PROB",
+      "environment": "Chrome local isolado",
+      "browser": "159.0.8154.33"
+    },
+    {
+      "file": "tela-375.jpg",
+      "route": "explorar?de=inicio",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "mode": "visitante",
+      "state": "tela-375",
+      "environment": "Chrome local isolado",
+      "browser": "159.0.8154.33"
+    },
+    {
+      "file": "tela-1920.jpg",
+      "route": "explorar?de=inicio",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "mode": "visitante",
+      "state": "tela-1920",
+      "environment": "Chrome local isolado",
+      "browser": "159.0.8154.33"
+    },
+    {
+      "file": "tela-844.jpg",
+      "route": "explorar?de=inicio",
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "mode": "visitante",
+      "state": "tela-844",
+      "environment": "Chrome local isolado",
+      "browser": "159.0.8154.33"
+    },
+    {
+      "file": "retorno-rascunho.jpg",
+      "route": "inspecoes/R03",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "mode": "visitante",
+      "state": "retorno-rascunho",
+      "environment": "Chrome local isolado",
+      "browser": "159.0.8154.33"
+    }
+  ]
+}

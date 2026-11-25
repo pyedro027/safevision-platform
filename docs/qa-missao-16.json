@@ -1,0 +1,1006 @@
+{
+  "date": "2026-11-24",
+  "branch": "feature/demonstration-edition-v1",
+  "base": "b7af326",
+  "pr": "https://github.com/pyedro027/safevision-platform/pull/13",
+  "baseline": {
+    "status": "passed",
+    "suites": [
+      "integridade",
+      "motor",
+      "RLS",
+      "sync",
+      "contas",
+      "plataforma",
+      "redesign",
+      "inspeção",
+      "Studio"
+    ]
+  },
+  "viewer": {
+    "ready_seconds": 2.94,
+    "fullscreen": "Chrome headless",
+    "pointer_lock": true,
+    "first_load_segments": 7,
+    "cases": 5,
+    "states_per_case": 2,
+    "rooms": 21,
+    "dimensions": [
+      [
+        375,
+        812
+      ],
+      [
+        430,
+        932
+      ],
+      [
+        768,
+        1024
+      ],
+      [
+        1024,
+        768
+      ],
+      [
+        1440,
+        900
+      ],
+      [
+        1920,
+        1080
+      ],
+      [
+        844,
+        390
+      ]
+    ],
+    "draft_return": "preserved",
+    "discard": "confirmed",
+    "retry": "passed",
+    "browser": "159.0.8154.33",
+    "errors": [],
+    "external": []
+  },
+  "presentation": {
+    "steps": 10,
+    "guest": "passed",
+    "authenticated": "simulated",
+    "private_header": "masked",
+    "guide_writes": 0,
+    "refresh": "passed",
+    "resume": "passed",
+    "browser": "159.0.8154.33",
+    "errors": [],
+    "external": []
+  },
+  "studio": {
+    "interface": "passed",
+    "official_pdfs": 2,
+    "request_methods": [
+      "GET"
+    ],
+    "same_origin_only": true,
+    "external_api_calls": 0,
+    "failure_and_retry": "passed",
+    "single_scene_on_repeat": true,
+    "initial_segment_requests": 7,
+    "risk_states": [
+      "R01",
+      "R02",
+      "R03",
+      "R04",
+      "R05"
+    ],
+    "glb_bytes": 113018368,
+    "glb_sha256": "911f6af402a19aca8b6825ab6df840b56d3100089cbb69e4c0d4a705588402f0",
+    "page_errors": [],
+    "console_errors": [],
+    "unexpected_http_errors": [],
+    "browser": "159.0.8154.33"
+  },
+  "inspection_return": "passed",
+  "reports": {
+    "pages": 6,
+    "size": "A4"
+  },
+  "security": {
+    "auth": "simulated",
+    "rls": "isolated",
+    "remote_write": false,
+    "remote_14b": false
+  },
+  "deployment": {
+    "branch_deployments": 0,
+    "production": "dpl_36t2LjWc8yGfNAjngMS5Gy8RC44r"
+  },
+  "limitations": [
+    "Sem dispositivo Quest 2 nesta rodada",
+    "Auth exercitado com API simulada",
+    "PGlite em lugar de stack Supabase local completa",
+    "Revisão do proprietário pendente"
+  ],
+  "evidence": "evidencias-missao-16/manifesto.json",
+  "acceptance": [
+    {
+      "id": 1,
+      "criterion": "Auditoria inicial concluída.",
+      "status": "passed",
+      "environment": "Git",
+      "evidence": "https://github.com/pyedro027/safevision-platform/pull/13",
+      "observation": "Base b7af326 e diff da branch da missão."
+    },
+    {
+      "id": 2,
+      "criterion": "Branch correta criada.",
+      "status": "passed",
+      "environment": "Git",
+      "evidence": "https://github.com/pyedro027/safevision-platform/pull/13",
+      "observation": "Base b7af326 e diff da branch da missão."
+    },
+    {
+      "id": 3,
+      "criterion": "Linha de base executada.",
+      "status": "passed",
+      "environment": "Loopback, Node e PGlite",
+      "evidence": "QA_MISSAO_16.md",
+      "observation": "Nove suítes executadas antes das mudanças."
+    },
+    {
+      "id": 4,
+      "criterion": "Documentação anterior preservada.",
+      "status": "passed",
+      "environment": "Git",
+      "evidence": "https://github.com/pyedro027/safevision-platform/pull/13",
+      "observation": "Base b7af326 e diff da branch da missão."
+    },
+    {
+      "id": 5,
+      "criterion": "Design system preservado.",
+      "status": "passed",
+      "environment": "Chrome em loopback",
+      "evidence": "evidencias-missao-16/integracao/inicio-1440.png",
+      "observation": "Componentes da visão geral reavaliados nas regressões."
+    },
+    {
+      "id": 6,
+      "criterion": "Dashboard preservado.",
+      "status": "passed",
+      "environment": "Chrome em loopback",
+      "evidence": "evidencias-missao-16/integracao/inicio-1440.png",
+      "observation": "Componentes da visão geral reavaliados nas regressões."
+    },
+    {
+      "id": 7,
+      "criterion": "Meus projetos preservado.",
+      "status": "simulated",
+      "environment": "Chrome e API simulada",
+      "evidence": "tests/accounts_projects_browser.py",
+      "observation": "SDK real, conta sintética e respostas locais de autenticação, carteira e histórico."
+    },
+    {
+      "id": 8,
+      "criterion": "Login preservado.",
+      "status": "simulated",
+      "environment": "Chrome e API simulada",
+      "evidence": "tests/accounts_projects_browser.py",
+      "observation": "SDK real, conta sintética e respostas locais de autenticação, carteira e histórico."
+    },
+    {
+      "id": 9,
+      "criterion": "Cadastro preservado.",
+      "status": "simulated",
+      "environment": "Chrome e API simulada",
+      "evidence": "tests/accounts_projects_browser.py",
+      "observation": "SDK real, conta sintética e respostas locais de autenticação, carteira e histórico."
+    },
+    {
+      "id": 10,
+      "criterion": "Recuperação preservada.",
+      "status": "simulated",
+      "environment": "Chrome e API simulada",
+      "evidence": "tests/accounts_projects_browser.py",
+      "observation": "SDK real, conta sintética e respostas locais de autenticação, carteira e histórico."
+    },
+    {
+      "id": 11,
+      "criterion": "Perfil preservado.",
+      "status": "simulated",
+      "environment": "Chrome e API simulada",
+      "evidence": "tests/accounts_projects_browser.py",
+      "observation": "SDK real, conta sintética e respostas locais de autenticação, carteira e histórico."
+    },
+    {
+      "id": 12,
+      "criterion": "Sessões preservadas.",
+      "status": "simulated",
+      "environment": "Chrome e API simulada",
+      "evidence": "tests/accounts_projects_browser.py",
+      "observation": "SDK real, conta sintética e respostas locais de autenticação, carteira e histórico."
+    },
+    {
+      "id": 13,
+      "criterion": "Histórico de projetos preservado.",
+      "status": "simulated",
+      "environment": "Chrome e API simulada",
+      "evidence": "tests/accounts_projects_browser.py",
+      "observation": "SDK real, conta sintética e respostas locais de autenticação, carteira e histórico."
+    },
+    {
+      "id": 14,
+      "criterion": "Nova rota 3D implementada.",
+      "status": "passed",
+      "environment": "Código e Chrome local",
+      "evidence": "ROTAS_E_NAVEGACAO_V1.md",
+      "observation": "Chamadas da plataforma apontam para a rota integrada, com origem controlada."
+    },
+    {
+      "id": 15,
+      "criterion": "Acesso do dashboard integrado.",
+      "status": "passed",
+      "environment": "Código e Chrome local",
+      "evidence": "ROTAS_E_NAVEGACAO_V1.md",
+      "observation": "Chamadas da plataforma apontam para a rota integrada, com origem controlada."
+    },
+    {
+      "id": 16,
+      "criterion": "Acesso da Clínica ÁUREA integrado.",
+      "status": "passed",
+      "environment": "Código e Chrome local",
+      "evidence": "ROTAS_E_NAVEGACAO_V1.md",
+      "observation": "Chamadas da plataforma apontam para a rota integrada, com origem controlada."
+    },
+    {
+      "id": 17,
+      "criterion": "Acesso dos cinco casos integrado.",
+      "status": "passed",
+      "environment": "Código e Chrome local",
+      "evidence": "ROTAS_E_NAVEGACAO_V1.md",
+      "observation": "Chamadas da plataforma apontam para a rota integrada, com origem controlada."
+    },
+    {
+      "id": 18,
+      "criterion": "Acesso do Studio integrado.",
+      "status": "passed",
+      "environment": "Chrome em loopback",
+      "evidence": "evidencias-missao-16/integracao/studio.json",
+      "observation": "Studio com PDFs oficiais, cena reutilizada, estados reais, porta e colisor verificados pelo teste."
+    },
+    {
+      "id": 19,
+      "criterion": "Acesso das inspeções integrado.",
+      "status": "passed",
+      "environment": "Código e Chrome local",
+      "evidence": "ROTAS_E_NAVEGACAO_V1.md",
+      "observation": "Chamadas da plataforma apontam para a rota integrada, com origem controlada."
+    },
+    {
+      "id": 20,
+      "criterion": "Links históricos removidos dos fluxos principais.",
+      "status": "passed",
+      "environment": "Código e Chrome local",
+      "evidence": "ROTAS_E_NAVEGACAO_V1.md",
+      "observation": "Chamadas da plataforma apontam para a rota integrada, com origem controlada."
+    },
+    {
+      "id": 21,
+      "criterion": "Shell moderno implementado.",
+      "status": "passed",
+      "environment": "Chrome em loopback",
+      "evidence": "evidencias-missao-16/integracao/depois-r05.png",
+      "observation": "Compare antes-r05.png na mesma pasta. Interface interna e barra da plataforma aplicadas ao tour original."
+    },
+    {
+      "id": 22,
+      "criterion": "Interface interna modernizada de forma suficiente.",
+      "status": "passed",
+      "environment": "Chrome em loopback",
+      "evidence": "evidencias-missao-16/integracao/depois-r05.png",
+      "observation": "Compare antes-r05.png na mesma pasta. Interface interna e barra da plataforma aplicadas ao tour original."
+    },
+    {
+      "id": 23,
+      "criterion": "Marca consistente.",
+      "status": "passed",
+      "environment": "Chrome em loopback",
+      "evidence": "evidencias-missao-16/integracao/depois-r05.png",
+      "observation": "Compare antes-r05.png na mesma pasta. Interface interna e barra da plataforma aplicadas ao tour original."
+    },
+    {
+      "id": 24,
+      "criterion": "Canvas funcional.",
+      "status": "passed",
+      "environment": "Chrome em loopback",
+      "evidence": "evidencias-missao-16/visualizador/result.json",
+      "observation": "Execução com GLB real. A suíte percorre controles, estados, navegação, falha recuperável e preservação da edição."
+    },
+    {
+      "id": 25,
+      "criterion": "Ambiente correto.",
+      "status": "passed",
+      "environment": "Chrome em loopback",
+      "evidence": "evidencias-missao-16/visualizador/result.json",
+      "observation": "Execução com GLB real. A suíte percorre controles, estados, navegação, falha recuperável e preservação da edição."
+    },
+    {
+      "id": 26,
+      "criterion": "Ferramentas funcionais.",
+      "status": "passed",
+      "environment": "Chrome em loopback",
+      "evidence": "evidencias-missao-16/visualizador/result.json",
+      "observation": "Execução com GLB real. A suíte percorre controles, estados, navegação, falha recuperável e preservação da edição."
+    },
+    {
+      "id": 27,
+      "criterion": "Lista de ambientes funcional.",
+      "status": "passed",
+      "environment": "Chrome em loopback",
+      "evidence": "evidencias-missao-16/visualizador/result.json",
+      "observation": "Execução com GLB real. A suíte percorre controles, estados, navegação, falha recuperável e preservação da edição."
+    },
+    {
+      "id": 28,
+      "criterion": "Lista de riscos funcional.",
+      "status": "passed",
+      "environment": "Chrome em loopback",
+      "evidence": "evidencias-missao-16/visualizador/result.json",
+      "observation": "Execução com GLB real. A suíte percorre controles, estados, navegação, falha recuperável e preservação da edição."
+    },
+    {
+      "id": 29,
+      "criterion": "R01 funcional.",
+      "status": "passed",
+      "environment": "Chrome em loopback",
+      "evidence": "evidencias-missao-16/visualizador/result.json",
+      "observation": "Execução com GLB real. A suíte percorre controles, estados, navegação, falha recuperável e preservação da edição."
+    },
+    {
+      "id": 30,
+      "criterion": "R02 funcional.",
+      "status": "passed",
+      "environment": "Chrome em loopback",
+      "evidence": "evidencias-missao-16/visualizador/result.json",
+      "observation": "Execução com GLB real. A suíte percorre controles, estados, navegação, falha recuperável e preservação da edição."
+    },
+    {
+      "id": 31,
+      "criterion": "R03 funcional.",
+      "status": "passed",
+      "environment": "Chrome em loopback",
+      "evidence": "evidencias-missao-16/visualizador/result.json",
+      "observation": "Execução com GLB real. A suíte percorre controles, estados, navegação, falha recuperável e preservação da edição."
+    },
+    {
+      "id": 32,
+      "criterion": "R04 funcional.",
+      "status": "passed",
+      "environment": "Chrome em loopback",
+      "evidence": "evidencias-missao-16/visualizador/result.json",
+      "observation": "Execução com GLB real. A suíte percorre controles, estados, navegação, falha recuperável e preservação da edição."
+    },
+    {
+      "id": 33,
+      "criterion": "R05 funcional.",
+      "status": "passed",
+      "environment": "Chrome em loopback",
+      "evidence": "evidencias-missao-16/visualizador/result.json",
+      "observation": "Execução com GLB real. A suíte percorre controles, estados, navegação, falha recuperável e preservação da edição."
+    },
+    {
+      "id": 34,
+      "criterion": "Estado problema preservado.",
+      "status": "passed",
+      "environment": "Chrome em loopback",
+      "evidence": "evidencias-missao-16/visualizador/result.json",
+      "observation": "Execução com GLB real. A suíte percorre controles, estados, navegação, falha recuperável e preservação da edição."
+    },
+    {
+      "id": 35,
+      "criterion": "Estado proposta preservado.",
+      "status": "passed",
+      "environment": "Chrome em loopback",
+      "evidence": "evidencias-missao-16/visualizador/result.json",
+      "observation": "Execução com GLB real. A suíte percorre controles, estados, navegação, falha recuperável e preservação da edição."
+    },
+    {
+      "id": 36,
+      "criterion": "Porta P03 preservada.",
+      "status": "passed",
+      "environment": "Chrome em loopback",
+      "evidence": "evidencias-missao-16/integracao/studio.json",
+      "observation": "Studio com PDFs oficiais, cena reutilizada, estados reais, porta e colisor verificados pelo teste."
+    },
+    {
+      "id": 37,
+      "criterion": "Colisor F060 preservado.",
+      "status": "passed",
+      "environment": "Chrome em loopback",
+      "evidence": "evidencias-missao-16/integracao/studio.json",
+      "observation": "Studio com PDFs oficiais, cena reutilizada, estados reais, porta e colisor verificados pelo teste."
+    },
+    {
+      "id": 38,
+      "criterion": "Arquitetura limpa preservada.",
+      "status": "passed",
+      "environment": "Chrome em loopback",
+      "evidence": "evidencias-missao-16/visualizador/result.json",
+      "observation": "Execução com GLB real. A suíte percorre controles, estados, navegação, falha recuperável e preservação da edição."
+    },
+    {
+      "id": 39,
+      "criterion": "Recepção preservada.",
+      "status": "passed",
+      "environment": "Chrome em loopback",
+      "evidence": "evidencias-missao-16/visualizador/result.json",
+      "observation": "Execução com GLB real. A suíte percorre controles, estados, navegação, falha recuperável e preservação da edição."
+    },
+    {
+      "id": 40,
+      "criterion": "Pausa preservada.",
+      "status": "passed",
+      "environment": "Chrome em loopback",
+      "evidence": "evidencias-missao-16/visualizador/result.json",
+      "observation": "Execução com GLB real. A suíte percorre controles, estados, navegação, falha recuperável e preservação da edição."
+    },
+    {
+      "id": 41,
+      "criterion": "Configurações preservadas.",
+      "status": "passed",
+      "environment": "Chrome em loopback",
+      "evidence": "evidencias-missao-16/visualizador/result.json",
+      "observation": "Execução com GLB real. A suíte percorre controles, estados, navegação, falha recuperável e preservação da edição."
+    },
+    {
+      "id": 42,
+      "criterion": "Ajuda funcional.",
+      "status": "passed",
+      "environment": "Chrome em loopback",
+      "evidence": "evidencias-missao-16/visualizador/result.json",
+      "observation": "Execução com GLB real. A suíte percorre controles, estados, navegação, falha recuperável e preservação da edição."
+    },
+    {
+      "id": 43,
+      "criterion": "Pointer lock preservado.",
+      "status": "passed",
+      "environment": "Chrome em loopback",
+      "evidence": "evidencias-missao-16/visualizador/result.json",
+      "observation": "Execução com GLB real. A suíte percorre controles, estados, navegação, falha recuperável e preservação da edição."
+    },
+    {
+      "id": 44,
+      "criterion": "Tela cheia funcional ou limitação explícita.",
+      "status": "passed",
+      "environment": "Chrome em loopback",
+      "evidence": "evidencias-missao-16/visualizador/result.json",
+      "observation": "Execução com GLB real. A suíte percorre controles, estados, navegação, falha recuperável e preservação da edição."
+    },
+    {
+      "id": 45,
+      "criterion": "Foco preservado.",
+      "status": "passed",
+      "environment": "Chrome em loopback",
+      "evidence": "evidencias-missao-16/visualizador/result.json",
+      "observation": "Execução com GLB real. A suíte percorre controles, estados, navegação, falha recuperável e preservação da edição."
+    },
+    {
+      "id": 46,
+      "criterion": "Retorno contextual funcional.",
+      "status": "passed",
+      "environment": "Chrome em loopback",
+      "evidence": "evidencias-missao-16/visualizador/result.json",
+      "observation": "Execução com GLB real. A suíte percorre controles, estados, navegação, falha recuperável e preservação da edição."
+    },
+    {
+      "id": 47,
+      "criterion": "Carregamento real.",
+      "status": "passed",
+      "environment": "Chrome em loopback",
+      "evidence": "evidencias-missao-16/visualizador/result.json",
+      "observation": "Execução com GLB real. A suíte percorre controles, estados, navegação, falha recuperável e preservação da edição."
+    },
+    {
+      "id": 48,
+      "criterion": "Progresso verdadeiro.",
+      "status": "passed",
+      "environment": "Chrome em loopback",
+      "evidence": "evidencias-missao-16/integracao/studio.json",
+      "observation": "Transferência observada durante as etapas do Studio. A interface consulta o percentual original."
+    },
+    {
+      "id": 49,
+      "criterion": "Timeout tratado.",
+      "status": "passed",
+      "environment": "Revisão de código",
+      "evidence": "VISUALIZADOR_INTEGRADO_V1.md",
+      "observation": "Revisão do AbortController, timer e desconexão de observadores. O prazo máximo de 210 s não foi aguardado no teste."
+    },
+    {
+      "id": 50,
+      "criterion": "Cancelamento funcional.",
+      "status": "passed",
+      "environment": "Chrome em loopback",
+      "evidence": "evidencias-missao-16/integracao/studio.json",
+      "observation": "Studio com PDFs oficiais, cena reutilizada, estados reais, porta e colisor verificados pelo teste."
+    },
+    {
+      "id": 51,
+      "criterion": "Retentativa funcional.",
+      "status": "passed",
+      "environment": "Chrome em loopback",
+      "evidence": "evidencias-missao-16/integracao/studio.json",
+      "observation": "Studio com PDFs oficiais, cena reutilizada, estados reais, porta e colisor verificados pelo teste."
+    },
+    {
+      "id": 52,
+      "criterion": "Sessões obsoletas invalidadas.",
+      "status": "passed",
+      "environment": "Chrome em loopback",
+      "evidence": "evidencias-missao-16/visualizador/result.json",
+      "observation": "Execução com GLB real. A suíte percorre controles, estados, navegação, falha recuperável e preservação da edição."
+    },
+    {
+      "id": 53,
+      "criterion": "Listeners controlados.",
+      "status": "passed",
+      "environment": "Revisão de código",
+      "evidence": "VISUALIZADOR_INTEGRADO_V1.md",
+      "observation": "Revisão do AbortController, timer e desconexão de observadores. O prazo máximo de 210 s não foi aguardado no teste."
+    },
+    {
+      "id": 54,
+      "criterion": "Instâncias controladas.",
+      "status": "passed",
+      "environment": "Chrome em loopback",
+      "evidence": "evidencias-missao-16/integracao/studio.json",
+      "observation": "Studio com PDFs oficiais, cena reutilizada, estados reais, porta e colisor verificados pelo teste."
+    },
+    {
+      "id": 55,
+      "criterion": "Reutilização avaliada.",
+      "status": "passed",
+      "environment": "Chrome em loopback",
+      "evidence": "evidencias-missao-16/integracao/studio.json",
+      "observation": "Studio com PDFs oficiais, cena reutilizada, estados reais, porta e colisor verificados pelo teste."
+    },
+    {
+      "id": 56,
+      "criterion": "Desmontagem funcional.",
+      "status": "passed",
+      "environment": "Chrome em loopback",
+      "evidence": "evidencias-missao-16/visualizador/result.json",
+      "observation": "Execução com GLB real. A suíte percorre controles, estados, navegação, falha recuperável e preservação da edição."
+    },
+    {
+      "id": 57,
+      "criterion": "Ausência de carregamento 3D indevido no login.",
+      "status": "passed",
+      "environment": "Chrome em loopback",
+      "evidence": "evidencias-missao-16/visualizador/result.json",
+      "observation": "Execução com GLB real. A suíte percorre controles, estados, navegação, falha recuperável e preservação da edição."
+    },
+    {
+      "id": 58,
+      "criterion": "Ausência de carregamento indevido em projetos.",
+      "status": "passed",
+      "environment": "Chrome em loopback",
+      "evidence": "evidencias-missao-16/visualizador/result.json",
+      "observation": "Execução com GLB real. A suíte percorre controles, estados, navegação, falha recuperável e preservação da edição."
+    },
+    {
+      "id": 59,
+      "criterion": "Studio preservado.",
+      "status": "passed",
+      "environment": "Chrome em loopback",
+      "evidence": "evidencias-missao-16/integracao/studio.json",
+      "observation": "Studio com PDFs oficiais, cena reutilizada, estados reais, porta e colisor verificados pelo teste."
+    },
+    {
+      "id": 60,
+      "criterion": "PDF oficial 1 validado.",
+      "status": "passed",
+      "environment": "Chrome em loopback",
+      "evidence": "evidencias-missao-16/integracao/studio.json",
+      "observation": "Studio com PDFs oficiais, cena reutilizada, estados reais, porta e colisor verificados pelo teste."
+    },
+    {
+      "id": 61,
+      "criterion": "PDF oficial 2 validado.",
+      "status": "passed",
+      "environment": "Chrome em loopback",
+      "evidence": "evidencias-missao-16/integracao/studio.json",
+      "observation": "Studio com PDFs oficiais, cena reutilizada, estados reais, porta e colisor verificados pelo teste."
+    },
+    {
+      "id": 62,
+      "criterion": "Inspeções preservadas.",
+      "status": "passed",
+      "environment": "Chrome e leitura com pypdf",
+      "evidence": "evidencias-missao-16/integracao/relatorio-exemplo.pdf",
+      "observation": "Avaliações locais distinguem origem e autor. PDF gerado pelo Chrome com seis páginas A4."
+    },
+    {
+      "id": 63,
+      "criterion": "Retorno à ficha funcional.",
+      "status": "passed",
+      "environment": "Chrome em loopback",
+      "evidence": "evidencias-missao-16/visualizador/result.json",
+      "observation": "Execução com GLB real. A suíte percorre controles, estados, navegação, falha recuperável e preservação da edição."
+    },
+    {
+      "id": 64,
+      "criterion": "Formulário temporário preservado.",
+      "status": "passed",
+      "environment": "Chrome em loopback",
+      "evidence": "evidencias-missao-16/visualizador/result.json",
+      "observation": "Execução com GLB real. A suíte percorre controles, estados, navegação, falha recuperável e preservação da edição."
+    },
+    {
+      "id": 65,
+      "criterion": "Alterações não salvas tratadas.",
+      "status": "passed",
+      "environment": "Chrome em loopback",
+      "evidence": "evidencias-missao-16/visualizador/result.json",
+      "observation": "Execução com GLB real. A suíte percorre controles, estados, navegação, falha recuperável e preservação da edição."
+    },
+    {
+      "id": 66,
+      "criterion": "Relatórios preservados.",
+      "status": "passed",
+      "environment": "Chrome e leitura com pypdf",
+      "evidence": "evidencias-missao-16/integracao/relatorio-exemplo.pdf",
+      "observation": "Avaliações locais distinguem origem e autor. PDF gerado pelo Chrome com seis páginas A4."
+    },
+    {
+      "id": 67,
+      "criterion": "Impressão A4 preservada.",
+      "status": "passed",
+      "environment": "Chrome e leitura com pypdf",
+      "evidence": "evidencias-missao-16/integracao/relatorio-exemplo.pdf",
+      "observation": "Avaliações locais distinguem origem e autor. PDF gerado pelo Chrome com seis páginas A4."
+    },
+    {
+      "id": 68,
+      "criterion": "Origem dos dados identificada.",
+      "status": "passed",
+      "environment": "Chrome e leitura com pypdf",
+      "evidence": "evidencias-missao-16/integracao/relatorio-exemplo.pdf",
+      "observation": "Avaliações locais distinguem origem e autor. PDF gerado pelo Chrome com seis páginas A4."
+    },
+    {
+      "id": 69,
+      "criterion": "Modo de apresentação implementado.",
+      "status": "passed",
+      "environment": "Chrome em loopback",
+      "evidence": "evidencias-missao-16/apresentacao/result.json",
+      "observation": "Roteiro visitante percorreu todas as dez etapas, recarga, abertura de módulos e encerramento."
+    },
+    {
+      "id": 70,
+      "criterion": "Entrada da apresentação funcional.",
+      "status": "passed",
+      "environment": "Chrome em loopback",
+      "evidence": "evidencias-missao-16/apresentacao/result.json",
+      "observation": "Roteiro visitante percorreu todas as dez etapas, recarga, abertura de módulos e encerramento."
+    },
+    {
+      "id": 71,
+      "criterion": "Navegação entre etapas funcional.",
+      "status": "passed",
+      "environment": "Chrome em loopback",
+      "evidence": "evidencias-missao-16/apresentacao/result.json",
+      "observation": "Roteiro visitante percorreu todas as dez etapas, recarga, abertura de módulos e encerramento."
+    },
+    {
+      "id": 72,
+      "criterion": "Retorno ao roteiro funcional.",
+      "status": "passed",
+      "environment": "Chrome em loopback",
+      "evidence": "evidencias-missao-16/apresentacao/result.json",
+      "observation": "Roteiro visitante percorreu todas as dez etapas, recarga, abertura de módulos e encerramento."
+    },
+    {
+      "id": 73,
+      "criterion": "Apresentação como visitante.",
+      "status": "passed",
+      "environment": "Chrome em loopback",
+      "evidence": "evidencias-missao-16/apresentacao/result.json",
+      "observation": "Roteiro visitante percorreu todas as dez etapas, recarga, abertura de módulos e encerramento."
+    },
+    {
+      "id": 74,
+      "criterion": "Apresentação autenticada em ambiente autorizado.",
+      "status": "simulated",
+      "environment": "Chrome e API simulada",
+      "evidence": "evidencias-missao-16/apresentacao/result.json",
+      "observation": "Cabeçalho privado oculto com uma sessão sintética e SDK real."
+    },
+    {
+      "id": 75,
+      "criterion": "Encerramento funcional.",
+      "status": "passed",
+      "environment": "Chrome em loopback",
+      "evidence": "evidencias-missao-16/apresentacao/result.json",
+      "observation": "Roteiro visitante percorreu todas as dez etapas, recarga, abertura de módulos e encerramento."
+    },
+    {
+      "id": 76,
+      "criterion": "Reinício sem perda de dados.",
+      "status": "passed",
+      "environment": "Chrome em loopback",
+      "evidence": "evidencias-missao-16/apresentacao/result.json",
+      "observation": "Reinício testado e navegação do roteiro sem escritas na API. O roteiro armazena apenas a etapa da sessão."
+    },
+    {
+      "id": 77,
+      "criterion": "Execução local sem backend preservada.",
+      "status": "passed",
+      "environment": "Chrome em loopback",
+      "evidence": "evidencias-missao-16/apresentacao/result.json",
+      "observation": "Roteiro visitante percorreu todas as dez etapas, recarga, abertura de módulos e encerramento."
+    },
+    {
+      "id": 78,
+      "criterion": "Falhas de rede tratadas.",
+      "status": "passed",
+      "environment": "Chrome em loopback",
+      "evidence": "evidencias-missao-16/visualizador/result.json",
+      "observation": "Execução com GLB real. A suíte percorre controles, estados, navegação, falha recuperável e preservação da edição."
+    },
+    {
+      "id": 79,
+      "criterion": "Contingências documentadas.",
+      "status": "passed",
+      "environment": "Documentação",
+      "evidence": "GUIA_APRESENTACAO_SAFE_V1.md",
+      "observation": "Há alternativas com fichas, imagens locais e PDF."
+    },
+    {
+      "id": 80,
+      "criterion": "Responsividade em seis larguras.",
+      "status": "passed",
+      "environment": "Chrome em loopback",
+      "evidence": "evidencias-missao-16/visualizador/result.json",
+      "observation": "Seis larguras, uma paisagem adicional, foco, Escape e teclado. Regressão de redesign verificou o menu móvel. Acessibilidade básica, sem certificação."
+    },
+    {
+      "id": 81,
+      "criterion": "Acessibilidade básica verificada.",
+      "status": "passed",
+      "environment": "Chrome em loopback",
+      "evidence": "evidencias-missao-16/visualizador/result.json",
+      "observation": "Seis larguras, uma paisagem adicional, foco, Escape e teclado. Regressão de redesign verificou o menu móvel. Acessibilidade básica, sem certificação."
+    },
+    {
+      "id": 82,
+      "criterion": "Navegação por teclado verificada.",
+      "status": "passed",
+      "environment": "Chrome em loopback",
+      "evidence": "evidencias-missao-16/visualizador/result.json",
+      "observation": "Seis larguras, uma paisagem adicional, foco, Escape e teclado. Regressão de redesign verificou o menu móvel. Acessibilidade básica, sem certificação."
+    },
+    {
+      "id": 83,
+      "criterion": "Mensagens seguras.",
+      "status": "passed",
+      "environment": "Chrome em loopback",
+      "evidence": "tests/inspection_browser.py",
+      "observation": "Observação contendo marcação HTML renderizada como texto."
+    },
+    {
+      "id": 84,
+      "criterion": "Isolamento de sessões preservado.",
+      "status": "isolated",
+      "environment": "PGlite e catálogo remoto",
+      "evidence": "tests/rls.mjs",
+      "observation": "Isolamento por proprietário exercitado em PostgreSQL embarcado. Catálogo remoto consultado em leitura."
+    },
+    {
+      "id": 85,
+      "criterion": "RLS preservada.",
+      "status": "isolated",
+      "environment": "PGlite e catálogo remoto",
+      "evidence": "tests/rls.mjs",
+      "observation": "Isolamento por proprietário exercitado em PostgreSQL embarcado. Catálogo remoto consultado em leitura."
+    },
+    {
+      "id": 86,
+      "criterion": "Nenhuma credencial exposta.",
+      "status": "passed",
+      "environment": "Revisão do diff",
+      "evidence": "https://github.com/pyedro027/safevision-platform/pull/13",
+      "observation": "Escopo versionado revisado. Configuração local e dados de autenticação do proprietário excluídos do diff."
+    },
+    {
+      "id": 87,
+      "criterion": "Nenhuma funcionalidade fictícia apresentada como real.",
+      "status": "passed",
+      "environment": "Código e roteiro",
+      "evidence": "MODO_APRESENTACAO_V1.md",
+      "observation": "Conteúdo identifica casos preexistentes, revisão humana e conversão externa futura."
+    },
+    {
+      "id": 88,
+      "criterion": "WebXR preservado.",
+      "status": "passed",
+      "environment": "Build e inventário",
+      "evidence": "INTEGRIDADE_VISUALIZADOR_M16.md",
+      "observation": "Módulo XR original conferido por hash e permissão do iframe mantida. Validação de preservação estática."
+    },
+    {
+      "id": 89,
+      "criterion": "Teste físico Quest 2 classificado corretamente.",
+      "status": "pending",
+      "environment": "Headset físico",
+      "evidence": "QA_MISSAO_16.md",
+      "observation": "Quest 2 físico indisponível nesta rodada."
+    },
+    {
+      "id": 90,
+      "criterion": "Integridade dos 42 arquivos confirmada.",
+      "status": "passed",
+      "environment": "SHA-256 e Chrome local",
+      "evidence": "INTEGRIDADE_VISUALIZADOR_M16.md",
+      "observation": "Inventário original, cópia distribuída e reconstrução do fluxo de bytes verificados."
+    },
+    {
+      "id": 91,
+      "criterion": "Sete segmentos confirmados.",
+      "status": "passed",
+      "environment": "SHA-256 e Chrome local",
+      "evidence": "INTEGRIDADE_VISUALIZADOR_M16.md",
+      "observation": "Inventário original, cópia distribuída e reconstrução do fluxo de bytes verificados."
+    },
+    {
+      "id": 92,
+      "criterion": "Tamanho do GLB confirmado.",
+      "status": "passed",
+      "environment": "SHA-256 e Chrome local",
+      "evidence": "INTEGRIDADE_VISUALIZADOR_M16.md",
+      "observation": "Inventário original, cópia distribuída e reconstrução do fluxo de bytes verificados."
+    },
+    {
+      "id": 93,
+      "criterion": "SHA-256 confirmado.",
+      "status": "passed",
+      "environment": "SHA-256 e Chrome local",
+      "evidence": "INTEGRIDADE_VISUALIZADOR_M16.md",
+      "observation": "Inventário original, cópia distribuída e reconstrução do fluxo de bytes verificados."
+    },
+    {
+      "id": 94,
+      "criterion": "Nenhuma migração remota aplicada.",
+      "status": "passed",
+      "environment": "Supabase em leitura",
+      "evidence": "RELATORIO_MISSAO_16.md",
+      "observation": "Somente consulta de catálogo e migrações. Apenas platform_foundation remota, sincronização adicional desligada."
+    },
+    {
+      "id": 95,
+      "criterion": "Missão 14B mantida desabilitada.",
+      "status": "passed",
+      "environment": "Supabase em leitura",
+      "evidence": "RELATORIO_MISSAO_16.md",
+      "observation": "Somente consulta de catálogo e migrações. Apenas platform_foundation remota, sincronização adicional desligada."
+    },
+    {
+      "id": 96,
+      "criterion": "Produção inalterada.",
+      "status": "passed",
+      "environment": "Vercel em leitura",
+      "evidence": "RELATORIO_MISSAO_16.md",
+      "observation": "Produção READY no deployment anterior e zero deployments da branch no levantamento."
+    },
+    {
+      "id": 97,
+      "criterion": "Deploy automático da branch protegido.",
+      "status": "passed",
+      "environment": "Vercel em leitura",
+      "evidence": "RELATORIO_MISSAO_16.md",
+      "observation": "Produção READY no deployment anterior e zero deployments da branch no levantamento."
+    },
+    {
+      "id": 98,
+      "criterion": "PR em rascunho criado.",
+      "status": "passed",
+      "environment": "GitHub",
+      "evidence": "https://github.com/pyedro027/safevision-platform/pull/13",
+      "observation": "PR aberto em rascunho para a branch da Missão 15."
+    },
+    {
+      "id": 99,
+      "criterion": "Build final disponível.",
+      "status": "passed",
+      "environment": "Loopback 4181",
+      "evidence": "QA_MISSAO_16.md",
+      "observation": "Build conferido e resposta HTTP 200 do visualizador no servidor da revisão."
+    },
+    {
+      "id": 100,
+      "criterion": "Servidor local disponível para revisão.",
+      "status": "passed",
+      "environment": "Loopback 4181",
+      "evidence": "QA_MISSAO_16.md",
+      "observation": "Build conferido e resposta HTTP 200 do visualizador no servidor da revisão."
+    },
+    {
+      "id": 101,
+      "criterion": "Evidências registradas.",
+      "status": "passed",
+      "environment": "Chrome local",
+      "evidence": "evidencias-missao-16/manifesto.json",
+      "observation": "49 capturas de navegador com metadados, incluindo R05 antes e depois."
+    },
+    {
+      "id": 102,
+      "criterion": "Comparação visual registrada.",
+      "status": "passed",
+      "environment": "Chrome local",
+      "evidence": "evidencias-missao-16/manifesto.json",
+      "observation": "49 capturas de navegador com metadados, incluindo R05 antes e depois."
+    },
+    {
+      "id": 103,
+      "criterion": "Guia do apresentador criado.",
+      "status": "passed",
+      "environment": "Documentação",
+      "evidence": "GUIA_APRESENTACAO_SAFE_V1.md",
+      "observation": "Guia operacional e dois roteiros para o apresentador."
+    },
+    {
+      "id": 104,
+      "criterion": "Roteiro curto criado.",
+      "status": "passed",
+      "environment": "Documentação",
+      "evidence": "GUIA_APRESENTACAO_SAFE_V1.md",
+      "observation": "Guia operacional e dois roteiros para o apresentador."
+    },
+    {
+      "id": 105,
+      "criterion": "Roteiro estendido criado.",
+      "status": "passed",
+      "environment": "Documentação",
+      "evidence": "GUIA_APRESENTACAO_SAFE_V1.md",
+      "observation": "Guia operacional e dois roteiros para o apresentador."
+    },
+    {
+      "id": 106,
+      "criterion": "Roadmap futuro documentado.",
+      "status": "passed",
+      "environment": "Documentação",
+      "evidence": "ROADMAP_POS_DEMONSTRACAO.md",
+      "observation": "Frentes futuras e evidência necessária para avançar."
+    },
+    {
+      "id": 107,
+      "criterion": "QA estruturado criado.",
+      "status": "passed",
+      "environment": "Documentação",
+      "evidence": "qa-missao-16.json",
+      "observation": "Matriz individual e escopo de cada teste."
+    },
+    {
+      "id": 108,
+      "criterion": "Relatório A–K entregue.",
+      "status": "passed",
+      "environment": "Entrega local",
+      "evidence": "RELATORIO_MISSAO_16.md",
+      "observation": "Limites identificados e edição disponível para revisão. Aprovação cabe ao proprietário."
+    },
+    {
+      "id": 109,
+      "criterion": "Limitações apresentadas.",
+      "status": "passed",
+      "environment": "Entrega local",
+      "evidence": "RELATORIO_MISSAO_16.md",
+      "observation": "Limites identificados e edição disponível para revisão. Aprovação cabe ao proprietário."
+    },
+    {
+      "id": 110,
+      "criterion": "Versão pronta para revisão final do proprietário.",
+      "status": "passed",
+      "environment": "Entrega local",
+      "evidence": "RELATORIO_MISSAO_16.md",
+      "observation": "Limites identificados e edição disponível para revisão. Aprovação cabe ao proprietário."
+    }
+  ]
+}
