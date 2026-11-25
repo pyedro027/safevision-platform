@@ -4,6 +4,12 @@
   "installCommand": "",
   "buildCommand": "node scripts/build-platform.mjs",
   "outputDirectory": "dist",
+  "headers": [
+    {
+      "source": "/vr/:path*",
+      "headers": [{ "key": "Permissions-Policy", "value": "xr-spatial-tracking=(self)" }]
+    }
+  ],
   "git": {
     "deploymentEnabled": {
       "integration/auth-preview-e2e": false,
@@ -12,7 +18,8 @@
       "feature/inspection-reports-v1": false,
       "feature/inspection-cloud-sync-v1": false,
       "feature/accounts-projects-v2": false,
-      "feature/demonstration-edition-v1": false
+      "feature/demonstration-edition-v1": false,
+      "hotfix/quest2-webxr": false
     }
   }
 }
