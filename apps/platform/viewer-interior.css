@@ -50,3 +50,11 @@ button:focus-visible,a:focus-visible,summary:focus-visible {outline:3px solid #f
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
 
 #review-case:not([hidden]) {display:inline-block;margin:12px 0;color:var(--forest);font-weight:650}
+
+#markers {overflow:clip}
+@media(max-width:750px) {
+  #hud {grid-template-columns:auto minmax(0,1fr)}
+  #hud nav {min-width:0;flex-wrap:wrap}
+  #hud:has(~ .drawer:not([hidden])) #riskQuickList {display:none}
+  #screenControls {max-height:56vh;overflow:auto}
+}

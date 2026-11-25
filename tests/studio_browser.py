@@ -150,7 +150,7 @@ def test(page, origin, pdfs, evidence):
     assert set(page.evaluate("window.studioSteps")) >= {1, 2, 3, 5}
     check_widths()
     page.screenshot(path=evidence / "06-conclusao.png", full_page=True)
-    runtime = page.frame(url=lambda url: url.endswith("/clinica/WEB/index.html"))
+    runtime = page.frame(url=lambda url: url.endswith("/visualizador.html"))
     assert runtime.evaluate("window.__tourDebug.ready && window.__tourDebug.suspended")
     expect(page.locator(".studio-frame iframe")).to_have_count(1)
 
@@ -213,7 +213,7 @@ def test(page, origin, pdfs, evidence):
     page.get_by_role("button", name="Voltar ao Studio").click()
     page.get_by_role("button", name="Repetir demonstração").click()
     expect(finished).to_be_visible()
-    assert page.frame(url=lambda url: url.endswith("/clinica/WEB/index.html")) is runtime
+    assert page.frame(url=lambda url: url.endswith("/visualizador.html")) is runtime
     counts = Counter(urlsplit(url).path for _, url in requests[successful_load_start:])
     assert all(counts[f"/clinica/MODELO/clinica-v03-0{index}.bin"] == 1 for index in range(7))
 

@@ -23,7 +23,8 @@ try:
         expect(page.get_by_role("heading", name="Visão geral")).to_be_visible()
         expect(page.get_by_text("O serviço de contas e projetos ainda não foi configurado")).to_be_visible()
         page.get_by_role("link", name="Abrir demonstração 3D").click()
-        expect(page.get_by_role("button", name="Abrir visualizador 3D")).to_be_visible()
+        expect(page.get_by_role("button", name="Voltar à visão geral")).to_be_visible()
+        assert "#explorar?de=inicio" in page.url
         for pattern in ("/config.json", "/auth/v1/**", "/rest/v1/**"):
             page.route(origin + pattern, simulated_api)
         page.goto(origin + "/#conta")
