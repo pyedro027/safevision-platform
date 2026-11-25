@@ -46,6 +46,14 @@ with session("visualizador") as (page,origin,shot,result):
         tool("full").click()
         page.wait_for_function("!document.fullscreenElement")
         result["fullscreen"]="Chrome headless"
+    el("#screenMode").uncheck()
+    el("#startButton").click()
+    runtime=page.frames[-1]
+    runtime.wait_for_function("document.pointerLockElement === document.getElementById('tour') || document.getElementById('mouseHint').textContent.includes('arraste')")
+    result["pointer_lock"]=runtime.evaluate("document.pointerLockElement === document.getElementById('tour')")
+    el("#tour").press("Escape")
+    expect(el("#pause")).to_be_visible()
+    el("#exitButton").click()
     el("#screenMode").check()
     el("#startButton").click()
     expect(el("#hud")).to_be_visible()

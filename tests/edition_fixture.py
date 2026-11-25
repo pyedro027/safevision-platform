@@ -25,6 +25,7 @@ def session(suite):
                     return route.abort()
                 route.continue_()
             page.route("http*/**",restrict)
+            page.route(fixture.origin+"/config.json",lambda route:route.fulfill(json={}))
             page.on("pageerror",lambda e:errors.append(str(e)))
             def shot(name, mode="visitante"):
                 path = folder / (name+".jpg")
