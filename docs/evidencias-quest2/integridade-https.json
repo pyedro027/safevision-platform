@@ -1,0 +1,18 @@
+{
+  "files": 42,
+  "segments": [
+    "MODELO/clinica-v03-00.bin",
+    "MODELO/clinica-v03-01.bin",
+    "MODELO/clinica-v03-02.bin",
+    "MODELO/clinica-v03-03.bin",
+    "MODELO/clinica-v03-04.bin",
+    "MODELO/clinica-v03-05.bin",
+    "MODELO/clinica-v03-06.bin"
+  ],
+  "bytes": 113018368,
+  "sha256": "911f6af402a19aca8b6825ab6df840b56d3100089cbb69e4c0d4a705588402f0",
+  "policy": "xr-spatial-tracking=(self)",
+  "secure": "max-age=63072000; includeSubDomains; preload",
+  "status": 200,
+  "isolated": true
+}

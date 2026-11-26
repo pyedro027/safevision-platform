@@ -1,0 +1,335 @@
+{
+  "data": "2026-11-25",
+  "status": "CORREÇÃO IMPLEMENTADA — AGUARDANDO HOMOLOGAÇÃO FÍSICA",
+  "candidate": {
+    "host": "https://safevision-quest2.vercel.app/vr/index.html",
+    "commit": "3836a7cf6f52e0ceea7ade08618d1d0b5fcc48d4",
+    "deployment": "dpl_CcgXJRrDPs6MesacX4ibE7Rr4bBc",
+    "pr": "https://github.com/pyedro027/safevision-platform/pull/14"
+  },
+  "production": {
+    "commit": "0084398b4f55948d2c731c2eb88fd7fc57eebc22",
+    "deployment": "dpl_GMNshJsxQSfVrfuXHdneEgMui9RC",
+    "changed": false
+  },
+  "evidence": {
+    "local": "evidencias-quest2/webxr-local.json",
+    "https": "evidencias-quest2/webxr-https.json",
+    "inventory": "evidencias-quest2/integridade-https.json"
+  },
+  "desktop_suites": {
+    "integrity": "pass",
+    "motor": "pass",
+    "local_rls": "pass",
+    "local_sync": "pass",
+    "platform": "pass",
+    "simulated_auth_accounts": "pass",
+    "viewer": "pass",
+    "studio": "pass",
+    "presentation": "pass",
+    "inspection_pdf": "pass",
+    "responsive_redesign": "pass"
+  },
+  "criteria": [
+    {
+      "id": 1,
+      "criterion": "Histórico original investigado.",
+      "status": "confirmado",
+      "evidence": "Arquivos arquivados de novembro e histórico Git inspecionados."
+    },
+    {
+      "id": 2,
+      "criterion": "Implementação anterior localizada ou indisponibilidade documentada.",
+      "status": "confirmado",
+      "evidence": "Cópias XR anteriores localizadas e preservadas. O SHA da sessão física relatada é desconhecido."
+    },
+    {
+      "id": 3,
+      "criterion": "Versão anteriormente funcional analisada.",
+      "status": "parcial",
+      "evidence": "Pacote XR mais antigo recuperado analisado e ensaiado. A correspondência com o pacote usado no headset é indeterminada."
+    },
+    {
+      "id": 4,
+      "criterion": "Comparação entre as versões realizada.",
+      "status": "confirmado",
+      "evidence": "Ensaios A–F com código, infraestrutura e renderização comparados."
+    },
+    {
+      "id": 5,
+      "criterion": "Causa da regressão investigada.",
+      "status": "confirmado",
+      "evidence": "Guarda de suspensão reproduzida. A causa específica do evento físico continua sem trace."
+    },
+    {
+      "id": 6,
+      "criterion": "Evidências técnicas apresentadas.",
+      "status": "confirmado",
+      "evidence": "Relatório, saídas A–F, sessão hospedada e inventário disponíveis."
+    },
+    {
+      "id": 7,
+      "criterion": "Correção implementada.",
+      "status": "confirmado",
+      "evidence": "Derivação WebXR implementada e publicada para homologação."
+    },
+    {
+      "id": 8,
+      "criterion": "Modelo convencional funcionando.",
+      "status": "confirmado",
+      "evidence": "Os sete segmentos carregaram e a clínica convencional ficou acessível."
+    },
+    {
+      "id": 9,
+      "criterion": "Navegação convencional disponível no Quest.",
+      "status": "emulação_validada",
+      "evidence": "Botões em tela moveram a câmera com eventos de ponteiro. Uso com gatilho físico depende da homologação."
+    },
+    {
+      "id": 10,
+      "criterion": "Entrada WebXR funcional.",
+      "status": "emulação_validada",
+      "evidence": "Clique direto abriu immersive-vr pelo candidato em HTTPS."
+    },
+    {
+      "id": 11,
+      "criterion": "Sessão imersiva inicializada.",
+      "status": "emulação_validada",
+      "evidence": "Sessão ativa e onXRFrame observados em HTTPS."
+    },
+    {
+      "id": 12,
+      "criterion": "Ciclo de renderização preservado.",
+      "status": "emulação_validada",
+      "evidence": "65–66 frames da cena em testes HTTPS de suspensão e visibilidade controladas."
+    },
+    {
+      "id": 13,
+      "criterion": "Câmera XR configurada corretamente.",
+      "status": "emulação_validada",
+      "evidence": "Câmera XR observada na recepção com near 0,055 m e far 100 m."
+    },
+    {
+      "id": 14,
+      "criterion": "Renderização estereoscópica funcional.",
+      "status": "emulação_validada",
+      "evidence": "Dois olhos, viewports válidos, render layer e cena processada em estéreo."
+    },
+    {
+      "id": 15,
+      "criterion": "Tela preta eliminada.",
+      "status": "pendente_físico",
+      "evidence": "Interrupção reproduzida por suspensão desapareceu no emulador. Falta observar a imagem no compositor do Quest 2."
+    },
+    {
+      "id": 16,
+      "criterion": "Clínica visível dentro do headset.",
+      "status": "pendente_físico",
+      "evidence": "A clínica teve malhas ativas no render XR emulado. Falta confirmação visual no headset."
+    },
+    {
+      "id": 17,
+      "criterion": "Rastreamento da cabeça funcional.",
+      "status": "emulação_validada",
+      "evidence": "Mudança de pose da cabeça observada na câmera."
+    },
+    {
+      "id": 18,
+      "criterion": "Controle esquerdo reconhecido.",
+      "status": "emulação_validada",
+      "evidence": "Touch esquerdo conectado com mapping xr-standard."
+    },
+    {
+      "id": 19,
+      "criterion": "Controle direito reconhecido.",
+      "status": "emulação_validada",
+      "evidence": "Touch direito conectado com mapping xr-standard."
+    },
+    {
+      "id": 20,
+      "criterion": "Movimentação funcional.",
+      "status": "emulação_validada",
+      "evidence": "Movimento do analógico esquerdo alterou efetivamente a posição."
+    },
+    {
+      "id": 21,
+      "criterion": "Rotação funcional.",
+      "status": "emulação_validada",
+      "evidence": "Analógico direito alterou efetivamente a rotação. O motor preserva o giro em 30°."
+    },
+    {
+      "id": 22,
+      "criterion": "Colisões preservadas.",
+      "status": "confirmado",
+      "evidence": "Motor XR existente preservado. Ensaio do elipsoide contra o colisor F060 passou."
+    },
+    {
+      "id": 23,
+      "criterion": "Posição inicial adequada.",
+      "status": "emulação_validada",
+      "evidence": "Posição da primeira vista XR na recepção, altura emulada de 1,60 m."
+    },
+    {
+      "id": 24,
+      "criterion": "Saída da sessão funcional.",
+      "status": "emulação_validada",
+      "evidence": "Evento end restaurou interface, câmera convencional e controles."
+    },
+    {
+      "id": 25,
+      "criterion": "Reentrada funcional.",
+      "status": "emulação_validada",
+      "evidence": "Três sessões sequenciais, inclusive após rejeição induzida."
+    },
+    {
+      "id": 26,
+      "criterion": "Ausência de loops duplicados.",
+      "status": "confirmado",
+      "evidence": "Engine original conserva o único loop. Babylon controla o scheduler XR e o devolve na saída."
+    },
+    {
+      "id": 27,
+      "criterion": "Ausência de sessões concorrentes.",
+      "status": "confirmado",
+      "evidence": "Guarda de fases bloqueia entrada concorrente. A regressão exercita três sessões sequenciais com a mesma cena."
+    },
+    {
+      "id": 28,
+      "criterion": "Diagnóstico disponível.",
+      "status": "confirmado",
+      "evidence": "Diagnóstico com 96 eventos por tentativa e cópia manual."
+    },
+    {
+      "id": 29,
+      "criterion": "Tratamento de erros implementado.",
+      "status": "emulação_validada",
+      "evidence": "Recusa de entrada e exceção de render recuperadas. Watchdog e eventos de contexto instrumentados."
+    },
+    {
+      "id": 30,
+      "criterion": "Performance investigada.",
+      "status": "confirmado",
+      "evidence": "Modelo, cena, framebuffer e perfil gráfico analisados. GPU, memória, FPS e conforto físicos ainda pendentes."
+    },
+    {
+      "id": 31,
+      "criterion": "Desktop preservado.",
+      "status": "confirmado",
+      "evidence": "Dashboard, visualizador, responsividade e conta simulada passaram em Chrome."
+    },
+    {
+      "id": 32,
+      "criterion": "Studio preservado.",
+      "status": "confirmado",
+      "evidence": "Studio passou com leitura do GLB, porta, casos, repetição e retentativa."
+    },
+    {
+      "id": 33,
+      "criterion": "Casos R01–R05 preservados.",
+      "status": "confirmado",
+      "evidence": "R01–R05 e dois estados por caso conferidos. Recursos originais idênticos."
+    },
+    {
+      "id": 34,
+      "criterion": "Relatórios preservados.",
+      "status": "confirmado",
+      "evidence": "Inspeções e relatório PDF A4 exercitados em seis páginas."
+    },
+    {
+      "id": 35,
+      "criterion": "Apresentação preservada.",
+      "status": "confirmado",
+      "evidence": "Dez passos, retomada e proteção de exibição em conta simulada passaram."
+    },
+    {
+      "id": 36,
+      "criterion": "Banco de dados inalterado.",
+      "status": "confirmado",
+      "evidence": "Diferença vazia em supabase/ e nenhuma operação remota de banco executada."
+    },
+    {
+      "id": 37,
+      "criterion": "RLS inalterada.",
+      "status": "confirmado",
+      "evidence": "RLS preservada no Git. Suíte PostgreSQL/PGlite local passou."
+    },
+    {
+      "id": 38,
+      "criterion": "Missão 14B desabilitada.",
+      "status": "confirmado",
+      "evidence": "A Missão 14B não foi ativada. Candidato sem configuração Supabase."
+    },
+    {
+      "id": 39,
+      "criterion": "Arquivos protegidos íntegros.",
+      "status": "confirmado",
+      "evidence": "42 arquivos verificados localmente e por HTTPS anônimo."
+    },
+    {
+      "id": 40,
+      "criterion": "Sete segmentos íntegros.",
+      "status": "confirmado",
+      "evidence": "Sete segmentos íntegros e recompostos na ordem do manifesto."
+    },
+    {
+      "id": 41,
+      "criterion": "SHA-256 confirmado.",
+      "status": "confirmado",
+      "evidence": "113018368 bytes, SHA-256 911f6af402a19aca8b6825ab6df840b56d3100089cbb69e4c0d4a705588402f0."
+    },
+    {
+      "id": 42,
+      "criterion": "Nenhum serviço pago contratado.",
+      "status": "confirmado",
+      "evidence": "Uso do projeto isolado e domínio incluso na Vercel existente. Nenhum plano ou serviço contratado."
+    },
+    {
+      "id": 43,
+      "criterion": "Candidato versionado.",
+      "status": "confirmado",
+      "evidence": "Candidato publicado a partir de 3836a7c na branch hotfix/quest2-webxr, PR #14 em rascunho."
+    },
+    {
+      "id": 44,
+      "criterion": "Testes automatizados realizados.",
+      "status": "confirmado",
+      "evidence": "Regressão desktop, testes WebXR local e hospedado, e ensaios A–F concluídos."
+    },
+    {
+      "id": 45,
+      "criterion": "Endereço HTTPS acessível.",
+      "status": "confirmado",
+      "evidence": "HTTPS anônimo 200, HSTS e permissões XR no endereço entregue."
+    },
+    {
+      "id": 46,
+      "criterion": "Instruções físicas simplificadas.",
+      "status": "confirmado",
+      "evidence": "Um endereço com sequência única de teste físico e saída pelo botão Meta."
+    },
+    {
+      "id": 47,
+      "criterion": "Diagnóstico recuperável.",
+      "status": "emulação_validada",
+      "evidence": "Erro de render persistido e recuperado depois de recarregar."
+    },
+    {
+      "id": 48,
+      "criterion": "Limitações documentadas.",
+      "status": "confirmado",
+      "evidence": "Limites da emulação, histórico não inequivocamente identificado e elementos físicos documentados."
+    },
+    {
+      "id": 49,
+      "criterion": "Correção preparada para publicação.",
+      "status": "confirmado",
+      "evidence": "Candidato publicado isoladamente. Implantação oficial continua no commit 0084398."
+    },
+    {
+      "id": 50,
+      "criterion": "Homologação física confirmada antes de declarar solução definitiva.",
+      "status": "pendente_físico",
+      "evidence": "Titular ainda precisa testar no Meta Quest 2 antes da aprovação da correção."
+    }
+  ]
+}

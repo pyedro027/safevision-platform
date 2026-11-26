@@ -1,5 +1,13 @@
 # Continuidade para o próximo agente
 
+## WebXR no Quest 2 · 25/11/2026
+
+O candidato público da Clínica ÁUREA passou no ensaio emulado e aguarda uma tentativa física. Use [a entrada única do Quest](https://safevision-quest2.vercel.app/vr/index.html). Peça a visualização da clínica, giro da cabeça, movimento com o analógico esquerdo, rotação com o direito e saída. Em caso de falha, leia o diagnóstico que o titular copiar na própria página.
+
+O [PR #14](https://github.com/pyedro027/safevision-platform/pull/14) está em rascunho na branch `hotfix/quest2-webxr`. A Vercel hospeda o commit do candidato `3836a7cf6f52e0ceea7ade08618d1d0b5fcc48d4` no projeto isolado `safevision-quest2`, deploy `dpl_CcgXJRrDPs6MesacX4ibE7Rr4bBc`. A produção oficial segue no deploy `dpl_GMNshJsxQSfVrfuXHdneEgMui9RC`, commit `0084398b4f55948d2c731c2eb88fd7fc57eebc22`. Mantenha o PR em rascunho até a confirmação física.
+
+Consulte o [relatório A–K](RELATORIO_QUEST2_WEBXR.md), os [50 critérios](qa-quest2.json) e o [registro de sessão HTTPS](evidencias-quest2/webxr-https.json). Preserve os 42 arquivos, os sete segmentos, R01–R05, a rota convencional, os dados e a configuração Supabase. O build de homologação não carrega a configuração de contas. Caso a imagem falhe, compare os eventos de sessão, primeiro callback XR, primeiro frame da cena e contexto WebGL antes de alterar o motor ou o modelo.
+
 ## Demonstration Edition · Missão 16
 
 Branch `feature/demonstration-edition-v1`, derivada de `b7af326`. A entrega pode ser revisada no [PR #13](https://github.com/pyedro027/safevision-platform/pull/13). Acesse [a apresentação local](http://127.0.0.1:4181/#apresentacao) ou [o modelo](http://127.0.0.1:4181/#explorar?de=inicio). A partir da raiz do repositório, `python scripts/servir-demonstracao.py` inicia a distribuição pronta em loopback.

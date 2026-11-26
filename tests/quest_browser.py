@@ -55,13 +55,14 @@ def start_server(root):
 
 def baseline(browser,origin,route):
     page=browser.new_page(viewport={"width":1240,"height":860})
-    ctx=page
-    emulator(ctx,origin)
-    page.goto(origin+route,wait_until="domcontentloaded")
+    emulator(page,origin)
     if route.startswith("/#"):
-        page.get_by_role("button",name="Preparar VR").click(timeout=150000)
-        frame=page.frames[-1]
+        page.goto(origin+"/",wait_until="domcontentloaded")
+        page.evaluate("hash=>{location.hash=hash}",route[2:])
+        page.get_by_role("button",name="Preparar VR").click(timeout=45000)
+        frame=next(f for f in page.frames if f.url.endswith("/visualizador.html"))
     else:
+        page.goto(origin+route,wait_until="domcontentloaded")
         frame=page.main_frame
         frame.locator("#startButton").wait_for(state="visible")
         expect(frame.locator("#startButton")).to_be_enabled(timeout=150000)
@@ -111,7 +112,9 @@ def minimal(browser,origin):
         scene.onAfterRenderObservable.add(()=>{
           const s=xr.baseExperience.sessionManager;
           if(s.inXRFrameLoop && scene.activeCamera===xr.baseExperience.camera){
-            window.minimal={eyes:scene.activeCamera.rigCameras.length, meshes:scene.getActiveMeshes().length,
+            const geometry=scene.getActiveMeshes().data.slice(0,scene.getActiveMeshes().length);
+            window.minimal={eyes:scene.activeCamera.rigCameras.length,
+              geometry:[...new Set(geometry.map(m=>m.name))].sort(),
               controllers:xr.input.controllers.map(c=>c.inputSource.handedness).sort(),
               layer:!!s.session.renderState.baseLayer, babylon:B.Engine.Version};
           }
@@ -121,17 +124,36 @@ def minimal(browser,origin):
     page.get_by_role("button",name="Entrar").click(timeout=30000)
     page.wait_for_function("window.minimal?.eyes===2 && minimal.controllers.length===2")
     result=page.evaluate("window.minimal")
-    assert result["controllers"]==["left","right"] and result["layer"] and result["meshes"]==2,result
+    assert result["controllers"]==["left","right"] and result["layer"],result
+    assert {"cube","floor"}.issubset(result["geometry"]),result
     page.evaluate("questSession.end()")
     page.close()
     return result
 
-def candidate(browser,origin):
+def screen_without_webxr(browser,origin,route):
+    page=browser.new_page(viewport={"width":430,"height":932},has_touch=True,is_mobile=True)
+    page.add_init_script("Object.defineProperty(navigator,'xr',{value:undefined})")
+    page.goto(origin+route,wait_until="domcontentloaded")
+    expect(page.locator("#questStatus")).to_contain_text("Modo de tela disponível",timeout=150000)
+    expect(page.locator("#enterVR")).to_be_hidden()
+    page.locator("#startButton").tap()
+    expect(page.locator("#screenControls")).to_be_visible()
+    before=page.evaluate("__tourDebug.nav.camera.position.asArray()")
+    page.get_by_role("button",name="Avançar",exact=True).tap()
+    page.wait_for_function("p=>__tourDebug.nav.camera.position.asArray().some((x,i)=>i!==1&&Math.abs(x-p[i])>.03)",arg=before)
+    assert page.evaluate("document.documentElement.scrollWidth <= innerWidth")
+    page.close()
+    return {"viewport":[430,932],"touch_navigation":True,"vr_button_hidden":True}
+
+def candidate(browser,origin,route="/vr/"):
     page=browser.new_page(viewport={"width":1240,"height":860})
     errors=[]
     page.on("pageerror",lambda exc:errors.append(exc.name))
     emulator(page,origin)
-    page.goto(origin+"/vr/",wait_until="domcontentloaded")
+    response=page.goto(origin+route,wait_until="domcontentloaded")
+    assert response.status==200,response.status
+    if origin.startswith("https://"):
+        assert response.headers.get("permissions-policy")=="xr-spatial-tracking=(self)"
     button=page.locator("#enterVR")
     expect(button).to_be_enabled(timeout=150000)
     expect(button).to_have_text("Entrar em VR")
@@ -150,6 +172,8 @@ def candidate(browser,origin):
     assert first["eyes"]==2 and first["tracked"] and first["layerPresent"] and first["activeMeshes"]>0,first
     assert len(first["viewports"])==2 and all(v["width"]>0 for v in first["viewports"]),first
     get_pos="window.__tourDebug.scene.activeCamera.position.asArray()"
+    spawn=page.evaluate("__tourDebug.scene.activeCamera.globalPosition.asArray()")
+    assert abs(spawn[0]-1.9)<.25 and 1.2<spawn[1]<2 and abs(spawn[2]+5)<.25,spawn
     before=page.evaluate(get_pos)
     rotation="window.__tourDebug.scene.activeCamera.rotationQuaternion.asArray()"
     head_before=page.evaluate(rotation)
@@ -185,6 +209,15 @@ def candidate(browser,origin):
       return frames;
     }""")
     assert delta>0,delta
+    panel="__tourDebug.scene.getMeshByName('UI_VR_INSPECAO')"
+    assert not page.evaluate(panel+".isEnabled()")
+    page.evaluate("""()=>{
+      questSession.addEventListener('squeezestart',()=>{window.qaGripPressed=true;},{once:true});
+      questDevice.controllers.left.updateButtonValue('squeeze',1);
+    }""")
+    page.wait_for_function("window.qaGripPressed===true")
+    page.evaluate("questDevice.controllers.left.updateButtonValue('squeeze', 0)")
+    page.wait_for_function(panel+".isEnabled()")
     # The emulator session can end exactly like the browser's own exit command.
     page.evaluate("questSession.end()")
     expect(button).to_have_text("Entrar em VR")
@@ -195,13 +228,15 @@ def candidate(browser,origin):
     page.evaluate("questSession.end()")
     expect(button).to_have_text("Entrar em VR")
     expect(button).to_be_enabled()
-    page.evaluate("""window.qaRequest=navigator.xr.requestSession;
-      navigator.xr.requestSession=()=>Promise.reject(new DOMException('QA', 'NotAllowedError'))""")
+    page.evaluate("""()=>{
+      window.qaRequest=navigator.xr.requestSession;
+      navigator.xr.requestSession=()=>Promise.reject(new DOMException('QA', 'NotAllowedError'));
+    }""")
     button.click()
     await_event(page,"entry-rejected")
     expect(button).to_have_text("Tentar entrar em VR")
     expect(button).to_be_enabled()
-    page.evaluate("navigator.xr.requestSession=window.qaRequest")
+    page.evaluate("()=>{navigator.xr.requestSession=window.qaRequest;}")
     button.click()
     page.wait_for_function("""JSON.parse(localStorage.getItem('safevision:quest:diagnostico:v1')).events.filter(r=>r.event==='first-scene-frame').length===3""")
     page.evaluate("""()=>{
@@ -226,7 +261,7 @@ def candidate(browser,origin):
     return {"diagnostic":data,"frames_while_hidden_and_suspended":delta,
             "three_sessions":True,"screen_controls":True,"head_tracking":True,
             "rejection_and_frame_failure_recovered":True,"previous_diagnostics_after_reload":True,
-            "browser":browser.version}
+            "panel_opened_with_grip":True,"spawn":spawn,"browser":browser.version}
 
 def main():
     server,origin=start_server(ROOT/"dist")
@@ -246,9 +281,12 @@ def main():
                 for route in ("/clinica/WEB/index.html","/visualizador.html","/#explorar?de=inicio"):
                     results[route]=baseline(browser,origin,route)
                     print(json.dumps(results[route]),flush=True)
+            if not hosted and os.getenv("SAFEVISION_QUEST_SKIP_MINIMAL")!="1":
                 results["minimal"]=minimal(browser,origin)
                 print(json.dumps(results["minimal"]),flush=True)
-            results["/vr/"]=candidate(browser,hosted or origin)
+            route="/vr/index.html" if hosted else "/vr/"
+            results["/vr/"]=candidate(browser,hosted or origin,route)
+            results["screen_without_webxr"]=screen_without_webxr(browser,hosted or origin,route)
             (EVIDENCE/"quest-browser.json").write_text(json.dumps(results,ensure_ascii=False,indent=2)+"\n","utf8")
             print(json.dumps({k:v for k,v in results["/vr/"].items() if k!="diagnostic"}),flush=True)
             browser.close()
