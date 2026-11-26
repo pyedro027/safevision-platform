@@ -1,0 +1,471 @@
+{
+  "/vr/": {
+    "diagnostic": {
+      "version": "V1.0.0-DEMO · Quest 2",
+      "commit": "3836a7cf6f52e0ceea7ade08618d1d0b5fcc48d4",
+      "babylon": "9.30.0",
+      "scene": "Clínica ÁUREA V03",
+      "secure": true,
+      "webxr": true,
+      "policy": true,
+      "events": [
+        {
+          "ms": 3871,
+          "event": "viewer-ready",
+          "camera": "olhar_primeira_pessoa",
+          "rooms": 21,
+          "meshes": 823,
+          "vertices": 2377764,
+          "materials": 44,
+          "textures": 8,
+          "lights": 23,
+          "webgl": 2,
+          "maxTextureSize": 16384
+        },
+        {
+          "ms": 3880,
+          "event": "immersive-vr-supported",
+          "supported": true
+        },
+        {
+          "ms": 3884,
+          "event": "phase",
+          "phase": "READY_2D"
+        },
+        {
+          "ms": 5530,
+          "event": "phase",
+          "phase": "ENTERING_XR"
+        },
+        {
+          "ms": 5530,
+          "event": "babylon-state",
+          "state": "ENTERING_XR"
+        },
+        {
+          "ms": 5538,
+          "event": "xr-session-init",
+          "visibility": "visible",
+          "referenceSpaceRequested": "local-floor",
+          "profile": "low"
+        },
+        {
+          "ms": 5552,
+          "event": "initial-xr-pose",
+          "xyz": [
+            1.9,
+            0,
+            -5
+          ],
+          "near": 0.055,
+          "far": 100
+        },
+        {
+          "ms": 5565,
+          "event": "controller-connected",
+          "hand": "left",
+          "profiles": [
+            "oculus-touch-v3",
+            "oculus-touch",
+            "generic-trigger-squeeze-thumbstick"
+          ],
+          "mapping": "xr-standard"
+        },
+        {
+          "ms": 5576,
+          "event": "controller-connected",
+          "hand": "right",
+          "profiles": [
+            "oculus-touch-v3",
+            "oculus-touch",
+            "generic-trigger-squeeze-thumbstick"
+          ],
+          "mapping": "xr-standard"
+        },
+        {
+          "ms": 5588,
+          "event": "first-xr-callback",
+          "referenceSpace": "r"
+        },
+        {
+          "ms": 5627,
+          "event": "babylon-state",
+          "state": "IN_XR"
+        },
+        {
+          "ms": 5712,
+          "event": "first-scene-frame",
+          "eyes": 2,
+          "tracked": true,
+          "referenceSpace": "r",
+          "layerPresent": true,
+          "width": 1240,
+          "height": 860,
+          "viewports": [
+            {
+              "eye": "left",
+              "width": 620,
+              "height": 860
+            },
+            {
+              "eye": "right",
+              "width": 620,
+              "height": 860
+            }
+          ],
+          "activeMeshes": 381
+        },
+        {
+          "ms": 5712,
+          "event": "phase",
+          "phase": "ACTIVE_XR"
+        },
+        {
+          "ms": 7073,
+          "event": "left-stick",
+          "x": 0,
+          "y": -0.8170731707317072
+        },
+        {
+          "ms": 7165,
+          "event": "right-stick",
+          "x": 0.8780487804878048
+        },
+        {
+          "ms": 8000,
+          "event": "babylon-state",
+          "state": "EXITING_XR"
+        },
+        {
+          "ms": 8000,
+          "event": "phase",
+          "phase": "EXITING_XR"
+        },
+        {
+          "ms": 8001,
+          "event": "babylon-state",
+          "state": "NOT_IN_XR"
+        },
+        {
+          "ms": 8003,
+          "event": "controller-removed",
+          "hand": "left"
+        },
+        {
+          "ms": 8004,
+          "event": "controller-removed",
+          "hand": "right"
+        },
+        {
+          "ms": 8009,
+          "event": "xr-session-ended",
+          "frames": 99
+        },
+        {
+          "ms": 8010,
+          "event": "phase",
+          "phase": "READY_2D"
+        },
+        {
+          "ms": 8089,
+          "event": "phase",
+          "phase": "ENTERING_XR"
+        },
+        {
+          "ms": 8092,
+          "event": "babylon-state",
+          "state": "ENTERING_XR"
+        },
+        {
+          "ms": 8092,
+          "event": "xr-session-init",
+          "visibility": "visible",
+          "referenceSpaceRequested": "local-floor",
+          "profile": "low"
+        },
+        {
+          "ms": 8100,
+          "event": "initial-xr-pose",
+          "xyz": [
+            1.98,
+            0,
+            -5
+          ],
+          "near": 0.055,
+          "far": 100
+        },
+        {
+          "ms": 8106,
+          "event": "controller-connected",
+          "hand": "left",
+          "profiles": [
+            "oculus-touch-v3",
+            "oculus-touch",
+            "generic-trigger-squeeze-thumbstick"
+          ],
+          "mapping": "xr-standard"
+        },
+        {
+          "ms": 8114,
+          "event": "controller-connected",
+          "hand": "right",
+          "profiles": [
+            "oculus-touch-v3",
+            "oculus-touch",
+            "generic-trigger-squeeze-thumbstick"
+          ],
+          "mapping": "xr-standard"
+        },
+        {
+          "ms": 8121,
+          "event": "first-xr-callback",
+          "referenceSpace": "r"
+        },
+        {
+          "ms": 8121,
+          "event": "babylon-state",
+          "state": "IN_XR"
+        },
+        {
+          "ms": 8189,
+          "event": "first-scene-frame",
+          "eyes": 2,
+          "tracked": true,
+          "referenceSpace": "r",
+          "layerPresent": true,
+          "width": 1240,
+          "height": 860,
+          "viewports": [
+            {
+              "eye": "left",
+              "width": 620,
+              "height": 860
+            },
+            {
+              "eye": "right",
+              "width": 620,
+              "height": 860
+            }
+          ],
+          "activeMeshes": 380
+        },
+        {
+          "ms": 8189,
+          "event": "phase",
+          "phase": "ACTIVE_XR"
+        },
+        {
+          "ms": 8260,
+          "event": "babylon-state",
+          "state": "EXITING_XR"
+        },
+        {
+          "ms": 8260,
+          "event": "phase",
+          "phase": "EXITING_XR"
+        },
+        {
+          "ms": 8261,
+          "event": "babylon-state",
+          "state": "NOT_IN_XR"
+        },
+        {
+          "ms": 8261,
+          "event": "controller-removed",
+          "hand": "left"
+        },
+        {
+          "ms": 8262,
+          "event": "controller-removed",
+          "hand": "right"
+        },
+        {
+          "ms": 8265,
+          "event": "xr-session-ended",
+          "frames": 5
+        },
+        {
+          "ms": 8266,
+          "event": "phase",
+          "phase": "READY_2D"
+        },
+        {
+          "ms": 8298,
+          "event": "phase",
+          "phase": "ENTERING_XR"
+        },
+        {
+          "ms": 8301,
+          "event": "babylon-state",
+          "state": "ENTERING_XR"
+        },
+        {
+          "ms": 8302,
+          "event": "babylon-state",
+          "state": "NOT_IN_XR"
+        },
+        {
+          "ms": 8302,
+          "event": "entry-rejected",
+          "error": "NotAllowedError"
+        },
+        {
+          "ms": 8303,
+          "event": "phase",
+          "phase": "ERROR"
+        },
+        {
+          "ms": 8337,
+          "event": "phase",
+          "phase": "ENTERING_XR"
+        },
+        {
+          "ms": 8337,
+          "event": "babylon-state",
+          "state": "ENTERING_XR"
+        },
+        {
+          "ms": 8338,
+          "event": "xr-session-init",
+          "visibility": "visible",
+          "referenceSpaceRequested": "local-floor",
+          "profile": "low"
+        },
+        {
+          "ms": 8344,
+          "event": "initial-xr-pose",
+          "xyz": [
+            1.98,
+            0,
+            -5
+          ],
+          "near": 0.055,
+          "far": 100
+        },
+        {
+          "ms": 8351,
+          "event": "controller-connected",
+          "hand": "left",
+          "profiles": [
+            "oculus-touch-v3",
+            "oculus-touch",
+            "generic-trigger-squeeze-thumbstick"
+          ],
+          "mapping": "xr-standard"
+        },
+        {
+          "ms": 8358,
+          "event": "controller-connected",
+          "hand": "right",
+          "profiles": [
+            "oculus-touch-v3",
+            "oculus-touch",
+            "generic-trigger-squeeze-thumbstick"
+          ],
+          "mapping": "xr-standard"
+        },
+        {
+          "ms": 8363,
+          "event": "first-xr-callback",
+          "referenceSpace": "r"
+        },
+        {
+          "ms": 8364,
+          "event": "babylon-state",
+          "state": "IN_XR"
+        },
+        {
+          "ms": 8427,
+          "event": "first-scene-frame",
+          "eyes": 2,
+          "tracked": true,
+          "referenceSpace": "r",
+          "layerPresent": true,
+          "width": 1240,
+          "height": 860,
+          "viewports": [
+            {
+              "eye": "left",
+              "width": 620,
+              "height": 860
+            },
+            {
+              "eye": "right",
+              "width": 620,
+              "height": 860
+            }
+          ],
+          "activeMeshes": 380
+        },
+        {
+          "ms": 8427,
+          "event": "phase",
+          "phase": "ACTIVE_XR"
+        },
+        {
+          "ms": 8482,
+          "event": "failure",
+          "reason": "scene-render",
+          "error": "Error",
+          "frames": 4
+        },
+        {
+          "ms": 8482,
+          "event": "phase",
+          "phase": "EXITING_XR"
+        },
+        {
+          "ms": 8485,
+          "event": "babylon-state",
+          "state": "EXITING_XR"
+        },
+        {
+          "ms": 8486,
+          "event": "babylon-state",
+          "state": "NOT_IN_XR"
+        },
+        {
+          "ms": 8486,
+          "event": "controller-removed",
+          "hand": "left"
+        },
+        {
+          "ms": 8487,
+          "event": "controller-removed",
+          "hand": "right"
+        },
+        {
+          "ms": 8491,
+          "event": "xr-session-ended",
+          "frames": 4
+        },
+        {
+          "ms": 8492,
+          "event": "phase",
+          "phase": "ERROR"
+        }
+      ]
+    },
+    "frames_while_hidden_and_suspended": 66,
+    "three_sessions": true,
+    "screen_controls": true,
+    "head_tracking": true,
+    "rejection_and_frame_failure_recovered": true,
+    "previous_diagnostics_after_reload": true,
+    "panel_opened_with_grip": true,
+    "spawn": [
+      1.8999996185302734,
+      1.600000023841858,
+      -4.999000072479248
+    ],
+    "browser": "159.0.8154.33"
+  },
+  "screen_without_webxr": {
+    "viewport": [
+      430,
+      932
+    ],
+    "touch_navigation": true,
+    "vr_button_hidden": true
+  }
+}
